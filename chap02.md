@@ -14,9 +14,12 @@ lang: 'ja'
 
 
 ### すべてのEPUBリーダーでサポートされている
+
 - CSS Values and Units Level 3
     - 長さの単位 rem
+
 ### ほとんどのEPUBリーダーでサポートされている
+
 - Selectors Level 3
     - 部分文字列マッチング属性セレクタ [att^=val]
     - 部分文字列マッチング属性セレクタ[att$=val]
@@ -39,7 +42,12 @@ lang: 'ja'
     - 後続兄弟結合子 E ~ F
     - ::first-line 擬似要素（モダンブラウザ系以外では、honto でOK）
 - CSS Values and Units Level 3
-    - 長さの単位 ch / 長さの単位 vw / 長さの単位 vh / 長さの単位 vmin / 長さの単位 vmax / 長さの単位 Q（モダンブラウザ系以外では、Kobo、honto、Konoppy、超縦書（Q 以外）でOK）
+    - 長さの単位 ch
+    - 長さの単位 vw
+    - 長さの単位 vh
+    - 長さの単位 vmin
+    - 長さの単位 vmax
+    - 長さの単位 Q（モダンブラウザ系以外では、Kobo、honto、Konoppy、超縦書（Q 以外）でOK）
 
 
 ### メジャーなEPUBリーダーでサポートされている
