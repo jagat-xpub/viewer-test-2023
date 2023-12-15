@@ -13,12 +13,12 @@ lang: 'ja'
 ### はじめに
 
 
-### すべてのEPUBリーダーでサポートされている
+### すべてのEPUBリーダーでサポートされているもの
 
 - CSS Values and Units Level 3
     - 長さの単位 rem
 
-### ほとんどのEPUBリーダーでサポートされている
+### ほとんどのEPUBリーダーでサポートされているもの
 
 - Selectors Level 3
     - 部分文字列マッチング属性セレクタ [att^=val]
@@ -50,7 +50,8 @@ lang: 'ja'
     - 長さの単位 Q（モダンブラウザ系以外では、Kobo、honto、Konoppy、超縦書（Q 以外）でOK）
 
 
-### メジャーなEPUBリーダーでサポートされている
+### メジャーなEPUBリーダーでサポートされているもの
+
 - CSS Color Level 4
     - opacity プロパティ（honto、Kinoppy、Voyager でNG）
 - CSS Backgrounds and Borders Level 3
@@ -60,7 +61,8 @@ lang: 'ja'
     - outline プロパティ（honto、Kinoppy、Voyager でNG）
 
 
-### モダンブラウザ系でのみサポートされている
+### モダンブラウザ系でのみサポートされているもの
+
 - CSS Cascading and Inheritance Level 4
     - all プロパティ（ただし、BiB/i でNG）
     - プロパティの値 unset / プロパティの値 revert（モダンブラウザ系以外では、honto でOK）
