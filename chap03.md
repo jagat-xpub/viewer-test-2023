@@ -65,16 +65,19 @@ EPUB内に紙の本のページ番号の記述を指定するには、ナビゲ�
 「```<span id="page001" epub:type="pagebreak" role="doc-pagebreak" aria-label="1" title="1"/>```」が指定に該当する。なお、title属性の値はビューアで表示する際の指定なので、目次など前付けのブロックにローマ数字を採用している本などにも問題なく対応できる。
 
 ### テスト結果
+
+＞表入る
+
 こちらはEPUB独自プロパティへの対応状況の調査となるため、「各OSで利用できるブラウザエンジンに依拠するもの」「独自レイアウトエンジンで動作するもの」への区分は設けず、対応状況を一覧表示した。
 
 現時点で対応が確認できたのは「ブック」と「Murasaki」のみ。Kindleはガイドライン文書に対応済の記載はあるが読み込ませたテストデータでは確認できない。これはかなり前からずっと変わっていない。外部文書の参照が頻繁に出てくるような類の本ではページ番号によるナビゲーションは重要なので、今後の対応を期待したいところ。
 対応済みだったアプリで実ページ番号にアクセスする方法を以下に載せておく。
 
-[「ブック」の設定項目](https://github.com/jagat-xpub/viewer-test-2023/blob/main/chap3/img/2-1_applebooks.png)
+![「ブック」の設定項目](https://github.com/jagat-xpub/viewer-test-2023/blob/main/chap3/img/2-1_applebooks.png)
 
 Mac版の「ブック」では表示メニューから「印刷版ページ番号」を選択することでノンブルの表示が実ページ番号に切り替わる。iOS版では特に切り替え設定は見当たらないが、自動で切り替わって表示される模様。
 
-[「Murasaki」のメニュー](https://github.com/jagat-xpub/viewer-test-2023/blob/main/chap3/img/2-2_murasaki.png)
+![「Murasaki」のメニュー](https://github.com/jagat-xpub/viewer-test-2023/blob/main/chap3/img/2-2_murasaki.png)
 
 「Murasaki」では移動メニューの「ページ番号」を選ぶことで選択ボックスが表示され、各ページの先頭位置にジャンプすることができる。
 
