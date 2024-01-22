@@ -5,17 +5,34 @@ link:
 lang: 'ja'
 ---
 
-# 第1章 CSS表示テストの結果
+# 第2章 CSS表示テスト
 
-## はじめに
+## 2-1 はじめに
 
-### CSS表示テストの目的
+### 2-1-1 CSS表示テストの目的と方法
 
-最新のEPUB仕様である[EPUB 3.3](https://www.w3.org/TR/epub-33/)では、「EPUB 3は、[CSS Snapshot](https://www.w3.org/TR/CSS/) で定義されたCSSをサポートする」と明記されている（[§1.3.3 Relationship to CSS](https://www.w3.org/TR/epub-33/#sec-overview-relations-css)）。いくつかの -epub- 接頭辞付きのCSSプロパティは後方互換性のために残されてはいるが、「EPUB制作者は接頭辞なしのプロパティを使用するべきで、リーディングシステムは現行のCSS仕様をサポートするべき」、「Working Groupは、EPUBの次のメジャーバージョンでこれらの接頭辞付きプロパティをサポートする見込みがないため、現在これらの接頭辞付きプロパティを使用しているEPUBクリエーターは、サポートが可能になり次第、接頭辞なしバージョンに移行することを推奨する」とのことである（[$6.3.1.3 Prefixed properties](https://www.w3.org/TR/epub-33/#sec-css-prefixed)）。
+最新のEPUB仕様である[EPUB 3.3](https://www.w3.org/TR/epub-33/)では、「EPUB 3は、[CSS Snapshot](https://www.w3.org/TR/CSS/) で定義されたCSSをサポートする」と明記されている（[§1.3.3 Relationship to CSS](https://www.w3.org/TR/epub-33/#sec-overview-relations-css)）。いくつかの `-epub-`接頭辞付きのCSSプロパティは後方互換性のために残されてはいるが、「EPUB制作者は接頭辞なしのプロパティを使用するべきで、リーディングシステム（EPUBリーダー）は現行のCSS仕様をサポートするべき」、「Working Groupは、EPUBの次のメジャーバージョンでこれらの接頭辞付きプロパティをサポートする見込みがないため、現在これらの接頭辞付きプロパティを使用しているEPUB制作者は、サポートが可能になり次第、接頭辞なしバージョンに移行することを推奨する」とのことである（[$6.3.1.3 Prefixed properties](https://www.w3.org/TR/epub-33/#sec-css-prefixed)）。
 
-それでは各社のEPUBリーディングシステムが現行のCSS仕様をどれだけサポートしているのか、-epub- 接頭辞付きプロパティはもう使わなくてよいのか、気になるところである。そこで、[CSS Snapshot 2023](https://www.w3.org/TR/css-2023/) でCSSの公式的な定義とされているCSSモジュールを中心にチェックリストを作成した。
+それでは各社のEPUBリーダーが現行のCSS仕様を、どれだけサポートしているのか、本当に`-epub-`接頭辞付きプロパティは使わなくてよいのか、こうした疑問に答えるため、W3Cによる[CSS Snapshot 2023](https://www.w3.org/TR/css-2023/) でCSSの公式的な定義とされたCSSモジュールを中心にチェックリストを作成し、各社EPUBリーダーが、これらをどのように表示するのかテストすることにした。
 
-### CSSの公式的な定義に含まれるCSSモジュール
+テストの方法を詳しく説明しよう。まずテストの材料となるCSSモジュールを、以下の基準によって選定した（選定したCSSモジュール名は次項で詳説）。
+
+1. CSSの公式的な定義に含まれるCSSモジュール
+2. かなり安定しているが実装経験が限定的なCSSモジュール
+3. 大まかな相互運用性のあるCSSモジュール
+4. CSS Snapshot 2023 に載っていないが、最新のブラウザで利用できるもの
+
+つぎに、選定したCSSモジュールごとに、対応の可否を一目で識別できるテストファイルを制作した。これは以下のリポジトリで公開しているので、お読みの方はぜひ自分でも試していただきたい（なお、ライセンスは[CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/deed.ja)で、著作権を放棄している）。
+
+- [EPUBリーダーのCSS仕様適合性テスト](https://github.com/jagat-xpub/epub-css-test/tree/main)
+
+最後に、これらのテストベッドとなるEPUBリーダーを選定し、当研究会のメンバーごとに割り振ってテストを開始し、結果を以下のGoogleスプレッドシートに記録していったのである。
+
+- [EPUBリーダー表示チェック（JAGAT次世代パブリッシング研究会）2023](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?usp=sharing)
+
+### 2-1-2 選定したCSSモジュール
+
+#### CSSの公式的な定義に含まれるCSSモジュール
 
 「2023年現在の CSS （ Cascading Style Sheets ）は、 以下に挙げる仕様で定義される」（[CSS Snapshot 2023 - §2.1. Cascading Style Sheets (CSS) — The Official Definition](https://www.w3.org/TR/css-2023/#css-official)）
 
@@ -108,7 +125,7 @@ lang: 'ja'
     - [ ] cjk-heavenly-stem
     - [ ] japanese-informal
 
-### かなり安定しているが実装経験が限定的なCSSモジュール
+#### かなり安定しているが実装経験が限定的なCSSモジュール
 
 「以下のモジュールは設計作業が完了し、かなり安定しているが、まだテストと実装の経験があまりない」（[§2.2. Fairly Stable Modules with limited implementation experience](https://www.w3.org/TR/css-2023/#fairly-stable)）
 
@@ -140,7 +157,7 @@ lang: 'ja'
 - [CSS Scrollbars Styling Module Level 1](https://www.w3.org/TR/css-scrollbars-1/)
 - [CSS View Transitions Module Level 1](https://www.w3.org/TR/css-view-transitions-1/)
 
-### 大まかな相互運用性のあるCSSモジュール
+#### 大まかな相互運用性のあるCSSモジュール
 
 「以下のモジュールは、大まかな相互運用性を確保した上で広く展開されているが、その詳細は十分に練られておらず、また十分な仕様もないため、さらなるテストとバグ修正が必要」 （[	§2.3. Modules with Rough Interoperability](https://www.w3.org/TR/css-2023/#rough-interop)）
 
@@ -185,19 +202,21 @@ lang: 'ja'
   - [ ] @supports selector() ルール
 - [CSS Cascading and Inheritance Level 5](https://www.w3.org/TR/css-cascade-5/)
   - [ ] @layer ルール
-
-### CSS Snapshot 2023 に載っていないが、最新のブラウザで利用できるもの
-
 - [Selectors Level 4](https://www.w3.org/TR/selectors-4/)
   - [ ] :is() 擬似クラス
   - [ ] :where() 擬似クラス
   - [ ] :has() 擬似クラス
 
+### 2-1-3 テストしたEPUBリーダー
 
-## CSS表示テストの結果
 
 
-### はじめに
+
+
+
+
+
+## 2-2 CSS表示テストの結果
 
 
 ### すべてのEPUBリーダーでサポートされているもの
