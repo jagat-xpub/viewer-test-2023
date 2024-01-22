@@ -13,7 +13,7 @@ lang: 'ja'
 
 最新のEPUB仕様である[EPUB 3.3](https://www.w3.org/TR/epub-33/)では、「EPUB 3は、[CSS Snapshot](https://www.w3.org/TR/CSS/) で定義されたCSSをサポートする」と明記されている（[§1.3.3 Relationship to CSS](https://www.w3.org/TR/epub-33/#sec-overview-relations-css)）。いくつかの `-epub-`接頭辞付きのCSSプロパティは後方互換性のために残されてはいるが、「EPUB制作者は接頭辞なしのプロパティを使用するべきで、リーディングシステム（EPUBリーダー）は現行のCSS仕様をサポートするべき」、「Working Groupは、EPUBの次のメジャーバージョンでこれらの接頭辞付きプロパティをサポートする見込みがないため、現在これらの接頭辞付きプロパティを使用しているEPUB制作者は、サポートが可能になり次第、接頭辞なしバージョンに移行することを推奨する」とのことである（[$6.3.1.3 Prefixed properties](https://www.w3.org/TR/epub-33/#sec-css-prefixed)）。
 
-それでは各社のEPUBリーダーが現行のCSS仕様を、どれだけサポートしているのか、本当に`-epub-`接頭辞付きプロパティは使わなくてよいのか、こうした疑問に答えるため、W3Cによる[CSS Snapshot 2023](https://www.w3.org/TR/css-2023/) でCSSの公式的な定義とされたCSSモジュールを中心にチェックリストを作成し、各社EPUBリーダーが、これらをどのように表示するのかテストすることにした。
+となると各社のEPUBリーダーが現行のCSS仕様を、どれだけサポートしているのか、本当に`-epub-`接頭辞付きプロパティは使わなくてよいのか、こうした疑問が湧いてくる。そこで、W3Cによる[CSS Snapshot 2023](https://www.w3.org/TR/css-2023/) でCSSの公式的な定義とされたCSSモジュールを中心にチェックリストを作成し、各社EPUBリーダーが、これらをどのように表示するのかテストすることにした。
 
 テストの方法を詳しく説明しよう。まずテストの材料となるCSSモジュールを、以下の基準によって選定した（選定したCSSモジュール名は次項で詳説）。
 
@@ -29,6 +29,8 @@ lang: 'ja'
 最後に、これらのテストベッドとなるEPUBリーダーを選定し、当研究会のメンバーごとに割り振ってテストを開始。各担当者は前述テスト用EPUBファイルを自分が担当したEPUBリーダーにサイドロードし、テスト結果を以下のGoogleスプレッドシートに記録していったのである。
 
 - [EPUBリーダー表示チェック（JAGAT次世代パブリッシング研究会）2023](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?usp=sharing)
+
+こうして得られたテスト結果を、なるべく分かりやすく報告するのが本章のミッションである。
 
 ### 2-1-2 選定したCSSモジュール
 
@@ -202,6 +204,9 @@ lang: 'ja'
   - [ ] @supports selector() ルール
 - [CSS Cascading and Inheritance Level 5](https://www.w3.org/TR/css-cascade-5/)
   - [ ] @layer ルール
+
+#### CSS Snapshot 2023 に載っていないが、最新のブラウザで利用できるもの
+
 - [Selectors Level 4](https://www.w3.org/TR/selectors-4/)
   - [ ] :is() 擬似クラス
   - [ ] :where() 擬似クラス
