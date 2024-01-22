@@ -22,11 +22,11 @@ lang: 'ja'
 3. 大まかな相互運用性のあるCSSモジュール
 4. CSS Snapshot 2023 に載っていないが、最新のブラウザで利用できるもの
 
-つぎに、選定したCSSモジュールごとに、対応の可否を一目で識別できるテストファイルを制作した。これは以下のリポジトリで公開しているので、お読みの方はぜひ自分でも試していただきたい（なお、ライセンスは[CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/deed.ja)で、著作権を放棄している）。
+つぎに、選定したCSSモジュールごとに、対応の可否を一目で識別できるテスト用EPUBファイルを制作した。これは以下のリポジトリで公開しているので、お読みの方はぜひ自分でも試していただきたい（なお、ライセンスは[CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/deed.ja)で、著作権を放棄している）。
 
 - [EPUBリーダーのCSS仕様適合性テスト](https://github.com/jagat-xpub/epub-css-test/tree/main)
 
-最後に、これらのテストベッドとなるEPUBリーダーを選定し、当研究会のメンバーごとに割り振ってテストを開始し、結果を以下のGoogleスプレッドシートに記録していったのである。
+最後に、これらのテストベッドとなるEPUBリーダーを選定し、当研究会のメンバーごとに割り振ってテストを開始。各担当者は前述テスト用EPUBファイルを自分が担当したEPUBリーダーにサイドロードし、テスト結果を以下のGoogleスプレッドシートに記録していったのである。
 
 - [EPUBリーダー表示チェック（JAGAT次世代パブリッシング研究会）2023](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?usp=sharing)
 
