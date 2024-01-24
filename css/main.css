@@ -181,7 +181,7 @@ ul,
 ol {
   margin-block: 0.5lh;
   margin-inline: 0 2em;
-  font-weight: 700;
+  font-weight: 400;
   padding-inline-start: 2em;
 }
 /* 入れ子のときは上下アキなし */
@@ -219,8 +219,22 @@ hr.blankline {
   visibility: hidden;
 }
 
-a {
-  color: #000;
+a:link {
+  color: #00008B;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #1E90FF;
+  text-decoration: none;}
+
+  a:hover {
+  color: #999;
+  text-decoration: none;
+}
+
+a:active {
+  color: #fff;
   text-decoration: none;
 }
 
@@ -324,6 +338,7 @@ blockquote {
   font-size: 14Q;
   color: #3da8c9;
 }
+
 
 /*編集コメント（サイドバー表示）*/
 .hen-comment {
