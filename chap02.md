@@ -216,8 +216,8 @@ lang: 'ja'
 
 #### 掲載したテスト環境の一覧
 
-<div style="font-size: 12Q">
-<table>
+
+<table style="font-size: 12Q" style="line-height: 21.5Q">
   <tr>
     <th style="color:#434343" align="center">EPUBリーダー</th>
     <th style="color:#434343" align="center">種別</th>
@@ -525,12 +525,12 @@ lang: 'ja'
     <td bgcolor="#6aa84f" align="center">2023/08/25</td>
   </tr>
 </table>
-</div>
+
 
 
 #### 掲載しなかったテスト環境の一覧
 
-<table>
+<table style="font-size: 12Q" style="line-height: 21.5Q">
   <tr>
     <th style="color:#434343" align="center">EPUBリーダー</th>
     <th style="color:#434343" align="center">種別</th>
