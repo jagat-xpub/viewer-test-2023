@@ -650,26 +650,26 @@ lang: 'ja'
 <table>
   <tr>
     <td style="color:#434343" align="right"></td>
-    <th valign="bottom">Selectors Level 3</th>
-    <td>部分文字列マッチング属性セレクタ [att^=val]</td>
-    <td>部分文字列マッチング属性セレクタ[att$=val]</td>
-    <td>部分文字列マッチング属性セレクタ[att*=val]</td>
-    <td>:root 擬似クラス</td>
-    <td>:nth-child() 擬似クラス</td>
-    <td>:nth-last-child() 擬似クラス</td>
-    <td>:nth-of-type() 擬似クラス</td>
-    <td>:nth-last-of-type() 擬似クラス</td>
-    <td>:last-child 擬似クラス</td>
-    <td>:only-child 擬似クラス</td>
-    <td>:first-of-type 擬似クラス</td>
-    <td>:last-of-type 擬似クラス</td>
-    <td>:only-of-type 擬似クラス</td>
-    <td>:empty 擬似クラス</td>
-    <td>:not 擬似クラス</td>
-    <td>::first-letter 擬似要素</td>
-    <td>::before 擬似要素</td>
-    <td>::after 擬似要素</td>
-    <td>後続兄弟結合子 E ~ F</td>
+    <th><span  style="writing-mode: vertical-rl">Selectors Level 3<span  style="writing-mode: vertical-rl"></span></th>
+    <td><span  style="writing-mode: vertical-rl">部分文字列マッチング属性セレクタ [att^=val]</span></td>
+    <td><span  style="writing-mode: vertical-rl">部分文字列マッチング属性セレクタ[att$=val]</span></td>
+    <td><span  style="writing-mode: vertical-rl">部分文字列マッチング属性セレクタ[att*=val]</span></td>
+    <td><span  style="writing-mode: vertical-rl">:root 擬似クラス</span></td>
+    <td><span  style="writing-mode: vertical-rl">:nth-child() 擬似クラス</span></td>
+    <td><span  style="writing-mode: vertical-rl">:nth-last-child() 擬似クラス</td>
+    <td><span  style="writing-mode: vertical-rl">:nth-of-type() 擬似クラス</span></td>
+    <td><span  style="writing-mode: vertical-rl">:nth-last-of-type() 擬似クラス</td>
+    <td><span  style="writing-mode: vertical-rl">:last-child 擬似クラス</span></td>
+    <td><span  style="writing-mode: vertical-rl">:only-child 擬似クラス</span></td>
+    <td><span  style="writing-mode: vertical-rl">:first-of-type 擬似クラス</span></td>
+    <td><span  style="writing-mode: vertical-rl">:last-of-type 擬似クラス</span></td>
+    <td><span  style="writing-mode: vertical-rl">:only-of-type 擬似クラス</span></td>
+    <td><span  style="writing-mode: vertical-rl">:empty 擬似クラス</span></td>
+    <td><span  style="writing-mode: vertical-rl">:not 擬似クラス</span></td>
+    <td><span  style="writing-mode: vertical-rl">::first-letter 擬似要素</span></td>
+    <td><span  style="writing-mode: vertical-rl">::before 擬似要素</span></td>
+    <td><span  style="writing-mode: vertical-rl">::after 擬似要素</span></td>
+    <td><span  style="writing-mode: vertical-rl">後続兄弟結合子 E ~ F</span></td>
     <th valign="bottom">CSS Cascading and Inheritance Level 4</th>
     <td valign="bottom">プロパティの値 initial</td>
     <th valign="bottom">CSS Backgrounds and Borders Level 3</th>
