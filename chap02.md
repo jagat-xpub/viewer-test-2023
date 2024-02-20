@@ -127,94 +127,9 @@ lang: 'ja'
     - cjk-heavenly-stem
     - japanese-informal
 
-#### かなり安定しているが実装経験が限定的なCSSモジュール
-
-「以下のモジュールは設計作業が完了し、かなり安定しているが、まだテストと実装の経験があまりない」（[§2.2. Fairly Stable Modules with limited implementation experience](https://www.w3.org/TR/css-2023/#fairly-stable)）
-
-- [Media Queries Level 4](https://www.w3.org/TR/mediaqueries-4/)
-- [CSS Display Module Level 3](https://www.w3.org/TR/css-display-3/)
-- [CSS Writing Modes Level 4](https://www.w3.org/TR/css-writing-modes-4/)
-- [CSS Fragmentation Module Level 3](https://www.w3.org/TR/css-break-3/)
-  - break-before, break-after プロパティ
-  - break-inside プロパティ
-  - orphans, widows プロパティ
-  - box-decoration-break プロパティ
-- [CSS Box Alignment Module Level 3](https://www.w3.org/TR/css-align-3/)
-- [CSS Shapes Module Level 1](https://www.w3.org/TR/css-shapes-1/)
-- [CSS Text Module Level 3](https://www.w3.org/TR/css-text-3/)
-  - word-break プロパティ
-  - line-break プロパティ
-  - hyphens プロパティ
-  - overflow-wrap プロパティ
-  - text-align-last プロパティ
-  - hanging-punctuation プロパティ
-- [CSS Text Decoration Level 3](https://www.w3.org/TR/css-text-decor-3/)
-  - text-decoration-line, text-decoration-style, text-decoration-color プロパティ
-  - text-underline-position プロパティ
-  - text-emphasis-color, text-emphasis-style, text-emphasis プロパティ
-  - text-emphasis-position プロパティ
-- [CSS Masking Level 1](https://www.w3.org/TR/css-masking-1/)
-- [CSS Scroll Snap Module Level 1](https://www.w3.org/TR/css-scroll-snap-1/)
-- [CSS Speech Module Level 1](https://www.w3.org/TR/css-speech-1/)
-- [CSS Scrollbars Styling Module Level 1](https://www.w3.org/TR/css-scrollbars-1/)
-- [CSS View Transitions Module Level 1](https://www.w3.org/TR/css-view-transitions-1/)
-
-#### 大まかな相互運用性のあるCSSモジュール
-
-「以下のモジュールは、大まかな相互運用性を確保した上で広く展開されているが、その詳細は十分に練られておらず、また十分な仕様もないため、さらなるテストとバグ修正が必要」 （[	§2.3. Modules with Rough Interoperability](https://www.w3.org/TR/css-2023/#rough-interop)）
-
-- [CSS Transitions Level 1](https://www.w3.org/TR/css-transitions-1/)
-- [CSS Animations Level 1](https://www.w3.org/TR/css-animations-1/)
-- [CSS Grid Layout Module Level 1](https://www.w3.org/TR/css-grid-1/)
-  - display プロパティの値 grid および inline-grid
-  - grid-template, grid プロパティ
-  - grid-row, grid-column, grid-area プロパティ
-- [CSS Grid Layout Module Level 2](https://www.w3.org/TR/css-grid-2/)
-- [CSS Will Change Level 1](https://www.w3.org/TR/css-will-change-1/)
-- [Filter Effects Module Level 1](https://www.w3.org/TR/filter-effects-1/)
-- [CSS Font Loading Module Level 3](https://www.w3.org/TR/css-font-loading/)
-- [CSS Box Sizing Level 3](https://www.w3.org/TR/css-sizing-3/)
-  - width・height プロパティの値 min-content と max-content
-- [CSS Transforms Level 2](https://www.w3.org/TR/css-transforms-2/)
-- [CSS Lists and Counters Module Level 3](https://www.w3.org/TR/css-lists-3/)
-- [CSS Logical Properties and Values Level 1](https://www.w3.org/TR/css-logical-1/)
-  - 論理プロパティ
-    - block-size, inline-size, min-block-size, min-inline-size, max-block-size, max-inline-size
-    - margin-block-start, margin-block-end, margin-inline-start, margin-inline-end
-    - margin-block, margin-inline
-    - inset-block-start, inset-block-end, inset-inline-start, inset-inline-end
-    - inset-block, inset-inline, inset
-    - padding-block-start, padding-block-end, padding-inline-start, padding-inline-end
-    - padding-block, padding-inline
-    - border-block-start-width, border-block-end-width, border-inline-start-width, border-inline-end-width
-    - border-block-width, border-inline-width
-    - border-block-start-style, border-block-end-style, border-inline-start-style, border-inline-end-style
-    - border-block-style, border-inline-style
-    - border-block-start-color, border-block-end-color, border-inline-start-color, border-inline-end-color
-    - border-block-color, border-inline-color
-    - border-block-start, border-block-end, border-inline-start, border-inline-end
-    - border-block, border-inline
-    - border-start-start-radius, border-start-end-radius, border-end-start-radius, border-end-end-radius
-- [CSS Positioned Layout Module Level 3](https://www.w3.org/TR/css-position-3/)
-- [Resize Observer](https://www.w3.org/TR/resize-observer-1/)
-- [Web Animations](https://www.w3.org/TR/web-animations-1/)
-- [CSS Fonts Module Level 4](https://www.w3.org/TR/css-fonts-4/)
-- [CSS Color Adjustment Module Level 1](https://www.w3.org/TR/css-color-adjust-1/)
-- [CSS Conditional Rules Module Level 4](https://www.w3.org/TR/css-conditional-4/)
-  - @supports selector() ルール
-- [CSS Cascading and Inheritance Level 5](https://www.w3.org/TR/css-cascade-5/)
-  - @layer ルール
-
-#### CSS Snapshot 2023 に載っていないが、最新のブラウザで利用できるもの
-
-- [Selectors Level 4](https://www.w3.org/TR/selectors-4/)
-  - :is() 擬似クラス
-  - :where() 擬似クラス
-  - :has() 擬似クラス
-
 ### 2-1-3 本調査におけるテスト環境の一覧
 
-#### 掲載したテスト環境の一覧
+#### 2-1-3-1 掲載したテスト環境の一覧
 
 <table>
   <tr>
@@ -227,7 +142,7 @@ lang: 'ja'
     <th style="color:#434343" align="center">テスト日</th>
   </tr>
   <tr>
-    <td bgcolor="#c9daf8" align="center">Kindle *ⁱ</td>
+    <td bgcolor="#c9daf8" align="center">Kindle *¹</td>
     <td bgcolor="#c9daf8" align="center">Kindle Previewer3 (Mac)</td>
     <td bgcolor="#c9daf8" align="center">Mac mini M1, 2020</td>
     <td bgcolor="#c9daf8" align="center">macOS Sonoma 14.2.1</td>
@@ -236,7 +151,7 @@ lang: 'ja'
     <td bgcolor="#c9daf8" align="center">2023/12/28</td>
   </tr>
   <tr>
-    <td bgcolor="#c9daf8" align="center">Kindle *ⁱ</td>
+    <td bgcolor="#c9daf8" align="center">Kindle *¹</td>
     <td bgcolor="#c9daf8" align="center">Mac</td>
     <td bgcolor="#c9daf8" align="center">Mac mini M1, 2020</td>
     <td bgcolor="#c9daf8" align="center">macOS Sonoma 14.2.1</td>
@@ -245,70 +160,70 @@ lang: 'ja'
     <td bgcolor="#c9daf8" align="center">2023/12/28</td>
   </tr>
   <tr>
-    <td bgcolor="#c9daf8" align="center">Kindle *ⁱ</td>
+    <td bgcolor="#c9daf8" align="center">Kindle *¹</td>
     <td bgcolor="#c9daf8" align="center">Kindle Previewer3 (Win)</td>
     <td bgcolor="#c9daf8" align="center"></td>
     <td bgcolor="#c9daf8" align="center">Windows 10 Pro 22H2</td>
     <td bgcolor="#c9daf8" align="center">3.74.0</td>
     <td bgcolor="#c9daf8" align="center">村上</td>
-    <td bgcolor="#c9daf8" align="center">2024/1/9</td>
+    <td bgcolor="#c9daf8" align="center">2024/01/09</td>
   </tr>
   <tr>
-    <td bgcolor="#c9daf8" align="center">Kindle *ⁱ</td>
+    <td bgcolor="#c9daf8" align="center">Kindle *¹</td>
     <td bgcolor="#c9daf8" align="center">Windows</td>
     <td bgcolor="#c9daf8" align="center"></td>
     <td bgcolor="#c9daf8" align="center">Windows 10 Pro 22H2</td>
     <td bgcolor="#c9daf8" align="center">2.3.0 (70673)</td>
     <td bgcolor="#c9daf8" align="center">村上</td>
-    <td bgcolor="#c9daf8" align="center">2024/1/9</td>
+    <td bgcolor="#c9daf8" align="center">2024/01/09</td>
   </tr>
   <tr>
-    <td bgcolor="#c9daf8" align="center">Kindle *ⁱ</td>
+    <td bgcolor="#c9daf8" align="center">Kindle *¹</td>
     <td bgcolor="#c9daf8" align="center">Android</td>
     <td bgcolor="#c9daf8" align="center">OPPO A55s 5G</td>
     <td bgcolor="#c9daf8" align="center">Android 12</td>
     <td bgcolor="#c9daf8" align="center">8.89.3.0 (2.0.2766.0)</td>
     <td bgcolor="#c9daf8" align="center">村上</td>
-    <td bgcolor="#c9daf8" align="center">2024/1/9</td>
+    <td bgcolor="#c9daf8" align="center">2024/01/09</td>
   </tr>
   <tr>
-    <td bgcolor="#c9daf8" align="center">Kindle *ⁱ</td>
+    <td bgcolor="#c9daf8" align="center">Kindle *¹</td>
     <td bgcolor="#c9daf8" align="center">iPad</td>
     <td bgcolor="#c9daf8" align="center">iPad mini (第5世代)</td>
     <td bgcolor="#c9daf8" align="center">iPadOS 17.1.2</td>
     <td bgcolor="#c9daf8" align="center">7.0.1</td>
     <td bgcolor="#c9daf8" align="center">村上</td>
-    <td bgcolor="#c9daf8" align="center">2024/1/9</td>
+    <td bgcolor="#c9daf8" align="center">2024/01/09</td>
   </tr>
   <tr>
-    <td bgcolor="#c9daf8" align="center">Kindle *ⁱ</td>
+    <td bgcolor="#c9daf8" align="center">Kindle *¹</td>
     <td bgcolor="#c9daf8" align="center">iOS</td>
     <td bgcolor="#c9daf8" align="center">iPhone13mini</td>
     <td bgcolor="#c9daf8" align="center">iOS 17.2.1</td>
     <td bgcolor="#c9daf8" align="center">7.1</td>
     <td bgcolor="#c9daf8" align="center">古門</td>
-    <td bgcolor="#c9daf8" align="center">2024/1/21</td>
+    <td bgcolor="#c9daf8" align="center">2024/01/21</td>
   </tr>
   <tr>
-    <td bgcolor="#d9ead3" align="center">kobo</td>
+    <td bgcolor="#d9ead3" align="center">kobo（kobo-1）*¹</td>
     <td bgcolor="#d9ead3" align="center">iOS</td>
-    <td bgcolor="#d9ead3" align="center">iPhone13mini</td>
-    <td bgcolor="#d9ead3" align="center">iOS16.4.1 (a)</td>
-    <td bgcolor="#d9ead3" align="center">10.3.7</td>
-    <td bgcolor="#d9ead3" align="center">古門</td>
-    <td bgcolor="#d9ead3" align="center">2023/5/20</td>
+    <td bgcolor="#d9ead3" align="center">iphone13mini</td>
+    <td bgcolor="#d9ead3" align="center">iOS17.2.1</td>
+    <td bgcolor="#d9ead3" align="center">10.4.3</td>
+    <td bgcolor="#d9ead3" align="center">古門（追試）</td>
+    <td bgcolor="#d9ead3" align="center">2024/02/01</td>
   </tr>
   <tr>
-    <td bgcolor="#d9ead3" align="center">kobo</td>
+    <td bgcolor="#d9ead3" align="center">kobo（kobo-2）</td>
     <td bgcolor="#d9ead3" align="center">Android</td>
     <td bgcolor="#d9ead3" align="center">Galaxy Tab S8 Ultra</td>
     <td bgcolor="#d9ead3" align="center">Android　13</td>
     <td bgcolor="#d9ead3" align="center">9.4.8.1</td>
     <td bgcolor="#d9ead3" align="center">仁科</td>
-    <td bgcolor="#d9ead3" align="center">2023/8/20</td>
+    <td bgcolor="#d9ead3" align="center">2023/08/20</td>
   </tr>
   <tr>
-    <td bgcolor="#c9daf8" align="center">kobo</td>
+    <td bgcolor="#c9daf8" align="center">kobo（kobo-3）</td>
     <td bgcolor="#c9daf8" align="center">専用タブレット</td>
     <td bgcolor="#c9daf8" align="center">Kobo Libra 2</td>
     <td bgcolor="#c9daf8" align="center"></td>
@@ -317,16 +232,16 @@ lang: 'ja'
     <td bgcolor="#c9daf8" align="center">2023/07/25</td>
   </tr>
   <tr>
-    <td bgcolor="#c9daf8" align="center">kobo</td>
+    <td bgcolor="#c9daf8" align="center">kobo（kobo-3）</td>
     <td bgcolor="#c9daf8" align="center">Windows</td>
-    <td bgcolor="#c9daf8" align="center">N/A *⁲</td>
+    <td bgcolor="#c9daf8" align="center">N/A *²</td>
     <td bgcolor="#c9daf8" align="center">Windows 10 Pro (22H2　19045.3208)</td>
     <td bgcolor="#c9daf8" align="center">4.37.19051</td>
     <td bgcolor="#c9daf8" align="center">仁科</td>
     <td bgcolor="#c9daf8" align="center">2023/07/25</td>
   </tr>
   <tr>
-    <td bgcolor="#c9daf8" align="center">kobo</td>
+    <td bgcolor="#c9daf8" align="center">kobo（kobo-3）</td>
     <td bgcolor="#c9daf8" align="center">Mac</td>
     <td bgcolor="#c9daf8" align="center">MacBook (Retina, 12-12inch, Early 2016)</td>
     <td bgcolor="#c9daf8" align="center">macOS Monterey 12.6.6</td>
@@ -335,22 +250,22 @@ lang: 'ja'
     <td bgcolor="#c9daf8" align="center">2023/08/20</td>
   </tr>
   <tr>
-    <td bgcolor="#c9daf8" align="center">kobo *ⁱ</td>
+    <td bgcolor="#c9daf8" align="center">kobo（kobo-3）*¹</td>
     <td bgcolor="#c9daf8" align="center">Mac</td>
-    <td bgcolor="#fff2cc" align="center"></td>
-    <td bgcolor="#fff2cc" align="center"></td>
-    <td bgcolor="#fff2cc" align="center"></td>
-    <td bgcolor="#fff2cc" align="center"></td>
-    <td bgcolor="#fff2cc" align="center"></td>
+    <td bgcolor="#c9daf8" align="center">MacBook (Retina, 12-12inch, Early 2016)</td>
+    <td bgcolor="#c9daf8" align="center">macOS Monterey 12.7.2</td>
+    <td bgcolor="#c9daf8" align="center">楽天Koboデスクトップ 4.37.17113</td>
+    <td bgcolor="#c9daf8" align="center">仁科</td>
+    <td bgcolor="#c9daf8" align="center">2024/01/30</td>
   </tr>
   <tr>
     <td bgcolor="#d9ead3" align="center">ブック</td>
     <td bgcolor="#d9ead3" align="center" valign="top">iOS</td>
     <td bgcolor="#d9ead3" align="center">iPhone13mini</td>
     <td bgcolor="#d9ead3" align="center">iOS16.4.1 (a)</td>
-    <td bgcolor="#d9ead3" align="center">N/A *³</td>
+    <td bgcolor="#d9ead3" style="color:#0000ff" align="center">N/A *³</td>
     <td bgcolor="#d9ead3" align="center">古門</td>
-    <td bgcolor="#d9ead3" align="center">2023/5/20</td>
+    <td bgcolor="#d9ead3" align="center">2023/05/20</td>
   </tr>
   <tr>
     <td bgcolor="#d9ead3" align="center">ブック</td>
@@ -362,6 +277,42 @@ lang: 'ja'
     <td bgcolor="#d9ead3" align="center">2024/01/05</td>
   </tr>
   <tr>
+    <td bgcolor="#d9ead3" align="center">ブック</td>
+    <td bgcolor="#d9ead3" align="center">Mac</td>
+    <td bgcolor="#d9ead3" align="center">MacBook Pro 13-inch, 2019, Four Thunderbolt 3 ports</td>
+    <td bgcolor="#d9ead3" align="center">13.6.3 (22G436)</td>
+    <td bgcolor="#d9ead3" align="center">5.2</td>
+    <td bgcolor="#d9ead3" align="center">小形</td>
+    <td bgcolor="#d9ead3" align="center">2024/02/07</td>
+  </tr>
+  <tr>
+    <td bgcolor="#d9ead3" align="center">ブック*¹</td>
+    <td bgcolor="#d9ead3" align="center">Mac</td>
+    <td bgcolor="#d9ead3" align="center">MacBook Pro 13-inch, 2019, Four Thunderbolt 3 ports</td>
+    <td bgcolor="#d9ead3" align="center">13.6.3 (22G436)</td>
+    <td bgcolor="#d9ead3" align="center">5.2</td>
+    <td bgcolor="#d9ead3" align="center">小形</td>
+    <td bgcolor="#d9ead3" align="center">2024/02/08</td>
+  </tr>
+  <tr>
+    <td bgcolor="#d9ead3" align="center">ブック</td>
+    <td bgcolor="#d9ead3" align="center">Mac</td>
+    <td bgcolor="#d9ead3" align="center">MacBookAir M2 2022</td>
+    <td bgcolor="#d9ead3" align="center">14.1.1（23B81）</td>
+    <td bgcolor="#d9ead3" align="center">6.1</td>
+    <td bgcolor="#d9ead3" align="center">小形</td>
+    <td bgcolor="#d9ead3" align="center">2024/02/09</td>
+  </tr>
+  <tr>
+    <td bgcolor="#d9ead3" align="center">ブック*¹</td>
+    <td bgcolor="#d9ead3" align="center">Mac</td>
+    <td bgcolor="#d9ead3" align="center">MacBookAir M2 2023</td>
+    <td bgcolor="#d9ead3" align="center">14.1.1（23B81）</td>
+    <td bgcolor="#d9ead3" align="center">6.1</td>
+    <td bgcolor="#d9ead3" align="center">小形</td>
+    <td bgcolor="#d9ead3" align="center">2024/02/10</td>
+  </tr>
+  <tr>
     <td bgcolor="#d9ead3" align="center">MURASAKI</td>
     <td bgcolor="#d9ead3" align="center">Mac</td>
     <td bgcolor="#d9ead3" align="center">MacBookAir M2 2022</td>
@@ -371,40 +322,31 @@ lang: 'ja'
     <td bgcolor="#d9ead3" align="center">2023/05/23</td>
   </tr>
   <tr>
-    <td bgcolor="#c9daf8" align="center">honto</td>
-    <td bgcolor="#c9daf8" align="center">iOS</td>
-    <td bgcolor="#c9daf8" align="center">iPhone13mini</td>
-    <td bgcolor="#c9daf8" align="center">iOS16.4.1 (a)</td>
-    <td bgcolor="#c9daf8" align="center">6.60.0</td>
-    <td bgcolor="#c9daf8" align="center">古門</td>
-    <td bgcolor="#c9daf8" align="center">2023/5/20</td>
+    <td bgcolor="#d9ead3" align="center">MURASAKI</td>
+    <td bgcolor="#d9ead3" align="center">Mac</td>
+    <td bgcolor="#d9ead3" align="center">MacBookAir M2 2022</td>
+    <td bgcolor="#d9ead3" align="center">14.1.1 (23B81)</td>
+    <td bgcolor="#d9ead3" align="center">2.4.1</td>
+    <td bgcolor="#d9ead3" align="center">小形</td>
+    <td bgcolor="#d9ead3" align="center">2024/02/08</td>
   </tr>
   <tr>
-    <td bgcolor="#c9daf8" align="center">honto</td>
-    <td bgcolor="#c9daf8" align="center">Android</td>
-    <td bgcolor="#c9daf8" align="center">Galaxy Tab S8 Ultra</td>
-    <td bgcolor="#c9daf8" align="center">Android　13</td>
-    <td bgcolor="#c9daf8" align="center">6.60.0</td>
-    <td bgcolor="#c9daf8" align="center">仁科</td>
-    <td bgcolor="#c9daf8" align="center">2023/8/20</td>
+    <td bgcolor="#d9ead3" align="center">MURASAKI*¹</td>
+    <td bgcolor="#d9ead3" align="center">Mac</td>
+    <td bgcolor="#d9ead3" align="center">MacBook Pro 13-inch, 2019, Four Thunderbolt 3 ports</td>
+    <td bgcolor="#d9ead3" align="center">13.6.3 (22G436)</td>
+    <td bgcolor="#d9ead3" align="center">5.2</td>
+    <td bgcolor="#d9ead3" align="center">小形</td>
+    <td bgcolor="#d9ead3" align="center">2024/02/08</td>
   </tr>
   <tr>
-    <td bgcolor="#c9daf8" align="center">honto</td>
-    <td bgcolor="#c9daf8" align="center">iOS</td>
-    <td bgcolor="#c9daf8" align="center">iPhone13mini</td>
-    <td bgcolor="#c9daf8" align="center">iOS16.4.1 (a)</td>
-    <td bgcolor="#c9daf8" align="center">6.60.0</td>
-    <td bgcolor="#c9daf8" align="center">古門</td>
-    <td bgcolor="#c9daf8" align="center">2023/5/20</td>
-  </tr>
-  <tr>
-    <td bgcolor="#c9daf8" align="center">honto *ⁱ</td>
+    <td bgcolor="#c9daf8" align="center">honto *¹</td>
     <td bgcolor="#c9daf8" align="center">iOS</td>
     <td bgcolor="#c9daf8" align="center">iPhone13mini</td>
     <td bgcolor="#c9daf8" align="center">iOS17.2.1</td>
     <td bgcolor="#c9daf8" align="center">6.62.0</td>
     <td bgcolor="#c9daf8" align="center">古門</td>
-    <td bgcolor="#c9daf8" align="center">2024/1/24</td>
+    <td bgcolor="#c9daf8" align="center">2024/01/24</td>
   </tr>
   <tr>
     <td bgcolor="#d9ead3" align="center">BOOK☆WALKER</td>
@@ -413,7 +355,7 @@ lang: 'ja'
     <td bgcolor="#d9ead3" align="center">iOS16.4.1 (a)</td>
     <td bgcolor="#d9ead3" align="center">7.4.7</td>
     <td bgcolor="#d9ead3" align="center">古門</td>
-    <td bgcolor="#d9ead3" align="center">2023/5/20</td>
+    <td bgcolor="#d9ead3" align="center">2023/05/20</td>
   </tr>
   <tr>
     <td bgcolor="#d9ead3" align="center">BOOK☆WALKER for Android</td>
@@ -422,39 +364,39 @@ lang: 'ja'
     <td bgcolor="#d9ead3" align="center">Android　13</td>
     <td bgcolor="#d9ead3" align="center">7.5.0</td>
     <td bgcolor="#d9ead3" align="center">仁科</td>
-    <td bgcolor="#d9ead3" align="center">2023/8/21</td>
+    <td bgcolor="#d9ead3" align="center">2023/08/21</td>
   </tr>
   <tr>
-    <td bgcolor="#c9daf8" align="center">Kinoppy *ⁱ</td>
+    <td bgcolor="#c9daf8" align="center">Kinoppy *¹</td>
     <td bgcolor="#c9daf8" align="center">Windows</td>
-    <td bgcolor="#c9daf8" align="center">N/A *⁲</td>
+    <td bgcolor="#c9daf8" align="center">N/A *²</td>
     <td bgcolor="#c9daf8" align="center">Windows 10 Pro 22H2</td>
     <td bgcolor="#c9daf8" align="center">3.2.19</td>
     <td bgcolor="#c9daf8" align="center">村上</td>
-    <td bgcolor="#c9daf8" align="center">2023/12/7</td>
+    <td bgcolor="#c9daf8" align="center">2023/12/07</td>
   </tr>
   <tr>
-    <td bgcolor="#c9daf8" align="center">Voyager</td>
+    <td bgcolor="#c9daf8" align="center">Voyager *¹</td>
     <td bgcolor="#c9daf8" align="center">Android</td>
     <td bgcolor="#c9daf8" align="center">Galaxy Tab S8 Ultra</td>
     <td bgcolor="#c9daf8" align="center">Android 13</td>
     <td bgcolor="#c9daf8" align="center">N/A *³ / Chrome114.0.5735.196</td>
     <td bgcolor="#c9daf8" align="center">仁科</td>
-    <td bgcolor="#c9daf8" align="center">2023/7/23</td>
+    <td bgcolor="#c9daf8" align="center">2023/07/23</td>
   </tr>
   <tr>
-    <td bgcolor="#c9daf8" align="center">Voyager</td>
+    <td bgcolor="#c9daf8" align="center">Voyager *¹</td>
     <td bgcolor="#c9daf8" align="center">Windows</td>
-    <td bgcolor="#c9daf8" align="center">N/A *⁲</td>
+    <td bgcolor="#c9daf8" align="center">N/A *²</td>
     <td bgcolor="#c9daf8" align="center">Windows 10 Pro</td>
     <td bgcolor="#c9daf8" align="center">N/A *³ / Chrome114.0.5735.199 *⁴</td>
     <td bgcolor="#c9daf8" align="center">仁科</td>
-    <td bgcolor="#c9daf8" align="center">2023/7/23</td>
+    <td bgcolor="#c9daf8" align="center">2023/07/23</td>
   </tr>
   <tr>
     <td bgcolor="#d9ead3" align="center">BiB/i</td>
     <td bgcolor="#d9ead3" align="center">Windows</td>
-    <td bgcolor="#d9ead3" align="center">N/A *⁲</td>
+    <td bgcolor="#d9ead3" align="center">N/A *²</td>
     <td bgcolor="#d9ead3" align="center">Windows 11 PRO</td>
     <td bgcolor="#d9ead3" align="center">1.2.0 / Chrome 113.0.5672.127 (64ビット) *⁴</td>
     <td bgcolor="#d9ead3" align="center">古門</td>
@@ -463,7 +405,7 @@ lang: 'ja'
   <tr>
     <td bgcolor="#d9ead3" align="center">BiB/i</td>
     <td bgcolor="#d9ead3" align="center">Windows</td>
-    <td bgcolor="#d9ead3" align="center">N/A *⁲</td>
+    <td bgcolor="#d9ead3" align="center">N/A *²</td>
     <td bgcolor="#d9ead3" align="center">Windows 11 PRO</td>
     <td bgcolor="#d9ead3" align="center">1.2.0 / Edge 113.0.1774.57 (64ビット) *⁴</td>
     <td bgcolor="#d9ead3" align="center">古門</td>
@@ -472,11 +414,20 @@ lang: 'ja'
   <tr>
     <td bgcolor="#c9daf8" align="center">超縦書</td>
     <td bgcolor="#c9daf8" align="center">Windows</td>
-    <td bgcolor="#c9daf8" align="center">N/A *⁲</td>
+    <td bgcolor="#c9daf8" align="center">N/A *²</td>
     <td bgcolor="#c9daf8" align="center">Windows 10 Home 21H2</td>
     <td bgcolor="#c9daf8" align="center">2.3.1</td>
     <td bgcolor="#c9daf8" align="center">田嶋</td>
-    <td bgcolor="#c9daf8" align="center">22023/5/23</td>
+    <td bgcolor="#c9daf8" align="center">2023/05/23</td>
+  </tr>
+  <tr>
+    <td bgcolor="#c9daf8" align="center">超縦書 *¹</td>
+    <td bgcolor="#c9daf8" align="center">Windows</td>
+    <td bgcolor="#c9daf8" align="center">N/A *²</td>
+    <td bgcolor="#c9daf8" align="center">Windows 10 Pro 22H2</td>
+    <td bgcolor="#c9daf8" align="center">2.3.2</td>
+    <td bgcolor="#c9daf8" align="center">小形</td>
+    <td bgcolor="#c9daf8" align="center">2024/02/13</td>
   </tr>
   <tr>
     <td bgcolor="#d9ead3" align="center">Vivliostyle Viewer</td>
@@ -488,9 +439,18 @@ lang: 'ja'
     <td bgcolor="#d9ead3" align="center">2023/05/23</td>
   </tr>
   <tr>
+    <td bgcolor="#d9ead3" align="center">Vivliostyle Viewer *¹</td>
+    <td bgcolor="#d9ead3" align="center">iOS</td>
+    <td bgcolor="#d9ead3" align="center">iPad第6世代</td>
+    <td bgcolor="#d9ead3" align="center">17.3.1</td>
+    <td bgcolor="#d9ead3" align="center">2.27.0 / Safari</td>
+    <td bgcolor="#d9ead3" align="center">田嶋</td>
+    <td bgcolor="#d9ead3" align="center">2024/02/13</td>
+  </tr>
+  <tr>
     <td bgcolor="#d9ead3" align="center">Thorium Reader</td>
     <td bgcolor="#d9ead3" align="center">Windows</td>
-    <td bgcolor="#d9ead3" align="center">N/A *⁲</td>
+    <td bgcolor="#d9ead3" align="center">N/A *²</td>
     <td bgcolor="#d9ead3" align="center">Windows 11 PRO</td>
     <td bgcolor="#d9ead3" align="center">2.3.0</td>
     <td bgcolor="#d9ead3" align="center">古門</td>
@@ -499,7 +459,7 @@ lang: 'ja'
   <tr>
     <td bgcolor="#d9ead3" align="center">Thorium Reader</td>
     <td bgcolor="#d9ead3" align="center">Mac</td>
-    <td bgcolor="#d9ead3" align="center"></td>
+    <td bgcolor="#d9ead3" align="center">MacBook Air (M1, 2020) </td>
     <td bgcolor="#d9ead3" align="center">macOS12.6.7</td>
     <td bgcolor="#d9ead3" align="center">2.2.0</td>
     <td bgcolor="#d9ead3" align="center">田嶋</td>
@@ -507,20 +467,700 @@ lang: 'ja'
   </tr>
 </table>
 
+#### 2-1-3-2 掲載しなかったテスト環境の一覧
+
+<table>
+  <tr>
+    <th style="color:#434343" align="center">リーダー</th>
+    <th style="color:#434343" align="center">種別</th>
+    <th style="color:#434343" align="center">機材名</th>
+    <th style="color:#434343" align="center">OS ver.</th>
+    <th style="color:#434343" align="center">リーダーver.</th>
+    <th style="color:#434343" align="center">担当者</th>
+    <th style="color:#434343" align="center">テスト日</th>
+  </tr>
+  <tr>
+    <td bgcolor="#c9daf8" align="center">Kindle</td>
+    <td bgcolor="#c9daf8" align="center">Android</td>
+    <td bgcolor="#c9daf8" align="center">Moto G30</td>
+    <td bgcolor="#c9daf8" align="center">Android　11</td>
+    <td bgcolor="#c9daf8" align="center">8.81.1.0 (1.3.290180.0)</td>
+    <td bgcolor="#c9daf8" align="center">仁科</td>
+    <td bgcolor="#c9daf8" align="center">2023/05/22</td>
+  </tr>
+  <tr>
+    <td bgcolor="#c9daf8" align="center">Kindle</td>
+    <td bgcolor="#c9daf8" align="center">Android</td>
+    <td bgcolor="#c9daf8" align="center">Galaxy Tab S8 Ultra</td>
+    <td bgcolor="#c9daf8" align="center">Android　13</td>
+    <td bgcolor="#c9daf8" align="center">8.81.1.0 (1.3.290180.0)</td>
+    <td bgcolor="#c9daf8" align="center">仁科</td>
+    <td bgcolor="#c9daf8" align="center">2023/722</td>
+  </tr>
+  <tr>
+    <td bgcolor="#c9daf8" align="center">Kindle</td>
+    <td bgcolor="#c9daf8" align="center">Android</td>
+    <td bgcolor="#c9daf8" align="center">Xperia 10 IV</td>
+    <td bgcolor="#c9daf8" align="center">Android　13</td>
+    <td bgcolor="#c9daf8" align="center">8.81.1.0 (1.3.290180.0)</td>
+    <td bgcolor="#c9daf8" align="center">木龍</td>
+    <td bgcolor="#c9daf8" align="center">2023/07/25</td>
+  </tr>
+  <tr>
+    <td bgcolor="#c9daf8" align="center">Kindle</td>
+    <td bgcolor="#c9daf8" align="center">専用タブレット</td>
+    <td bgcolor="#c9daf8" align="center">Fire HD 10 Plus (第11世代)</td>
+    <td bgcolor="#c9daf8" align="center">FireOS 7.3.2.8</td>
+    <td bgcolor="#c9daf8" align="center">14.81.160 (1.3.290180)</td>
+    <td bgcolor="#c9daf8" align="center">仁科</td>
+    <td bgcolor="#c9daf8" align="center">2023/05/21</td>
+  </tr>
+  <tr>
+    <td bgcolor="#c9daf8" align="center">Kindle *¹</td>
+    <td bgcolor="#c9daf8" align="center">専用タブレット</td>
+    <td bgcolor="#c9daf8" align="center">Kindle Paperwhite Signature Edition (第11世代)</td>
+    <td bgcolor="#c9daf8" align="center">専用タブレット</td>
+    <td bgcolor="#fff2cc" align="center"> </td>
+    <td bgcolor="#c9daf8" align="center">仁科</td>
+    <td bgcolor="#c9daf8" align="center">2023/05/21</td>
+  </tr>
+  <tr>
+    <td bgcolor="#c9daf8" align="center">Kindle</td>
+    <td bgcolor="#c9daf8" align="center">Windows</td>
+    <td bgcolor="#c9daf8" align="center">N/A *⁴</td>
+    <td bgcolor="#c9daf8" align="center">Windows</td>
+    <td bgcolor="#c9daf8" align="center">Windows 10 Home 21H2</td>
+    <td bgcolor="#c9daf8" align="center">田嶋</td>
+    <td bgcolor="#c9daf8" align="center">2023/05/22</td>
+  </tr>
+  <tr>
+    <td bgcolor="#c9daf8" align="center">Kindle</td>
+    <td bgcolor="#c9daf8" align="center">Windows</td>
+    <td bgcolor="#c9daf8" align="center">N/A *⁴</td>
+    <td bgcolor="#c9daf8" align="center">Kindle for PC</td>
+    <td bgcolor="#c9daf8" align="center">2.0.1 (70350)</td>
+    <td bgcolor="#c9daf8" align="center">仁科</td>
+    <td bgcolor="#c9daf8" align="center">2023/10/24</td>
+  </tr>
+  <tr>
+    <td bgcolor="#c9daf8" align="center">Kindle</td>
+    <td bgcolor="#c9daf8" align="center">Windows</td>
+    <td bgcolor="#c9daf8" align="center">N/A *⁴</td>
+    <td bgcolor="#c9daf8" align="center">Kindle for PC</td>
+    <td bgcolor="#c9daf8" align="center">1.40.1 (65535)</td>
+    <td bgcolor="#c9daf8" align="center">仁科</td>
+    <td bgcolor="#c9daf8" align="center">2023/05/21</td>
+  </tr>
+  <tr>
+    <td bgcolor="#c9daf8" align="center">Kindle*²</td>
+    <td bgcolor="#c9daf8" align="center">Windows</td>
+    <td bgcolor="#c9daf8" align="center">N/A *⁴</td>
+    <td bgcolor="#c9daf8" align="center">Kindle for PC</td>
+    <td bgcolor="#c9daf8" align="center">2.0.0 (70301)</td>
+    <td bgcolor="#c9daf8" align="center">木龍</td>
+    <td bgcolor="#c9daf8" align="center">2023/08/22</td>
+  </tr>
+  <tr>
+    <td bgcolor="#c9daf8" align="center">Kindle</td>
+    <td bgcolor="#c9daf8" align="center">Mac</td>
+    <td bgcolor="#c9daf8" align="center">Macbook 12-inch, Early 2016</td>
+    <td bgcolor="#c9daf8" align="center">macOS Monterey 12.6.6</td>
+    <td bgcolor="#c9daf8" align="center">Kindle for Mac 1.40.1 (65624)</td>
+    <td bgcolor="#c9daf8" align="center">仁科</td>
+    <td bgcolor="#c9daf8" align="center">2023/05/22</td>
+  </tr>
+  <tr>
+    <td bgcolor="#c9daf8" align="center">Kindle</td>
+    <td bgcolor="#c9daf8" align="center">Kindle Previewer3 (Win)</td>
+    <td bgcolor="#c9daf8" align="center">N/A *⁴</td>
+    <td bgcolor="#c9daf8" align="center">Kindle Previewer3(Win)</td>
+    <td bgcolor="#fff2cc" align="center"></td>
+    <td bgcolor="#c9daf8" align="center">仁科</td>
+    <td bgcolor="#c9daf8" align="center">2023/05/22</td>
+  </tr>
+  <tr>
+    <td bgcolor="#c9daf8" align="center">Kindle</td>
+    <td bgcolor="#c9daf8" align="center">Kindle Previewer3 (Mac)</td>
+    <td bgcolor="#c9daf8" align="center">MacBook 12-inch, Early 2016</td>
+    <td bgcolor="#c9daf8" align="center">macOS Monterey 12.6.6</td>
+    <td bgcolor="#c9daf8" align="center">3.72.0</td>
+    <td bgcolor="#c9daf8" align="center">仁科</td>
+    <td bgcolor="#c9daf8" align="center">2023/05/22</td>
+  </tr>
+  <tr>
+    <td bgcolor="#d9ead3" align="center">kobo</td>
+    <td bgcolor="#d9ead3" align="center">iOS</td>
+    <td bgcolor="#d9ead3" align="center">iPhone13mini</td>
+    <td bgcolor="#d9ead3" align="center">iOS16.4.1 (a)</td>
+    <td bgcolor="#d9ead3" align="center">10.3.7</td>
+    <td bgcolor="#d9ead3" align="center">古門</td>
+    <td bgcolor="#d9ead3" align="center">2023/05/20</td>
+  </tr>
+  <tr>
+    <td bgcolor="#c9daf8" align="center">honto</td>
+    <td bgcolor="#c9daf8" align="center">iOS</td>
+    <td bgcolor="#c9daf8" align="center">iPhone13mini</td>
+    <td bgcolor="#c9daf8" align="center">iOS16.4.1 (a)</td>
+    <td bgcolor="#c9daf8" align="center">6.60.0</td>
+    <td bgcolor="#c9daf8" align="center">古門</td>
+    <td bgcolor="#c9daf8" align="center">2023/05/20</td>
+  </tr>
+  <tr>
+    <td bgcolor="#c9daf8" align="center">honto</td>
+    <td bgcolor="#c9daf8" align="center">Android</td>
+    <td bgcolor="#c9daf8" align="center">Galaxy Tab S8 Ultra</td>
+    <td bgcolor="#c9daf8" align="center">Android 13</td>
+    <td bgcolor="#c9daf8" align="center">6.60.0</td>
+    <td bgcolor="#c9daf8" align="center">仁科</td>
+    <td bgcolor="#c9daf8" align="center">2023/08/20</td>
+  </tr>
+  <tr>
+    <td bgcolor="#c9daf8" align="center">Kinoppy *³</td>
+    <td bgcolor="#c9daf8" align="center">iOS</td>
+    <td bgcolor="#c9daf8" align="center">iPhone13mini</td>
+    <td bgcolor="#c9daf8" align="center">iOS</td>
+    <td bgcolor="#c9daf8" align="center">3.9.17.415162200</td>
+    <td bgcolor="#c9daf8" align="center">古門</td>
+    <td bgcolor="#c9daf8" align="center">2023/10/23</td>
+  </tr>
+  <tr>
+    <td bgcolor="#c9daf8" align="center">Kinoppy for Android *³</td>
+    <td bgcolor="#c9daf8" align="center">Android</td>
+    <td bgcolor="#c9daf8" align="center">Galaxy Tab S8 Ultra</td>
+    <td bgcolor="#c9daf8" align="center">Android 13</td>
+    <td bgcolor="#c9daf8" align="center">3.10.7 (913557c)</td>
+    <td bgcolor="#c9daf8" align="center">仁科</td>
+    <td bgcolor="#c9daf8" align="center">2023/10/18</td>
+  </tr>
+  <tr>
+    <td bgcolor="#c9daf8" align="center">Kinoppy</td>
+    <td bgcolor="#c9daf8" align="center">Windows</td>
+    <td bgcolor="#c9daf8" align="center">N/A *⁴</td>
+    <td bgcolor="#c9daf8" align="center">Windows 10 Home 21H2</td>
+    <td bgcolor="#c9daf8" align="center">Ver.3.2.19</td>
+    <td bgcolor="#c9daf8" align="center">田嶋</td>
+    <td bgcolor="#c9daf8" align="center">2023/5/23</td>
+  </tr>
+</table>
+
 ## 2-2 CSS表示テストの結果
 
+### 2-2-1 メジャーなEPUBリーダーでサポートされているCSS機能
 
-### すべてのEPUBリーダーでサポートされているもの
+<table>
+  <tr>
+    <td style="color:#434343" align="right"></td>
+    <th valign="bottom">Selectors Level 3</th>
+    <td>部分文字列マッチング属性セレクタ [att^=val]</td>
+    <td>部分文字列マッチング属性セレクタ[att$=val]</td>
+    <td>部分文字列マッチング属性セレクタ[att*=val]</td>
+    <td>:root 擬似クラス</td>
+    <td>:nth-child() 擬似クラス</td>
+    <td>:nth-last-child() 擬似クラス</td>
+    <td>:nth-of-type() 擬似クラス</td>
+    <td>:nth-last-of-type() 擬似クラス</td>
+    <td>:last-child 擬似クラス</td>
+    <td>:only-child 擬似クラス</td>
+    <td>:first-of-type 擬似クラス</td>
+    <td>:last-of-type 擬似クラス</td>
+    <td>:only-of-type 擬似クラス</td>
+    <td>:empty 擬似クラス</td>
+    <td>:not 擬似クラス</td>
+    <td>::first-letter 擬似要素</td>
+    <td>::before 擬似要素</td>
+    <td>::after 擬似要素</td>
+    <td>後続兄弟結合子 E ~ F</td>
+    <th valign="bottom">CSS Cascading and Inheritance Level 4</th>
+    <td valign="bottom">プロパティの値 initial</td>
+    <th valign="bottom">CSS Backgrounds and Borders Level 3</th>
+    <td valign="bottom">border-radius プロパティ</td>
+    <td valign="bottom">box-shadow プロパティ</td>
+    <th valign="bottom">CSS User Interface Module Level 3</th>
+    <td valign="bottom">outline プロパティ</td>
+    <th valign="bottom">CSS Counter Styles Level 3</th>
+    <td valign="bottom">定義済みカウンタースタイル lower-greek</td>
+    <td valign="bottom">定義済みカウンタースタイル katakana</td>
+    <td valign="bottom">定義済みカウンタースタイル katakana-iroha</td>
+  </tr>
+  <tr>
+    <td bgcolor="#c9daf8" align="center">Kindle</td>
+    <td valign="bottom"></td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center"></td>
+    <td align="center">OK</td>
+    <td align="center"></td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center"></td>
+    <td align="center">OK</td>
+    <td align="center"></td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+  </tr>
+  <tr>
+    <td bgcolor="#d9ead3" align="center">kobo-1 (iOS)</td>
+    <td valign="bottom"></td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center"></td>
+    <td align="center">OK</td>
+    <td align="center"></td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center"></td>
+    <td align="center">OK</td>
+    <td align="center"></td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+  </tr>
+  <tr>
+    <td bgcolor="#d9ead3" align="center">kobo-2 (Android)</td>
+    <td valign="bottom"></td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center"></td>
+    <td align="center">OK</td>
+    <td align="center"></td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center"></td>
+    <td align="center">OK</td>
+    <td align="center"></td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+  </tr>
+  <tr>
+    <td bgcolor="#c9daf8" align="center">kobo-3</td>
+    <td valign="bottom"></td>
+    <td style="color:#ff0000" align="center">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center"></td>
+    <td align="center">OK</td>
+    <td align="center"></td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center"></td>
+    <td align="center">OK</td>
+    <td align="center"></td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+  </tr>
+  <tr>
+    <td bgcolor="#d9ead3" align="center">ブック</td>
+    <td valign="bottom"></td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center"></td>
+    <td align="center">OK</td>
+    <td align="center"></td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center"></td>
+    <td align="center">OK</td>
+    <td align="center"></td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+  </tr>
+  <tr>
+    <td bgcolor="#d9ead3" align="center">MURASAKI</td>
+    <td valign="bottom"></td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center"></td>
+    <td align="center">OK</td>
+    <td align="center"></td>
+    <td align="center">OK</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center"></td>
+    <td align="center">OK</td>
+    <td align="center"></td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+  </tr>
+  <tr>
+    <td bgcolor="#c9daf8" align="center">honto</td>
+    <td valign="bottom"></td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td align="center"></td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center"></td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center"></td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center"></td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+  </tr>
+  <tr>
+    <td bgcolor="#d9ead3" align="center">BOOK☆ WALKER</td>
+    <td valign="bottom"></td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center"></td>
+    <td align="center">OK</td>
+    <td align="center"></td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center"></td>
+    <td align="center">OK</td>
+    <td align="center"></td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+  </tr>
+  <tr>
+    <td bgcolor="#c9daf8" align="center">Kinoppy</td>
+    <td valign="bottom"></td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center"></td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center"></td>
+    <td style="color:#1f1f1f" align="center">OK</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center"></td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center"></td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td style="color:#ea4335" align="center">NG</td>
+  </tr>
+  <tr>
+    <td bgcolor="#c9daf8" align="center">Voyager</td>
+    <td valign="bottom"></td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center"></td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center"></td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center"></td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center"></td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td style="color:#ea4335" align="center">NG</td>
+  </tr>
+  <tr>
+    <td bgcolor="#d9ead3" align="center">BiB/i</td>
+    <td valign="bottom"></td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center"></td>
+    <td align="center">OK</td>
+    <td align="center"></td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center"></td>
+    <td bgcolor="#f3f3f3" align="center">OK / NG *¹</td>
+    <td align="center"></td>
+    <td bgcolor="#f3f3f3" align="center">OK *²</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+  </tr>
+  <tr>
+    <td bgcolor="#c9daf8" align="center">超縦書</td>
+    <td valign="bottom"></td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center"></td>
+    <td align="center">OK</td>
+    <td align="center"></td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center"></td>
+    <td align="center">OK</td>
+    <td align="center"></td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+  </tr>
+  <tr>
+    <td bgcolor="#d9ead3" align="center">Vivliostyle Viewer</td>
+    <td valign="bottom"></td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center"></td>
+    <td align="center">OK</td>
+    <td align="center"></td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center"></td>
+    <td align="center">OK</td>
+    <td align="center"></td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+  </tr>
+  <tr>
+    <td bgcolor="#d9ead3" align="center">Thorium Reader</td>
+    <td valign="bottom"></td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center"></td>
+    <td align="center">OK</td>
+    <td align="center"></td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center"></td>
+    <td align="center">OK</td>
+    <td align="center"></td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+  </tr>
+</table>
 
 
+### 2-2-2 おもにモダンブラウザ系でサポートされているCSS機能
 
-### ほとんどのEPUBリーダーでサポートされているもの
-
-
-
-### メジャーなEPUBリーダーでサポートされているもの
-
-
-
-### モダンブラウザ系でのみサポートされているもの
 
