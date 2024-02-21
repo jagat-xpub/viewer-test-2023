@@ -151,10 +151,10 @@ h3::before {
 }
 
 h4 {
-  font-size: var(--base-font-size);
+  font-size: 17Q;
 }
 h4::before {
-  content: "●";
+  content: "◆";
 }
 
 h6 {
