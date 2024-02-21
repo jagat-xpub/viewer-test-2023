@@ -670,17 +670,17 @@ lang: 'ja'
     <td><span  style="writing-mode: vertical-rl">::before 擬似要素</span></td>
     <td><span  style="writing-mode: vertical-rl">::after 擬似要素</span></td>
     <td><span  style="writing-mode: vertical-rl">後続兄弟結合子 E ~ F</span></td>
-    <th valign="bottom">CSS Cascading and Inheritance Level 4</th>
-    <td valign="bottom">プロパティの値 initial</td>
-    <th valign="bottom">CSS Backgrounds and Borders Level 3</th>
-    <td valign="bottom">border-radius プロパティ</td>
-    <td valign="bottom">box-shadow プロパティ</td>
-    <th valign="bottom">CSS User Interface Module Level 3</th>
-    <td valign="bottom">outline プロパティ</td>
-    <th valign="bottom">CSS Counter Styles Level 3</th>
-    <td valign="bottom">定義済みカウンタースタイル lower-greek</td>
-    <td valign="bottom">定義済みカウンタースタイル katakana</td>
-    <td valign="bottom">定義済みカウンタースタイル katakana-iroha</td>
+    <th valign="bottom"><span  style="writing-mode: vertical-rl">CSS Cascading and Inheritance Level 4</span></th>
+    <td valign="bottom"><span  style="writing-mode: vertical-rl">プロパティの値 initial</span></td>
+    <th valign="bottom"><span  style="writing-mode: vertical-rl">CSS Backgrounds and Borders Level 3</span></th>
+    <td valign="bottom"><span  style="writing-mode: vertical-rl">border-radius プロパティ</span></td>
+    <td valign="bottom"><span  style="writing-mode: vertical-rl">box-shadow プロパティ</span></td>
+    <th valign="bottom"><span  style="writing-mode: vertical-rl">CSS User Interface Module Level 3</span></th>
+    <td valign="bottom"><span  style="writing-mode: vertical-rl">outline プロパティ</span></td>
+    <th valign="bottom"><span  style="writing-mode: vertical-rl">CSS Counter Styles Level 3</span></th>
+    <td valign="bottom"><span  style="writing-mode: vertical-rl">定義済みカウンタースタイル lower-greek</span></td>
+    <td valign="bottom"><span  style="writing-mode: vertical-rl">定義済みカウンタースタイル katakana</span></td>
+    <td valign="bottom"><span  style="writing-mode: vertical-rl">定義済みカウンタースタイル katakana-iroha</span></td>
   </tr>
   <tr>
     <td bgcolor="#c9daf8" align="center">Kindle</td>

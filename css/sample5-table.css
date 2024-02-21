@@ -17,7 +17,7 @@ th {
 
 th {
   background: #bbb;
-  min-inline-size: 7em;
+  /* min-inline-size: 7em; */
 }
 
 tr:nth-child(even) {

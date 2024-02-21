@@ -16,10 +16,10 @@
   /* 基本体裁 */
   --base-font-size: 14Q;
   --base-line-height: 24.5Q;
-  --page-width: 210mm;
-  --page-height: 297mm;
-  --letters-per-line: 44.5;
-  --lines-per-page: 43;
+  --page-width: 297mm;
+  --page-height: 210mm;
+  --letters-per-line: 75;
+  --lines-per-page: 29;
   --page-margin-top: 16mm; /*天地マージンは天のみ指定できる。地は自動計算*/
   --page-margin-xshift: 0mm; /*左右マージンはデフォルト左右均等。xshift値でずらす*/
   --column-font-size: 14Q; /*コラムのフォントサイズ*/
