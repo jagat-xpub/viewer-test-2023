@@ -154,7 +154,7 @@ h4 {
   font-size: 17Q;
 }
 h4::before {
-  content: "◆";
+  /* content: "◆"; */
 }
 
 h6 {
