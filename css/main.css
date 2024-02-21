@@ -139,7 +139,7 @@ h3 {
 
 h3::before {
   content: "";
-  background: url(img/_c_choju24_0001_s1024_choju24_0001_7.png);
+  /* background: url(img/_c_choju24_0001_s1024_choju24_0001_7.png); */
   /* background: url(img/ai_carrot.png); */
   background-size: contain;
   background-repeat: no-repeat;
