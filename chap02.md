@@ -467,6 +467,12 @@ lang: 'ja'
   </tr>
 </table>
 
+
+*1……テストファイルepubcsstest_voyagerで再テスト</br>
+*2……自作機もあるWindows環境ではハードウェアを区別する意味はあまりないので省略</br>
+*3……バージョン番号を表示する機能がない</br>
+*4……ブラウザ上で動作するのでブラウザのバージョン名も併記</br>{.column}
+
 #### 2-1-3-2 掲載しなかったテスト環境の一覧
 
 <table>
@@ -643,6 +649,11 @@ lang: 'ja'
   </tr>
 </table>
 
+*1……Kindle Paperwhite Signature Edition (第11世代) Kindle Paperwhite (第7世代)はKindle 5.16.2.1 (4064640031)
+*2……1.40.1 (65535) 20230822／2.0.0 (70301)に更新。とりあえずその他のEPUBビューア表示テストから確認
+*3……分割ファイルで再テスト
+*4……自作機もあるWindows環境ではハードウェアを区別する意味はあまりないので省略
+
 ## 2-2 CSS表示テストの結果
 
 ### 2-2-1 メジャーなEPUBリーダーでサポートされているCSS機能
@@ -650,177 +661,57 @@ lang: 'ja'
 <table>
   <tr>
     <td style="color:#434343" align="right"></td>
-    <th><span  style="writing-mode: vertical-rl">Selectors Level 3<span  style="writing-mode: vertical-rl"></span></th>
-    <td><span  style="writing-mode: vertical-rl">部分文字列マッチング属性セレクタ [att^=val]</span></td>
-    <td><span  style="writing-mode: vertical-rl">部分文字列マッチング属性セレクタ[att$=val]</span></td>
-    <td><span  style="writing-mode: vertical-rl">部分文字列マッチング属性セレクタ[att*=val]</span></td>
-    <td><span  style="writing-mode: vertical-rl">:root 擬似クラス</span></td>
-    <td><span  style="writing-mode: vertical-rl">:nth-child() 擬似クラス</span></td>
-    <td><span  style="writing-mode: vertical-rl">:nth-last-child() 擬似クラス</td>
-    <td><span  style="writing-mode: vertical-rl">:nth-of-type() 擬似クラス</span></td>
-    <td><span  style="writing-mode: vertical-rl">:nth-last-of-type() 擬似クラス</td>
-    <td><span  style="writing-mode: vertical-rl">:last-child 擬似クラス</span></td>
-    <td><span  style="writing-mode: vertical-rl">:only-child 擬似クラス</span></td>
-    <td><span  style="writing-mode: vertical-rl">:first-of-type 擬似クラス</span></td>
-    <td><span  style="writing-mode: vertical-rl">:last-of-type 擬似クラス</span></td>
-    <td><span  style="writing-mode: vertical-rl">:only-of-type 擬似クラス</span></td>
-    <td><span  style="writing-mode: vertical-rl">:empty 擬似クラス</span></td>
-    <td><span  style="writing-mode: vertical-rl">:not 擬似クラス</span></td>
-    <td><span  style="writing-mode: vertical-rl">::first-letter 擬似要素</span></td>
-    <td><span  style="writing-mode: vertical-rl">::before 擬似要素</span></td>
-    <td><span  style="writing-mode: vertical-rl">::after 擬似要素</span></td>
-    <td><span  style="writing-mode: vertical-rl">後続兄弟結合子 E ~ F</span></td>
-    <th valign="bottom">CSS Cascading and Inheritance Level 4</th>
-    <td valign="bottom">プロパティの値 initial</td>
-    <th valign="bottom">CSS Backgrounds and Borders Level 3</th>
-    <td valign="bottom">border-radius プロパティ</td>
-    <td valign="bottom">box-shadow プロパティ</td>
-    <th valign="bottom">CSS User Interface Module Level 3</th>
-    <td valign="bottom">outline プロパティ</td>
-    <th valign="bottom">CSS Counter Styles Level 3</th>
-    <td valign="bottom">定義済みカウンタースタイル lower-greek</td>
-    <td valign="bottom">定義済みカウンタースタイル katakana</td>
-    <td valign="bottom">定義済みカウンタースタイル katakana-iroha</td>
-  </tr>
-  <tr>
     <td bgcolor="#c9daf8" align="center">Kindle</td>
-    <td valign="bottom"></td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center"></td>
-    <td align="center">OK</td>
-    <td align="center"></td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center"></td>
-    <td align="center">OK</td>
-    <td align="center"></td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-  </tr>
-  <tr>
     <td bgcolor="#d9ead3" align="center">kobo-1 (iOS)</td>
-    <td valign="bottom"></td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center"></td>
-    <td align="center">OK</td>
-    <td align="center"></td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center"></td>
-    <td align="center">OK</td>
-    <td align="center"></td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-  </tr>
-  <tr>
     <td bgcolor="#d9ead3" align="center">kobo-2 (Android)</td>
-    <td valign="bottom"></td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center"></td>
-    <td align="center">OK</td>
-    <td align="center"></td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center"></td>
-    <td align="center">OK</td>
-    <td align="center"></td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
+    <td bgcolor="#c9daf8" align="center">kobo-3</td>
+    <td bgcolor="#d9ead3" align="center">ブック</td>
+    <td bgcolor="#d9ead3" align="center">MURASAKI</td>
+    <td bgcolor="#c9daf8" align="center">honto</td>
+    <td bgcolor="#d9ead3" align="center">BOOK☆ WALKER</td>
+    <td bgcolor="#c9daf8" align="center">Kinoppy</td>
+    <td bgcolor="#c9daf8" align="center">Voyager</td>
+    <td bgcolor="#d9ead3" align="center">BiB/i</td>
+    <td bgcolor="#c9daf8" align="center">超縦書</td>
+    <td bgcolor="#d9ead3" align="center">Vivliostyle Viewer</td>
+    <td bgcolor="#d9ead3" align="center">Thorium Reader</td>
   </tr>
   <tr>
-    <td bgcolor="#c9daf8" align="center">kobo-3</td>
+    <th valign="bottom">Selectors Level 3</th>
     <td valign="bottom"></td>
+    <td valign="bottom"></td>
+    <td valign="bottom"></td>
+    <td valign="bottom"></td>
+    <td valign="bottom"></td>
+    <td valign="bottom"></td>
+    <td valign="bottom"></td>
+    <td valign="bottom"></td>
+    <td valign="bottom"></td>
+    <td valign="bottom"></td>
+    <td valign="bottom"></td>
+    <td valign="bottom"></td>
+    <td valign="bottom"></td>
+    <td valign="bottom"></td>
+  </tr>
+  <tr>
+    <td>部分文字列マッチング属性セレクタ [att^=val]</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
     <td style="color:#ff0000" align="center">NG</td>
     <td align="center">OK</td>
     <td align="center">OK</td>
     <td align="center">OK</td>
     <td align="center">OK</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td style="color:#ea4335" align="center">NG</td>
     <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center"></td>
-    <td align="center">OK</td>
-    <td align="center"></td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center"></td>
-    <td align="center">OK</td>
-    <td align="center"></td>
     <td align="center">OK</td>
     <td align="center">OK</td>
     <td align="center">OK</td>
   </tr>
   <tr>
-    <td bgcolor="#d9ead3" align="center">ブック</td>
-    <td valign="bottom"></td>
+    <td>部分文字列マッチング属性セレクタ[att$=val]</td>
     <td align="center">OK</td>
     <td align="center">OK</td>
     <td align="center">OK</td>
@@ -829,32 +720,15 @@ lang: 'ja'
     <td align="center">OK</td>
     <td align="center">OK</td>
     <td align="center">OK</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td style="color:#ea4335" align="center">NG</td>
     <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center"></td>
-    <td align="center">OK</td>
-    <td align="center"></td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center"></td>
-    <td align="center">OK</td>
-    <td align="center"></td>
     <td align="center">OK</td>
     <td align="center">OK</td>
     <td align="center">OK</td>
   </tr>
   <tr>
-    <td bgcolor="#d9ead3" align="center">MURASAKI</td>
-    <td valign="bottom"></td>
+    <td>部分文字列マッチング属性セレクタ[att*=val]</td>
     <td align="center">OK</td>
     <td align="center">OK</td>
     <td align="center">OK</td>
@@ -862,41 +736,16 @@ lang: 'ja'
     <td align="center">OK</td>
     <td align="center">OK</td>
     <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center"></td>
-    <td align="center">OK</td>
-    <td align="center"></td>
     <td align="center">OK</td>
     <td style="color:#ea4335" align="center">NG</td>
-    <td align="center"></td>
+    <td style="color:#ea4335" align="center">NG</td>
     <td align="center">OK</td>
-    <td align="center"></td>
     <td align="center">OK</td>
     <td align="center">OK</td>
     <td align="center">OK</td>
   </tr>
   <tr>
-    <td bgcolor="#c9daf8" align="center">honto</td>
-    <td valign="bottom"></td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
+    <td>:root 擬似クラス</td>
     <td align="center">OK</td>
     <td align="center">OK</td>
     <td align="center">OK</td>
@@ -908,157 +757,420 @@ lang: 'ja'
     <td style="color:#ea4335" align="center">NG</td>
     <td style="color:#ea4335" align="center">NG</td>
     <td align="center">OK</td>
-    <td align="center"></td>
-    <td style="color:#ea4335" align="center">NG</td>
-    <td align="center"></td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center"></td>
-    <td style="color:#ea4335" align="center">NG</td>
-    <td align="center"></td>
-    <td style="color:#ea4335" align="center">NG</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-  </tr>
-  <tr>
-    <td bgcolor="#d9ead3" align="center">BOOK☆ WALKER</td>
-    <td valign="bottom"></td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center"></td>
-    <td align="center">OK</td>
-    <td align="center"></td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center"></td>
-    <td align="center">OK</td>
-    <td align="center"></td>
     <td align="center">OK</td>
     <td align="center">OK</td>
     <td align="center">OK</td>
   </tr>
   <tr>
-    <td bgcolor="#c9daf8" align="center">Kinoppy</td>
-    <td valign="bottom"></td>
+    <td>:nth-child() 擬似クラス</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
     <td style="color:#ea4335" align="center">NG</td>
     <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+  </tr>
+  <tr>
+    <td>:nth-last-child() 擬似クラス</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
     <td style="color:#ea4335" align="center">NG</td>
     <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+  </tr>
+  <tr>
+    <td>:nth-of-type() 擬似クラス</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
     <td style="color:#ea4335" align="center">NG</td>
     <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+  </tr>
+  <tr>
+    <td>:nth-last-of-type() 擬似クラス</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
     <td style="color:#ea4335" align="center">NG</td>
     <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+  </tr>
+  <tr>
+    <td>:last-child 擬似クラス</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
     <td style="color:#ea4335" align="center">NG</td>
     <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+  </tr>
+  <tr>
+    <td>:only-child 擬似クラス</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
     <td style="color:#ea4335" align="center">NG</td>
     <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+  </tr>
+  <tr>
+    <td>:first-of-type 擬似クラス</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
     <td style="color:#ea4335" align="center">NG</td>
     <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+  </tr>
+  <tr>
+    <td>:last-of-type 擬似クラス</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
     <td style="color:#ea4335" align="center">NG</td>
     <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+  </tr>
+  <tr>
+    <td>:only-of-type 擬似クラス</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
     <td style="color:#ea4335" align="center">NG</td>
     <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+  </tr>
+  <tr>
+    <td>:empty 擬似クラス</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
     <td style="color:#ea4335" align="center">NG</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+  </tr>
+  <tr>
+    <td>:not 擬似クラス</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+  </tr>
+  <tr>
+    <td>::first-letter 擬似要素</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+  </tr>
+  <tr>
+    <td>::before 擬似要素</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+  </tr>
+  <tr>
+    <td>::after 擬似要素</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+  </tr>
+  <tr>
+    <td>後続兄弟結合子 E ~ F</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+  </tr>
+  <tr>
+    <th valign="bottom">CSS Cascading and Inheritance Level 4</th>
     <td align="center"></td>
-    <td style="color:#ea4335" align="center">NG</td>
     <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+  </tr>
+  <tr>
+    <td valign="bottom">プロパティの値 initial</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+  </tr>
+  <tr>
+    <th valign="bottom">CSS Backgrounds and Borders Level 3</th>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+  </tr>
+  <tr>
+    <td valign="bottom">border-radius プロパティ</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
     <td style="color:#1f1f1f" align="center">OK</td>
     <td style="color:#ea4335" align="center">NG</td>
-    <td align="center"></td>
-    <td style="color:#ea4335" align="center">NG</td>
-    <td align="center"></td>
-    <td style="color:#ea4335" align="center">NG</td>
-    <td style="color:#ea4335" align="center">NG</td>
-    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
   </tr>
   <tr>
-    <td bgcolor="#c9daf8" align="center">Voyager</td>
-    <td valign="bottom"></td>
+    <td valign="bottom">box-shadow プロパティ</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
     <td style="color:#ea4335" align="center">NG</td>
     <td style="color:#ea4335" align="center">NG</td>
-    <td style="color:#ea4335" align="center">NG</td>
-    <td style="color:#ea4335" align="center">NG</td>
-    <td style="color:#ea4335" align="center">NG</td>
-    <td style="color:#ea4335" align="center">NG</td>
-    <td style="color:#ea4335" align="center">NG</td>
-    <td style="color:#ea4335" align="center">NG</td>
-    <td style="color:#ea4335" align="center">NG</td>
-    <td style="color:#ea4335" align="center">NG</td>
-    <td style="color:#ea4335" align="center">NG</td>
-    <td style="color:#ea4335" align="center">NG</td>
-    <td style="color:#ea4335" align="center">NG</td>
-    <td style="color:#ea4335" align="center">NG</td>
-    <td style="color:#ea4335" align="center">NG</td>
-    <td style="color:#ea4335" align="center">NG</td>
-    <td style="color:#ea4335" align="center">NG</td>
-    <td style="color:#ea4335" align="center">NG</td>
-    <td style="color:#ea4335" align="center">NG</td>
-    <td align="center"></td>
-    <td style="color:#ea4335" align="center">NG</td>
-    <td align="center"></td>
-    <td style="color:#ea4335" align="center">NG</td>
-    <td style="color:#ea4335" align="center">NG</td>
-    <td align="center"></td>
-    <td style="color:#ea4335" align="center">NG</td>
-    <td align="center"></td>
-    <td style="color:#ea4335" align="center">NG</td>
-    <td style="color:#ea4335" align="center">NG</td>
-    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
   </tr>
   <tr>
-    <td bgcolor="#d9ead3" align="center">BiB/i</td>
-    <td valign="bottom"></td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
+    <th valign="bottom">CSS User Interface Module Level 3</th>
     <td align="center"></td>
-    <td align="center">OK</td>
     <td align="center"></td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
     <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+  </tr>
+  <tr>
+    <td valign="bottom">outline プロパティ</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td style="color:#ea4335" align="center">NG</td>
     <td bgcolor="#f3f3f3" align="center">OK / NG *¹</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+  </tr>
+  <tr>
+    <th valign="bottom">CSS Counter Styles Level 3</th>
     <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+  </tr>
+  <tr>
+    <td valign="bottom">定義済みカウンタースタイル lower-greek</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td style="color:#ea4335" align="center">NG</td>
     <td bgcolor="#f3f3f3" align="center">OK *²</td>
     <td align="center">OK</td>
     <td align="center">OK</td>
+    <td align="center">OK</td>
   </tr>
   <tr>
-    <td bgcolor="#c9daf8" align="center">超縦書</td>
-    <td valign="bottom"></td>
+    <td valign="bottom">定義済みカウンタースタイル katakana</td>
     <td align="center">OK</td>
     <td align="center">OK</td>
     <td align="center">OK</td>
@@ -1067,32 +1179,15 @@ lang: 'ja'
     <td align="center">OK</td>
     <td align="center">OK</td>
     <td align="center">OK</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td style="color:#ea4335" align="center">NG</td>
     <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center"></td>
-    <td align="center">OK</td>
-    <td align="center"></td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center"></td>
-    <td align="center">OK</td>
-    <td align="center"></td>
     <td align="center">OK</td>
     <td align="center">OK</td>
     <td align="center">OK</td>
   </tr>
   <tr>
-    <td bgcolor="#d9ead3" align="center">Vivliostyle Viewer</td>
-    <td valign="bottom"></td>
+    <td valign="bottom">定義済みカウンタースタイル katakana-iroha</td>
     <td align="center">OK</td>
     <td align="center">OK</td>
     <td align="center">OK</td>
@@ -1101,65 +1196,14 @@ lang: 'ja'
     <td align="center">OK</td>
     <td align="center">OK</td>
     <td align="center">OK</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td style="color:#ea4335" align="center">NG</td>
     <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center"></td>
-    <td align="center">OK</td>
-    <td align="center"></td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center"></td>
-    <td align="center">OK</td>
-    <td align="center"></td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-  </tr>
-  <tr>
-    <td bgcolor="#d9ead3" align="center">Thorium Reader</td>
-    <td valign="bottom"></td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center"></td>
-    <td align="center">OK</td>
-    <td align="center"></td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center"></td>
-    <td align="center">OK</td>
-    <td align="center"></td>
     <td align="center">OK</td>
     <td align="center">OK</td>
     <td align="center">OK</td>
   </tr>
 </table>
-
 
 ### 2-2-2 おもにモダンブラウザ系でサポートされているCSS機能
 
