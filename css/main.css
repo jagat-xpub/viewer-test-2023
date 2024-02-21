@@ -77,7 +77,7 @@ h2 {
   block-size: 5rlh;
   /* margin-block: 4mm 11mm; */
   /* margin-inline-start: 20mm; */
-  margin-inline-start: 15mm;
+  /* margin-inline-start: 15mm; */
   margin-block: 0;
   display: grid;
   align-content: center;
@@ -92,8 +92,8 @@ h2::before {
   block-size: 24mm;
   inline-size: 40mm;
   position: absolute;
-  inset-block-start: -2mm;
-  inset-inline-start: -17mm; 
+  /* inset-block-start: -2mm; */
+  /* inset-inline-start: -17mm;  */
 }
 
 /* 節番号 */
@@ -129,7 +129,7 @@ h3 {
   display: grid;
   place-items: center start;
   position: relative;
-  padding-inline-start: 7mm;
+  /* padding-inline-start: 7mm; */
 
   /* background-color: #88ddff; */
   /* 背景画像 */
