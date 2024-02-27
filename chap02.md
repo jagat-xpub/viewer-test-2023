@@ -274,7 +274,7 @@ lang: 'ja'
     <td bgcolor="#d9ead3" align="center">13.6.3 (22G436)</td>
     <td bgcolor="#d9ead3" align="center">5.2 (5800.52)</td>
     <td bgcolor="#d9ead3" align="center">小形</td>
-    <td bgcolor="#d9ead3" align="center">2024/01/05</td>
+    <td bgcolor="#d9ead3" align="center">2023/05/23</td>
   </tr>
   <tr>
     <td bgcolor="#d9ead3" align="center">ブック</td>
