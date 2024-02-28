@@ -133,7 +133,18 @@ lang: 'ja'
 
 <table>
   <tr>
-    <th style="color:#434343" align="center">リーダー</th>
+    <td style="color:#434343" align="right"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+  </tr>
+  <tr>
+    <th style="color:#434343" align="center">リーダー名</th>
+    <td bgcolor="#d9d9d9" align="center">略称</td>
     <th style="color:#434343" align="center">種別</th>
     <th style="color:#434343" align="center">機材名</th>
     <th style="color:#434343" align="center">OS ver.</th>
@@ -142,8 +153,9 @@ lang: 'ja'
     <th style="color:#434343" align="center">テスト日</th>
   </tr>
   <tr>
-    <td bgcolor="#c9daf8" align="center">Kindle *¹</td>
-    <td bgcolor="#c9daf8" align="center">Kindle Previewer3 (Mac)</td>
+    <td bgcolor="#c9daf8" align="center">Kindle Previewer3 (Mac) *¹</td>
+    <td bgcolor="#c9daf8" align="center">Kindle</td>
+    <td bgcolor="#c9daf8" align="center">Macアプリ</td>
     <td bgcolor="#c9daf8" align="center">Mac mini M1, 2020</td>
     <td bgcolor="#c9daf8" align="center">macOS Sonoma 14.2.1</td>
     <td bgcolor="#c9daf8" align="center">3.74.0</td>
@@ -151,8 +163,9 @@ lang: 'ja'
     <td bgcolor="#c9daf8" align="center">2023/12/28</td>
   </tr>
   <tr>
-    <td bgcolor="#c9daf8" align="center">Kindle *¹</td>
-    <td bgcolor="#c9daf8" align="center">Mac</td>
+    <td bgcolor="#c9daf8" align="center">Kindle for Mac *¹</td>
+    <td bgcolor="#c9daf8" align="center">Kindle</td>
+    <td bgcolor="#c9daf8" align="center">Macアプリ</td>
     <td bgcolor="#c9daf8" align="center">Mac mini M1, 2020</td>
     <td bgcolor="#c9daf8" align="center">macOS Sonoma 14.2.1</td>
     <td bgcolor="#c9daf8" align="center">7.0.0.100 (1.316222)</td>
@@ -160,26 +173,29 @@ lang: 'ja'
     <td bgcolor="#c9daf8" align="center">2023/12/28</td>
   </tr>
   <tr>
-    <td bgcolor="#c9daf8" align="center">Kindle *¹</td>
-    <td bgcolor="#c9daf8" align="center">Kindle Previewer3 (Win)</td>
-    <td bgcolor="#c9daf8" align="center"></td>
+    <td bgcolor="#c9daf8" align="center">Kindle Previewer3 (Win) *¹</td>
+    <td bgcolor="#c9daf8" align="center">Kindle</td>
+    <td bgcolor="#c9daf8" align="center">Windowsアプリ</td>
+    <td bgcolor="#c9daf8" align="center">N/A *²</td>
     <td bgcolor="#c9daf8" align="center">Windows 10 Pro 22H2</td>
     <td bgcolor="#c9daf8" align="center">3.74.0</td>
     <td bgcolor="#c9daf8" align="center">村上</td>
     <td bgcolor="#c9daf8" align="center">2024/01/09</td>
   </tr>
   <tr>
-    <td bgcolor="#c9daf8" align="center">Kindle *¹</td>
-    <td bgcolor="#c9daf8" align="center">Windows</td>
-    <td bgcolor="#c9daf8" align="center"></td>
+    <td bgcolor="#c9daf8" align="center">Kindle for PC *¹</td>
+    <td bgcolor="#c9daf8" align="center">Kindle</td>
+    <td bgcolor="#c9daf8" align="center">Windowsアプリ</td>
+    <td bgcolor="#c9daf8" align="center">N/A *²</td>
     <td bgcolor="#c9daf8" align="center">Windows 10 Pro 22H2</td>
     <td bgcolor="#c9daf8" align="center">2.3.0 (70673)</td>
     <td bgcolor="#c9daf8" align="center">村上</td>
     <td bgcolor="#c9daf8" align="center">2024/01/09</td>
   </tr>
   <tr>
-    <td bgcolor="#c9daf8" align="center">Kindle *¹</td>
-    <td bgcolor="#c9daf8" align="center">Android</td>
+    <td bgcolor="#c9daf8" align="center">Kindle for Android *¹</td>
+    <td bgcolor="#c9daf8" align="center">Kindle</td>
+    <td bgcolor="#c9daf8" align="center">Androidアプリ</td>
     <td bgcolor="#c9daf8" align="center">OPPO A55s 5G</td>
     <td bgcolor="#c9daf8" align="center">Android 12</td>
     <td bgcolor="#c9daf8" align="center">8.89.3.0 (2.0.2766.0)</td>
@@ -187,8 +203,9 @@ lang: 'ja'
     <td bgcolor="#c9daf8" align="center">2024/01/09</td>
   </tr>
   <tr>
-    <td bgcolor="#c9daf8" align="center">Kindle *¹</td>
-    <td bgcolor="#c9daf8" align="center">iPad</td>
+    <td bgcolor="#c9daf8" align="center">Kinoppy for iOS *¹</td>
+    <td bgcolor="#c9daf8" align="center">Kindle</td>
+    <td bgcolor="#c9daf8" align="center">iPadアプリ</td>
     <td bgcolor="#c9daf8" align="center">iPad mini (第5世代)</td>
     <td bgcolor="#c9daf8" align="center">iPadOS 17.1.2</td>
     <td bgcolor="#c9daf8" align="center">7.0.1</td>
@@ -196,8 +213,9 @@ lang: 'ja'
     <td bgcolor="#c9daf8" align="center">2024/01/09</td>
   </tr>
   <tr>
-    <td bgcolor="#c9daf8" align="center">Kindle *¹</td>
-    <td bgcolor="#c9daf8" align="center">iOS</td>
+    <td bgcolor="#c9daf8" align="center">Kinoppy for iOS *¹</td>
+    <td bgcolor="#c9daf8" align="center">Kindle</td>
+    <td bgcolor="#c9daf8" align="center">iOSアプリ</td>
     <td bgcolor="#c9daf8" align="center">iPhone13mini</td>
     <td bgcolor="#c9daf8" align="center">iOS 17.2.1</td>
     <td bgcolor="#c9daf8" align="center">7.1</td>
@@ -205,8 +223,9 @@ lang: 'ja'
     <td bgcolor="#c9daf8" align="center">2024/01/21</td>
   </tr>
   <tr>
-    <td bgcolor="#d9ead3" align="center">kobo（kobo-1）*¹</td>
-    <td bgcolor="#d9ead3" align="center">iOS</td>
+    <td bgcolor="#d9ead3" align="center">楽天Koboアプリ for iPhone *¹</td>
+    <td bgcolor="#d9ead3" align="center">kobo-1</td>
+    <td bgcolor="#d9ead3" align="center">iOSアプリ</td>
     <td bgcolor="#d9ead3" align="center">iphone13mini</td>
     <td bgcolor="#d9ead3" align="center">iOS17.2.1</td>
     <td bgcolor="#d9ead3" align="center">10.4.3</td>
@@ -214,8 +233,9 @@ lang: 'ja'
     <td bgcolor="#d9ead3" align="center">2024/02/01</td>
   </tr>
   <tr>
-    <td bgcolor="#d9ead3" align="center">kobo（kobo-2）</td>
-    <td bgcolor="#d9ead3" align="center">Android</td>
+    <td bgcolor="#d9ead3" align="center">楽天Koboアプリ for Android</td>
+    <td bgcolor="#d9ead3" align="center">kobo-2</td>
+    <td bgcolor="#d9ead3" align="center">Androidアプリ</td>
     <td bgcolor="#d9ead3" align="center">Galaxy Tab S8 Ultra</td>
     <td bgcolor="#d9ead3" align="center">Android　13</td>
     <td bgcolor="#d9ead3" align="center">9.4.8.1</td>
@@ -223,17 +243,19 @@ lang: 'ja'
     <td bgcolor="#d9ead3" align="center">2023/08/20</td>
   </tr>
   <tr>
-    <td bgcolor="#c9daf8" align="center">kobo（kobo-3）</td>
-    <td bgcolor="#c9daf8" align="center">専用タブレット</td>
     <td bgcolor="#c9daf8" align="center">Kobo Libra 2</td>
-    <td bgcolor="#c9daf8" align="center"></td>
+    <td bgcolor="#c9daf8" align="center">kobo-3</td>
+    <td bgcolor="#c9daf8" align="center">専用タブレット</td>
+    <td bgcolor="#c9daf8" align="center">リーダーと同</td>
+    <td bgcolor="#c9daf8" valign="bottom">4.38.21908 (fac580f37d, 2023/08/22)</td>
     <td bgcolor="#c9daf8" align="center">4.37.21586 (42535ad976, 2023/07/06)</td>
     <td bgcolor="#c9daf8" align="center">仁科</td>
     <td bgcolor="#c9daf8" align="center">2023/07/25</td>
   </tr>
   <tr>
-    <td bgcolor="#c9daf8" align="center">kobo（kobo-3）</td>
-    <td bgcolor="#c9daf8" align="center">Windows</td>
+    <td bgcolor="#c9daf8" align="center">楽天Koboデスクトップ</td>
+    <td bgcolor="#c9daf8" align="center">kobo-3</td>
+    <td bgcolor="#c9daf8" align="center">Windowsアプリ</td>
     <td bgcolor="#c9daf8" align="center">N/A *²</td>
     <td bgcolor="#c9daf8" align="center">Windows 10 Pro (22H2　19045.3208)</td>
     <td bgcolor="#c9daf8" align="center">4.37.19051</td>
@@ -241,8 +263,9 @@ lang: 'ja'
     <td bgcolor="#c9daf8" align="center">2023/07/25</td>
   </tr>
   <tr>
-    <td bgcolor="#c9daf8" align="center">kobo（kobo-3）</td>
-    <td bgcolor="#c9daf8" align="center">Mac</td>
+    <td bgcolor="#c9daf8" align="center">楽天Koboデスクトップ</td>
+    <td bgcolor="#c9daf8" align="center">kobo-3</td>
+    <td bgcolor="#c9daf8" align="center">Macアプリ</td>
     <td bgcolor="#c9daf8" align="center">MacBook (Retina, 12-12inch, Early 2016)</td>
     <td bgcolor="#c9daf8" align="center">macOS Monterey 12.6.6</td>
     <td bgcolor="#c9daf8" align="center">4.37.17113</td>
@@ -250,17 +273,19 @@ lang: 'ja'
     <td bgcolor="#c9daf8" align="center">2023/08/20</td>
   </tr>
   <tr>
-    <td bgcolor="#c9daf8" align="center">kobo（kobo-3）*¹</td>
-    <td bgcolor="#c9daf8" align="center">Mac</td>
+    <td bgcolor="#c9daf8" align="center">楽天Koboデスクトップ *¹</td>
+    <td bgcolor="#c9daf8" align="center">kobo-3</td>
+    <td bgcolor="#c9daf8" align="center">Macアプリ</td>
     <td bgcolor="#c9daf8" align="center">MacBook (Retina, 12-12inch, Early 2016)</td>
     <td bgcolor="#c9daf8" align="center">macOS Monterey 12.7.2</td>
-    <td bgcolor="#c9daf8" align="center">楽天Koboデスクトップ 4.37.17113</td>
+    <td bgcolor="#c9daf8" align="center"> 4.37.17113</td>
     <td bgcolor="#c9daf8" align="center">仁科</td>
     <td bgcolor="#c9daf8" align="center">2024/01/30</td>
   </tr>
   <tr>
     <td bgcolor="#d9ead3" align="center">ブック</td>
-    <td bgcolor="#d9ead3" align="center" valign="top">iOS</td>
+    <td bgcolor="#d9ead3" align="center">→</td>
+    <td bgcolor="#d9ead3" align="center" valign="top">iOSアプリ</td>
     <td bgcolor="#d9ead3" align="center">iPhone13mini</td>
     <td bgcolor="#d9ead3" align="center">iOS16.4.1 (a)</td>
     <td bgcolor="#d9ead3" style="color:#0000ff" align="center">N/A *³</td>
@@ -269,7 +294,8 @@ lang: 'ja'
   </tr>
   <tr>
     <td bgcolor="#d9ead3" align="center">ブック</td>
-    <td bgcolor="#d9ead3" align="center" valign="top">Mac</td>
+    <td bgcolor="#d9ead3" align="center">→</td>
+    <td bgcolor="#d9ead3" align="center" valign="top">Macアプリ</td>
     <td bgcolor="#d9ead3" align="center">MacBookAir M2 2022</td>
     <td bgcolor="#d9ead3" align="center">13.6.3 (22G436)</td>
     <td bgcolor="#d9ead3" align="center">5.2 (5800.52)</td>
@@ -278,7 +304,8 @@ lang: 'ja'
   </tr>
   <tr>
     <td bgcolor="#d9ead3" align="center">ブック</td>
-    <td bgcolor="#d9ead3" align="center">Mac</td>
+    <td bgcolor="#d9ead3" align="center">→</td>
+    <td bgcolor="#d9ead3" align="center">Macアプリ</td>
     <td bgcolor="#d9ead3" align="center">MacBook Pro 13-inch, 2019, Four Thunderbolt 3 ports</td>
     <td bgcolor="#d9ead3" align="center">13.6.3 (22G436)</td>
     <td bgcolor="#d9ead3" align="center">5.2</td>
@@ -287,7 +314,8 @@ lang: 'ja'
   </tr>
   <tr>
     <td bgcolor="#d9ead3" align="center">ブック*¹</td>
-    <td bgcolor="#d9ead3" align="center">Mac</td>
+    <td bgcolor="#d9ead3" align="center">→</td>
+    <td bgcolor="#d9ead3" align="center">Macアプリ</td>
     <td bgcolor="#d9ead3" align="center">MacBook Pro 13-inch, 2019, Four Thunderbolt 3 ports</td>
     <td bgcolor="#d9ead3" align="center">13.6.3 (22G436)</td>
     <td bgcolor="#d9ead3" align="center">5.2</td>
@@ -296,7 +324,8 @@ lang: 'ja'
   </tr>
   <tr>
     <td bgcolor="#d9ead3" align="center">ブック</td>
-    <td bgcolor="#d9ead3" align="center">Mac</td>
+    <td bgcolor="#d9ead3" align="center">→</td>
+    <td bgcolor="#d9ead3" align="center">Macアプリ</td>
     <td bgcolor="#d9ead3" align="center">MacBookAir M2 2022</td>
     <td bgcolor="#d9ead3" align="center">14.1.1（23B81）</td>
     <td bgcolor="#d9ead3" align="center">6.1</td>
@@ -305,7 +334,8 @@ lang: 'ja'
   </tr>
   <tr>
     <td bgcolor="#d9ead3" align="center">ブック*¹</td>
-    <td bgcolor="#d9ead3" align="center">Mac</td>
+    <td bgcolor="#d9ead3" align="center">→</td>
+    <td bgcolor="#d9ead3" align="center">Macアプリ</td>
     <td bgcolor="#d9ead3" align="center">MacBookAir M2 2023</td>
     <td bgcolor="#d9ead3" align="center">14.1.1（23B81）</td>
     <td bgcolor="#d9ead3" align="center">6.1</td>
@@ -314,7 +344,8 @@ lang: 'ja'
   </tr>
   <tr>
     <td bgcolor="#d9ead3" align="center">MURASAKI</td>
-    <td bgcolor="#d9ead3" align="center">Mac</td>
+    <td bgcolor="#d9ead3" align="center">→</td>
+    <td bgcolor="#d9ead3" align="center">Macアプリ</td>
     <td bgcolor="#d9ead3" align="center">MacBookAir M2 2022</td>
     <td bgcolor="#d9ead3" align="center">13.4</td>
     <td bgcolor="#d9ead3" align="center">2.4.1</td>
@@ -323,7 +354,8 @@ lang: 'ja'
   </tr>
   <tr>
     <td bgcolor="#d9ead3" align="center">MURASAKI</td>
-    <td bgcolor="#d9ead3" align="center">Mac</td>
+    <td bgcolor="#d9ead3" align="center">→</td>
+    <td bgcolor="#d9ead3" align="center">Macアプリ</td>
     <td bgcolor="#d9ead3" align="center">MacBookAir M2 2022</td>
     <td bgcolor="#d9ead3" align="center">14.1.1 (23B81)</td>
     <td bgcolor="#d9ead3" align="center">2.4.1</td>
@@ -332,7 +364,8 @@ lang: 'ja'
   </tr>
   <tr>
     <td bgcolor="#d9ead3" align="center">MURASAKI*¹</td>
-    <td bgcolor="#d9ead3" align="center">Mac</td>
+    <td bgcolor="#d9ead3" align="center">→</td>
+    <td bgcolor="#d9ead3" align="center">Macアプリ</td>
     <td bgcolor="#d9ead3" align="center">MacBook Pro 13-inch, 2019, Four Thunderbolt 3 ports</td>
     <td bgcolor="#d9ead3" align="center">13.6.3 (22G436)</td>
     <td bgcolor="#d9ead3" align="center">5.2</td>
@@ -340,8 +373,9 @@ lang: 'ja'
     <td bgcolor="#d9ead3" align="center">2024/02/08</td>
   </tr>
   <tr>
-    <td bgcolor="#c9daf8" align="center">honto *¹</td>
-    <td bgcolor="#c9daf8" align="center">iOS</td>
+    <td bgcolor="#c9daf8" align="center">honto電子書籍リーダー *¹</td>
+    <td bgcolor="#c9daf8" align="center">honto</td>
+    <td bgcolor="#c9daf8" align="center">iOSアプリ</td>
     <td bgcolor="#c9daf8" align="center">iPhone13mini</td>
     <td bgcolor="#c9daf8" align="center">iOS17.2.1</td>
     <td bgcolor="#c9daf8" align="center">6.62.0</td>
@@ -350,7 +384,8 @@ lang: 'ja'
   </tr>
   <tr>
     <td bgcolor="#d9ead3" align="center">BOOK☆WALKER</td>
-    <td bgcolor="#d9ead3" align="center">iOS</td>
+    <td bgcolor="#d9ead3" align="center">→</td>
+    <td bgcolor="#d9ead3" align="center">iOSアプリ</td>
     <td bgcolor="#d9ead3" align="center">iPhone13mini</td>
     <td bgcolor="#d9ead3" align="center">iOS16.4.1 (a)</td>
     <td bgcolor="#d9ead3" align="center">7.4.7</td>
@@ -358,8 +393,9 @@ lang: 'ja'
     <td bgcolor="#d9ead3" align="center">2023/05/20</td>
   </tr>
   <tr>
-    <td bgcolor="#d9ead3" align="center">BOOK☆WALKER for Android</td>
-    <td bgcolor="#d9ead3" align="center">Android</td>
+    <td bgcolor="#d9ead3" align="center">BOOK☆WALKER</td>
+    <td bgcolor="#d9ead3" align="center">→</td>
+    <td bgcolor="#d9ead3" align="center">Androidアプリ</td>
     <td bgcolor="#d9ead3" align="center">Galaxy Tab S8 Ultra</td>
     <td bgcolor="#d9ead3" align="center">Android　13</td>
     <td bgcolor="#d9ead3" align="center">7.5.0</td>
@@ -368,7 +404,8 @@ lang: 'ja'
   </tr>
   <tr>
     <td bgcolor="#c9daf8" align="center">Kinoppy *¹</td>
-    <td bgcolor="#c9daf8" align="center">Windows</td>
+    <td bgcolor="#c9daf8" align="center">→</td>
+    <td bgcolor="#c9daf8" align="center">Windowsアプリ</td>
     <td bgcolor="#c9daf8" align="center">N/A *²</td>
     <td bgcolor="#c9daf8" align="center">Windows 10 Pro 22H2</td>
     <td bgcolor="#c9daf8" align="center">3.2.19</td>
@@ -376,8 +413,9 @@ lang: 'ja'
     <td bgcolor="#c9daf8" align="center">2023/12/07</td>
   </tr>
   <tr>
-    <td bgcolor="#c9daf8" align="center">Voyager *¹</td>
-    <td bgcolor="#c9daf8" align="center">Android</td>
+    <td bgcolor="#c9daf8" align="center">Romancer *¹</td>
+    <td bgcolor="#c9daf8" align="center">→</td>
+    <td bgcolor="#c9daf8" align="center">ブラウザー・ポリフィル</td>
     <td bgcolor="#c9daf8" align="center">Galaxy Tab S8 Ultra</td>
     <td bgcolor="#c9daf8" align="center">Android 13</td>
     <td bgcolor="#c9daf8" align="center">N/A *³ / Chrome114.0.5735.196</td>
@@ -385,8 +423,9 @@ lang: 'ja'
     <td bgcolor="#c9daf8" align="center">2023/07/23</td>
   </tr>
   <tr>
-    <td bgcolor="#c9daf8" align="center">Voyager *¹</td>
-    <td bgcolor="#c9daf8" align="center">Windows</td>
+    <td bgcolor="#c9daf8" align="center">Romancer *¹</td>
+    <td bgcolor="#c9daf8" align="center">→</td>
+    <td bgcolor="#c9daf8" align="center">ブラウザー・ポリフィル</td>
     <td bgcolor="#c9daf8" align="center">N/A *²</td>
     <td bgcolor="#c9daf8" align="center">Windows 10 Pro</td>
     <td bgcolor="#c9daf8" align="center">N/A *³ / Chrome114.0.5735.199 *⁴</td>
@@ -394,8 +433,9 @@ lang: 'ja'
     <td bgcolor="#c9daf8" align="center">2023/07/23</td>
   </tr>
   <tr>
-    <td bgcolor="#d9ead3" align="center">BiB/i</td>
-    <td bgcolor="#d9ead3" align="center">Windows</td>
+    <td bgcolor="#d9ead3" align="center">Bibi</td>
+    <td bgcolor="#d9ead3" align="center">→</td>
+    <td bgcolor="#d9ead3" align="center">ブラウザー・ポリフィル</td>
     <td bgcolor="#d9ead3" align="center">N/A *²</td>
     <td bgcolor="#d9ead3" align="center">Windows 11 PRO</td>
     <td bgcolor="#d9ead3" align="center">1.2.0 / Chrome 113.0.5672.127 (64ビット) *⁴</td>
@@ -403,8 +443,9 @@ lang: 'ja'
     <td bgcolor="#d9ead3" align="center">2023/05/28</td>
   </tr>
   <tr>
-    <td bgcolor="#d9ead3" align="center">BiB/i</td>
-    <td bgcolor="#d9ead3" align="center">Windows</td>
+    <td bgcolor="#d9ead3" align="center">Bibi</td>
+    <td bgcolor="#d9ead3" align="center">→</td>
+    <td bgcolor="#d9ead3" align="center">ブラウザー・ポリフィル</td>
     <td bgcolor="#d9ead3" align="center">N/A *²</td>
     <td bgcolor="#d9ead3" align="center">Windows 11 PRO</td>
     <td bgcolor="#d9ead3" align="center">1.2.0 / Edge 113.0.1774.57 (64ビット) *⁴</td>
@@ -413,7 +454,8 @@ lang: 'ja'
   </tr>
   <tr>
     <td bgcolor="#c9daf8" align="center">超縦書</td>
-    <td bgcolor="#c9daf8" align="center">Windows</td>
+    <td bgcolor="#c9daf8" align="center">→</td>
+    <td bgcolor="#c9daf8" align="center">Windowsアプリ</td>
     <td bgcolor="#c9daf8" align="center">N/A *²</td>
     <td bgcolor="#c9daf8" align="center">Windows 10 Home 21H2</td>
     <td bgcolor="#c9daf8" align="center">2.3.1</td>
@@ -422,7 +464,8 @@ lang: 'ja'
   </tr>
   <tr>
     <td bgcolor="#c9daf8" align="center">超縦書 *¹</td>
-    <td bgcolor="#c9daf8" align="center">Windows</td>
+    <td bgcolor="#c9daf8" align="center">→</td>
+    <td bgcolor="#c9daf8" align="center">Windowsアプリ</td>
     <td bgcolor="#c9daf8" align="center">N/A *²</td>
     <td bgcolor="#c9daf8" align="center">Windows 10 Pro 22H2</td>
     <td bgcolor="#c9daf8" align="center">2.3.2</td>
@@ -431,7 +474,8 @@ lang: 'ja'
   </tr>
   <tr>
     <td bgcolor="#d9ead3" align="center">Vivliostyle Viewer</td>
-    <td bgcolor="#d9ead3" align="center">Mac</td>
+    <td bgcolor="#d9ead3" align="center">Vivliostyle</td>
+    <td bgcolor="#d9ead3" align="center">ブラウザー・ポリフィル</td>
     <td bgcolor="#d9ead3" align="center">Mac mini M1, 2020</td>
     <td bgcolor="#d9ead3" align="center">macOS 13.4</td>
     <td bgcolor="#d9ead3" align="center">2.25.0 / Chrome 113 *⁴</td>
@@ -440,7 +484,8 @@ lang: 'ja'
   </tr>
   <tr>
     <td bgcolor="#d9ead3" align="center">Vivliostyle Viewer *¹</td>
-    <td bgcolor="#d9ead3" align="center">iOS</td>
+    <td bgcolor="#d9ead3" align="center">Vivliostyle</td>
+    <td bgcolor="#d9ead3" align="center">ブラウザー・ポリフィル</td>
     <td bgcolor="#d9ead3" align="center">iPad第6世代</td>
     <td bgcolor="#d9ead3" align="center">17.3.1</td>
     <td bgcolor="#d9ead3" align="center">2.27.0 / Safari</td>
@@ -449,7 +494,8 @@ lang: 'ja'
   </tr>
   <tr>
     <td bgcolor="#d9ead3" align="center">Thorium Reader</td>
-    <td bgcolor="#d9ead3" align="center">Windows</td>
+    <td bgcolor="#d9ead3" align="center">Thorium</td>
+    <td bgcolor="#d9ead3" align="center">Windowsアプリ</td>
     <td bgcolor="#d9ead3" align="center">N/A *²</td>
     <td bgcolor="#d9ead3" align="center">Windows 11 PRO</td>
     <td bgcolor="#d9ead3" align="center">2.3.0</td>
@@ -458,7 +504,8 @@ lang: 'ja'
   </tr>
   <tr>
     <td bgcolor="#d9ead3" align="center">Thorium Reader</td>
-    <td bgcolor="#d9ead3" align="center">Mac</td>
+    <td bgcolor="#d9ead3" align="center">Thorium</td>
+    <td bgcolor="#d9ead3" align="center">Macアプリ</td>
     <td bgcolor="#d9ead3" align="center">MacBook Air (M1, 2020) </td>
     <td bgcolor="#d9ead3" align="center">macOS12.6.7</td>
     <td bgcolor="#d9ead3" align="center">2.2.0</td>
@@ -468,16 +515,16 @@ lang: 'ja'
 </table>
 
 
-- *1……テストファイルepubcsstest_voyagerで再テスト
-- *2……自作機もあるWindows環境ではハードウェアを区別する意味はあまりないので省略
-- *3……バージョン番号を表示する機能がない
-- *4……ブラウザ上で動作するのでブラウザのバージョン名も併記
+- 1……テストファイルepubcsstest_voyagerによるテスト
+- 2……自作機もあるWindows環境ではハードウェアを区別する意味はあまりないので省略
+- 3……バージョン番号を表示する機能がない
+- 4……ブラウザ上で動作するのでブラウザのバージョン名も併記
 
 #### 2-1-3-2 掲載しなかったテスト環境の一覧
 
 <table>
   <tr>
-    <th style="color:#434343" align="center">リーダー</th>
+    <th style="color:#434343" align="center">リーダー名</th>
     <th style="color:#434343" align="center">種別</th>
     <th style="color:#434343" align="center">機材名</th>
     <th style="color:#434343" align="center">OS ver.</th>
@@ -486,8 +533,8 @@ lang: 'ja'
     <th style="color:#434343" align="center">テスト日</th>
   </tr>
   <tr>
-    <td bgcolor="#c9daf8" align="center">Kindle</td>
-    <td bgcolor="#c9daf8" align="center">Android</td>
+    <td bgcolor="#c9daf8" align="center">Kindle for Android</td>
+    <td bgcolor="#c9daf8" align="center">Androidアプリ</td>
     <td bgcolor="#c9daf8" align="center">Moto G30</td>
     <td bgcolor="#c9daf8" align="center">Android　11</td>
     <td bgcolor="#c9daf8" align="center">8.81.1.0 (1.3.290180.0)</td>
@@ -495,8 +542,8 @@ lang: 'ja'
     <td bgcolor="#c9daf8" align="center">2023/05/22</td>
   </tr>
   <tr>
-    <td bgcolor="#c9daf8" align="center">Kindle</td>
-    <td bgcolor="#c9daf8" align="center">Android</td>
+    <td bgcolor="#c9daf8" align="center">Kindle for Android</td>
+    <td bgcolor="#c9daf8" align="center">Androidアプリ</td>
     <td bgcolor="#c9daf8" align="center">Galaxy Tab S8 Ultra</td>
     <td bgcolor="#c9daf8" align="center">Android　13</td>
     <td bgcolor="#c9daf8" align="center">8.81.1.0 (1.3.290180.0)</td>
@@ -504,8 +551,8 @@ lang: 'ja'
     <td bgcolor="#c9daf8" align="center">2023/722</td>
   </tr>
   <tr>
-    <td bgcolor="#c9daf8" align="center">Kindle</td>
-    <td bgcolor="#c9daf8" align="center">Android</td>
+    <td bgcolor="#c9daf8" align="center">Kindle for Android</td>
+    <td bgcolor="#c9daf8" align="center">Androidアプリ</td>
     <td bgcolor="#c9daf8" align="center">Xperia 10 IV</td>
     <td bgcolor="#c9daf8" align="center">Android　13</td>
     <td bgcolor="#c9daf8" align="center">8.81.1.0 (1.3.290180.0)</td>
@@ -513,26 +560,26 @@ lang: 'ja'
     <td bgcolor="#c9daf8" align="center">2023/07/25</td>
   </tr>
   <tr>
-    <td bgcolor="#c9daf8" align="center">Kindle</td>
+    <td bgcolor="#c9daf8" align="center">Kindle Fire HD 10 Plus</td>
     <td bgcolor="#c9daf8" align="center">専用タブレット</td>
-    <td bgcolor="#c9daf8" align="center">Fire HD 10 Plus (第11世代)</td>
+    <td bgcolor="#c9daf8" align="center">リーダーと同</td>
     <td bgcolor="#c9daf8" align="center">FireOS 7.3.2.8</td>
     <td bgcolor="#c9daf8" align="center">14.81.160 (1.3.290180)</td>
     <td bgcolor="#c9daf8" align="center">仁科</td>
     <td bgcolor="#c9daf8" align="center">2023/05/21</td>
   </tr>
   <tr>
-    <td bgcolor="#c9daf8" align="center">Kindle *¹</td>
+    <td bgcolor="#c9daf8" align="center">Kindle Paperwhite Signature Edition *¹</td>
     <td bgcolor="#c9daf8" align="center">専用タブレット</td>
-    <td bgcolor="#c9daf8" align="center">Kindle Paperwhite Signature Edition (第11世代)</td>
+    <td bgcolor="#c9daf8" align="center">リーダーと同</td>
     <td bgcolor="#c9daf8" align="center">専用タブレット</td>
     <td bgcolor="#fff2cc" align="center"> </td>
     <td bgcolor="#c9daf8" align="center">仁科</td>
     <td bgcolor="#c9daf8" align="center">2023/05/21</td>
   </tr>
   <tr>
-    <td bgcolor="#c9daf8" align="center">Kindle</td>
-    <td bgcolor="#c9daf8" align="center">Windows</td>
+    <td bgcolor="#c9daf8" align="center">Kindle for PC</td>
+    <td bgcolor="#c9daf8" align="center">Windowsアプリ</td>
     <td bgcolor="#c9daf8" align="center">N/A *⁴</td>
     <td bgcolor="#c9daf8" align="center">Windows</td>
     <td bgcolor="#c9daf8" align="center">Windows 10 Home 21H2</td>
@@ -540,17 +587,17 @@ lang: 'ja'
     <td bgcolor="#c9daf8" align="center">2023/05/22</td>
   </tr>
   <tr>
-    <td bgcolor="#c9daf8" align="center">Kindle</td>
-    <td bgcolor="#c9daf8" align="center">Windows</td>
-    <td bgcolor="#c9daf8" align="center">N/A *⁴</td>
     <td bgcolor="#c9daf8" align="center">Kindle for PC</td>
+    <td bgcolor="#c9daf8" align="center">Windowsアプリ</td>
+    <td bgcolor="#c9daf8" align="center">N/A *⁴</td>
+    <td bgcolor="#c9daf8" align="center"></td>
     <td bgcolor="#c9daf8" align="center">2.0.1 (70350)</td>
     <td bgcolor="#c9daf8" align="center">仁科</td>
     <td bgcolor="#c9daf8" align="center">2023/10/24</td>
   </tr>
   <tr>
-    <td bgcolor="#c9daf8" align="center">Kindle</td>
-    <td bgcolor="#c9daf8" align="center">Windows</td>
+    <td bgcolor="#c9daf8" align="center">Kindle for PC</td>
+    <td bgcolor="#c9daf8" align="center">Windowsアプリ</td>
     <td bgcolor="#c9daf8" align="center">N/A *⁴</td>
     <td bgcolor="#c9daf8" align="center">Kindle for PC</td>
     <td bgcolor="#c9daf8" align="center">1.40.1 (65535)</td>
@@ -558,8 +605,8 @@ lang: 'ja'
     <td bgcolor="#c9daf8" align="center">2023/05/21</td>
   </tr>
   <tr>
-    <td bgcolor="#c9daf8" align="center">Kindle*²</td>
-    <td bgcolor="#c9daf8" align="center">Windows</td>
+    <td bgcolor="#c9daf8" align="center">Kindle for PC *²</td>
+    <td bgcolor="#c9daf8" align="center">Windowsアプリ</td>
     <td bgcolor="#c9daf8" align="center">N/A *⁴</td>
     <td bgcolor="#c9daf8" align="center">Kindle for PC</td>
     <td bgcolor="#c9daf8" align="center">2.0.0 (70301)</td>
@@ -567,17 +614,17 @@ lang: 'ja'
     <td bgcolor="#c9daf8" align="center">2023/08/22</td>
   </tr>
   <tr>
-    <td bgcolor="#c9daf8" align="center">Kindle</td>
-    <td bgcolor="#c9daf8" align="center">Mac</td>
+    <td bgcolor="#c9daf8" align="center">Kindle for Mac </td>
+    <td bgcolor="#c9daf8" align="center">Macアプリ</td>
     <td bgcolor="#c9daf8" align="center">Macbook 12-inch, Early 2016</td>
     <td bgcolor="#c9daf8" align="center">macOS Monterey 12.6.6</td>
-    <td bgcolor="#c9daf8" align="center">Kindle for Mac 1.40.1 (65624)</td>
+    <td bgcolor="#c9daf8" align="center">1.40.1 (65624)</td>
     <td bgcolor="#c9daf8" align="center">仁科</td>
     <td bgcolor="#c9daf8" align="center">2023/05/22</td>
   </tr>
   <tr>
-    <td bgcolor="#c9daf8" align="center">Kindle</td>
     <td bgcolor="#c9daf8" align="center">Kindle Previewer3 (Win)</td>
+    <td bgcolor="#c9daf8" align="center">Windowsアプリ</td>
     <td bgcolor="#c9daf8" align="center">N/A *⁴</td>
     <td bgcolor="#c9daf8" align="center">Kindle Previewer3(Win)</td>
     <td bgcolor="#fff2cc" align="center"></td>
@@ -585,8 +632,8 @@ lang: 'ja'
     <td bgcolor="#c9daf8" align="center">2023/05/22</td>
   </tr>
   <tr>
-    <td bgcolor="#c9daf8" align="center">Kindle</td>
     <td bgcolor="#c9daf8" align="center">Kindle Previewer3 (Mac)</td>
+    <td bgcolor="#c9daf8" align="center">Macアプリ</td>
     <td bgcolor="#c9daf8" align="center">MacBook 12-inch, Early 2016</td>
     <td bgcolor="#c9daf8" align="center">macOS Monterey 12.6.6</td>
     <td bgcolor="#c9daf8" align="center">3.72.0</td>
@@ -594,8 +641,8 @@ lang: 'ja'
     <td bgcolor="#c9daf8" align="center">2023/05/22</td>
   </tr>
   <tr>
-    <td bgcolor="#d9ead3" align="center">kobo</td>
-    <td bgcolor="#d9ead3" align="center">iOS</td>
+    <td bgcolor="#d9ead3" align="center">楽天Kobo - 読書専用アプリ</td>
+    <td bgcolor="#d9ead3" align="center">iOSアプリ</td>
     <td bgcolor="#d9ead3" align="center">iPhone13mini</td>
     <td bgcolor="#d9ead3" align="center">iOS16.4.1 (a)</td>
     <td bgcolor="#d9ead3" align="center">10.3.7</td>
@@ -603,8 +650,8 @@ lang: 'ja'
     <td bgcolor="#d9ead3" align="center">2023/05/20</td>
   </tr>
   <tr>
-    <td bgcolor="#c9daf8" align="center">honto</td>
-    <td bgcolor="#c9daf8" align="center">iOS</td>
+    <td bgcolor="#c9daf8" align="center">honto電子書籍リーダー</td>
+    <td bgcolor="#c9daf8" align="center">iOSアプリ</td>
     <td bgcolor="#c9daf8" align="center">iPhone13mini</td>
     <td bgcolor="#c9daf8" align="center">iOS16.4.1 (a)</td>
     <td bgcolor="#c9daf8" align="center">6.60.0</td>
@@ -612,8 +659,8 @@ lang: 'ja'
     <td bgcolor="#c9daf8" align="center">2023/05/20</td>
   </tr>
   <tr>
-    <td bgcolor="#c9daf8" align="center">honto</td>
-    <td bgcolor="#c9daf8" align="center">Android</td>
+    <td bgcolor="#c9daf8" align="center">honto電子書籍リーダー</td>
+    <td bgcolor="#c9daf8" align="center">Androidアプリ</td>
     <td bgcolor="#c9daf8" align="center">Galaxy Tab S8 Ultra</td>
     <td bgcolor="#c9daf8" align="center">Android 13</td>
     <td bgcolor="#c9daf8" align="center">6.60.0</td>
@@ -621,8 +668,8 @@ lang: 'ja'
     <td bgcolor="#c9daf8" align="center">2023/08/20</td>
   </tr>
   <tr>
-    <td bgcolor="#c9daf8" align="center">Kinoppy *³</td>
-    <td bgcolor="#c9daf8" align="center">iOS</td>
+    <td bgcolor="#c9daf8" align="center">Kinoppy for iOS *³</td>
+    <td bgcolor="#c9daf8" align="center">iOSアプリ</td>
     <td bgcolor="#c9daf8" align="center">iPhone13mini</td>
     <td bgcolor="#c9daf8" align="center">iOS</td>
     <td bgcolor="#c9daf8" align="center">3.9.17.415162200</td>
@@ -631,7 +678,7 @@ lang: 'ja'
   </tr>
   <tr>
     <td bgcolor="#c9daf8" align="center">Kinoppy for Android *³</td>
-    <td bgcolor="#c9daf8" align="center">Android</td>
+    <td bgcolor="#c9daf8" align="center">Androidアプリ</td>
     <td bgcolor="#c9daf8" align="center">Galaxy Tab S8 Ultra</td>
     <td bgcolor="#c9daf8" align="center">Android 13</td>
     <td bgcolor="#c9daf8" align="center">3.10.7 (913557c)</td>
@@ -639,8 +686,8 @@ lang: 'ja'
     <td bgcolor="#c9daf8" align="center">2023/10/18</td>
   </tr>
   <tr>
-    <td bgcolor="#c9daf8" align="center">Kinoppy</td>
-    <td bgcolor="#c9daf8" align="center">Windows</td>
+    <td bgcolor="#c9daf8" align="center">Kinoppy for Windows Desktop</td>
+    <td bgcolor="#c9daf8" align="center">Windowsアプリ</td>
     <td bgcolor="#c9daf8" align="center">N/A *⁴</td>
     <td bgcolor="#c9daf8" align="center">Windows 10 Home 21H2</td>
     <td bgcolor="#c9daf8" align="center">Ver.3.2.19</td>
@@ -649,10 +696,10 @@ lang: 'ja'
   </tr>
 </table>
 
-- *1……Kindle Paperwhite Signature Edition (第11世代) Kindle Paperwhite (第7世代)はKindle 5.16.2.1 (4064640031)
-- *2……1.40.1 (65535) 20230822／2.0.0 (70301)に更新。とりあえずその他のEPUBビューア表示テストから確認
-- *3……分割ファイルで再テスト
-- *4……自作機もあるWindows環境ではハードウェアを区別する意味はあまりないので省略
+- 1……Kindle Paperwhite Signature Edition (第11世代) Kindle Paperwhite (第7世代)はKindle 5.16.2.1 (4064640031)
+- 2……1.40.1 (65535) 20230822／2.0.0 (70301)に更新。とりあえずその他のEPUBビューア表示テストから確認
+- 3……分割ファイルで再テスト
+- 4……自作機もあるWindows環境ではハードウェアを区別する意味はあまりないので省略
 
 ## 2-2 CSS表示テストの結果
 
@@ -661,20 +708,20 @@ lang: 'ja'
 <table>
   <tr>
     <td style="color:#434343" align="right"></td>
-    <td bgcolor="#c9daf8" align="center">Kindle</td>
-    <td bgcolor="#d9ead3" align="center">kobo-1 (iOS)</td>
-    <td bgcolor="#d9ead3" align="center">kobo-2 (Android)</td>
-    <td bgcolor="#c9daf8" align="center">kobo-3</td>
-    <td bgcolor="#d9ead3" align="center">ブック</td>
-    <td bgcolor="#d9ead3" align="center">MURASAKI</td>
-    <td bgcolor="#c9daf8" align="center">honto</td>
-    <td bgcolor="#d9ead3" align="center">BOOK☆ WALKER</td>
-    <td bgcolor="#c9daf8" align="center">Kinoppy</td>
-    <td bgcolor="#c9daf8" align="center">Voyager</td>
-    <td bgcolor="#d9ead3" align="center">BiB/i</td>
-    <td bgcolor="#c9daf8" align="center">超縦書</td>
-    <td bgcolor="#d9ead3" align="center">Vivliostyle Viewer</td>
-    <td bgcolor="#d9ead3" align="center">Thorium Reader</td>
+    <td style="writing-mode: vertical-lr" bgcolor="#c9daf8" align="center">Kindle</td>
+    <td style="writing-mode: vertical-lr" bgcolor="#d9ead3" align="center">kobo-1</td>
+    <td style="writing-mode: vertical-lr" bgcolor="#d9ead3" align="center">kobo-2</td>
+    <td style="writing-mode: vertical-lr" bgcolor="#c9daf8" align="center">kobo-3</td>
+    <td style="writing-mode: vertical-lr" bgcolor="#d9ead3" align="center">ブック</td>
+    <td style="writing-mode: vertical-lr" bgcolor="#d9ead3" align="center">MURASAKI</td>
+    <td style="writing-mode: vertical-lr" bgcolor="#c9daf8" align="center">honto</td>
+    <td style="writing-mode: vertical-lr" bgcolor="#d9ead3" align="center">BOOK☆ WALKER</td>
+    <td style="writing-mode: vertical-lr" bgcolor="#c9daf8" align="center">Kinoppy</td>
+    <td style="writing-mode: vertical-lr" bgcolor="#c9daf8" align="center">Romancer</td>
+    <td style="writing-mode: vertical-lr" bgcolor="#d9ead3" align="center">Bibi</td>
+    <td style="writing-mode: vertical-lr" bgcolor="#c9daf8" align="center">超縦書</td>
+    <td style="writing-mode: vertical-lr" bgcolor="#d9ead3" align="center">Vivliostyle</td>
+    <td style="writing-mode: vertical-lr" bgcolor="#d9ead3" align="center">Thorium</td>
   </tr>
   <tr>
     <th valign="bottom">Selectors Level 3</th>
@@ -1205,6 +1252,1284 @@ lang: 'ja'
   </tr>
 </table>
 
+- 1……同じWindows 11 Proで、ブラウザを変えてテストしたところ、Chrome（113.0.5672.127）でNG、Edge（113.0.1774.57）ではOK
+- 2……ただし他の箇条書きに比べて1文字落ちている
+
 ### 2-2-2 おもにモダンブラウザ系でサポートされているCSS機能
 
+<table>
+  <tr>
+    <td style="color:#434343" align="right"></td>
+    <td style="writing-mode: vertical-lr" bgcolor="#c9daf8" align="center">Kindle</td>
+    <td style="writing-mode: vertical-lr" bgcolor="#d9ead3" align="center">kobo-1</td>
+    <td style="writing-mode: vertical-lr" bgcolor="#d9ead3" align="center">kobo-2</td>
+    <td style="writing-mode: vertical-lr" bgcolor="#c9daf8" align="center">kobo-3</td>
+    <td style="writing-mode: vertical-lr" bgcolor="#d9ead3" align="center">ブック</td>
+    <td style="writing-mode: vertical-lr" bgcolor="#d9ead3" align="center">MURASAKI</td>
+    <td style="writing-mode: vertical-lr" bgcolor="#c9daf8" align="center">honto</td>
+    <td style="writing-mode: vertical-lr" bgcolor="#d9ead3" align="center">BOOK☆ WALKER</td>
+    <td style="writing-mode: vertical-lr" bgcolor="#c9daf8" align="center">Kinoppy</td>
+    <td style="writing-mode: vertical-lr" bgcolor="#c9daf8" align="center">Romancer</td>
+    <td style="writing-mode: vertical-lr" bgcolor="#d9ead3" align="center">Bibi</td>
+    <td style="writing-mode: vertical-lr" bgcolor="#c9daf8" align="center">超縦書</td>
+    <td style="writing-mode: vertical-lr" bgcolor="#d9ead3" align="center">Vivliostyle</td>
+    <td style="writing-mode: vertical-lr" bgcolor="#d9ead3" align="center">Thorium</td>
+  </tr>
+  <tr>
+    <th valign="bottom">Selectors Level 3</th>
+    <td valign="bottom"></td>
+    <td valign="bottom"></td>
+    <td valign="bottom"></td>
+    <td valign="bottom"></td>
+    <td align="center" valign="bottom"></td>
+    <td align="center" valign="bottom"></td>
+    <td valign="bottom"></td>
+    <td valign="bottom"></td>
+    <td valign="bottom"></td>
+    <td valign="bottom"></td>
+    <td valign="bottom"></td>
+    <td align="center" valign="bottom"></td>
+    <td align="center" valign="bottom"></td>
+    <td valign="bottom"></td>
+  </tr>
+  <tr>
+    <td valign="bottom">::first-line 擬似要素</td>
+    <td bgcolor="#f3f3f3" align="center">OK / NG *¹</td>
+    <td align="center">OK</td>
+    <td style="color:#ff0000" align="center">NG</td>
+    <td align="center">OK</td>
+    <td bgcolor="#f3f3f3" align="center">OK / NG *⁶</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td bgcolor="#f3f3f3" style="color:#ff0000" align="center">OK / NG *¹¹</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+  </tr>
+  <tr>
+    <th valign="bottom">CSS Values and Units Level 3</th>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+  </tr>
+  <tr>
+    <td valign="bottom">長さの単位 ch</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td style="color:#ff0000" align="center">NG</td>
+    <td align="center">OK</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+  </tr>
+  <tr>
+    <td valign="bottom">長さの単位 rem</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td style="color:#ff0000" align="center">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+  </tr>
+  <tr>
+    <td valign="bottom">長さの単位 vw</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td style="color:#ff0000" align="center">NG</td>
+    <td align="center">OK</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+  </tr>
+  <tr>
+    <td valign="bottom">長さの単位 vh</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td style="color:#ff0000" align="center">NG</td>
+    <td align="center">OK</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+  </tr>
+  <tr>
+    <td valign="bottom">長さの単位 vmin</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td style="color:#ff0000" align="center">NG</td>
+    <td align="center">OK</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+  </tr>
+  <tr>
+    <td valign="bottom">長さの単位 vmax</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td style="color:#ff0000" align="center">NG</td>
+    <td align="center">OK</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+  </tr>
+  <tr>
+    <td valign="bottom">長さの単位 Q</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td style="color:#ff0000" align="center">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td style="color:#ff0000" align="center">NG</td>
+    <td align="center">OK</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td bgcolor="#f3f3f3" style="color:#ff0000" align="center">OK / NG *¹³</td>
+    <td align="center">OK</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+  </tr>
+  <tr>
+    <th valign="bottom">CSS Conditional Rules Level 3</th>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td style="color:#ea4335" align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+  </tr>
+  <tr>
+    <td valign="bottom">@supports ルール</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td style="color:#ff0000" align="center">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+  </tr>
+  <tr>
+    <th valign="bottom">CSS Cascading and Inheritance Level 4</th>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+  </tr>
+  <tr>
+    <td valign="bottom">all プロパティ</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td style="color:#ff0000" align="center">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+  </tr>
+  <tr>
+    <td valign="bottom">プロパティの値 unset</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td style="color:#ff0000" align="center">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+  </tr>
+  <tr>
+    <td valign="bottom">プロパティの値 revert</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td style="color:#ff0000" align="center">NG</td>
+    <td style="color:#ff0000" align="center">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td bgcolor="#f3f3f3" style="color:#ff0000" align="center">OK / NG *¹²</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+  </tr>
+  <tr>
+    <th valign="bottom">CSS Custom Properties for Cascading Variables Module Level 1</th>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td style="color:#ea4335" align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+  </tr>
+  <tr>
+    <td valign="bottom">CSS変数</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td style="color:#ff0000" align="center">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+  </tr>
+  <tr>
+    <th valign="bottom">CSS Color Level 4</th>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td style="color:#ea4335" align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+  </tr>
+  <tr>
+    <td valign="bottom">opacity プロパティ</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td style="color:#ff0000" align="center">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+  </tr>
+  <tr>
+    <td valign="bottom">rgb() 関数のコンマなし形式 例: rgb (0 255 0 / .5)</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td style="color:#ff0000" align="center">NG</td>
+    <td align="center">OK</td>
+    <td style="color:#ff0000" align="center">NG</td>
+    <td align="center">OK</td>
+    <td bgcolor="#f3f3f3" align="center">OK / N/A *¹⁰</td>
+    <td bgcolor="#f3f3f3" style="color:#0000ff" align="center" valign="bottom">N/A *¹⁰</td>
+    <td align="center">OK</td>
+    <td bgcolor="#f3f3f3" style="color:#0000ff" align="center" valign="bottom">N/A *¹⁰</td>
+    <td bgcolor="#f3f3f3" style="color:#0000ff" align="center" valign="bottom">N/A *¹⁰</td>
+    <td align="center">OK</td>
+    <td bgcolor="#f3f3f3" style="color:#ff0000" align="center" valign="bottom">NG / N/A *¹⁰</td>
+    <td bgcolor="#f3f3f3" align="center">OK / NG *¹⁰</td>
+    <td bgcolor="#f3f3f3" align="center">OK / NG *¹⁵</td>
+  </tr>
+  <tr>
+    <td valign="bottom">16進数のRGBA形式 (8桁）</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td style="color:#ff0000" align="center">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td style="color:#ff0000" align="center" valign="bottom">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+  </tr>
+  <tr>
+    <td valign="bottom">16進数のRGBA形式 (4桁）</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td style="color:#ff0000" align="center">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td style="color:#ff0000" align="center" valign="bottom">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+  </tr>
+  <tr>
+    <td valign="bottom">hsl() 関数</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td style="color:#ff0000" align="center">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td style="color:#ff0000" align="center" valign="bottom">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+  </tr>
+  <tr>
+    <td valign="bottom">hwb() 関数</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td style="color:#ff0000" align="center">NG</td>
+    <td style="color:#ff0000" align="center">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td bgcolor="#f3f3f3" style="color:#ff0000" align="center">OK / NG *¹²</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td style="color:#ff0000" align="center" valign="bottom">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+  </tr>
+  <tr>
+    <th valign="bottom">CSS Backgrounds and Borders Level 3</th>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+  </tr>
+  <tr>
+    <td valign="bottom">複数の背景画像</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+  </tr>
+  <tr>
+    <td valign="bottom">border-image プロパティ</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+  </tr>
+  <tr>
+    <th valign="bottom">CSS Images Level 3</th>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+  </tr>
+  <tr>
+    <td valign="bottom">グラデーション関数 linear-gradient()</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+  </tr>
+  <tr>
+    <td valign="bottom">グラデーション関数 radial-gradient()</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+  </tr>
+  <tr>
+    <td valign="bottom">グラデーション関数 repeating-linear-gradient()</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+  </tr>
+  <tr>
+    <td valign="bottom">グラデーション関数 repeating-radial-gradient()</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+  </tr>
+  <tr>
+    <td valign="bottom">object-fit プロパティ contain</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td style="color:#ff0000" align="center">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+  </tr>
+  <tr>
+    <td valign="bottom">object-fit プロパティ cover</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td style="color:#ff0000" align="center">NG</td>
+    <td align="center">OK</td>
+    <td style="color:#ff0000" align="center">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+  </tr>
+  <tr>
+    <td valign="bottom">object-position プロパティ</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td style="color:#ff0000" align="center">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+  </tr>
+  <tr>
+    <th valign="bottom">CSS Fonts Level 3</th>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td style="color:#ea4335" align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+  </tr>
+  <tr>
+    <td valign="bottom">@font-face ルール</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td bgcolor="#f3f3f3" align="center">OK / NG *⁷</td>
+    <td align="center">OK</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td bgcolor="#f3f3f3" align="center">OK / NG *¹⁴</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+  </tr>
+  <tr>
+    <td valign="bottom">unicode-range 記述子</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td bgcolor="#f3f3f3" align="center">OK / NG *⁷</td>
+    <td align="center">OK</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+  </tr>
+  <tr>
+    <td valign="bottom">font-kerning プロパティ</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td style="color:#ff0000" align="center">NG</td>
+    <td bgcolor="#f3f3f3" align="center">OK / NG *⁸</td>
+    <td align="center">OK</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+  </tr>
+  <tr>
+    <td valign="bottom">font-variant プロパティ</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td style="color:#ff0000" align="center">NG</td>
+    <td bgcolor="#f3f3f3" align="center">OK / NG *⁹</td>
+    <td align="center">OK</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+  </tr>
+  <tr>
+    <td valign="bottom">font-feature-settings プロパティ</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td style="color:#ff0000" align="center">NG</td>
+    <td bgcolor="#f3f3f3" align="center">OK / NG *⁹</td>
+    <td align="center">OK</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+  </tr>
+  <tr>
+    <th valign="bottom">CSS Writing Modes Level 3</th>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td style="color:#ea4335" align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+  </tr>
+  <tr>
+    <td valign="bottom">writing-mode プロパティ vertical-rl</td>
+    <td bgcolor="#f3f3f3" align="center">OK / NG *²</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td bgcolor="#f3f3f3" style="color:#ff0000" align="center">NG *²</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td bgcolor="#f3f3f3" style="color:#ff0000" align="center">OK / NG *²</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+  </tr>
+  <tr>
+    <td valign="bottom">text-orientation プロパティ upright</td>
+    <td bgcolor="#f3f3f3" align="center">OK / NG *²</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td bgcolor="#f3f3f3" style="color:#0000ff" align="center" valign="bottom">N/A *²</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td bgcolor="#f3f3f3" style="color:#0000ff" align="center">OK / N/A *²</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+  </tr>
+  <tr>
+    <td valign="bottom">text-orientation プロパティ sideways</td>
+    <td bgcolor="#f3f3f3" align="center">OK / NG *²</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td bgcolor="#f3f3f3" style="color:#0000ff" align="center" valign="bottom">N/A *²</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td bgcolor="#f3f3f3" style="color:#0000ff" align="center">OK / N/A *²</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+  </tr>
+  <tr>
+    <th valign="bottom">CSS Multi-column Layout Level 1</th>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td style="color:#0000ff" align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+  </tr>
+  <tr>
+    <td valign="bottom">段組 2段組</td>
+    <td bgcolor="#f3f3f3" style="color:#ea4335" align="center">NG *³</td>
+    <td align="center">OK</td>
+    <td bgcolor="#f3f3f3" style="color:#ff0000" align="center">NG *³</td>
+    <td bgcolor="#f3f3f3" style="color:#ff0000" align="center">NG *³</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td bgcolor="#f3f3f3" style="color:#ff0000" align="center">NG *³</td>
+    <td bgcolor="#f3f3f3" align="center">OK / NG *³ *¹²</td>
+    <td bgcolor="#f3f3f3" style="color:#ff0000" align="center">NG *³</td>
+    <td bgcolor="#f3f3f3" style="color:#ff0000" align="center">NG *³</td>
+    <td align="center">OK</td>
+    <td bgcolor="#f3f3f3" style="color:#ff0000" align="center">NG *³</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+  </tr>
+  <tr>
+    <td valign="bottom">段組 段間罫</td>
+    <td bgcolor="#f3f3f3" style="color:#0000ff" align="center">N/A *³</td>
+    <td align="center">OK</td>
+    <td bgcolor="#f3f3f3" style="color:#0000ff" align="center">N/A *³</td>
+    <td bgcolor="#f3f3f3" style="color:#0000ff" align="center">N/A *³</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td bgcolor="#f3f3f3" style="color:#0000ff" align="center">N/A *³</td>
+    <td bgcolor="#f3f3f3" align="center">OK / N/A *³ *¹²</td>
+    <td bgcolor="#f3f3f3" style="color:#0000ff" align="center">N/A *³</td>
+    <td bgcolor="#f3f3f3" style="color:#0000ff" align="center">N/A *³</td>
+    <td align="center">OK</td>
+    <td bgcolor="#f3f3f3" style="color:#0000ff" align="center">N/A *³</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+  </tr>
+  <tr>
+    <td valign="bottom">段抜き：column-span プロパティ</td>
+    <td bgcolor="#f3f3f3" style="color:#0000ff" align="center">N/A *³</td>
+    <td align="center">OK</td>
+    <td bgcolor="#f3f3f3" style="color:#0000ff" align="center">N/A *³</td>
+    <td bgcolor="#f3f3f3" style="color:#0000ff" align="center">N/A *³</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td bgcolor="#f3f3f3" style="color:#0000ff" align="center">N/A *³</td>
+    <td bgcolor="#f3f3f3" align="center">OK / N/A *³ *¹²</td>
+    <td bgcolor="#f3f3f3" style="color:#0000ff" align="center">N/A *³</td>
+    <td bgcolor="#f3f3f3" style="color:#0000ff" align="center">N/A *³</td>
+    <td align="center">OK</td>
+    <td bgcolor="#f3f3f3" style="color:#0000ff" align="center">N/A *³</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+  </tr>
+  <tr>
+    <td valign="bottom">段バランス：column-fill: balance</td>
+    <td bgcolor="#f3f3f3" style="color:#0000ff" align="center">N/A *³</td>
+    <td align="center">OK</td>
+    <td bgcolor="#f3f3f3" style="color:#0000ff" align="center">N/A *³</td>
+    <td bgcolor="#f3f3f3" style="color:#0000ff" align="center">N/A *³</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td bgcolor="#f3f3f3" style="color:#0000ff" align="center">N/A *³</td>
+    <td bgcolor="#f3f3f3" align="center">OK / N/A *³ *¹²</td>
+    <td bgcolor="#f3f3f3" style="color:#0000ff" align="center">N/A *³</td>
+    <td bgcolor="#f3f3f3" style="color:#0000ff" align="center">N/A *³</td>
+    <td align="center">OK</td>
+    <td bgcolor="#f3f3f3" style="color:#0000ff" align="center">N/A *³</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+  </tr>
+  <tr>
+    <td valign="bottom">段バランス：column-fill: auto</td>
+    <td bgcolor="#f3f3f3" style="color:#0000ff" align="center">N/A *³</td>
+    <td align="center">OK</td>
+    <td bgcolor="#f3f3f3" style="color:#0000ff" align="center">N/A *³</td>
+    <td bgcolor="#f3f3f3" style="color:#0000ff" align="center">N/A *³</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td bgcolor="#f3f3f3" style="color:#0000ff" align="center">N/A *³</td>
+    <td bgcolor="#f3f3f3" align="center">OK / N/A *³ *¹²</td>
+    <td bgcolor="#f3f3f3" style="color:#0000ff" align="center">N/A *³</td>
+    <td bgcolor="#f3f3f3" style="color:#0000ff" align="center">N/A *³</td>
+    <td align="center">OK</td>
+    <td bgcolor="#f3f3f3" style="color:#0000ff" align="center">N/A *³</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+  </tr>
+  <tr>
+    <th valign="bottom">CSS Flexible Box Module Level 1</th>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+  </tr>
+  <tr>
+    <td valign="bottom">Flexboxによる上下中央揃え</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td style="color:#ff0000" align="center">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+  </tr>
+  <tr>
+    <th valign="bottom">CSS User Interface Module Level 3</th>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+  </tr>
+  <tr>
+    <td valign="bottom">box-sizing プロパティ border-box</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+  </tr>
+  <tr>
+    <td valign="bottom">box-sizing プロパティ content-box</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+  </tr>
+  <tr>
+    <th valign="bottom">CSS Containment Module Level 1</th>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td style="color:#ea4335" align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+  </tr>
+  <tr>
+    <td valign="bottom">contain プロパティ</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td style="color:#ff0000" align="center">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+  </tr>
+  <tr>
+    <th valign="bottom">CSS Transforms Level 1</th>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td style="color:#ea4335" align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+  </tr>
+  <tr>
+    <td valign="bottom">transform プロパティ</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td style="color:#ff0000" align="center">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+  </tr>
+  <tr>
+    <th valign="bottom">CSS Compositing and Blending Level 1</th>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td style="color:#ea4335" align="center"></td>
+    <td style="color:#ea4335" align="center"></td>
+    <td align="center"></td>
+  </tr>
+  <tr>
+    <td valign="bottom">mix-blend-mode プロパティ</td>
+    <td style="color:#ea4335" align="center">NG *⁴</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td bgcolor="#f3f3f3" style="color:#ff0000" align="center">NG *⁴</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td bgcolor="#f3f3f3" style="color:#ea4335" align="center">NG *⁴</td>
+    <td align="center">OK</td>
+    <td bgcolor="#f3f3f3" style="color:#ea4335" align="center">NG *⁴</td>
+    <td bgcolor="#f3f3f3" style="color:#ea4335" align="center">NG *⁴</td>
+    <td align="center">OK</td>
+    <td bgcolor="#f3f3f3" style="color:#ea4335" align="center">NG *⁴</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+  </tr>
+  <tr>
+    <td valign="bottom">isolation プロパティ</td>
+    <td bgcolor="#f3f3f3" style="color:#0000ff" align="center">N/A *⁴</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td bgcolor="#f3f3f3" style="color:#0000ff" align="center">N/A *⁴</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td bgcolor="#f3f3f3" style="color:#0000ff" align="center">N/A *⁴</td>
+    <td align="center">OK</td>
+    <td bgcolor="#f3f3f3" style="color:#0000ff" align="center">N/A *⁴</td>
+    <td bgcolor="#f3f3f3" style="color:#0000ff" align="center">N/A *⁴</td>
+    <td align="center">OK</td>
+    <td bgcolor="#f3f3f3" style="color:#0000ff" align="center">N/A *⁴</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+  </tr>
+  <tr>
+    <td valign="bottom">background-blend-mode プロパティ</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td style="color:#ff0000" align="center">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+  </tr>
+  <tr>
+    <th valign="bottom">CSS Counter Styles Level 3</th>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+  </tr>
+  <tr>
+    <td valign="bottom">@counter-style ルール</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td style="color:#ff0000" align="center">NG</td>
+    <td style="color:#ff0000" align="center">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td style="color:#ff0000" align="center">NG</td>
+    <td bgcolor="#f3f3f3" align="center">OK / NG *¹²</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+  </tr>
+  <tr>
+    <td valign="bottom">定義済みカウンタースタイル cjk-decimal</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td style="color:#ff0000" align="center">NG</td>
+    <td style="color:#ff0000" align="center">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td bgcolor="#f3f3f3" align="center">OK / NG *¹²</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+  </tr>
+  <tr>
+    <td valign="bottom">定義済みカウンタースタイル hiragana</td>
+    <td bgcolor="#f3f3f3" align="center">OK / NG *⁵</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+  </tr>
+  <tr>
+    <td valign="bottom">定義済みカウンタースタイル hiragana-iroha</td>
+    <td bgcolor="#f3f3f3" align="center">OK / NG *⁵</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+  </tr>
+  <tr>
+    <td valign="bottom">定義済みカウンタースタイル cjk-earthly-branch</td>
+    <td bgcolor="#f3f3f3" align="center">OK / NG *⁵</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td style="color:#ff0000" align="center">NG</td>
+    <td align="center">OK</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+  </tr>
+  <tr>
+    <td valign="bottom">定義済みカウンタースタイル cjk-heavenly-stem</td>
+    <td bgcolor="#f3f3f3" align="center">OK / NG *⁵</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td style="color:#ff0000" align="center">NG</td>
+    <td align="center">OK</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+  </tr>
+  <tr>
+    <td valign="bottom">定義済みカウンタースタイル japanese-informal</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td style="color:#ff0000" align="center">NG</td>
+    <td style="color:#ff0000" align="center">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td style="color:#ff0000" align="center">NG</td>
+    <td bgcolor="#f3f3f3" align="center">OK / NG *¹²</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td style="color:#ea4335" align="center">NG</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+  </tr>
+</table>
 
+- 1……iPhone（17.2.1）でのみOK
+- 2……Windows上のKindleのみvertical-rlがNG。これを前提とする他のプロパティは無効（N/A）
+- 3……掲載した全てのテスト環境で2段組がNG。これを前提とする他のプロパティは無効（N/A）
+- 4……掲載した全てのテスト環境でmix-blend-modeがNG。これを前提とするisolationは無効（N/A）
+- 5……Windows上のKindle 2.3.0のみNG。他はすべてOK
+- 6……Mac（Intel）でテストファイルepubcsstest_voyager-epubを実行した場合のみNG
+- 7……Mac（14.1.1）、及びiOS（16.4.1）でNG
+- 8……iOS（16.4.1）でのみNG
+- 9……Mac（v14.1.1）でのみNG
+- 10……テストファイルepubcsstest_voyager-epubのバグによりN/A
+- 11……Android（13）がOK、iOS（16.4.1 ）がNG
+- 12……iOS（16.4.1 ）がOK、Android（13）がNG
+- 13……Windows 10はOK（ただし青枠の幅が他の半分しかない）、AndroidはNG
+- 14……Chrome（113.0.5672.127）がOK、Edge（113.0.1774.57）がNG
+- 15……Windowsアプリ（2.3.0）がNG、Macアプリ（2.2.0）がNG
