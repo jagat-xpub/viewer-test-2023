@@ -133,16 +133,6 @@ lang: 'ja'
 
 <table>
   <tr>
-    <td style="color:#434343" align="right"></td>
-    <td align="center"></td>
-    <td align="center"></td>
-    <td align="center"></td>
-    <td align="center"></td>
-    <td align="center"></td>
-    <td align="center"></td>
-    <td align="center"></td>
-  </tr>
-  <tr>
     <th style="color:#434343" align="center">リーダー名</th>
     <td bgcolor="#d9d9d9" align="center">略称</td>
     <th style="color:#434343" align="center">種別</th>
@@ -1260,20 +1250,20 @@ lang: 'ja'
 <table>
   <tr>
     <td style="color:#434343" align="right"></td>
-    <td style="writing-mode: vertical-lr" bgcolor="#c9daf8" align="center">Kindle</td>
-    <td style="writing-mode: vertical-lr" bgcolor="#d9ead3" align="center">kobo-1</td>
-    <td style="writing-mode: vertical-lr" bgcolor="#d9ead3" align="center">kobo-2</td>
-    <td style="writing-mode: vertical-lr" bgcolor="#c9daf8" align="center">kobo-3</td>
-    <td style="writing-mode: vertical-lr" bgcolor="#d9ead3" align="center">ブック</td>
-    <td style="writing-mode: vertical-lr" bgcolor="#d9ead3" align="center">MURASAKI</td>
-    <td style="writing-mode: vertical-lr" bgcolor="#c9daf8" align="center">honto</td>
-    <td style="writing-mode: vertical-lr" bgcolor="#d9ead3" align="center">BOOK☆ WALKER</td>
-    <td style="writing-mode: vertical-lr" bgcolor="#c9daf8" align="center">Kinoppy</td>
-    <td style="writing-mode: vertical-lr" bgcolor="#c9daf8" align="center">Romancer</td>
-    <td style="writing-mode: vertical-lr" bgcolor="#d9ead3" align="center">Bibi</td>
-    <td style="writing-mode: vertical-lr" bgcolor="#c9daf8" align="center">超縦書</td>
-    <td style="writing-mode: vertical-lr" bgcolor="#d9ead3" align="center">Vivliostyle</td>
-    <td style="writing-mode: vertical-lr" bgcolor="#d9ead3" align="center">Thorium</td>
+    <td style="writing-mode: vertical-lr" align="center">Kindle</td>
+    <td style="writing-mode: vertical-lr" align="center">kobo-1</td>
+    <td style="writing-mode: vertical-lr" align="center">kobo-2</td>
+    <td style="writing-mode: vertical-lr" align="center">kobo-3</td>
+    <td style="writing-mode: vertical-lr" align="center">ブック</td>
+    <td style="writing-mode: vertical-lr" align="center">MURASAKI</td>
+    <td style="writing-mode: vertical-lr" align="center">honto</td>
+    <td style="writing-mode: vertical-lr" align="center">BOOK☆ WALKER</td>
+    <td style="writing-mode: vertical-lr" align="center">Kinoppy</td>
+    <td style="writing-mode: vertical-lr" align="center">Romancer</td>
+    <td style="writing-mode: vertical-lr" align="center">Bibi</td>
+    <td style="writing-mode: vertical-lr" align="center">超縦書</td>
+    <td style="writing-mode: vertical-lr" align="center">Vivliostyle</td>
+    <td style="writing-mode: vertical-lr" align="center">Thorium</td>
   </tr>
   <tr>
     <th valign="bottom">Selectors Level 3</th>
@@ -1294,14 +1284,14 @@ lang: 'ja'
   </tr>
   <tr>
     <td valign="bottom">::first-line 擬似要素</td>
-    <td bgcolor="#f3f3f3" align="center">OK / NG *¹</td>
+    <td align="center">OK / NG *¹</td>
     <td align="center">OK</td>
     <td style="color:#ff0000" align="center">NG</td>
     <td align="center">OK</td>
-    <td bgcolor="#f3f3f3" align="center">OK / NG *⁶</td>
+    <td align="center">OK / NG *⁶</td>
     <td align="center">OK</td>
     <td align="center">OK</td>
-    <td bgcolor="#f3f3f3" style="color:#ff0000" align="center">OK / NG *¹¹</td>
+    <td style="color:#ff0000" align="center">OK / NG *¹¹</td>
     <td style="color:#ea4335" align="center">NG</td>
     <td style="color:#ea4335" align="center">NG</td>
     <td align="center">OK</td>
@@ -1439,7 +1429,7 @@ lang: 'ja'
     <td style="color:#ff0000" align="center">NG</td>
     <td align="center">OK</td>
     <td style="color:#ea4335" align="center">NG</td>
-    <td bgcolor="#f3f3f3" style="color:#ff0000" align="center">OK / NG *¹³</td>
+    <td style="color:#ff0000" align="center">OK / NG *¹³</td>
     <td align="center">OK</td>
     <td style="color:#ea4335" align="center">NG</td>
     <td align="center">OK</td>
@@ -1539,7 +1529,7 @@ lang: 'ja'
     <td align="center">OK</td>
     <td align="center">OK</td>
     <td style="color:#ea4335" align="center">NG</td>
-    <td bgcolor="#f3f3f3" style="color:#ff0000" align="center">OK / NG *¹²</td>
+    <td style="color:#ff0000" align="center">OK / NG *¹²</td>
     <td style="color:#ea4335" align="center">NG</td>
     <td style="color:#ea4335" align="center">NG</td>
     <td align="center">OK</td>
@@ -1622,15 +1612,15 @@ lang: 'ja'
     <td align="center">OK</td>
     <td style="color:#ff0000" align="center">NG</td>
     <td align="center">OK</td>
-    <td bgcolor="#f3f3f3" align="center">OK / N/A *¹⁰</td>
-    <td bgcolor="#f3f3f3" style="color:#0000ff" align="center" valign="bottom">N/A *¹⁰</td>
+    <td align="center">OK / N/A *¹⁰</td>
+    <td style="color:#0000ff" align="center" valign="bottom">N/A *¹⁰</td>
     <td align="center">OK</td>
-    <td bgcolor="#f3f3f3" style="color:#0000ff" align="center" valign="bottom">N/A *¹⁰</td>
-    <td bgcolor="#f3f3f3" style="color:#0000ff" align="center" valign="bottom">N/A *¹⁰</td>
+    <td style="color:#0000ff" align="center" valign="bottom">N/A *¹⁰</td>
+    <td style="color:#0000ff" align="center" valign="bottom">N/A *¹⁰</td>
     <td align="center">OK</td>
-    <td bgcolor="#f3f3f3" style="color:#ff0000" align="center" valign="bottom">NG / N/A *¹⁰</td>
-    <td bgcolor="#f3f3f3" align="center">OK / NG *¹⁰</td>
-    <td bgcolor="#f3f3f3" align="center">OK / NG *¹⁵</td>
+    <td style="color:#ff0000" align="center" valign="bottom">NG / N/A *¹⁰</td>
+    <td align="center">OK / NG *¹⁰</td>
+    <td align="center">OK / NG *¹⁵</td>
   </tr>
   <tr>
     <td valign="bottom">16進数のRGBA形式 (8桁）</td>
@@ -1692,7 +1682,7 @@ lang: 'ja'
     <td align="center">OK</td>
     <td align="center">OK</td>
     <td style="color:#ea4335" align="center">NG</td>
-    <td bgcolor="#f3f3f3" style="color:#ff0000" align="center">OK / NG *¹²</td>
+    <td style="color:#ff0000" align="center">OK / NG *¹²</td>
     <td style="color:#ea4335" align="center">NG</td>
     <td style="color:#ea4335" align="center">NG</td>
     <td align="center">OK</td>
@@ -1910,13 +1900,13 @@ lang: 'ja'
     <td align="center">OK</td>
     <td align="center">OK</td>
     <td align="center">OK</td>
-    <td bgcolor="#f3f3f3" align="center">OK / NG *⁷</td>
+    <td align="center">OK / NG *⁷</td>
     <td align="center">OK</td>
     <td style="color:#ea4335" align="center">NG</td>
     <td align="center">OK</td>
     <td style="color:#ea4335" align="center">NG</td>
     <td style="color:#ea4335" align="center">NG</td>
-    <td bgcolor="#f3f3f3" align="center">OK / NG *¹⁴</td>
+    <td align="center">OK / NG *¹⁴</td>
     <td align="center">OK</td>
     <td align="center">OK</td>
     <td align="center">OK</td>
@@ -1927,7 +1917,7 @@ lang: 'ja'
     <td align="center">OK</td>
     <td align="center">OK</td>
     <td align="center">OK</td>
-    <td bgcolor="#f3f3f3" align="center">OK / NG *⁷</td>
+    <td align="center">OK / NG *⁷</td>
     <td align="center">OK</td>
     <td style="color:#ea4335" align="center">NG</td>
     <td align="center">OK</td>
@@ -1944,7 +1934,7 @@ lang: 'ja'
     <td align="center">OK</td>
     <td align="center">OK</td>
     <td style="color:#ff0000" align="center">NG</td>
-    <td bgcolor="#f3f3f3" align="center">OK / NG *⁸</td>
+    <td align="center">OK / NG *⁸</td>
     <td align="center">OK</td>
     <td style="color:#ea4335" align="center">NG</td>
     <td align="center">OK</td>
@@ -1961,7 +1951,7 @@ lang: 'ja'
     <td align="center">OK</td>
     <td align="center">OK</td>
     <td style="color:#ff0000" align="center">NG</td>
-    <td bgcolor="#f3f3f3" align="center">OK / NG *⁹</td>
+    <td align="center">OK / NG *⁹</td>
     <td align="center">OK</td>
     <td style="color:#ea4335" align="center">NG</td>
     <td align="center">OK</td>
@@ -1978,7 +1968,7 @@ lang: 'ja'
     <td align="center">OK</td>
     <td align="center">OK</td>
     <td style="color:#ff0000" align="center">NG</td>
-    <td bgcolor="#f3f3f3" align="center">OK / NG *⁹</td>
+    <td align="center">OK / NG *⁹</td>
     <td align="center">OK</td>
     <td style="color:#ea4335" align="center">NG</td>
     <td align="center">OK</td>
@@ -2008,52 +1998,52 @@ lang: 'ja'
   </tr>
   <tr>
     <td valign="bottom">writing-mode プロパティ vertical-rl</td>
-    <td bgcolor="#f3f3f3" align="center">OK / NG *²</td>
+    <td align="center">OK / NG *²</td>
     <td align="center">OK</td>
     <td align="center">OK</td>
-    <td bgcolor="#f3f3f3" style="color:#ff0000" align="center">NG *²</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
+    <td style="color:#ff0000" align="center">NG *²</td>
     <td align="center">OK</td>
     <td align="center">OK</td>
     <td align="center">OK</td>
     <td align="center">OK</td>
-    <td bgcolor="#f3f3f3" style="color:#ff0000" align="center">OK / NG *²</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td style="color:#ff0000" align="center">OK / NG *²</td>
     <td align="center">OK</td>
     <td align="center">OK</td>
   </tr>
   <tr>
     <td valign="bottom">text-orientation プロパティ upright</td>
-    <td bgcolor="#f3f3f3" align="center">OK / NG *²</td>
+    <td align="center">OK / NG *²</td>
     <td align="center">OK</td>
     <td align="center">OK</td>
-    <td bgcolor="#f3f3f3" style="color:#0000ff" align="center" valign="bottom">N/A *²</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
+    <td style="color:#0000ff" align="center" valign="bottom">N/A *²</td>
     <td align="center">OK</td>
     <td align="center">OK</td>
     <td align="center">OK</td>
     <td align="center">OK</td>
-    <td bgcolor="#f3f3f3" style="color:#0000ff" align="center">OK / N/A *²</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td style="color:#0000ff" align="center">OK / N/A *²</td>
     <td align="center">OK</td>
     <td align="center">OK</td>
   </tr>
   <tr>
     <td valign="bottom">text-orientation プロパティ sideways</td>
-    <td bgcolor="#f3f3f3" align="center">OK / NG *²</td>
+    <td align="center">OK / NG *²</td>
     <td align="center">OK</td>
     <td align="center">OK</td>
-    <td bgcolor="#f3f3f3" style="color:#0000ff" align="center" valign="bottom">N/A *²</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
-    <td align="center">OK</td>
+    <td style="color:#0000ff" align="center" valign="bottom">N/A *²</td>
     <td align="center">OK</td>
     <td align="center">OK</td>
     <td align="center">OK</td>
     <td align="center">OK</td>
-    <td bgcolor="#f3f3f3" style="color:#0000ff" align="center">OK / N/A *²</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td align="center">OK</td>
+    <td style="color:#0000ff" align="center">OK / N/A *²</td>
     <td align="center">OK</td>
     <td align="center">OK</td>
   </tr>
@@ -2076,86 +2066,86 @@ lang: 'ja'
   </tr>
   <tr>
     <td valign="bottom">段組 2段組</td>
-    <td bgcolor="#f3f3f3" style="color:#ea4335" align="center">NG *³</td>
+    <td style="color:#ea4335" align="center">NG *³</td>
     <td align="center">OK</td>
-    <td bgcolor="#f3f3f3" style="color:#ff0000" align="center">NG *³</td>
-    <td bgcolor="#f3f3f3" style="color:#ff0000" align="center">NG *³</td>
+    <td style="color:#ff0000" align="center">NG *³</td>
+    <td style="color:#ff0000" align="center">NG *³</td>
     <td align="center">OK</td>
     <td align="center">OK</td>
-    <td bgcolor="#f3f3f3" style="color:#ff0000" align="center">NG *³</td>
-    <td bgcolor="#f3f3f3" align="center">OK / NG *³ *¹²</td>
-    <td bgcolor="#f3f3f3" style="color:#ff0000" align="center">NG *³</td>
-    <td bgcolor="#f3f3f3" style="color:#ff0000" align="center">NG *³</td>
+    <td style="color:#ff0000" align="center">NG *³</td>
+    <td align="center">OK / NG *³ *¹²</td>
+    <td style="color:#ff0000" align="center">NG *³</td>
+    <td style="color:#ff0000" align="center">NG *³</td>
     <td align="center">OK</td>
-    <td bgcolor="#f3f3f3" style="color:#ff0000" align="center">NG *³</td>
+    <td style="color:#ff0000" align="center">NG *³</td>
     <td align="center">OK</td>
     <td align="center">OK</td>
   </tr>
   <tr>
     <td valign="bottom">段組 段間罫</td>
-    <td bgcolor="#f3f3f3" style="color:#0000ff" align="center">N/A *³</td>
+    <td style="color:#0000ff" align="center">N/A *³</td>
     <td align="center">OK</td>
-    <td bgcolor="#f3f3f3" style="color:#0000ff" align="center">N/A *³</td>
-    <td bgcolor="#f3f3f3" style="color:#0000ff" align="center">N/A *³</td>
+    <td style="color:#0000ff" align="center">N/A *³</td>
+    <td style="color:#0000ff" align="center">N/A *³</td>
     <td align="center">OK</td>
     <td align="center">OK</td>
-    <td bgcolor="#f3f3f3" style="color:#0000ff" align="center">N/A *³</td>
-    <td bgcolor="#f3f3f3" align="center">OK / N/A *³ *¹²</td>
-    <td bgcolor="#f3f3f3" style="color:#0000ff" align="center">N/A *³</td>
-    <td bgcolor="#f3f3f3" style="color:#0000ff" align="center">N/A *³</td>
+    <td style="color:#0000ff" align="center">N/A *³</td>
+    <td align="center">OK / N/A *³ *¹²</td>
+    <td style="color:#0000ff" align="center">N/A *³</td>
+    <td style="color:#0000ff" align="center">N/A *³</td>
     <td align="center">OK</td>
-    <td bgcolor="#f3f3f3" style="color:#0000ff" align="center">N/A *³</td>
+    <td style="color:#0000ff" align="center">N/A *³</td>
     <td align="center">OK</td>
     <td align="center">OK</td>
   </tr>
   <tr>
     <td valign="bottom">段抜き：column-span プロパティ</td>
-    <td bgcolor="#f3f3f3" style="color:#0000ff" align="center">N/A *³</td>
+    <td style="color:#0000ff" align="center">N/A *³</td>
     <td align="center">OK</td>
-    <td bgcolor="#f3f3f3" style="color:#0000ff" align="center">N/A *³</td>
-    <td bgcolor="#f3f3f3" style="color:#0000ff" align="center">N/A *³</td>
+    <td style="color:#0000ff" align="center">N/A *³</td>
+    <td style="color:#0000ff" align="center">N/A *³</td>
     <td align="center">OK</td>
     <td align="center">OK</td>
-    <td bgcolor="#f3f3f3" style="color:#0000ff" align="center">N/A *³</td>
-    <td bgcolor="#f3f3f3" align="center">OK / N/A *³ *¹²</td>
-    <td bgcolor="#f3f3f3" style="color:#0000ff" align="center">N/A *³</td>
-    <td bgcolor="#f3f3f3" style="color:#0000ff" align="center">N/A *³</td>
+    <td style="color:#0000ff" align="center">N/A *³</td>
+    <td align="center">OK / N/A *³ *¹²</td>
+    <td style="color:#0000ff" align="center">N/A *³</td>
+    <td style="color:#0000ff" align="center">N/A *³</td>
     <td align="center">OK</td>
-    <td bgcolor="#f3f3f3" style="color:#0000ff" align="center">N/A *³</td>
+    <td style="color:#0000ff" align="center">N/A *³</td>
     <td align="center">OK</td>
     <td align="center">OK</td>
   </tr>
   <tr>
     <td valign="bottom">段バランス：column-fill: balance</td>
-    <td bgcolor="#f3f3f3" style="color:#0000ff" align="center">N/A *³</td>
+    <td style="color:#0000ff" align="center">N/A *³</td>
     <td align="center">OK</td>
-    <td bgcolor="#f3f3f3" style="color:#0000ff" align="center">N/A *³</td>
-    <td bgcolor="#f3f3f3" style="color:#0000ff" align="center">N/A *³</td>
+    <td style="color:#0000ff" align="center">N/A *³</td>
+    <td style="color:#0000ff" align="center">N/A *³</td>
     <td align="center">OK</td>
     <td align="center">OK</td>
-    <td bgcolor="#f3f3f3" style="color:#0000ff" align="center">N/A *³</td>
-    <td bgcolor="#f3f3f3" align="center">OK / N/A *³ *¹²</td>
-    <td bgcolor="#f3f3f3" style="color:#0000ff" align="center">N/A *³</td>
-    <td bgcolor="#f3f3f3" style="color:#0000ff" align="center">N/A *³</td>
+    <td style="color:#0000ff" align="center">N/A *³</td>
+    <td align="center">OK / N/A *³ *¹²</td>
+    <td style="color:#0000ff" align="center">N/A *³</td>
+    <td style="color:#0000ff" align="center">N/A *³</td>
     <td align="center">OK</td>
-    <td bgcolor="#f3f3f3" style="color:#0000ff" align="center">N/A *³</td>
+    <td style="color:#0000ff" align="center">N/A *³</td>
     <td align="center">OK</td>
     <td align="center">OK</td>
   </tr>
   <tr>
     <td valign="bottom">段バランス：column-fill: auto</td>
-    <td bgcolor="#f3f3f3" style="color:#0000ff" align="center">N/A *³</td>
+    <td style="color:#0000ff" align="center">N/A *³</td>
     <td align="center">OK</td>
-    <td bgcolor="#f3f3f3" style="color:#0000ff" align="center">N/A *³</td>
-    <td bgcolor="#f3f3f3" style="color:#0000ff" align="center">N/A *³</td>
+    <td style="color:#0000ff" align="center">N/A *³</td>
+    <td style="color:#0000ff" align="center">N/A *³</td>
     <td align="center">OK</td>
     <td align="center">OK</td>
-    <td bgcolor="#f3f3f3" style="color:#0000ff" align="center">N/A *³</td>
-    <td bgcolor="#f3f3f3" align="center">OK / N/A *³ *¹²</td>
-    <td bgcolor="#f3f3f3" style="color:#0000ff" align="center">N/A *³</td>
-    <td bgcolor="#f3f3f3" style="color:#0000ff" align="center">N/A *³</td>
+    <td style="color:#0000ff" align="center">N/A *³</td>
+    <td align="center">OK / N/A *³ *¹²</td>
+    <td style="color:#0000ff" align="center">N/A *³</td>
+    <td style="color:#0000ff" align="center">N/A *³</td>
     <td align="center">OK</td>
-    <td bgcolor="#f3f3f3" style="color:#0000ff" align="center">N/A *³</td>
+    <td style="color:#0000ff" align="center">N/A *³</td>
     <td align="center">OK</td>
     <td align="center">OK</td>
   </tr>
@@ -2334,32 +2324,32 @@ lang: 'ja'
     <td style="color:#ea4335" align="center">NG *⁴</td>
     <td align="center">OK</td>
     <td align="center">OK</td>
-    <td bgcolor="#f3f3f3" style="color:#ff0000" align="center">NG *⁴</td>
+    <td style="color:#ff0000" align="center">NG *⁴</td>
     <td align="center">OK</td>
     <td align="center">OK</td>
-    <td bgcolor="#f3f3f3" style="color:#ea4335" align="center">NG *⁴</td>
+    <td style="color:#ea4335" align="center">NG *⁴</td>
     <td align="center">OK</td>
-    <td bgcolor="#f3f3f3" style="color:#ea4335" align="center">NG *⁴</td>
-    <td bgcolor="#f3f3f3" style="color:#ea4335" align="center">NG *⁴</td>
+    <td style="color:#ea4335" align="center">NG *⁴</td>
+    <td style="color:#ea4335" align="center">NG *⁴</td>
     <td align="center">OK</td>
-    <td bgcolor="#f3f3f3" style="color:#ea4335" align="center">NG *⁴</td>
+    <td style="color:#ea4335" align="center">NG *⁴</td>
     <td align="center">OK</td>
     <td align="center">OK</td>
   </tr>
   <tr>
     <td valign="bottom">isolation プロパティ</td>
-    <td bgcolor="#f3f3f3" style="color:#0000ff" align="center">N/A *⁴</td>
+    <td style="color:#0000ff" align="center">N/A *⁴</td>
     <td align="center">OK</td>
     <td align="center">OK</td>
-    <td bgcolor="#f3f3f3" style="color:#0000ff" align="center">N/A *⁴</td>
+    <td style="color:#0000ff" align="center">N/A *⁴</td>
     <td align="center">OK</td>
     <td align="center">OK</td>
-    <td bgcolor="#f3f3f3" style="color:#0000ff" align="center">N/A *⁴</td>
+    <td style="color:#0000ff" align="center">N/A *⁴</td>
     <td align="center">OK</td>
-    <td bgcolor="#f3f3f3" style="color:#0000ff" align="center">N/A *⁴</td>
-    <td bgcolor="#f3f3f3" style="color:#0000ff" align="center">N/A *⁴</td>
+    <td style="color:#0000ff" align="center">N/A *⁴</td>
+    <td style="color:#0000ff" align="center">N/A *⁴</td>
     <td align="center">OK</td>
-    <td bgcolor="#f3f3f3" style="color:#0000ff" align="center">N/A *⁴</td>
+    <td style="color:#0000ff" align="center">N/A *⁴</td>
     <td align="center">OK</td>
     <td align="center">OK</td>
   </tr>
@@ -2406,7 +2396,7 @@ lang: 'ja'
     <td align="center">OK</td>
     <td align="center">OK</td>
     <td style="color:#ff0000" align="center">NG</td>
-    <td bgcolor="#f3f3f3" align="center">OK / NG *¹²</td>
+    <td align="center">OK / NG *¹²</td>
     <td style="color:#ea4335" align="center">NG</td>
     <td style="color:#ea4335" align="center">NG</td>
     <td align="center">OK</td>
@@ -2423,7 +2413,7 @@ lang: 'ja'
     <td align="center">OK</td>
     <td align="center">OK</td>
     <td align="center">OK</td>
-    <td bgcolor="#f3f3f3" align="center">OK / NG *¹²</td>
+    <td align="center">OK / NG *¹²</td>
     <td style="color:#ea4335" align="center">NG</td>
     <td style="color:#ea4335" align="center">NG</td>
     <td align="center">OK</td>
@@ -2433,7 +2423,7 @@ lang: 'ja'
   </tr>
   <tr>
     <td valign="bottom">定義済みカウンタースタイル hiragana</td>
-    <td bgcolor="#f3f3f3" align="center">OK / NG *⁵</td>
+    <td align="center">OK / NG *⁵</td>
     <td align="center">OK</td>
     <td align="center">OK</td>
     <td align="center">OK</td>
@@ -2450,7 +2440,7 @@ lang: 'ja'
   </tr>
   <tr>
     <td valign="bottom">定義済みカウンタースタイル hiragana-iroha</td>
-    <td bgcolor="#f3f3f3" align="center">OK / NG *⁵</td>
+    <td align="center">OK / NG *⁵</td>
     <td align="center">OK</td>
     <td align="center">OK</td>
     <td align="center">OK</td>
@@ -2467,7 +2457,7 @@ lang: 'ja'
   </tr>
   <tr>
     <td valign="bottom">定義済みカウンタースタイル cjk-earthly-branch</td>
-    <td bgcolor="#f3f3f3" align="center">OK / NG *⁵</td>
+    <td align="center">OK / NG *⁵</td>
     <td align="center">OK</td>
     <td align="center">OK</td>
     <td align="center">OK</td>
@@ -2484,7 +2474,7 @@ lang: 'ja'
   </tr>
   <tr>
     <td valign="bottom">定義済みカウンタースタイル cjk-heavenly-stem</td>
-    <td bgcolor="#f3f3f3" align="center">OK / NG *⁵</td>
+    <td align="center">OK / NG *⁵</td>
     <td align="center">OK</td>
     <td align="center">OK</td>
     <td align="center">OK</td>
@@ -2508,7 +2498,7 @@ lang: 'ja'
     <td align="center">OK</td>
     <td align="center">OK</td>
     <td style="color:#ff0000" align="center">NG</td>
-    <td bgcolor="#f3f3f3" align="center">OK / NG *¹²</td>
+    <td align="center">OK / NG *¹²</td>
     <td style="color:#ea4335" align="center">NG</td>
     <td style="color:#ea4335" align="center">NG</td>
     <td align="center">OK</td>
