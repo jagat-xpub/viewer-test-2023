@@ -478,7 +478,7 @@ lang: 'ja'
     <td bgcolor="#d9ead3" align="center">ブラウザー・ポリフィル</td>
     <td bgcolor="#d9ead3" align="center">iPad第6世代</td>
     <td bgcolor="#d9ead3" align="center">17.3.1</td>
-    <td bgcolor="#d9ead3" align="center">2.27.0 / Safari</td>
+    <td bgcolor="#d9ead3" align="center">2.27.0 / Safari (N/A)</td>
     <td bgcolor="#d9ead3" align="center">田嶋</td>
     <td bgcolor="#d9ead3" align="center">2024/02/13</td>
   </tr>
@@ -617,7 +617,7 @@ lang: 'ja'
     <td bgcolor="#c9daf8" align="center">Windowsアプリ</td>
     <td bgcolor="#c9daf8" align="center">N/A *⁴</td>
     <td bgcolor="#c9daf8" align="center">Kindle Previewer3(Win)</td>
-    <td bgcolor="#fff2cc" align="center"></td>
+    <td bgcolor="#c9daf8" align="center">3.71.1</td>
     <td bgcolor="#c9daf8" align="center">仁科</td>
     <td bgcolor="#c9daf8" align="center">2023/05/22</td>
   </tr>
@@ -686,7 +686,7 @@ lang: 'ja'
   </tr>
 </table>
 
-- 1……Kindle Paperwhite Signature Edition (第11世代) Kindle Paperwhite (第7世代)はKindle 5.16.2.1 (4064640031)
+- 1……4章掲載「EPUB内文字、画像、背景表示テスト」のみ画面表示ができず、機材をKindle Paperwhite（第7世代）に変更
 - 2……1.40.1 (65535) 20230822／2.0.0 (70301)に更新。とりあえずその他のEPUBビューア表示テストから確認
 - 3……分割ファイルで再テスト
 - 4……自作機もあるWindows環境ではハードウェアを区別する意味はあまりないので省略
