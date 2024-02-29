@@ -11,37 +11,58 @@ lang: 'ja'
 
 ### 2-1-1 CSS表示テストの目的と方法
 
-最新のEPUB仕様である[EPUB 3.3](https://www.w3.org/TR/epub-33/)では、「EPUB 3は、[CSS Snapshot](https://www.w3.org/TR/CSS/) で定義されたCSSをサポートする」と明記されている（[§1.3.3 Relationship to CSS](https://www.w3.org/TR/epub-33/#sec-overview-relations-css)）。いくつかの `-epub-`接頭辞付きのCSSプロパティは後方互換性のために残されてはいるが、「EPUB制作者は接頭辞なしのプロパティを使用するべきで、リーディングシステム（EPUBリーダー）は現行のCSS仕様をサポートするべき」、「Working Groupは、EPUBの次のメジャーバージョンでこれらの接頭辞付きプロパティをサポートする見込みがないため、現在これらの接頭辞付きプロパティを使用しているEPUB制作者は、サポートが可能になり次第、接頭辞なしバージョンに移行することを推奨する」とのことである（[$6.3.1.3 Prefixed properties](https://www.w3.org/TR/epub-33/#sec-css-prefixed)）。
+2023年12月、W3Cは最新のEPUB仕様となる[EPUB 3.3](https://www.w3.org/TR/epub-33/)を勧告した。そこではCSS仕様との関係について、以下のように規定している。
 
-となると各社のEPUBリーダーが現行のCSS仕様を、どれだけサポートしているのか、本当に`-epub-`接頭辞付きプロパティは使わなくてもよいのかという疑問が湧いてくる。そこで、W3Cによる[CSS Snapshot 2023](https://www.w3.org/TR/css-2023/) でCSSの公式的な定義とされたCSSモジュールを中心にチェックすべきCSSモジュールのリストを作成した上で、実際に各社EPUBリーダーがどれだけ準拠しているのかテストしてみた。
+> [§1.3.3 Relationship to CSS](https://www.w3.org/TR/epub-33/#sec-overview-relations-css)
+> 
+> EPUB 3 supports CSS as defined by the CSS Working Group Snapshot [[csssnapshot]](https://www.w3.org/TR/CSS/). EPUB 3 also maintains some prefixed CSS properties, to ensure consistent support for global languages.
+> 
+> 和訳：**§1.3.3 CSSとの関係**　EPUB3は、CSS Working Group Snapshot [[csssnapshot]](https://www.w3.org/TR/CSS/)で定義されているCSSをサポートします。EPUB3は、グローバル言語のための一貫したサポートを保証するために、いくつかの接頭辞付きのCSSプロパティも維持します。
 
-テストの方法をもう少し詳しく説明しよう。まずチェックするCSSモジュールは、以下の基準によって選定した（選定結果は2-1-2参照）。
+上記にある “Snapshot” とは[CSS Snapshot 2023](https://www.w3.org/TR/CSS/)を指す。かつてバージョン2まで、CSS仕様は単一の仕様書ですべてのプロパティを規定していた。しかしバージョン3からは飛躍的に規模が大きくなったことに伴い、機能や目的ごとにモジュールに分けることにし、更新のペースはそれぞれの状況にあわせることになった。ところがこの方法ではモジュールごとにバラバラに更新されるため、仕様全体の状況が把握しづらくなる。そこで考え出されたのが、あらかじめ安定レベルごとにモジュールを分類したリストを作成し、これを1年ごとに更新していく方法だ。これが上記で述べられている “snapshot” という方法であり、その2023年版が前述の “CSS Snapshot 2023” なのである。そこでは仕様の安定レベルが以下の3段階に分類されている。
 
-1. CSSの公式的な定義に含まれるCSSモジュール
-2. かなり安定しているが実装経験が限定的なCSSモジュール
-3. 大まかな相互運用性のあるCSSモジュール
-4. CSS Snapshot 2023 に載っていないが、最新のブラウザで利用できるもの
+1. [CSSの公式的な定義に含まれるCSSモジュール（Cascading Style Sheets (CSS) — The Official Definition）](https://www.w3.org/TR/CSS/#css-official)
+2. [かなり安定しているが実装経験が限定的なCSSモジュール（Fairly Stable Modules with limited implementation experience）](https://www.w3.org/TR/CSS/#fairly-stable)
+3. [大まかな相互運用性のあるCSSモジュール（Modules with Rough Interoperability）](https://www.w3.org/TR/CSS/#rough-interop)
 
-つぎに、選定したCSSモジュールごとに、対応の可否を一目で識別できるテスト用EPUBファイルを制作した。これは以下のリポジトリで公開しているので、お読みの方はぜひ自分でも試していただきたい（なお、ライセンスは[CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/deed.ja)で、著作権を放棄している）。
+上記EPUB 3.3の引用にある「Snapshotで定義されているCSS」とは、上記のうち1のことだ。つまり、EPUB 3.3では上記1でリストアップされているCSSモジュールが使えることが求められている。では、**現在我が国で利用されている各社EPUBリーダーは、これらのCSSモジュールをサポートしているのだろうか？**
+
+もうひとつ、上記EPUB 3.3の引用で分かるように、旧仕様で許されていた`-epub-`接頭辞付きのCSSプロパティは、最新仕様でも後方互換性のために残されている。とはいえ、[§6.3.1.3 Prefixed properties](https://www.w3.org/TR/epub-33/#sec-css-prefixed)で、「EPUB制作者は接頭辞なしのプロパティを使用するべきで、リーディングシステム（EPUBリーダー）は現行のCSS仕様をサポートするべき」、「Working Groupは、EPUBの次のメジャーバージョンでこれらの接頭辞付きプロパティをサポートする見込みがないため、現在これらの接頭辞付きプロパティを使用しているEPUB制作者は、サポートが可能になり次第、接頭辞なしバージョンに移行することを推奨する」と規定されている。
+
+つまりEPUB 3.3では、接頭辞は使わないことが推奨されている。では、**現在使われている各社EPUBリーダーは、`-epub-`接頭辞付きプロパティなしで、本当に問題はないのだろうか？**　これらのことを実際にテストすれば、我が国におけるEPUBリーダーの現状を知ることができる、そのように私達は考えたわけである。
+
+テストの方法をもう少し詳しく説明しよう。上記[CSS Snapshot 2023](https://www.w3.org/TR/css-2023/) にある3つに加え、そこに載っていないが最新のブラウザで利用できるCSSモジュールを加え、全部で4つの基準によってCSSモジュールを選定することにした（→2-1-2）。
+
+つぎに、選定したCSSモジュールごとに、対応の可否を一目で識別できるテスト用EPUBファイルを制作した。これは以下のリポジトリで公開しているので、お読みの方はぜひご自分でも試していただきたい（なお、ライセンスは[CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/deed.ja)で、著作権を放棄している）。
 
 - [EPUBリーダーのCSS仕様適合性テスト](https://github.com/jagat-xpub/epub-css-test/tree/main)
 
-最後に、これらのテストベッドとなるEPUBリーダーを選定し、当研究会のメンバーごとに割り振ってテストを開始（テストしたEPUBリーダーは2-1-3参照）した。各担当者は前述テスト用EPUBファイルを自分が担当するEPUBリーダーにサイドロードし、テスト結果を以下のGoogleスプレッドシートに記録していったのである。
+最後に、テストベッドとなるEPUBリーダーを選定し、当研究会のメンバーごとに割り振ってテストを開始した。各担当者は前述テスト用EPUBファイルを自分が担当するEPUBリーダーにサイドロードし、テスト結果を以下のGoogleスプレッドシートに記録していったのである。
 
 - [EPUBリーダー表示チェック（JAGAT次世代パブリッシング研究会）2023](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?usp=sharing)
 
-こうして得られたテスト結果をなるべく分かりやすく報告するのが、本章のミッションである。
+試したEPUBリーダーの数は全部で54にのぼる。そのうち、報告に掲載したリーダーが36（→2-1-3-1）、掲載しなかったものが18（→2-1-3-2）だ。この掲載しなかったというのは、テストファイルに不具合がみつかり、テストの一部を更新したことに伴い、結果に不具合を含んでいることから掲載しないことにしたものだ（○○で詳述）。
 
-### 2-1-2 選定したCSSモジュール
+ただし、実際に調査結果をまとめてみると、あまりにテスト項目が多すぎて報告書に収まりきらないことが判明した。やむなくEPUB 3.3にいう「Snapshotで定義されているCSS」、つまり前述「CSSの公式的な定義に含まれるCSSモジュール」に絞って結果を掲載することにした。その他の結果を知りたい方は、申し訳ないが上記「EPUBリーダー表示チェック（JAGAT次世代パブリッシング研究会）2023」をご参照いただきたい。
 
-#### CSSの公式的な定義に含まれるCSSモジュール
 
-「2023年現在の CSS （ Cascading Style Sheets ）は、 以下に挙げる仕様で定義される」（[CSS Snapshot 2023 - §2.1. Cascading Style Sheets (CSS) — The Official Definition](https://www.w3.org/TR/css-2023/#css-official)）
+
+### 2-1-2 テスト結果を掲載したCSSモジュール
+
+前述したように、本報告書では[CSS Snapshot 2023](https://www.w3.org/TR/CSS/)のうち、[2.1. Cascading Style Sheets (CSS) — The Official Definition（CSSの公式的な定義に含まれるCSSモジュール）](https://www.w3.org/TR/CSS/#css-official)にあるものだけを報告の対象とした。
+
+ただし、そのうち以下はあまりに基礎的な仕様であり、実装の可否を調べるまでもないのでテストからは外している。
 
 - [CSS Level 2, latest revision](https://www.w3.org/TR/CSS2/) (including errata)
 - [CSS Syntax Level 3](https://www.w3.org/TR/css-syntax-3/)
 - [CSS Style Attributes](https://www.w3.org/TR/css-style-attr/)
 - [Media Queries Level 3](https://www.w3.org/TR/css3-mediaqueries/)
+- [CSS Namespaces](https://www.w3.org/TR/css-namespaces/)
+- [CSS Box Model Level 3](https://www.w3.org/TR/css-box-3/)
+- [CSS Easing Functions Level 1](https://www.w3.org/TR/css-easing-1/)
+
+のこりを本報告書の対象とした。以下に仕様へのリンクとともに挙げる。全部で17のモジュール、61のCSS機能である。
+
 - [CSS Conditional Rules Level 3](https://www.w3.org/TR/css-conditional-3/)
   - @supports ルール
 - [Selectors Level 3](https://www.w3.org/TR/selectors-3/)
@@ -53,7 +74,6 @@ lang: 'ja'
   - :not() 擬似クラス
   - ::first-line, ::first-letter, ::before, ::after 擬似要素
   - 後続兄弟結合子 `E ~ F`
-- [CSS Namespaces](https://www.w3.org/TR/css-namespaces/)
 - [CSS Cascading and Inheritance Level 4](https://www.w3.org/TR/css-cascade-4/)
   - all プロパティ
   - プロパティの値 initial, unset, revert
@@ -65,7 +85,6 @@ lang: 'ja'
     - Q
 - [CSS Custom Properties for Cascading Variables Module Level 1](https://www.w3.org/TR/css-variables-1/)
   - CSS変数
-- [CSS Box Model Level 3](https://www.w3.org/TR/css-box-3/)
 - [CSS Color Level 4](https://www.w3.org/TR/css-color-4/)
   - opacity プロパティ
   - rgb() 関数のコンマなし形式　例: rgb(0 255 0 / .5)
@@ -117,7 +136,6 @@ lang: 'ja'
   - mix-blend-mode プロパティ
   - isolation プロパティ
   - background-blend-mode プロパティ
-- [CSS Easing Functions Level 1](https://www.w3.org/TR/css-easing-1/)
 - [CSS Counter Styles Level 3](https://www.w3.org/TR/css-counter-styles-3/)
   - @counter-style ルール
   - 定義済みカウンタースタイル
