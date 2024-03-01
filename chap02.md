@@ -19,9 +19,9 @@ lang: 'ja'
 > 
 > 和訳：**§1.3.3 CSSとの関係**　EPUB3は、CSS Working Group Snapshot [[csssnapshot]](https://www.w3.org/TR/CSS/)で定義されているCSSをサポートします。EPUB3は、グローバル言語のための一貫したサポートを保証するために、いくつかの接頭辞付きのCSSプロパティも維持します。
 
-上記にある “CSS Snapshot” とはなんだろう。かつてバージョン2まで、CSS仕様は単一の仕様書ですべてのプロパティを規定していた。しかしその次のバージョン3では飛躍的に規模が大きくなることが確実になった。そこでCSS Working Groupは、仕様を機能や目的ごとの「モジュール」に分割することにし、更新のペースはモジュールごとにまかせることになった。ところが更新のペースがバラバラになると、今度はCSS仕様全体の状況が把握しづらくなってしまう。そこで考え出したのが、安定レベルごとにモジュールを分類したリストを特定のURLで公開し、これを1年ごとに更新していくという方法だ。
+上記にある “CSS Working Group Snapshot” とはなんだろう。かつてバージョン2まで、CSS仕様は単一の仕様書ですべてのプロパティを規定していた。しかしその次のバージョン3では飛躍的に規模が大きくなることが確実になった。そこで審議するCSS Working Groupは、仕様を機能や目的ごとの「モジュール」に分割することにし、更新のペースはモジュールごとにまかせることにした。ところが更新のペースがバラバラになると、今度はCSS仕様全体の状況が把握しづらくなってしまう。そこで考え出されたのが、安定レベルごとにモジュールを分類したリストを特定のURLで公開し、これを1年ごとに更新していくという方法だ。
 
-本稿を執筆している2024年3月では、前述した`https://www.w3.org/TR/CSS/`にジャンプすると“CSS Snapshot 2023” というタイトルが表示される。しかし、今から1年後の2025年3月に同じURLをクリックすると “CSS Snapshot 2024” になっており、リストの内容もその時の実装状況を反映して変わっているだろう。これが “CSS Snapshot” という方法なのである。
+本稿を執筆している2024年3月では、前述した`https://www.w3.org/TR/CSS/`にジャンプすると“CSS Snapshot 2023” というタイトルが表示される。しかし、今から1年後の2025年3月に同じURLをクリックすると “CSS Snapshot 2024” になっており、リストの内容もその時の実装状況を反映して変わっているだろう。これが “CSS Working Group Snapshot” という方法なのである（なお、“CSS Snapshot 2023”のパーマネント・リンクは[こちら](https://www.w3.org/TR/css-2023/)）。
 
 そこで重要になるのが安定性のレベル分けだが、以下の3段階に分類されることになっている。
 
@@ -31,33 +31,27 @@ lang: 'ja'
 
 前掲EPUB 3.3の引用にある「CSS Working Group Snapshotで定義されているCSS」とは、上記のうち1のことだ。つまり、EPUB 3.3では上記1でリストアップされているCSSモジュールが使えることが求められている。では、**現在我が国で利用されている各社EPUBリーダーは、これらのCSSモジュールをサポートしているのだろうか？**
 
-もうひとつ、前掲の引用で分かるように、旧仕様で許されていた`-epub-`接頭辞付きのCSSプロパティは、最新仕様でも後方互換性のために残されている。とはいえ、[§6.3.1.3 Prefixed properties](https://www.w3.org/TR/epub-33/#sec-css-prefixed)で、「EPUB制作者は接頭辞なしのプロパティを使用するべきで、リーディングシステム（EPUBリーダー）は現行のCSS仕様をサポートするべき」、「Working Groupは、EPUBの次のメジャーバージョンでこれらの接頭辞付きプロパティをサポートする見込みがないため、現在これらの接頭辞付きプロパティを使用しているEPUB制作者は、サポートが可能になり次第、接頭辞なしバージョンに移行することを推奨する」と規定されている。
+もうひとつ、前掲の引用で分かるように、旧仕様で許されていた`-epub-`接頭辞付きのCSSプロパティは、最新仕様でも後方互換性のために残された。とはいえ、[§6.3.1.3 Prefixed properties](https://www.w3.org/TR/epub-33/#sec-css-prefixed)で、「EPUB制作者は接頭辞なしのプロパティを使用するべきで、リーディングシステム（EPUBリーダー）は現行のCSS仕様をサポートするべき」、「Working Groupは、EPUBの次のメジャーバージョンでこれらの接頭辞付きプロパティをサポートする見込みがないため、現在これらの接頭辞付きプロパティを使用しているEPUB制作者は、サポートが可能になり次第、接頭辞なしバージョンに移行することを推奨する」と規定されている。
 
 つまりEPUB 3.3では、接頭辞は使わないことが推奨されている。では、**現在使われている各社EPUBリーダーは、`-epub-`接頭辞付きプロパティなしで、本当に問題はないのだろうか？**
 
-これらのことを実際にテストすることにより、我が国で使われているEPUBリーダーがどの程度EPUB 3.3に適合しているのか分かる。それだけではない、EPUB 3.3は国際規格だ。ということは、このテストによって「日本のEPUBリーダーの国際的な立ち位置」をも浮き彫りになるだろう、そのように私達は考えた。
+これらのことを実際にテストすることによって現在使われているEPUBリーダーの状況を知ることができる。それだけではない、EPUB 3.3は国際規格だ。ということは、このテストにより「日本のEPUBリーダーの状況」をも明らかにできるのではないか、そのように私達は考えた。
 
-テストの方法をもう少し詳しく説明しよう。上記[CSS Snapshot 2023](https://www.w3.org/TR/css-2023/) にある3つに加え、そこに載っていないが最新のブラウザで利用できるCSSモジュールを加え、全部で4つの基準によってCSSモジュールを選定することにした（→2-1-2）。
+テストの方法をもう少し詳しく説明しよう。上記[CSS Snapshot 2023](https://www.w3.org/TR/css-2023/) にある3つに加え、そこに載っていないが最新のブラウザで利用できるCSSモジュールを加え、全部で4つの基準によってCSSモジュールを選定することにした。
 
 つぎに、選定したCSSモジュールごとに、対応の可否を一目で識別できるテスト用EPUBファイルを制作した。これは以下のリポジトリで公開しているので、お読みの方はぜひご自分でも試していただきたい（なお、ライセンスは[CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/deed.ja)で、著作権を放棄している）。
 
 - [EPUBリーダーのCSS仕様適合性テスト](https://github.com/jagat-xpub/epub-css-test/tree/main)
 
-最後に、テストベッドとなるEPUBリーダーを選定し、当研究会のメンバーごとに割り振ってテストを開始した。各担当者は前述テスト用EPUBファイルを自分が担当するEPUBリーダーにサイドロードし、テスト結果を以下のGoogleスプレッドシートに記録していったのである。
+最後に、テストベッドとなるEPUBリーダーを選定し、当研究会のメンバーごとに割り振ってテストを開始した。各担当者は前述テスト用EPUBファイルを自分が担当するEPUBリーダーにサイドロードし、テスト結果を以下のGoogleスプレッドシートに記録していったのである（前述「4つの規準」ごとにテストしたCSSモジュール名も、これを参照してほしい）。
 
-- [EPUBリーダー表示チェック（JAGAT次世代パブリッシング研究会）2023](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?usp=sharing)
+- [EPUBリーダー表示チェック（JAGAT次世代パブリッシング研究会）2023](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?usp=sharing)（以下、「EPUBリーダー表示チェック」）
 
-試したEPUBリーダーの数は全部で54にのぼる。そのうち、報告に掲載したリーダーが36（→2-1-3-1）、掲載しなかったものが18（→2-1-3-2）だ。この掲載しなかったというのは、一部のリーダーを対象にテストファイルの不具合がみつかってテストを部分的に更新したことに伴い、更新前のテストをしたリーダーを掲載しないことにしたものだ（○○で詳述）。
-
-ただし、実際に調査結果をまとめてみると、あまりにテスト項目が多すぎて報告書に収まりきらないことが判明した。やむなくEPUB 3.3にいう「Snapshotで定義されているCSS」、つまり前述「CSSの公式的な定義に含まれるCSSモジュール」に絞って結果を掲載することにした。その他の結果を知りたい方は、申し訳ないが上記「EPUBリーダー表示チェック（JAGAT次世代パブリッシング研究会）2023」をご参照いただきたい。
-
-
+ただし、実際に調査結果をまとめてみると、あまりにテスト項目が多すぎて報告書に収まりきらないことが判明した。やむなくEPUB 3.3にいう「Snapshotで定義されているCSS」、つまり前述「CSSの公式的な定義に含まれるCSSモジュール」に絞って、本報告書に結果を掲載することにした。その他のテスト結果を知りたい方は、申し訳ないが上記「EPUBリーダー表示チェック」をご参照いただきたい。
 
 ### 2-1-2 テスト結果を掲載したCSSモジュール
 
-前述したように、本報告書では[CSS Snapshot 2023](https://www.w3.org/TR/CSS/)のうち、[2.1. Cascading Style Sheets (CSS) — The Official Definition（CSSの公式的な定義に含まれるCSSモジュール）](https://www.w3.org/TR/CSS/#css-official)にあるものだけを報告の対象とした。
-
-ただし、そのうち以下はあまりに基礎的な仕様であり、実装の可否を調べるまでもないのでテストからは外している。
+前述したように、本報告書では[CSS Snapshot 2023](https://www.w3.org/TR/CSS/)のうち、[2.1. Cascading Style Sheets (CSS) — The Official Definition（CSSの公式的な定義に含まれるCSSモジュール）](https://www.w3.org/TR/CSS/#css-official)にあるものだけを対象としているが、そのうち以下はあまりに基礎的な仕様であり、実装の可否を調べるまでもないのでテストからは外した。
 
 - [CSS Level 2, latest revision](https://www.w3.org/TR/CSS2/) (including errata)
 - [CSS Syntax Level 3](https://www.w3.org/TR/css-syntax-3/)
@@ -153,13 +147,17 @@ lang: 'ja'
 
 ### 2-1-3 本調査におけるテスト環境の一覧
 
+今回の調査でテストしたEPUBリーダーの数は、全部で54にのぼる。そのうち、次項以降で詳細を述べるリーダーが36だ。これらの明細を<a href="#2-1-3-1-掲載したテスト環境の一覧">2-1-3-1 掲載したテスト環境の一覧</a>に掲げる。
+
+他方、54のうち18は掲載していない。その理由は一部テストファイルの不具合が判明し部分的に更新したことに伴い、それ以前のテスト結果は不正確であることから掲載しないことにしたものだ。この不具合については○○で詳述することにして、それらリーダーの明細を<a href="#2-1-3-2-掲載しなかったテスト環境の一覧">2-1-3-2 掲載しなかったテスト環境の一覧</a>に掲げる。
+
 #### 2-1-3-1 掲載したテスト環境の一覧
 
 <table>
   <thead>
     <tr>
       <th style="color:#434343" align="center">リーダー名</th>
-      <td bgcolor="#d9d9d9" align="center">略称</td>
+      <th style="color:#434343" align="center">略称</td>
       <th style="color:#434343" align="center">種別</th>
       <th style="color:#434343" align="center">機材名</th>
       <th style="color:#434343" align="center">OS ver.</th>
@@ -174,7 +172,7 @@ lang: 'ja'
       <td bgcolor="#c9daf8" align="center">Kindle</td>
       <td bgcolor="#c9daf8" align="center">Macアプリ</td>
       <td bgcolor="#c9daf8" align="center">Mac mini M1, 2020</td>
-      <td bgcolor="#c9daf8" align="center">macOS Sonoma 14.2.1</td>
+      <td bgcolor="#c9daf8" align="center">macOS 14.2.1</td>
       <td bgcolor="#c9daf8" align="center">3.74.0</td>
       <td bgcolor="#c9daf8" align="center">村上</td>
       <td bgcolor="#c9daf8" align="center">2023/12/28</td>
@@ -184,7 +182,7 @@ lang: 'ja'
       <td bgcolor="#c9daf8" align="center">Kindle</td>
       <td bgcolor="#c9daf8" align="center">Macアプリ</td>
       <td bgcolor="#c9daf8" align="center">Mac mini M1, 2020</td>
-      <td bgcolor="#c9daf8" align="center">macOS Sonoma 14.2.1</td>
+      <td bgcolor="#c9daf8" align="center">macOS 14.2.1</td>
       <td bgcolor="#c9daf8" align="center">7.0.0.100 (1.316222)</td>
       <td bgcolor="#c9daf8" align="center">村上</td>
       <td bgcolor="#c9daf8" align="center">2023/12/28</td>
@@ -243,7 +241,7 @@ lang: 'ja'
       <td bgcolor="#d9ead3" align="center">楽天Koboアプリ for iPhone *¹</td>
       <td bgcolor="#d9ead3" align="center">kobo-1</td>
       <td bgcolor="#d9ead3" align="center">iOSアプリ</td>
-      <td bgcolor="#d9ead3" align="center">iphone13mini</td>
+      <td bgcolor="#d9ead3" align="center">iPhone13mini</td>
       <td bgcolor="#d9ead3" align="center">iOS17.2.1</td>
       <td bgcolor="#d9ead3" align="center">10.4.3</td>
       <td bgcolor="#d9ead3" align="center">古門（追試）</td>
@@ -264,7 +262,7 @@ lang: 'ja'
       <td bgcolor="#c9daf8" align="center">kobo-3</td>
       <td bgcolor="#c9daf8" align="center">専用タブレット</td>
       <td bgcolor="#c9daf8" align="center">リーダーと同</td>
-      <td bgcolor="#c9daf8" valign="bottom">4.38.21908 (fac580f37d, 2023/08/22)</td>
+      <td bgcolor="#c9daf8" align="center">4.38.21908 (fac580f37d, 2023/08/22)</td>
       <td bgcolor="#c9daf8" align="center">4.37.21586 (42535ad976, 2023/07/06)</td>
       <td bgcolor="#c9daf8" align="center">仁科</td>
       <td bgcolor="#c9daf8" align="center">2023/07/25</td>
@@ -284,7 +282,7 @@ lang: 'ja'
       <td bgcolor="#c9daf8" align="center">kobo-3</td>
       <td bgcolor="#c9daf8" align="center">Macアプリ</td>
       <td bgcolor="#c9daf8" align="center">MacBook (Retina, 12-12inch, Early 2016)</td>
-      <td bgcolor="#c9daf8" align="center">macOS Monterey 12.6.6</td>
+      <td bgcolor="#c9daf8" align="center">macOS 12.6.6</td>
       <td bgcolor="#c9daf8" align="center">4.37.17113</td>
       <td bgcolor="#c9daf8" align="center">仁科</td>
       <td bgcolor="#c9daf8" align="center">2023/08/20</td>
@@ -294,7 +292,7 @@ lang: 'ja'
       <td bgcolor="#c9daf8" align="center">kobo-3</td>
       <td bgcolor="#c9daf8" align="center">Macアプリ</td>
       <td bgcolor="#c9daf8" align="center">MacBook (Retina, 12-12inch, Early 2016)</td>
-      <td bgcolor="#c9daf8" align="center">macOS Monterey 12.7.2</td>
+      <td bgcolor="#c9daf8" align="center">macOS 12.7.2</td>
       <td bgcolor="#c9daf8" align="center"> 4.37.17113</td>
       <td bgcolor="#c9daf8" align="center">仁科</td>
       <td bgcolor="#c9daf8" align="center">2024/01/30</td>
@@ -314,7 +312,7 @@ lang: 'ja'
       <td bgcolor="#d9ead3" align="center">→</td>
       <td bgcolor="#d9ead3" align="center" valign="top">Macアプリ</td>
       <td bgcolor="#d9ead3" align="center">MacBookAir M2 2022</td>
-      <td bgcolor="#d9ead3" align="center">13.6.3 (22G436)</td>
+      <td bgcolor="#d9ead3" align="center">macOS 13.6.3 (22G436)</td>
       <td bgcolor="#d9ead3" align="center">5.2 (5800.52)</td>
       <td bgcolor="#d9ead3" align="center">小形</td>
       <td bgcolor="#d9ead3" align="center">2023/05/23</td>
@@ -324,7 +322,7 @@ lang: 'ja'
       <td bgcolor="#d9ead3" align="center">→</td>
       <td bgcolor="#d9ead3" align="center">Macアプリ</td>
       <td bgcolor="#d9ead3" align="center">MacBook Pro 13-inch, 2019, Four Thunderbolt 3 ports</td>
-      <td bgcolor="#d9ead3" align="center">13.6.3 (22G436)</td>
+      <td bgcolor="#d9ead3" align="center">macOS 13.6.3 (22G436)</td>
       <td bgcolor="#d9ead3" align="center">5.2</td>
       <td bgcolor="#d9ead3" align="center">小形</td>
       <td bgcolor="#d9ead3" align="center">2024/02/07</td>
@@ -334,7 +332,7 @@ lang: 'ja'
       <td bgcolor="#d9ead3" align="center">→</td>
       <td bgcolor="#d9ead3" align="center">Macアプリ</td>
       <td bgcolor="#d9ead3" align="center">MacBook Pro 13-inch, 2019, Four Thunderbolt 3 ports</td>
-      <td bgcolor="#d9ead3" align="center">13.6.3 (22G436)</td>
+      <td bgcolor="#d9ead3" align="center">macOS 13.6.3 (22G436)</td>
       <td bgcolor="#d9ead3" align="center">5.2</td>
       <td bgcolor="#d9ead3" align="center">小形</td>
       <td bgcolor="#d9ead3" align="center">2024/02/08</td>
@@ -344,7 +342,7 @@ lang: 'ja'
       <td bgcolor="#d9ead3" align="center">→</td>
       <td bgcolor="#d9ead3" align="center">Macアプリ</td>
       <td bgcolor="#d9ead3" align="center">MacBookAir M2 2022</td>
-      <td bgcolor="#d9ead3" align="center">14.1.1（23B81）</td>
+      <td bgcolor="#d9ead3" align="center">macOS 14.1.1（23B81）</td>
       <td bgcolor="#d9ead3" align="center">6.1</td>
       <td bgcolor="#d9ead3" align="center">小形</td>
       <td bgcolor="#d9ead3" align="center">2024/02/09</td>
@@ -354,7 +352,7 @@ lang: 'ja'
       <td bgcolor="#d9ead3" align="center">→</td>
       <td bgcolor="#d9ead3" align="center">Macアプリ</td>
       <td bgcolor="#d9ead3" align="center">MacBookAir M2 2023</td>
-      <td bgcolor="#d9ead3" align="center">14.1.1（23B81）</td>
+      <td bgcolor="#d9ead3" align="center">macOS 14.1.1（23B81）</td>
       <td bgcolor="#d9ead3" align="center">6.1</td>
       <td bgcolor="#d9ead3" align="center">小形</td>
       <td bgcolor="#d9ead3" align="center">2024/02/10</td>
@@ -364,7 +362,7 @@ lang: 'ja'
       <td bgcolor="#d9ead3" align="center">→</td>
       <td bgcolor="#d9ead3" align="center">Macアプリ</td>
       <td bgcolor="#d9ead3" align="center">MacBookAir M2 2022</td>
-      <td bgcolor="#d9ead3" align="center">13.4</td>
+      <td bgcolor="#d9ead3" align="center">macOS 13.4</td>
       <td bgcolor="#d9ead3" align="center">2.4.1</td>
       <td bgcolor="#d9ead3" align="center">小形</td>
       <td bgcolor="#d9ead3" align="center">2023/05/23</td>
@@ -374,7 +372,7 @@ lang: 'ja'
       <td bgcolor="#d9ead3" align="center">→</td>
       <td bgcolor="#d9ead3" align="center">Macアプリ</td>
       <td bgcolor="#d9ead3" align="center">MacBookAir M2 2022</td>
-      <td bgcolor="#d9ead3" align="center">14.1.1 (23B81)</td>
+      <td bgcolor="#d9ead3" align="center">macOS 14.1.1 (23B81)</td>
       <td bgcolor="#d9ead3" align="center">2.4.1</td>
       <td bgcolor="#d9ead3" align="center">小形</td>
       <td bgcolor="#d9ead3" align="center">2024/02/08</td>
@@ -384,7 +382,7 @@ lang: 'ja'
       <td bgcolor="#d9ead3" align="center">→</td>
       <td bgcolor="#d9ead3" align="center">Macアプリ</td>
       <td bgcolor="#d9ead3" align="center">MacBook Pro 13-inch, 2019, Four Thunderbolt 3 ports</td>
-      <td bgcolor="#d9ead3" align="center">13.6.3 (22G436)</td>
+      <td bgcolor="#d9ead3" align="center">macOS 13.6.3 (22G436)</td>
       <td bgcolor="#d9ead3" align="center">5.2</td>
       <td bgcolor="#d9ead3" align="center">小形</td>
       <td bgcolor="#d9ead3" align="center">2024/02/08</td>
@@ -504,7 +502,7 @@ lang: 'ja'
       <td bgcolor="#d9ead3" align="center">Vivliostyle</td>
       <td bgcolor="#d9ead3" align="center">ブラウザー・ポリフィル</td>
       <td bgcolor="#d9ead3" align="center">iPad第6世代</td>
-      <td bgcolor="#d9ead3" align="center">17.3.1</td>
+      <td bgcolor="#d9ead3" align="center">iPadOS 17.3.1</td>
       <td bgcolor="#d9ead3" align="center">2.27.0 / Safari (N/A)</td>
       <td bgcolor="#d9ead3" align="center">田嶋</td>
       <td bgcolor="#d9ead3" align="center">2024/02/13</td>
@@ -556,7 +554,7 @@ lang: 'ja'
       <td bgcolor="#c9daf8" align="center">Kindle for Android</td>
       <td bgcolor="#c9daf8" align="center">Androidアプリ</td>
       <td bgcolor="#c9daf8" align="center">Moto G30</td>
-      <td bgcolor="#c9daf8" align="center">Android　11</td>
+      <td bgcolor="#c9daf8" align="center">Android 11</td>
       <td bgcolor="#c9daf8" align="center">8.81.1.0 (1.3.290180.0)</td>
       <td bgcolor="#c9daf8" align="center">仁科</td>
       <td bgcolor="#c9daf8" align="center">2023/05/22</td>
@@ -565,7 +563,7 @@ lang: 'ja'
       <td bgcolor="#c9daf8" align="center">Kindle for Android</td>
       <td bgcolor="#c9daf8" align="center">Androidアプリ</td>
       <td bgcolor="#c9daf8" align="center">Galaxy Tab S8 Ultra</td>
-      <td bgcolor="#c9daf8" align="center">Android　13</td>
+      <td bgcolor="#c9daf8" align="center">Android 13</td>
       <td bgcolor="#c9daf8" align="center">8.81.1.0 (1.3.290180.0)</td>
       <td bgcolor="#c9daf8" align="center">仁科</td>
       <td bgcolor="#c9daf8" align="center">2023/722</td>
@@ -574,7 +572,7 @@ lang: 'ja'
       <td bgcolor="#c9daf8" align="center">Kindle for Android</td>
       <td bgcolor="#c9daf8" align="center">Androidアプリ</td>
       <td bgcolor="#c9daf8" align="center">Xperia 10 IV</td>
-      <td bgcolor="#c9daf8" align="center">Android　13</td>
+      <td bgcolor="#c9daf8" align="center">Android 13</td>
       <td bgcolor="#c9daf8" align="center">8.81.1.0 (1.3.290180.0)</td>
       <td bgcolor="#c9daf8" align="center">木龍</td>
       <td bgcolor="#c9daf8" align="center">2023/07/25</td>
@@ -593,7 +591,7 @@ lang: 'ja'
       <td bgcolor="#c9daf8" align="center">専用タブレット</td>
       <td bgcolor="#c9daf8" align="center">リーダーと同</td>
       <td bgcolor="#c9daf8" align="center">専用タブレット</td>
-      <td bgcolor="#fff2cc" align="center"> </td>
+      <td bgcolor="#c9daf8" align="center">5.15.1.1</td>
       <td bgcolor="#c9daf8" align="center">仁科</td>
       <td bgcolor="#c9daf8" align="center">2023/05/21</td>
     </tr>
@@ -637,7 +635,7 @@ lang: 'ja'
       <td bgcolor="#c9daf8" align="center">Kindle for Mac </td>
       <td bgcolor="#c9daf8" align="center">Macアプリ</td>
       <td bgcolor="#c9daf8" align="center">Macbook 12-inch, Early 2016</td>
-      <td bgcolor="#c9daf8" align="center">macOS Monterey 12.6.6</td>
+      <td bgcolor="#c9daf8" align="center">macOS 12.6.6</td>
       <td bgcolor="#c9daf8" align="center">1.40.1 (65624)</td>
       <td bgcolor="#c9daf8" align="center">仁科</td>
       <td bgcolor="#c9daf8" align="center">2023/05/22</td>
@@ -655,7 +653,7 @@ lang: 'ja'
       <td bgcolor="#c9daf8" align="center">Kindle Previewer3 (Mac)</td>
       <td bgcolor="#c9daf8" align="center">Macアプリ</td>
       <td bgcolor="#c9daf8" align="center">MacBook 12-inch, Early 2016</td>
-      <td bgcolor="#c9daf8" align="center">macOS Monterey 12.6.6</td>
+      <td bgcolor="#c9daf8" align="center">macOS 12.6.6</td>
       <td bgcolor="#c9daf8" align="center">3.72.0</td>
       <td bgcolor="#c9daf8" align="center">仁科</td>
       <td bgcolor="#c9daf8" align="center">2023/05/22</td>
@@ -716,6 +714,7 @@ lang: 'ja'
     </tr>
   </tbody>
 </table>
+
 - 1……4章掲載「EPUB内文字、画像、背景表示テスト」のみ画面表示ができず、機材をKindle Paperwhite（第7世代）に変更
 - 2……1.40.1 (65535) 20230822／2.0.0 (70301)に更新。とりあえずその他のEPUBビューア表示テストから確認
 - 3……分割ファイルで再テスト
