@@ -47,11 +47,11 @@ lang: 'ja'
 
 - [EPUBリーダー表示チェック（JAGAT次世代パブリッシング研究会）2023](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?usp=sharing)（以下、「EPUBリーダー表示チェック」）
 
-ただし、実際に調査結果をまとめてみると、あまりにテスト項目が多すぎて報告書に収まりきらないことが判明した。やむなくEPUB 3.3にいう「Snapshotで定義されているCSS」、つまり前述「CSSの公式的な定義に含まれるCSSモジュール」に絞って、本報告書に結果を掲載することにした。その他のテスト結果を知りたい方は、申し訳ないが上記「EPUBリーダー表示チェック」をご参照いただきたい。
+ただし、実際に調査結果をまとめてみると、あまりにテスト項目が多すぎて報告書に収まりきらないことが判明した。やむなくEPUB 3.3にいう「Snapshotで定義されているCSS」、つまりEPUB 3.3で使えるべき前述「CSSの公式的な定義に含まれるCSSモジュール」に絞って、本報告書に結果を掲載することにした。その他のテスト結果を知りたい方は、申し訳ないが上記「EPUBリーダー表示チェック」をご参照いただきたい。
 
 ### 2-1-2 テスト結果を掲載したCSSモジュール
 
-前述したように、本報告書では[CSS Snapshot 2023](https://www.w3.org/TR/CSS/)のうち、[2.1. Cascading Style Sheets (CSS) — The Official Definition（CSSの公式的な定義に含まれるCSSモジュール）](https://www.w3.org/TR/CSS/#css-official)にあるものだけを対象としているが、そのうち以下はあまりに基礎的な仕様であり、実装の可否を調べるまでもないのでテストからは外した。
+前述したように、本報告書では[CSS Snapshot 2023](https://www.w3.org/TR/CSS/)のうち、[2.1. Cascading Style Sheets (CSS) — The Official Definition（CSSの公式的な定義に含まれるCSSモジュール）](https://www.w3.org/TR/CSS/#css-official)にあるものだけを報告するが、そのうち以下はあまりに基礎的な仕様であり、実装の可否を調べるまでもないのでテストからは外している。
 
 - [CSS Level 2, latest revision](https://www.w3.org/TR/CSS2/) (including errata)
 - [CSS Syntax Level 3](https://www.w3.org/TR/css-syntax-3/)
@@ -61,7 +61,7 @@ lang: 'ja'
 - [CSS Box Model Level 3](https://www.w3.org/TR/css-box-3/)
 - [CSS Easing Functions Level 1](https://www.w3.org/TR/css-easing-1/)
 
-のこりを本報告書の対象とした。以下に仕様へのリンクとともに挙げる。全部で17のモジュール、61のCSS機能である。
+のこりが本報告の対象となる。以下に仕様へのリンクとともに挙げる。全部で17のモジュール、61のCSS機能である。
 
 - [CSS Conditional Rules Level 3](https://www.w3.org/TR/css-conditional-3/)
   - @supports ルール
