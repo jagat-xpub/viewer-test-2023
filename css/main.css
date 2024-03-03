@@ -176,6 +176,11 @@ p {
   /* font-family: "Open Sans", "こぶりなゴシック StdN W1", "UD デジタル 教科書体 N-B", "Noto Sans JP"; */
 }
 
+/* 字下げなしの本文 */
+.no-indent p {
+  text-indent: 0em;
+}
+
 /* 箇条書き（リスト） */
 ul,
 ol {
