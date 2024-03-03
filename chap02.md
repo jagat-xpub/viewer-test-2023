@@ -19,7 +19,7 @@ lang: 'ja'
 > 
 > 和訳：**§1.3.3 CSSとの関係**　EPUB3は、CSS Working Group Snapshot [[csssnapshot]](https://www.w3.org/TR/CSS/)で定義されているCSSをサポートします。EPUB3は、グローバル言語のための一貫したサポートを保証するために、いくつかの接頭辞付きのCSSプロパティも維持します。
 
-上記にある “CSS Working Group Snapshot” とはなんだろう。かつてバージョン2まで、CSS仕様は単一の仕様書ですべてのプロパティを規定していた。しかしその次のバージョン3では飛躍的に規模が大きくなることが確実になった。そこで審議するCSS Working Groupは、機能や目的ごとの「モジュール」に仕様を分割することにし、更新はモジュールごとにすすめることにした。ところが更新のペースがバラバラになると、今度はCSS仕様全体の状況が把握しづらくなってしまう。そこで考え出されたのが、実装の安定レベルごとにモジュールを分類したリストを作成、これを特定のURLで公開することにし、リストを1年ごとに更新していくという方法だ。
+上記にある “CSS Working Group Snapshot” とはなんだろう。かつてバージョン2まで、CSS仕様は単一の仕様書ですべてのプロパティを規定していた。しかしその次のバージョン3では飛躍的に規模が大きくなることが確実になった。そこで審議するCSS Working Groupは、機能や目的ごとの「モジュール」に仕様を分割することにし、更新はモジュールごとにすすめることにした。ところが更新のペースがバラバラになると、今度はCSS仕様全体の状況が把握しづらくなってしまう。そこで考え出されたのが、実装の安定レベルごとにモジュールを分類したリストを作成、これを特定のURLで公開することにし、リストは1年ごとに更新していくという方法だ。
 
 本稿を執筆している2024年3月では、前述した`https://www.w3.org/TR/CSS/`にジャンプすると“CSS Snapshot 2023” というタイトルが表示される。しかし、今から1年後の2025年3月に同じURLをクリックすると “CSS Snapshot 2024” になっており、リストの内容もその時の実装状況を反映して変わっているだろう。これが “CSS Working Group Snapshot” という方法なのである（なお、“CSS Snapshot 2023”のパーマネント・リンクは[こちら](https://www.w3.org/TR/css-2023/)）。
 
@@ -59,7 +59,7 @@ lang: 'ja'
 
 ### 2-1-2 テスト結果を掲載したCSSモジュール
 
-前述したように、本報告書では[CSS Snapshot 2023](https://www.w3.org/TR/CSS/)のうち、[2.1. Cascading Style Sheets (CSS) — The Official Definition（CSSの公式的な定義に含まれるCSSモジュール）](https://www.w3.org/TR/CSS/#css-official)にあるものだけを報告するが、そのうち以下はあまりに基礎的な仕様であり、実装の可否を調べるまでもないのでテストからは外している。
+前述したように、本報告書では[CSS Snapshot 2023](https://www.w3.org/TR/CSS/)のうち、[2.1. Cascading Style Sheets (CSS) — The Official Definition（CSSの公式的な定義に含まれるCSSモジュール）](https://www.w3.org/TR/CSS/#css-official)にあるものだけを報告するが、そのうち以下はあまりに基礎的な仕様であり、実装の可否を調べるまでもないのでテストそのものから外している。
 
 - [CSS Level 2, latest revision](https://www.w3.org/TR/CSS2/) (including errata)
 - [CSS Syntax Level 3](https://www.w3.org/TR/css-syntax-3/)
@@ -69,7 +69,7 @@ lang: 'ja'
 - [CSS Box Model Level 3](https://www.w3.org/TR/css-box-3/)
 - [CSS Easing Functions Level 1](https://www.w3.org/TR/css-easing-1/)
 
-のこりが本報告の対象となる。以下に仕様へのリンクとともに挙げる。全部で17のモジュール、61のCSS機能である。
+のこりを次節以降で報告する。以下に仕様へのリンクとともに挙げる。全部で17のモジュール、61のCSS機能である。
 
 - [CSS Conditional Rules Level 3](https://www.w3.org/TR/css-conditional-3/)
   - @supports ルール
