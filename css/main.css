@@ -306,6 +306,28 @@ img[src$=".svg"] {
   margin-left: 1em;
 }
 
+/* 脚注 */
+.notetext {
+  float: footnote;
+  font-family: var(--main-font-family);
+  font-weight: 400;
+  font-feature-settings: normal;
+  font-size: 11px;
+  line-height: 15px;
+  text-indent: 0;
+}
+
+::footnote-marker {
+  content: "*" counter(footnote) " ";
+}
+
+::footnote-call {
+  content: "*" counter(footnote);
+  font-size: 0.8em;
+  position: relative;
+  inset-block-start: -0.5em;
+}
+
 /* 以降は第3章の説明で使用するスタイル */
 
 /* インライン画像の配置 */
