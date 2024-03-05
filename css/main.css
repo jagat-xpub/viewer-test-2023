@@ -312,8 +312,8 @@ img[src$=".svg"] {
   font-family: var(--main-font-family);
   font-weight: 400;
   font-feature-settings: normal;
-  font-size: 11px;
-  line-height: 15px;
+  font-size: 12Q;
+  line-height: 18Q;
   text-indent: 0;
 }
 
