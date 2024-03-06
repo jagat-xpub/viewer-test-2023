@@ -730,18 +730,56 @@ lang: 'ja'
 
 ### 2-2-1 はじめに：レイアウトエンジンの違いとテストとの関係
 
-テスト結果を報告する前に、まずレイアウトエンジンとは何か、これがCSS表示テストとどのような関係があるのかを説明する。
+テスト結果を報告する前に、まずレイアウトエンジンとは何か、そしてCSS表示テストとどのような関係があるのかを説明する。
 
-ここでいうレイアウトエンジンとは、文字や画像を特定のルールに基づき描画するプログラムのことだ。レンダリングエンジンともいう。たとえばインターネットブラウザの場合、前述ルールはHTML、CSS、JavaScriptになる。同じくEPUBもこれらのルールに基づくことから、EPUBリーダーでもインターネットブラウザのレイアウトエンジンが使われることも多い。
+ここでいうレイアウトエンジンとは、文字や画像を特定のルールに基づき描画するプログラムのことだ。レンダリングエンジンともいう。たとえばインターネットブラウザの場合、ルールはHTML、CSS、JavaScriptに当たる。EPUBも同じルールに基づくことから、EPUBリーダーでもインターネットブラウザのレイアウトエンジンが使われることが多い。とくに2011年10月に制定された[EPUB 3.0](https://idpf.org/epub/30/spec/epub30-overview.html)に先んじて、いち早く[同年7月](https://developer.mozilla.org/ja/docs/Web/CSS/writing-mode#%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6%E3%83%BC%E3%81%AE%E4%BA%92%E6%8F%9B%E6%80%A7)からCSSの縦書き用プロパティを実装したAppleの[WebKit](https://webkit.org/)は、EPUBリーダー用のレイアウトエンジンとしてよく使われることになった。<span class="notetext">ただし、`-webkit-`接頭辞が必要とされた。2-1-1で引用したEPUB 3.3[§1.3.3 Relationship to CSS](https://www.w3.org/TR/epub-33/#sec-overview-relations-css)の「いくつかの接頭辞付きのCSSプロパティ」とは、これを指す。</span>
 
-たとえば、Appleによるオープンソースである[WebKit](https://webkit.org/)を使った「楽天Koboアプリ for iPhone」「楽天Koboアプリ for Android」「ブック」「MURASAKI」「BOOK☆WALKER」がそうである。一般にレイアウトエンジンはそれ自体が巨大で複雑なプログラムであることから、オープンソースを利用することで開発コストを下げつつ、一定の品質を確保することが狙いと考えられる。<span class="notetext">ただし、AppleのiOSに関してはサードパーティーに対してセキュリティを理由にWebKitのみに利用を限定してることから、レイアウトエンジンは一択となる。</span>
+その背景には、WebKitが無料で利用できるオープンソースソフトウェア（以下、OSS）であることから、開発コストを下げつつ一定以上の品質を確保できたことが大きいと考えられる。本稿では、こうした現在使われているブラウザのレイアウトエンジンを利用したEPUBリーダーを一括して「モダンブラウザ系」と呼ぶことにする。
 
-他方、レイアウトエンジンは中枢となるモジュールであることから、これをアウトソーシングにすると独自機能の追加がむずかしくなるなど、開発の柔軟性が下がるデメリットが考えられる。これを嫌ってだろうか、独自のレイアウトエンジンを実装するEPUBリーダーも多い。代表的なのはKindle、他にもモバイル版以外の楽天kobo、honto、Kinoppy、Romancerがこれにあたる。
+他方、中枢となるモジュールであるレイアウトエンジンをアウトソーシングすれば、独自機能の追加がむずかしくなるなど開発の柔軟性が下がるデメリットが考えられる。これを嫌ってだろうか、独自のレイアウトエンジンを実装するEPUBリーダーも多い。代表的なのはKindle、他にもモバイル版以外の楽天kobo、honto、Kinoppy、Romancerがこれにあたる。本稿では、これら独自のレイアウトエンジンを使っているEPUBリーダーを「独自エンジン系」と呼ぶ。
+
+では、今回のCSS表示テストで対象としたEPUBリーダーは、どれがモダンブラウザ系で、どれが独自エンジン系なのだろう。
 
 
 
-
-
+<table>
+  <tr>
+    <td bgcolor="#d9d9d9" align="center">モダンブラウザ系</td>
+    <td bgcolor="#d9d9d9" align="center">独自エンジン</td>
+  </tr>
+  <tr>
+    <td bgcolor="#d9ead3" align="center">kobo-1</td>
+    <td bgcolor="#c9daf8" align="center">Kindle</td>
+  </tr>
+  <tr>
+    <td bgcolor="#d9ead3" align="center">kobo-2</td>
+    <td bgcolor="#c9daf8" align="center">kobo-3</td>
+  </tr>
+  <tr>
+    <td bgcolor="#d9ead3" align="center">ブック</td>
+    <td bgcolor="#c9daf8" align="center">honto</td>
+  </tr>
+  <tr>
+    <td bgcolor="#d9ead3" align="center">MURASAKI</td>
+    <td bgcolor="#c9daf8" align="center">Kinoppy</td>
+  </tr>
+  <tr>
+    <td bgcolor="#d9ead3" align="center">BOOK☆WALKER</td>
+    <td bgcolor="#c9daf8" align="center">Romancer</td>
+  </tr>
+  <tr>
+    <td bgcolor="#d9ead3" align="center">Bibi</td>
+    <td bgcolor="#c9daf8" align="center">超縦書</td>
+  </tr>
+  <tr>
+    <td bgcolor="#d9ead3" align="center">Vivliostyle Viewer</td>
+    <td bgcolor="#FFFFFF" align="center"></td>
+  </tr>
+  <tr>
+    <td bgcolor="#d9ead3" align="center">Thorium Reader</td>
+    <td bgcolor="#FFFFFF" align="center"></td>
+  </tr>
+</table>
 
 ### 2-2-2 メジャーなEPUBリーダーでサポートされているCSS機能
 
