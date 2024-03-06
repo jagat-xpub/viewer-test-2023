@@ -596,7 +596,7 @@ lang: 'ja'
       <td bgcolor="#c9daf8" align="center">Kindle Paperwhite Signature Edition *¹</td>
       <td bgcolor="#c9daf8" align="center">専用<br/>タブレット</td>
       <td bgcolor="#c9daf8" align="center">リーダーと同</td>
-      <td bgcolor="#c9daf8" align="center"></td>
+      <td bgcolor="#FFDEAD" align="center"></td>
       <td bgcolor="#c9daf8" align="center">5.15.1.1</td>
       <td bgcolor="#c9daf8" align="center">仁科</td>
       <td bgcolor="#c9daf8" align="center">2023/05/21</td>
@@ -606,7 +606,7 @@ lang: 'ja'
       <td bgcolor="#c9daf8" align="center">Windows<br/>アプリ</td>
       <td bgcolor="#c9daf8" align="center">N/A *⁴</td>
       <td bgcolor="#c9daf8" align="center">Windows 10 Home 21H2</td>
-      <td bgcolor="#c9daf8" align="center"></td>
+      <td bgcolor="#FFDEAD" align="center"></td>
       <td bgcolor="#c9daf8" align="center">田嶋</td>
       <td bgcolor="#c9daf8" align="center">2023/05/22</td>
     </tr>
@@ -614,7 +614,7 @@ lang: 'ja'
       <td bgcolor="#c9daf8" align="center">Kindle for PC</td>
       <td bgcolor="#c9daf8" align="center">Windows<br/>アプリ</td>
       <td bgcolor="#c9daf8" align="center">N/A *⁴</td>
-      <td bgcolor="#c9daf8" align="center"></td>
+      <td bgcolor="#FFDEAD" align="center"></td>
       <td bgcolor="#c9daf8" align="center">2.0.1 (70350)</td>
       <td bgcolor="#c9daf8" align="center">仁科</td>
       <td bgcolor="#c9daf8" align="center">2023/10/24</td>
@@ -623,7 +623,7 @@ lang: 'ja'
       <td bgcolor="#c9daf8" align="center">Kindle for PC</td>
       <td bgcolor="#c9daf8" align="center">Windows<br/>アプリ</td>
       <td bgcolor="#c9daf8" align="center">N/A *⁴</td>
-      <td bgcolor="#c9daf8" align="center"></td>
+      <td bgcolor="#FFDEAD" align="center"></td>
       <td bgcolor="#c9daf8" align="center">1.40.1 (65535)</td>
       <td bgcolor="#c9daf8" align="center">仁科</td>
       <td bgcolor="#c9daf8" align="center">2023/05/21</td>
@@ -632,7 +632,7 @@ lang: 'ja'
       <td bgcolor="#c9daf8" align="center">Kindle for PC *²</td>
       <td bgcolor="#c9daf8" align="center">Windows<br/>アプリ</td>
       <td bgcolor="#c9daf8" align="center">N/A *⁴</td>
-      <td bgcolor="#c9daf8" align="center"></td>
+      <td bgcolor="#FFDEAD" align="center"></td>
       <td bgcolor="#c9daf8" align="center">2.0.0 (70301)</td>
       <td bgcolor="#c9daf8" align="center">木龍</td>
       <td bgcolor="#c9daf8" align="center">2023/08/22</td>
@@ -736,7 +736,7 @@ lang: 'ja'
 
 たとえば、Appleによるオープンソースである[WebKit](https://webkit.org/)を使った「楽天Koboアプリ for iPhone」「楽天Koboアプリ for Android」「ブック」「MURASAKI」「BOOK☆WALKER」がそうである。一般にレイアウトエンジンはそれ自体が巨大で複雑なプログラムであることから、オープンソースを利用することで開発コストを下げつつ、一定の品質を確保することが狙いと考えられる。<span class="notetext">ただし、AppleのiOSに関してはサードパーティーに対してセキュリティを理由にWebKitのみに利用を限定してることから、レイアウトエンジンは一択となる。</span>
 
-他方、レイアウトエンジンは中枢であることから、これをアウトソーシングにすると独自機能の追加がむずかしくなるなど、開発の柔軟性が下がるデメリットが考えられる。これを嫌ってだろうか、独自のレイアウトエンジンを実装するEPUBリーダーも多い。代表的なのはKindle、他にもモバイル版以外の楽天kobo、honto、Kinoppy、Romancerがこれにあたる。
+他方、レイアウトエンジンは中枢となるモジュールであることから、これをアウトソーシングにすると独自機能の追加がむずかしくなるなど、開発の柔軟性が下がるデメリットが考えられる。これを嫌ってだろうか、独自のレイアウトエンジンを実装するEPUBリーダーも多い。代表的なのはKindle、他にもモバイル版以外の楽天kobo、honto、Kinoppy、Romancerがこれにあたる。
 
 
 
