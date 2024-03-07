@@ -740,7 +740,7 @@ lang: 'ja'
 
 本稿では、現在Webの閲覧に使われている（つまりモダンな）ブラウザのレイアウトエンジンを利用したEPUBリーダーを、一括して**「モダンブラウザ系」**と呼ぶことにする。
 
-他方、レイアウトエンジンは中枢となるモジュールであり、これを外部から調達すれば独自機能の追加がむずかしくなるなど、開発の柔軟性が低減するデメリットが考えられる。これを嫌ってだろうか、コストをかけても独自のレイアウトエンジンを実装するEPUBリーダーも多い。本稿ではこれらを**「独自エンジン系」**と呼ぶ。
+他方、レイアウトエンジンは中枢となるモジュールであり、これを外部から調達すれば独自機能の追加がむずかしくなるなど、開発の柔軟性を損なうデメリットが考えられる。これを嫌ってだろうか、コストをかけても独自のレイアウトエンジンを実装するEPUBリーダーも多い。本稿ではこれらを**「独自エンジン系」**と呼ぶ。
 
 では、本テストで対象としたEPUBリーダーのうち、どれがモダンブラウザ系で、どれが独自エンジン系なのだろう。ここで本報告書でテストしたCSSモジュールは、“CSS Snapshot 2023” の中でも、最も実装が安定している「CSSの公式的な定義に含まれるCSSモジュール」であることを思い出してほしい。
 
@@ -748,9 +748,9 @@ lang: 'ja'
 
 こうして、本報告書でテストしたCSSモジュールを帰納法的なモノサシにして、表示できたEPUBリーダーがモダンブラウザ系、そうでなかったEPUBリーダーが独自エンジン系と分別できることになる。
 
-ただし、これだけで簡単に分別できるほど現実は甘くない。レイアウトエンジンのバージョンが関係するからだ。例を挙げて説明しよう。
+ただし、これだけで簡単に分別できるほど現実は甘くない。レイアウトエンジンのバージョンが関係するからだ。
 
-たとえば、超縦書はレイアウトエンジンにChromeのOSS版、[Chromium](https://www.chromium.org/chromium-projects/)を採用している<span class="notetext">EPUBビューア「超縦書」Windows版 よくある質問（BPS株式会社、baba、2017年6月）<https://techracho.bpsinc.jp/baba/2017_06_30/42515></span>。しかしテスト結果をみると、「Flexboxによる上下中央揃え」はサポートしているものの、「[CSS変数](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=1234705026&range=G43:H43)」や「[Grid Layout](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=1234705026&range=G124)」はサポートしていない。このことからおそらく2014年前後の古いChromiumを実装したまま、現在までレイアウトエンジンをアップデートしていなかったと推測される（メモ:根拠？）。これだけ古いと「モダン」の要件からははずれるだろう。そこで、ブラウザーのレイアウトエンジンを採用していても、超縦書は独自エンジン系に分類した。
+たとえば、超縦書はレイアウトエンジンにChromeのOSS版、[Chromium](https://www.chromium.org/chromium-projects/)を採用している<span class="notetext">EPUBビューア「超縦書」Windows版 よくある質問（BPS株式会社、baba、2017年6月）<https://techracho.bpsinc.jp/baba/2017_06_30/42515></span>。しかしテスト結果をみると、「Flexboxによる上下中央揃え」はサポートしているものの、「[CSS変数](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=1234705026&range=G43:H43)」や「[Grid Layout](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=1234705026&range=G124)」はサポートしていない。このことからおそらく2014年前後の古いChromiumを実装したまま、現在までレイアウトエンジンをアップデートしていなかったと推測される（メモ:根拠？）。これだけ古いと「モダン」の要件からははずれるだろう。そこで、ブラウザーのレイアウトエンジンを利用しているが、超縦書は独自エンジン系に分類することにした。
 
 このようにして、本報告書のテスト対象としたEPUBリーダーを、2-1-3-1所載の「略称」ごとにレイアウトエンジンで分別すると、以下の表のようになる。
 
