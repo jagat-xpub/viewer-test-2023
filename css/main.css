@@ -204,7 +204,7 @@ em {
 /* 強調（重要） */
 strong {
   font-weight: 900;
-  color: #b40;
+  color: #000080;
 }
 
 /* キーボードフォント */
@@ -223,7 +223,7 @@ hr.blankline {
 }
 
 a:link {
-  color: #00008B;
+  color: #800000;
   text-decoration: none;
 }
 
@@ -299,10 +299,24 @@ img[src$=".svg"] {
 }
 
 /* 図版右寄せ */
-.figure.right {
+/* .figure.right {
+  float: inline-end;
+  margin-left: 1em;
+} */
+
+/* 図版右寄せ */
+.figure-right {
   float: inline-end;
   margin-left: 1em;
 }
+
+.figcaption {
+  padding: 0.75lh;
+  font-size: 0.86rem;
+  font-family: var(--main-text-font);
+  line-height: 0.75lh;
+}
+
 
 /* 脚注 */
 .notetext {

@@ -34,3 +34,10 @@ tr:nth-child(even) {
   text-align: end;
   vertical-align: bottom;
 }
+
+/* 表のキャプション */
+caption {
+  caption-side: bottom;
+  padding: 0.5lh;
+  font-size: 0.86rem;
+}

@@ -28,6 +28,7 @@
   --main-text-font: "Noto Sans JP";
   --header-font: "Zen Maru Gothic";
   --code-font: "udevgothic-r"; /*コードフォント*/
+  
 
   /* ページマージン自動計算 */
   --page-body-width: calc(var(--base-font-size) * var(--letters-per-line));
