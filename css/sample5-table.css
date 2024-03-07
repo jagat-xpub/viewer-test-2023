@@ -10,7 +10,7 @@ table {
 }
 
 /* 表のフロート */
-  float-table {
+.float-table {
   float-reference: inline;
   float: inline-end;
   font-family: 'Roboto Condensed', sans-serif;

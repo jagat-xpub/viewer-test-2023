@@ -771,7 +771,7 @@ lang: 'ja'
 このようにして、本報告書のテスト対象としたEPUBリーダーを、2-1-3-1所載の「略称」を使ってレイアウトエンジンで分別したのが表1だ。
 
 <div style=margin-top:24.5Q>
-<div style="float-table">
+<div class="float-table">
   <table>
     <tr>
       <td style="margin-top:24.5Q;" bgcolor="#d9d9d9" align="center">モダンブラウザー系</td>
