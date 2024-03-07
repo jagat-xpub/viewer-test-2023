@@ -300,19 +300,22 @@ img[src$=".svg"] {
 
 /* 図版右寄せ */
 .figure-right {
+  float-reference: inline;
   float: inline-end;
   margin-left: 1.5rem;
-  margin-top: 1.5rem;
+  margin-top: 1rem;
   margin-bottom: 1.5rem;
 }
 
-.figcaption {
+figcaption {
+  text-align:center;
   padding: 0.75lh;
   font-size: 0.86rem;
   font-family: var(--main-text-font);
-  line-height: 0.75lh;
+  line-height: 0.5lh;
   font-feature-settings: "palt";
   margin-block-start: 0.5em;
+  
 }
 
 

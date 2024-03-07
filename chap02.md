@@ -738,7 +738,7 @@ lang: 'ja'
 
 その背景には、WebKitが一定の条件で無料利用できるオープンソースソフトウェア（以下、OSS）であることから、これを使えば開発コストを抑えられ、同時に日本語書籍に必須とされる縦書きをはじめ、さまざまな機能をすぐに実装できたことが大きいと考えられる。
 
-本稿では、Webの閲覧に現在使われている（つまりモダン<span class="notetext">「モダン」の定義を補足すると、WebにおけるCSS仕様の使われ方が大きく変わったのは、2014年〜2016年に実装がはじまった[CSS変数（カスタムプロパティ）](https://developer.mozilla.org/ja/docs/Web/CSS/var#%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6%E3%83%BC%E3%81%AE%E4%BA%92%E6%8F%9B%E6%80%A7)によってなので、これが使えるかどうかを尺度とした。</span>な）ブラウザーのレイアウトエンジンを利用したEPUBリーダーを、一括して**「モダンブラウザー系」**と呼ぶことにする。
+本稿では、Webの閲覧に現在使われている（つまりモダン<span class="notetext">「モダン」の定義を補足すると、WebにおけるCSS仕様の使われ方が大きく変わったのは、2014年〜2016年に実装がはじまった[CSS変数（カスタムプロパティ）](https://developer.mozilla.org/ja/docs/Web/CSS/var#%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6%E3%83%BC%E3%81%AE%E4%BA%92%E6%8F%9B%E6%80%A7)だ。そこでこれが使えるかどうかを尺度とした。</span>な）ブラウザーのレイアウトエンジンを利用したEPUBリーダーを、一括して**「モダンブラウザー系」**と呼ぶことにする。
 
 他方、レイアウトエンジンは中枢となるモジュールであり、これを外部から調達すれば独自機能の追加がむずかしくなるなど、開発の柔軟性を損なうデメリットが考えられる。これを嫌ってだろうか、コストをかけても独自のレイアウトエンジンを実装するEPUBリーダーも多い。本稿ではこれらを**「独自エンジン系」**と呼ぶ。
 
@@ -754,59 +754,65 @@ lang: 'ja'
 
 たとえば、超縦書はレイアウトエンジンにChromeのOSS版、[Chromium](https://www.chromium.org/chromium-projects/)を採用している<span class="notetext">EPUBビューア「超縦書」Windows版 よくある質問（BPS株式会社、baba、2017年6月）<https://techracho.bpsinc.jp/baba/2017_06_30/42515></span>。しかしテスト結果をみると、現在使われているブラウザでは安定的に実装されている「Flexboxによる上下中央揃え」はサポートしているものの、同じく「[CSS変数](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=1234705026&range=G43:H43)」や「[Grid Layout](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=1234705026&range=G124)」はサポートしていないことが分かる。
 
-そこで超縦書.exeを調べてみると製品バージョンは2.3.1で、更新日は2017年7月3日と分かる（図1）。
+そこで超縦書.exeを調べてみると、2017年7月3日に更新されたバージョン2.3.1だ（図1）。
 
-![図1 超縦書のプロパティ](img/chap2/fig-1.png){.figure-right width=240Q}
+<div class="figure-right">
+
+![図1 超縦書のプロパティ](img/chap2/fig-1.png){width=240}
+
+</div>
 
 さらにプログラムのフォルダを見ると、Qt5というフレームワークのライブラリが使われている。このうちQt5Core.dllのバージョン（5.6.1）とChromiumのバージョンには対応関係があり、ここから超縦書で使われたChromiumのバージョンは2015年9月にリリースされた45.0.2554.101と推測できる。<span class="notetext">Qt5とChromiumのバージョン対応については以下を参照。<br/>https://wiki.qt.io/QtWebEngine/ChromiumVersions<br/>また、Chrome 45のリリース日については以下を参照。<br/>https://chrome.softwaredownload.co.in/chrome-45-0-2454</span>
 
-実際にはChromiumをそのまま使うのでなくカスタマイズしているだろうから、確実にChrome 45とまで言えない。しかし、現行バージョンのタイムスタンプが2017年7月3日であり、使用しているChromiumはそれよりさらに古いことは確かだ。
+実際にはChromiumをそのまま使うのでなくカスタマイズしているだろうからChrome 45とは断定できない。しかし、現行バージョンのタイムスタンプが2017年7月3日であり、さらに使用しているChromiumはそれより古いことは確かだ。
 
-このことから、超縦書はかなり古いChromiumを実装したまま現在までアップデートしていなかったようだ。これだけ古いと「モダン」の要件からははずれる。そこで、ブラウザーのレイアウトエンジンを利用していても、超縦書は独自エンジン系に分類することにした。
+このことから、超縦書はかなり古いChromiumを実装したまま現在までアップデートしていなかったと言える。これだけ古いと「モダン」の要件からははずれる。そこで、ブラウザーのレイアウトエンジンを利用しているが、超縦書は独自エンジン系に分類することにした。
 
-このようにして、本報告書のテスト対象としたEPUBリーダーを、2-1-3-1所載の「略称」ごとにレイアウトエンジンで分別したのが以下の表だ。
-<div style="margin-top:24.5Q;">
-<table>
-  <tr >
-    <td  style="margin-top:24.5Q;" bgcolor="#d9d9d9" align="center">モダンブラウザー系</td>
-    <td bgcolor="#d9d9d9" align="center">独自エンジン</td>
-  </tr>
-  <tr>
-    <td bgcolor="#d9ead3" align="center">kobo-1</td>
-    <td bgcolor="#c9daf8" align="center">Kindle</td>
-  </tr>
-  <tr>
-    <td bgcolor="#d9ead3" align="center">kobo-2</td>
-    <td bgcolor="#c9daf8" align="center">kobo-3</td>
-  </tr>
-  <tr>
-    <td bgcolor="#d9ead3" align="center">ブック</td>
-    <td bgcolor="#c9daf8" align="center">honto</td>
-  </tr>
-  <tr>
-    <td bgcolor="#d9ead3" align="center">MURASAKI</td>
-    <td bgcolor="#c9daf8" align="center">Kinoppy</td>
-  </tr>
-  <tr>
-    <td bgcolor="#d9ead3" align="center">BOOK☆WALKER</td>
-    <td bgcolor="#c9daf8" align="center">Romancer</td>
-  </tr>
-  <tr>
-    <td bgcolor="#d9ead3" align="center">Bibi</td>
-    <td bgcolor="#c9daf8" align="center">超縦書</td>
-  </tr>
-  <tr>
-    <td bgcolor="#d9ead3" align="center">Vivliostyle Viewer</td>
-    <td bgcolor="#FFFFFF" align="center"></td>
-  </tr>
-  <tr>
-    <td bgcolor="#d9ead3" align="center">Thorium Reader</td>
-    <td bgcolor="#FFFFFF" align="center"></td>
-  </tr>
-<caption>表1 EPUBリーダーの分類</caption>
-</table>
+このようにして、本報告書のテスト対象としたEPUBリーダーを、2-1-3-1所載の「略称」を使ってレイアウトエンジンで分別したのが表1だ。
+
+<div style=margin-top:24.5Q>
+<div style="float-table">
+  <table>
+    <tr>
+      <td style="margin-top:24.5Q;" bgcolor="#d9d9d9" align="center">モダンブラウザー系</td>
+      <td bgcolor="#d9d9d9" align="center">独自エンジン系</td>
+    </tr>
+    <tr>
+      <td bgcolor="#d9ead3" align="center">kobo-1</td>
+      <td bgcolor="#c9daf8" align="center">Kindle</td>
+    </tr>
+    <tr>
+      <td bgcolor="#d9ead3" align="center">kobo-2</td>
+      <td bgcolor="#c9daf8" align="center">kobo-3</td>
+    </tr>
+    <tr>
+      <td bgcolor="#d9ead3" align="center">ブック</td>
+      <td bgcolor="#c9daf8" align="center">honto</td>
+    </tr>
+    <tr>
+      <td bgcolor="#d9ead3" align="center">MURASAKI</td>
+      <td bgcolor="#c9daf8" align="center">Kinoppy</td>
+    </tr>
+    <tr>
+      <td bgcolor="#d9ead3" align="center">BOOK☆WALKER</td>
+      <td bgcolor="#c9daf8" align="center">Romancer</td>
+    </tr>
+    <tr>
+      <td bgcolor="#d9ead3" align="center">Bibi</td>
+      <td bgcolor="#c9daf8" align="center">超縦書</td>
+    </tr>
+    <tr>
+      <td bgcolor="#d9ead3" align="center">Vivliostyle Viewer</td>
+      <td bgcolor="#FFFFFF" align="center"></td>
+    </tr>
+    <tr>
+      <td bgcolor="#d9ead3" align="center">Thorium Reader</td>
+      <td bgcolor="#FFFFFF" align="center"></td>
+    </tr>
+    <caption>表1 EPUBリーダーの分類</caption>
+  </table>
 </div>
-
+</div>
 
 --------
 
