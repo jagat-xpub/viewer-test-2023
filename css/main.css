@@ -299,15 +299,11 @@ img[src$=".svg"] {
 }
 
 /* 図版右寄せ */
-/* .figure.right {
-  float: inline-end;
-  margin-left: 1em;
-} */
-
-/* 図版右寄せ */
 .figure-right {
   float: inline-end;
-  margin-left: 1em;
+  margin-left: 1.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .figcaption {
@@ -315,6 +311,8 @@ img[src$=".svg"] {
   font-size: 0.86rem;
   font-family: var(--main-text-font);
   line-height: 0.75lh;
+  font-feature-settings: "palt";
+  margin-block-start: 0.5em;
 }
 
 
