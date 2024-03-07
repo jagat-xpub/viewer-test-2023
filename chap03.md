@@ -9,15 +9,15 @@ lang: 'ja'
 
 田嶋　淳
 
-## 本扉配置指定テスト
+## 3-1 本扉配置指定テスト
 
-### 調査の概要／目的
+### 3-1-1 調査の概要／目的
 
 ![扉タイトル](img/chap3/1-1_tobira.png "page-spread-leftを指定すると必ず見開き左側のページに配置される")
 
 　冊子体で綴じられた紙の本は、当たり前のことだが、見開きで読まれることを前提として作られてきた。このため、紙の本の体裁を引き継いで作られたリフロー型の電子書籍にも見開きを前提としたページ位置配置の規格がある。これは本扉、章扉などを見開き表示の際に縦書きならば左、横書きならば右に配置する指定に用いられる他、例えば絵画を題材として扱うような本で文中に挿入される見開きの図版を泣き別れにならないように表示させるために使われたりもする。これはEPUB内のOPFファイルにページ配置位置の指定を行うことで指定できるが、以前のテストの際には海外製のビューアを中心に未実装の例が目立った。これを踏まえ、今現在どういった状況にあるかを調査した。
 
-### ページ配置位置の指定方法
+### 3-1-2 ページ配置位置の指定方法
 
 　EPUBで見開き表示の際に各XHTMLファイルを左右どちらに配置するかを指定するには、EPUB内のOPFファイルのSPINEブロックに以下のような記述を行う必要がある。
 
@@ -32,9 +32,483 @@ lang: 'ja'
 
 「properties="page-spread-left"」が配置位置指定に該当する。「properties="page-spread-right"」なら右ページに配置、「properties="page-spread-left"」なら左ページに配置の指定となる。
 
-### テスト結果
+### 3-1-3 テスト結果
 
-＞表入る
+#### 3-1-3-1 本調査におけるテスト環境の一覧
+
+<table>
+  <tr>
+    <th style="color:#434343" align="center">リーダー名</th>
+    <th style="color:#434343" align="center">略称</th>
+    <th style="color:#434343" align="center">種別</th>
+    <th style="color:#434343" align="center">機材名</th>
+    <th style="color:#434343" align="center">OS ver.</th>
+    <th style="color:#434343" align="center">リーダーver.</th>
+    <th style="color:#434343" align="center">担当者</th>
+    <th style="color:#434343" align="center">テスト日</th>
+  </tr>
+  <tr>
+    <td bgcolor="#c9daf8" align="center">Kindle for Android</td>
+    <td bgcolor="#c9daf8" align="center">Kindle</td>
+    <td bgcolor="#c9daf8" align="center">Androidアプリ</td>
+    <td bgcolor="#c9daf8" align="center">Moto G30</td>
+    <td bgcolor="#c9daf8" align="center">Android 11</td>
+    <td bgcolor="#c9daf8" align="center">8.81.1.0 (1.3.290180.0)</td>
+    <td bgcolor="#c9daf8" align="center">仁科</td>
+    <td bgcolor="#c9daf8" align="center">2023/5/22</td>
+  </tr>
+  <tr>
+    <td bgcolor="#c9daf8" align="center">Kindle for Android</td>
+    <td bgcolor="#c9daf8" align="center">Kindle</td>
+    <td bgcolor="#c9daf8" align="center">Androidアプリ</td>
+    <td bgcolor="#c9daf8" align="center">Galaxy Tab S8 Ultra</td>
+    <td bgcolor="#c9daf8" align="center">Android 13</td>
+    <td bgcolor="#c9daf8" align="center">8.81.1.0 (1.3.290180.0)</td>
+    <td bgcolor="#c9daf8" align="center">仁科</td>
+    <td bgcolor="#c9daf8" align="center">2023/7/22</td>
+  </tr>
+  <tr>
+    <td bgcolor="#c9daf8" align="center">Kindle for Android</td>
+    <td bgcolor="#c9daf8" align="center">Kindle</td>
+    <td bgcolor="#c9daf8" align="center">Androidアプリ</td>
+    <td bgcolor="#c9daf8" align="center">Xperia 10 IV</td>
+    <td bgcolor="#c9daf8" align="center">Android 13</td>
+    <td bgcolor="#c9daf8" align="center">8.81.1.0 (1.3.290180.0)</td>
+    <td bgcolor="#c9daf8" align="center">木龍</td>
+    <td bgcolor="#c9daf8" align="center">2023/7/25</td>
+  </tr>
+  <tr>
+    <td bgcolor="#c9daf8" align="center">Kindle Fire HD 10 Plus</td>
+    <td bgcolor="#c9daf8" align="center">Kindle</td>
+    <td bgcolor="#c9daf8" align="center">専用タブレット</td>
+    <td bgcolor="#c9daf8" align="center">リーダーと同</td>
+    <td bgcolor="#c9daf8" align="center">FireOS 7.3.2.8</td>
+    <td bgcolor="#c9daf8" align="center">14.81.160 (1.3.290180)</td>
+    <td bgcolor="#c9daf8" align="center">仁科</td>
+    <td bgcolor="#c9daf8" align="center">2023/5/21</td>
+  </tr>
+  <tr>
+    <td bgcolor="#c9daf8" align="center">Kindle Paperwhite Signature Edition</td>
+    <td bgcolor="#c9daf8" align="center">Kindle</td>
+    <td bgcolor="#c9daf8" align="center">専用タブレット</td>
+    <td bgcolor="#c9daf8" align="center">リーダーと同</td>
+    <td bgcolor="#c9daf8" align="center"></td>
+    <td bgcolor="#c9daf8" align="center"></td>
+    <td bgcolor="#c9daf8" align="center">仁科</td>
+    <td bgcolor="#c9daf8" align="center">2023/5/21</td>
+  </tr>
+  <tr>
+    <td bgcolor="#c9daf8" align="center">Kindle for PC</td>
+    <td bgcolor="#c9daf8" align="center">Kindle</td>
+    <td bgcolor="#c9daf8" align="center">Windowsアプリ</td>
+    <td bgcolor="#c9daf8" align="center">N/A *¹</td>
+    <td bgcolor="#c9daf8" align="center">Windows 10 Home 21H2</td>
+    <td bgcolor="#c9daf8" align="center">1.40.1(65535)</td>
+    <td bgcolor="#c9daf8" align="center">田嶋</td>
+    <td bgcolor="#c9daf8" align="center">2023/5/22</td>
+  </tr>
+  <tr>
+    <td bgcolor="#c9daf8" align="center">Kindle for PC</td>
+    <td bgcolor="#c9daf8" align="center">Kindle</td>
+    <td bgcolor="#c9daf8" align="center">Windowsアプリ</td>
+    <td bgcolor="#c9daf8" align="center">GCR2070RGF-QCG</td>
+    <td bgcolor="#c9daf8" align="center">Kindle for PC</td>
+    <td bgcolor="#c9daf8" align="center">2.0.1（70350）</td>
+    <td bgcolor="#c9daf8" align="center">仁科</td>
+    <td bgcolor="#c9daf8" align="center">2023/10/24</td>
+  </tr>
+  <tr>
+    <td bgcolor="#c9daf8" align="center">Kindle for PC</td>
+    <td bgcolor="#c9daf8" align="center">Kindle</td>
+    <td bgcolor="#c9daf8" align="center">Windowsアプリ</td>
+    <td bgcolor="#c9daf8" align="center">GALLERIA ZA9C-R38</td>
+    <td bgcolor="#c9daf8" align="center">Kindle for PC</td>
+    <td bgcolor="#c9daf8" align="center">1.40.1 (65535)</td>
+    <td bgcolor="#c9daf8" align="center">仁科</td>
+    <td bgcolor="#c9daf8" align="center">2023/05/21</td>
+  </tr>
+  <tr>
+    <td bgcolor="#c9daf8" align="center">Kindle for PC</td>
+    <td bgcolor="#c9daf8" align="center">Kindle</td>
+    <td bgcolor="#c9daf8" align="center">Windowsアプリ</td>
+    <td bgcolor="#c9daf8" align="center">11 (Surface Pro 8)</td>
+    <td bgcolor="#c9daf8" align="center">Kindle for PC</td>
+    <td bgcolor="#c9daf8" align="center">2.0.0 (70301)</td>
+    <td bgcolor="#c9daf8" align="center">木龍</td>
+    <td bgcolor="#c9daf8" align="center">2023/8/22</td>
+  </tr>
+  <tr>
+    <td bgcolor="#c9daf8" align="center">Kindle for Mac</td>
+    <td bgcolor="#c9daf8" align="center">Kindle</td>
+    <td bgcolor="#c9daf8" align="center">Macアプリ</td>
+    <td bgcolor="#c9daf8" align="center">Macbook 12-inch, Early 2016</td>
+    <td bgcolor="#c9daf8" align="center">macOS Monterey 12.6.6</td>
+    <td bgcolor="#c9daf8" align="center">1.40.1 (65624)</td>
+    <td bgcolor="#c9daf8" align="center">仁科</td>
+    <td bgcolor="#c9daf8" align="center">2023/5/22</td>
+  </tr>
+  <tr>
+    <td bgcolor="#c9daf8" align="center">Kindle Previewer3 (Win)</td>
+    <td bgcolor="#c9daf8" align="center">Kindle</td>
+    <td bgcolor="#c9daf8" align="center">Windowsアプリ</td>
+    <td bgcolor="#c9daf8" align="center">GALLERIA ZA9C-R38</td>
+    <td bgcolor="#c9daf8" align="center"></td>
+    <td bgcolor="#c9daf8" align="center"></td>
+    <td bgcolor="#c9daf8" align="center">仁科</td>
+    <td bgcolor="#c9daf8" align="center">2023/5/22</td>
+  </tr>
+  <tr>
+    <td bgcolor="#c9daf8" align="center">Kindle Previewer3 (Mac)</td>
+    <td bgcolor="#c9daf8" align="center">Kindle</td>
+    <td bgcolor="#c9daf8" align="center">Macアプリ</td>
+    <td bgcolor="#c9daf8" align="center">Macbook 12-inch, Early 2016</td>
+    <td bgcolor="#c9daf8" align="center"></td>
+    <td bgcolor="#c9daf8" align="center">3.72.0</td>
+    <td bgcolor="#c9daf8" align="center">仁科</td>
+    <td bgcolor="#c9daf8" align="center">2023/5/22</td>
+  </tr>
+  <tr>
+    <td bgcolor="#c9daf8" align="center">楽天Koboアプリ for iPhone</td>
+    <td bgcolor="#c9daf8" align="center">kobo</td>
+    <td bgcolor="#c9daf8" align="center">iOSアプリ</td>
+    <td bgcolor="#c9daf8" align="center">iPhone13mini</td>
+    <td bgcolor="#c9daf8" align="center">iOS16.4.1（a)</td>
+    <td bgcolor="#c9daf8" align="center">10.3.7</td>
+    <td bgcolor="#c9daf8" align="center">古門</td>
+    <td bgcolor="#c9daf8" align="center">2023/5/20</td>
+  </tr>
+  <tr>
+    <td bgcolor="#c9daf8" align="center">楽天Koboアプリ for Android</td>
+    <td bgcolor="#c9daf8" align="center">kobo</td>
+    <td bgcolor="#c9daf8" align="center">Androidアプリ</td>
+    <td bgcolor="#c9daf8" align="center">Galaxy Tab S8 Ultra</td>
+    <td bgcolor="#c9daf8" align="center">Android 13</td>
+    <td bgcolor="#c9daf8" align="center">9.4.8.1</td>
+    <td bgcolor="#c9daf8" align="center">仁科</td>
+    <td bgcolor="#c9daf8" align="center">2023/8/20</td>
+  </tr>
+  <tr>
+    <td bgcolor="#c9daf8" align="center">Kobo Libra 2</td>
+    <td bgcolor="#c9daf8" align="center">kobo</td>
+    <td bgcolor="#c9daf8" align="center">専用タブレット</td>
+    <td bgcolor="#c9daf8" align="center">Kobo Libra 2</td>
+    <td bgcolor="#c9daf8" align="center"></td>
+    <td bgcolor="#c9daf8" align="center">4.37.21586（42535ad976）</td>
+    <td bgcolor="#c9daf8" align="center">仁科</td>
+    <td bgcolor="#c9daf8" align="center">2023/07/25</td>
+  </tr>
+  <tr>
+    <td bgcolor="#c9daf8" align="center">楽天Koboデスクトップ</td>
+    <td bgcolor="#c9daf8" align="center">kobo</td>
+    <td bgcolor="#c9daf8" align="center">Windowsアプリ</td>
+    <td bgcolor="#c9daf8" align="center">GALLERIA ZA9C-R38</td>
+    <td bgcolor="#c9daf8" align="center">Windows 10 Pro（22H2 19045.3208）</td>
+    <td bgcolor="#c9daf8" align="center">4.37.19051</td>
+    <td bgcolor="#c9daf8" align="center">仁科</td>
+    <td bgcolor="#c9daf8" align="center">2023/07/25</td>
+  </tr>
+  <tr>
+    <td bgcolor="#c9daf8" align="center">楽天Koboデスクトップ</td>
+    <td bgcolor="#c9daf8" align="center">kobo</td>
+    <td bgcolor="#c9daf8" align="center">Macアプリ</td>
+    <td bgcolor="#c9daf8" align="center">MacBook （Retina, 12-12inch, Early 2016)</td>
+    <td bgcolor="#c9daf8" align="center">macOS Monterey 12.6.6</td>
+    <td bgcolor="#c9daf8" align="center">4.37.17113</td>
+    <td bgcolor="#c9daf8" align="center">仁科</td>
+    <td bgcolor="#c9daf8" align="center">2023/08/20</td>
+  </tr>
+  <tr>
+    <td bgcolor="#c9daf8" align="center">ブック</td>
+    <td bgcolor="#c9daf8" align="center">ブック</td>
+    <td bgcolor="#c9daf8" align="center">iOSアプリ</td>
+    <td bgcolor="#c9daf8" align="center">iPhone13mini</td>
+    <td bgcolor="#c9daf8" align="center">iOS16.4.1（a)</td>
+    <td bgcolor="#c9daf8" align="center">N/A *²</td>
+    <td bgcolor="#c9daf8" align="center">古門</td>
+    <td bgcolor="#c9daf8" align="center">2023/5/20</td>
+  </tr>
+  <tr>
+    <td bgcolor="#c9daf8" align="center">ブック</td>
+    <td bgcolor="#c9daf8" align="center">ブック</td>
+    <td bgcolor="#c9daf8" align="center">iOSアプリ</td>
+    <td bgcolor="#c9daf8" align="center">iPad第6世代</td>
+    <td bgcolor="#c9daf8" align="center">iOS17.1.2</td>
+    <td bgcolor="#c9daf8" align="center">N/A *²</td>
+    <td bgcolor="#c9daf8" align="center">田嶋</td>
+    <td bgcolor="#c9daf8" align="center">2024/1/11</td>
+  </tr>
+  <tr>
+    <td bgcolor="#c9daf8" align="center">ブック</td>
+    <td bgcolor="#c9daf8" align="center">ブック</td>
+    <td bgcolor="#c9daf8" align="center">Macアプリ</td>
+    <td bgcolor="#c9daf8" align="center">MacBookAir M2 2022</td>
+    <td bgcolor="#c9daf8" align="center">13.6.3（22G436）</td>
+    <td bgcolor="#c9daf8" align="center">5.2 (5800.52)</td>
+    <td bgcolor="#c9daf8" align="center">小形</td>
+    <td bgcolor="#c9daf8" align="center">2024/01/05</td>
+  </tr>
+  <tr>
+    <td bgcolor="#c9daf8" align="center">MURASAKI</td>
+    <td bgcolor="#c9daf8" align="center">→</td>
+    <td bgcolor="#c9daf8" align="center">Macアプリ</td>
+    <td bgcolor="#c9daf8" align="center">MacBookAir M2 2022</td>
+    <td bgcolor="#c9daf8" align="center">13.4</td>
+    <td bgcolor="#c9daf8" align="center">2.4.1</td>
+    <td bgcolor="#c9daf8" align="center">小形</td>
+    <td bgcolor="#c9daf8" align="center">2023/05/23</td>
+  </tr>
+  <tr>
+    <td bgcolor="#c9daf8" align="center">honto電子書籍リーダー</td>
+    <td bgcolor="#c9daf8" align="center">honto</td>
+    <td bgcolor="#c9daf8" align="center">iOSアプリ</td>
+    <td bgcolor="#c9daf8" align="center">iPhone13mini</td>
+    <td bgcolor="#c9daf8" align="center">iOS16.4.1（a)</td>
+    <td bgcolor="#c9daf8" align="center">6.60.0</td>
+    <td bgcolor="#c9daf8" align="center">古門</td>
+    <td bgcolor="#c9daf8" align="center">2023/5/20</td>
+  </tr>
+  <tr>
+    <td bgcolor="#c9daf8" align="center">honto電子書籍リーダー</td>
+    <td bgcolor="#c9daf8" align="center">honto</td>
+    <td bgcolor="#c9daf8" align="center">iOSアプリ</td>
+    <td bgcolor="#c9daf8" align="center">iPad第6世代</td>
+    <td bgcolor="#c9daf8" align="center">iOS17.1.2</td>
+    <td bgcolor="#c9daf8" align="center">6.62.0</td>
+    <td bgcolor="#c9daf8" align="center">田嶋</td>
+    <td bgcolor="#c9daf8" align="center">2023/9/15</td>
+  </tr>
+  <tr>
+    <td bgcolor="#c9daf8" align="center">honto電子書籍リーダー</td>
+    <td bgcolor="#c9daf8" align="center">honto</td>
+    <td bgcolor="#c9daf8" align="center">Androidアプリ</td>
+    <td bgcolor="#c9daf8" align="center">Galaxy Tab S8 Ultra</td>
+    <td bgcolor="#c9daf8" align="center">Android 13</td>
+    <td bgcolor="#c9daf8" align="center">6.60.0</td>
+    <td bgcolor="#c9daf8" align="center">仁科</td>
+    <td bgcolor="#c9daf8" align="center">2023/8/20</td>
+  </tr>
+  <tr>
+    <td bgcolor="#c9daf8" align="center">BOOK☆WALKER</td>
+    <td bgcolor="#c9daf8" align="center">→</td>
+    <td bgcolor="#c9daf8" align="center">iOSアプリ</td>
+    <td bgcolor="#c9daf8" align="center">iPhone13mini</td>
+    <td bgcolor="#c9daf8" align="center">iOS16.4.1（a)</td>
+    <td bgcolor="#c9daf8" align="center">7.4.7</td>
+    <td bgcolor="#c9daf8" align="center">古門</td>
+    <td bgcolor="#c9daf8" align="center">2023/5/20</td>
+  </tr>
+  <tr>
+    <td bgcolor="#c9daf8" align="center">BOOK☆WALKER</td>
+    <td bgcolor="#c9daf8" align="center">→</td>
+    <td bgcolor="#c9daf8" align="center">iOSアプリ</td>
+    <td bgcolor="#c9daf8" align="center">iPad第6世代</td>
+    <td bgcolor="#c9daf8" align="center">iOS17.1.2</td>
+    <td bgcolor="#c9daf8" align="center">7.5.1</td>
+    <td bgcolor="#c9daf8" align="center">田嶋</td>
+    <td bgcolor="#c9daf8" align="center">2024/1/10</td>
+  </tr>
+  <tr>
+    <td bgcolor="#c9daf8" align="center">BOOK☆WALKER</td>
+    <td bgcolor="#c9daf8" align="center">→</td>
+    <td bgcolor="#c9daf8" align="center">Androidアプリ</td>
+    <td bgcolor="#c9daf8" align="center">Galaxy Tab S8 Ultra</td>
+    <td bgcolor="#c9daf8" align="center">Android 13</td>
+    <td bgcolor="#c9daf8" align="center">7.5.0</td>
+    <td bgcolor="#c9daf8" align="center">仁科</td>
+    <td bgcolor="#c9daf8" align="center">2023/8/21</td>
+  </tr>
+  <tr>
+    <td bgcolor="#c9daf8" align="center">Kinoppy for iOS</td>
+    <td bgcolor="#c9daf8" align="center">Kinoppy</td>
+    <td bgcolor="#c9daf8" align="center">iOSアプリ</td>
+    <td bgcolor="#c9daf8" align="center">iPhone13mini</td>
+    <td bgcolor="#c9daf8" align="center">iOSアプリ</td>
+    <td bgcolor="#c9daf8" align="center">3.9.17.415162200</td>
+    <td bgcolor="#c9daf8" align="center">古門</td>
+    <td bgcolor="#c9daf8" align="center">2023/10/23</td>
+  </tr>
+  <tr>
+    <td bgcolor="#c9daf8" align="center">Kinoppy for iOS</td>
+    <td bgcolor="#c9daf8" align="center">Kinoppy</td>
+    <td bgcolor="#c9daf8" align="center">iOSアプリ</td>
+    <td bgcolor="#c9daf8" align="center">iPad第6世代</td>
+    <td bgcolor="#c9daf8" align="center">iOS17.1.2</td>
+    <td bgcolor="#c9daf8" align="center">3.10.0.452243324</td>
+    <td bgcolor="#c9daf8" align="center">田嶋</td>
+    <td bgcolor="#c9daf8" align="center">2024/1/11</td>
+  </tr>
+  <tr>
+    <td bgcolor="#c9daf8" align="center">Kinoppy for Android</td>
+    <td bgcolor="#c9daf8" align="center">Kinoppy</td>
+    <td bgcolor="#c9daf8" align="center">Androidアプリ</td>
+    <td bgcolor="#c9daf8" align="center">Galaxy Tab S8 Ultra</td>
+    <td bgcolor="#c9daf8" align="center">Android 13</td>
+    <td bgcolor="#c9daf8" align="center">3.10.7(913557c)</td>
+    <td bgcolor="#c9daf8" align="center">仁科</td>
+    <td bgcolor="#c9daf8" align="center">2023/10/18</td>
+  </tr>
+  <tr>
+    <td bgcolor="#c9daf8" align="center">Kinoppy for Windows Desktop</td>
+    <td bgcolor="#c9daf8" align="center">Kinoppy</td>
+    <td bgcolor="#c9daf8" align="center">Windowsアプリ</td>
+    <td bgcolor="#c9daf8" align="center">N/A *¹</td>
+    <td bgcolor="#c9daf8" align="center">Windows 10 Home 21H2</td>
+    <td bgcolor="#c9daf8" align="center">3.2.19</td>
+    <td bgcolor="#c9daf8" align="center">田嶋</td>
+    <td bgcolor="#c9daf8" align="center">2023/5/23</td>
+  </tr>
+  <tr>
+    <td bgcolor="#c9daf8" align="center">Kinoppy for Mac</td>
+    <td bgcolor="#c9daf8" align="center">Kinoppy</td>
+    <td bgcolor="#c9daf8" align="center">Macアプリ</td>
+    <td bgcolor="#c9daf8" align="center">Macbook 12-inch, Early 2016</td>
+    <td bgcolor="#c9daf8" align="center">macOS Monterey 12.6.6</td>
+    <td bgcolor="#c9daf8" align="center">3.6.6 (Build 649561180)</td>
+    <td bgcolor="#c9daf8" align="center">仁科</td>
+    <td bgcolor="#c9daf8" align="center">2023/8/21</td>
+  </tr>
+  <tr>
+    <td bgcolor="#c9daf8" align="center">Romancer</td>
+    <td bgcolor="#c9daf8" align="center">Voyager</td>
+    <td bgcolor="#c9daf8" align="center">Webアプリ</td>
+    <td bgcolor="#c9daf8" align="center">Galaxy Tab S8 Ultra</td>
+    <td bgcolor="#c9daf8" align="center">Android 13</td>
+    <td bgcolor="#c9daf8" align="center">N/A *² </td>
+    <td bgcolor="#c9daf8" align="center">仁科</td>
+    <td bgcolor="#c9daf8" align="center">2023/7/23</td>
+  </tr>
+  <tr>
+    <td bgcolor="#c9daf8" align="center">Romancer</td>
+    <td bgcolor="#c9daf8" align="center">Voyager</td>
+    <td bgcolor="#c9daf8" align="center">Webアプリ</td>
+    <td bgcolor="#c9daf8" align="center">N/A *¹</td>
+    <td bgcolor="#c9daf8" align="center">Windows 10 Pro</td>
+    <td bgcolor="#c9daf8" align="center">N/A *² </td>
+    <td bgcolor="#c9daf8" align="center">仁科</td>
+    <td bgcolor="#c9daf8" align="center">2023/7/23</td>
+  </tr>
+  <tr>
+    <td bgcolor="#c9daf8" align="center">Bibi</td>
+    <td bgcolor="#c9daf8" align="center">→</td>
+    <td bgcolor="#c9daf8" align="center">Webアプリ</td>
+    <td bgcolor="#c9daf8" align="center">DELL</td>
+    <td bgcolor="#c9daf8" align="center">Windows 11 PRO</td>
+    <td bgcolor="#c9daf8" align="center">Chrome 113.0.5672.127(64ビット)*³</td>
+    <td bgcolor="#c9daf8" align="center">古門</td>
+    <td bgcolor="#c9daf8" align="center">2023/05/28</td>
+  </tr>
+  <tr>
+    <td bgcolor="#c9daf8" align="center">Bibi</td>
+    <td bgcolor="#c9daf8" align="center">→</td>
+    <td bgcolor="#c9daf8" align="center">Webアプリ</td>
+    <td bgcolor="#c9daf8" align="center">DELL</td>
+    <td bgcolor="#c9daf8" align="center">Windows 11 PRO</td>
+    <td bgcolor="#c9daf8" align="center">Edge 113.0.1774.57 (64ビット)*³</td>
+    <td bgcolor="#c9daf8" align="center">古門</td>
+    <td bgcolor="#c9daf8" align="center">2023/05/28</td>
+  </tr>
+  <tr>
+    <td bgcolor="#c9daf8" align="center">超縦書</td>
+    <td bgcolor="#c9daf8" align="center">→</td>
+    <td bgcolor="#c9daf8" align="center">Windowsアプリ</td>
+    <td bgcolor="#c9daf8" align="center">N/A</td>
+    <td bgcolor="#c9daf8" align="center">Windows 10 Home 21H2</td>
+    <td bgcolor="#c9daf8" align="center">2.3.1</td>
+    <td bgcolor="#c9daf8" align="center">田嶋</td>
+    <td bgcolor="#c9daf8" align="center">22023/5/23</td>
+  </tr>
+  <tr>
+    <td bgcolor="#c9daf8" align="center">Thorium Reader</td>
+    <td bgcolor="#c9daf8" align="center">Thorium</td>
+    <td bgcolor="#c9daf8" align="center">Windowsアプリ</td>
+    <td bgcolor="#c9daf8" align="center">N/A</td>
+    <td bgcolor="#c9daf8" align="center">Windows 11 PRO</td>
+    <td bgcolor="#c9daf8" align="center">2.3.0</td>
+    <td bgcolor="#c9daf8" align="center">古門</td>
+    <td bgcolor="#c9daf8" align="center">2023/09/25</td>
+  </tr>
+  <tr>
+    <td bgcolor="#c9daf8" align="center">Thorium Reader</td>
+    <td bgcolor="#c9daf8" align="center">Thorium</td>
+    <td bgcolor="#c9daf8" align="center">Macアプリ</td>
+    <td bgcolor="#c9daf8" align="center">MacBook Air (M1, 2020)</td>
+    <td bgcolor="#c9daf8" align="center">macOS12.6.7</td>
+    <td bgcolor="#c9daf8" align="center">2.2.0</td>
+    <td bgcolor="#c9daf8" align="center">田嶋</td>
+    <td bgcolor="#c9daf8" align="center">2023/08/25</td>
+  </tr>
+  <tr>
+    <td bgcolor="#c9daf8" align="center">Vivliostyle Viewer</td>
+    <td bgcolor="#c9daf8" align="center">Vivliostyle</td>
+    <td bgcolor="#c9daf8" align="center">Webアプリ</td>
+    <td bgcolor="#c9daf8" align="center">Mac mini M1, 2020</td>
+    <td bgcolor="#c9daf8" align="center">macOS 13.4</td>
+    <td bgcolor="#c9daf8" align="center">v2.25.0 / Chrome 113*³</td>
+    <td bgcolor="#c9daf8" align="center">村上</td>
+    <td bgcolor="#c9daf8" align="center">2023/5/23</td>
+  </tr>
+</table>
+
+- *1……自作機もあるWindows環境ではハードウェアを区別する意味はあまりないので省略
+- *2……バージョン番号を表示する機能がない
+- *3……ブラウザ上で動作するのでブラウザのバージョン名も併記
+
+#### 3-1-3-2 各ビューアの対応状況
+<table>
+  <tr>
+    <th style="color:#434343" align="center">Kindle</th>
+    <td bgcolor="#c9daf8" align="center">NG *¹</td>
+  </tr>
+  <tr>
+    <th style="color:#434343" align="center">Kobo</th>
+    <td bgcolor="#c9daf8" align="center">NA/OK *²</td>
+  </tr>
+  <tr>
+    <th style="color:#434343" align="center">ブック</th>
+    <td bgcolor="#c9daf8" align="center">NG</td>
+  </tr>
+  <tr>
+    <th style="color:#434343" align="center">MURASAKI</th>
+    <td bgcolor="#c9daf8" align="center">NA</td>
+  </tr>
+  <tr>
+    <th style="color:#434343" align="center">honto</th>
+    <td bgcolor="#c9daf8" align="center">NA/OK *²</td>
+  </tr>
+  <tr>
+    <th style="color:#434343" align="center">BOOK☆WALKER</th>
+    <td bgcolor="#c9daf8" align="center">NA/OK *²</td>
+  </tr>
+  <tr>
+    <th style="color:#434343" align="center">Kinoppy</th>
+    <td bgcolor="#c9daf8" align="center">OK</td>
+  </tr>
+  <tr>
+    <th style="color:#434343" align="center">Voyager</th>
+    <td bgcolor="#c9daf8" align="center">NG</td>
+  </tr>
+  <tr>
+    <th style="color:#434343" align="center">Bibi</th>
+    <td bgcolor="#c9daf8" align="center">NA</td>
+  </tr>
+  <tr>
+    <th style="color:#434343" align="center">超縦書</th>
+    <td bgcolor="#c9daf8" align="center">OK</td>
+  </tr>
+  <tr>
+    <th style="color:#434343" align="center">Thorium</th>
+    <td bgcolor="#c9daf8" align="center">NA</td>
+  </tr>
+  <tr>
+    <th style="color:#434343" align="center">Vivliostyle</th>
+    <td bgcolor="#c9daf8" align="center">OK</td>
+  </tr>
+</table>
+
+- *1 見開き表示を選択できないデバイスが多く、Android版、Windows版は横書きのみ見開きを選択できるがページ配置位置指定は効かない
+- *2 Android版のみ見開き表示モードがあり、配置位置指定も効く
+
+<br>
 
 　こちらはEPUB独自プロパティへの対応状況の調査となるため、「各OSで利用できるブラウザエンジンに依拠するもの」「独自レイアウトエンジンで動作するもの」への区分は設けず、対応状況を一覧表示した。また、見開き表示そのものに対応していないビューアも少なくないため、それに該当する場合は「NA」としている。
 
