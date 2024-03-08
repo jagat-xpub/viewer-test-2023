@@ -744,17 +744,17 @@ lang: 'ja'
 
 では、本テストで対象とするEPUBリーダーのうち、どれがモダンブラウザー系で、どれが独自エンジン系なのだろう。ここで、本報告書がもとづく “CSS Snapshot 2023” は、CSS仕様の安定性を主要なブラウザーでの実装により4段階に分けたものであることを思い出してほしい。
 
-つまり、現在Webの閲覧に使われているブラウザーのレイアウトエンジンであれば、本報告書に掲載した最も実装が安定した「CSSの公式的な定義に含まれるCSSモジュール」は、問題なく表示できるはずなのだ。
+つまり、現在Webの閲覧に使われているブラウザーのレイアウトエンジンであれば、本報告書に掲載した最も実装が安定した「CSSの公式的な定義に含まれるCSSモジュール」は、問題なく表示できるはずだ。
 
 一方で、EPUBという限定的なフォーマットのレイアウトに特化した独自エンジン系にとっては、余計なコストをかけてまで “CSS Snapshot 2023” の規準をクリアするメリットはないだろう（少なくともEPUB 3.3のなかで “CSS Snapshot 2023” のサポートが掲げられる以前は、なのだが）。
 
 こうして、本報告書でテストしたCSSモジュールを帰納法的なモノサシにして、それらが表示できたEPUBリーダーをモダンブラウザー系、そうでなかったEPUBリーダーを独自エンジン系と分別できることになる。
 
-ただし、これだけで簡単に分別できるほど現実は甘くない。そこにはレイアウトエンジンのバージョン、もっといえばアップデートの頻度が関わってくるのだ。
+ただし、これだけで簡単に分別できるほど現実は甘くない。そこにはレイアウトエンジンのバージョン、もっといえばアップデートの頻度が関わってくる。
 
 たとえば、超縦書はレイアウトエンジンにChromeのOSS版、[Chromium](https://www.chromium.org/chromium-projects/)を採用している<span class="notetext">EPUBビューア「超縦書」Windows版 よくある質問（BPS株式会社、baba、2017年6月）<https://techracho.bpsinc.jp/baba/2017_06_30/42515></span>。しかしテスト結果をみると、現在使われているブラウザでは安定的に実装されている「Flexboxによる上下中央揃え」はサポートしているものの、同じく「[CSS変数](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=1234705026&range=G43:H43)」や「[Grid Layout](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=1234705026&range=G124)」はサポートしていないことが分かる。
 
-そこで超縦書.exeを調べてみると、2017年7月3日に更新されたバージョン2.3.1だ（図1）。
+そこで超縦書のプロパティを調べてみると、2017年7月3日に更新されたことが分かる（図1）。
 
 <div class="figure-right">
 
@@ -762,7 +762,7 @@ lang: 'ja'
 
 </div>
 
-さらにプログラムのフォルダを見ると、Qt5というフレームワークのライブラリが使われている。このうちQt5Core.dllのバージョン（5.6.1）とChromiumのバージョンには対応関係があることが分かっており、ここから超縦書で使われたChromiumのバージョンは2015年9月にリリースされた45.0.2554.101と推測できる。<span class="notetext">Qt5とChromiumのバージョン対応については以下を参照。<br/>https://wiki.qt.io/QtWebEngine/ChromiumVersions<br/>また、Chrome 45のリリース日については以下を参照。<br/>https://chrome.softwaredownload.co.in/chrome-45-0-2454</span>
+さらにプログラムのフォルダ内を見ると、Qt5というフレームワークのライブラリがある。このうちQt5Core.dllのバージョン（5.6.1）とChromiumのバージョンには対応関係があることが分かっており、ここから超縦書で使われたChromiumのバージョンは2015年9月にリリースされた45.0.2554.101と推測できる。<span class="notetext">Qt5とChromiumのバージョン対応については以下を参照。<br/>https://wiki.qt.io/QtWebEngine/ChromiumVersions<br/>また、Chrome 45のリリース日については以下を参照。<br/>https://chrome.softwaredownload.co.in/chrome-45-0-2454</span>
 
 実際にはChromiumをそのまま使うのでなくカスタマイズしているだろうから、必ずしもChrome 45とは断定できない。しかし、現行バージョンのタイムスタンプが2017年7月3日であり、Chromiumはさらにそれより古いことは確かだ。
 
