@@ -79,7 +79,6 @@ h2 {
   /* margin-inline-start: 20mm; */
   /* margin-inline-start: 15mm; */
   margin-block: 0;
-  align-content: center;
   position: relative;
   /* string-set: section-title content(), section-number content(before); */
 }
@@ -125,7 +124,6 @@ h3 {
   margin-block: 1rlh 0;
   margin-break: auto;
   block-size: 2rlh;
-  place-items: center start;
   position: relative;
   /* padding-inline-start: 7mm; */
 
