@@ -11,7 +11,7 @@ lang: 'ja'
 
 <div class="no-indent" style="margin-top:24.5Q;">
 
-**情報開示：**本報告書のテストで取り上げたCSSモジュールの選定、及びテストの制作は、本稿の共著者である村上真雄（[Vivliostyle Foundation](https://vivliostyle.org/ja/)）がおこなった。村上はテスト対象であるVivliostyle Viewerの開発者でもある。また、もう一人の共著者である小形克宏もVivliostyle Foundationに所属する。この点、[テスト](https://github.com/jagat-xpub/epub-css-test/tree/main)や[原稿執筆](https://github.com/jagat-xpub/viewer-test-2023)に利用したGitHubリポジトリや[テスト結果](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?usp=sharing)をまとめたGoogleスプレッドシートを公開することで客観性の担保に努めた。
+**情報開示：**本報告書のテストで取り上げたCSSモジュールの選定、及びテストの制作は、本稿の共著者である村上真雄（[Vivliostyle Foundation](https://vivliostyle.org/ja/)）がおこなった。村上はテスト対象であるVivliostyle Viewerの開発者でもある。また、もう一人の共著者である小形克宏もVivliostyle Foundationに所属する。この点、[テスト](https://github.com/jagat-xpub/epub-css-test/tree/main)や[原稿執筆](https://github.com/jagat-xpub/viewer-test-2023)に利用したGitHubリポジトリや、[テスト結果](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?usp=sharing)をまとめたGoogleスプレッドシートを公開することで客観性の担保に努めた。
 
 </div>
 
@@ -25,15 +25,15 @@ lang: 'ja'
 > 
 > 和訳：**§1.3.3 CSSとの関係**　EPUB3は、CSS Working Group Snapshot [[csssnapshot]](https://www.w3.org/TR/CSS/)で定義されているCSSをサポートします。EPUB3は、グローバル言語のための一貫したサポートを保証するために、いくつかの接頭辞付きのCSSプロパティも維持します。
 
-上記にある “CSS Working Group Snapshot” とはなんだろう。バージョン2まで、CSS仕様はすべてのプロパティを単一の仕様書で規定していた。しかしその次のバージョン3では飛躍的に規模が大きくなることが確実になった。そこで審議するCSS Working Groupは、機能や目的ごとの「モジュール」に仕様を分割することにし、更新はモジュールごとにすすめることにした。ところが更新のペースがバラバラになると、今度はCSS仕様全体の状況が把握しづらくなってしまう。そこで考え出されたのが、インターネットブラウザー（以下、ブラウザー）に実装されたCSSモジュールの安定レベルごと分類したリストを作成、これを特定のURLで公開することにし、そのリストを1年ごとに更新していくという方法だ。<span class="notetext">2023年版 “CSS Working Group Snapshot” である“CSS Snapshot 2023”のパーマネント・リンクは以下を参照。<br/>https://www.w3.org/TR/css-2023/</span>
+上記にある “CSS Working Group Snapshot”（以下、“Snapshot”）とはなんだろう。バージョン2まで、CSS仕様はすべてのプロパティを単一の仕様書で規定していた。しかしその次のバージョン3では飛躍的に規模が大きくなることが確実になった。そこで審議するCSS Working Groupは、機能や目的ごとの「モジュール」に仕様を分割することにし、更新はモジュールごとにすすめることにした。ところが更新のペースがバラバラになると、今度はCSS仕様全体の状況が把握しづらくなってしまう。そこで考え出されたのが、インターネットブラウザー（以下、ブラウザー）に実装されたCSSモジュールを、安定レベルごとに分けたリストを作成し、これを1年ごとに更新していく “Snapshot” だ。<span class="notetext"> “Snapshot” のURLは`https://www.w3.org/TR/CSS/`に固定されている。本稿を執筆している2024年3月では “CSS Snapshot 2023” というタイトルだが、1年後の2025年3月に同じURLをクリックすれば “CSS Snapshot 2024” になっているはずだ。なお、2023年版のパーマネント・リンクは`https://www.w3.org/TR/css-2023/`である。</span>
 
-そこで重要になるのが安定性のレベル分けだが、以下の3段階に分類されることになっている。
+ここで重要なのが安定性のレベル分けだが、以下の3段階に分類されることになっている。
 
 1. [CSSの公式的な定義に含まれるCSSモジュール（Cascading Style Sheets (CSS) — The Official Definition）](https://www.w3.org/TR/CSS/#css-official)
 2. [かなり安定しているが実装経験が限定的なCSSモジュール（Fairly Stable Modules with limited implementation experience）](https://www.w3.org/TR/CSS/#fairly-stable)
 3. [大まかな相互運用性のあるCSSモジュール（Modules with Rough Interoperability）](https://www.w3.org/TR/CSS/#rough-interop)
 
-前掲EPUB 3.3の引用にある「CSS Working Group Snapshotで定義されているCSS」とは、上記のうち1のことだ。つまり、EPUB 3.3では上記1でリストアップされているCSSモジュールが使えることが求められている。では、**現在我が国で利用されている各社EPUBリーダーは、これらのCSSモジュールを表示できるのだろうか？**
+前掲EPUB 3.3の引用にある「Snapshotで定義されているCSS」とは、上記のうち1のことだ。つまり、EPUB 3.3では上記1でリストアップされているCSSモジュールが使えることが求められている。では、**現在我が国で利用されている各社EPUBリーダーは、これらのCSSモジュールを表示できるのだろうか？**
 
 もうひとつ、前掲の引用で分かるように、旧仕様で許されていた`-epub-`接頭辞付きのCSSプロパティは、最新仕様でも後方互換性のために残された。とはいえ、[§6.3.1.3 Prefixed properties](https://www.w3.org/TR/epub-33/#sec-css-prefixed)で、「EPUB制作者は接頭辞なしのプロパティを使用するべきで、リーディングシステム（EPUBリーダー）は現行のCSS仕様をサポートするべき」、「Working Groupは、EPUBの次のメジャーバージョンでこれらの接頭辞付きプロパティをサポートする見込みがないため、現在これらの接頭辞付きプロパティを使用しているEPUB制作者は、サポートが可能になり次第、接頭辞なしバージョンに移行することを推奨する」と規定されている。
 
@@ -41,7 +41,7 @@ lang: 'ja'
 
 これらのことを実際にテストすることによって、現在使われているEPUBリーダーが最新のEPUB 3.3にどの程度対応しているかが分かる。それだけではない、EPUB 3.3は国際規格だ。ということは、このテストにより「日本のEPUBリーダーの国際的な立ち位置」も明らかにできるのではないか、そのように私達は考えた。
 
-テストの方法をもう少し詳しく説明しよう。上記 [“CSS Working Group Snapshot”](https://www.w3.org/TR/css-2023/) にある3つに加え、そこに載っていないが最新のブラウザーで利用できるCSSモジュールを加えて、全部で4つの規準によりCSSモジュールを選定することにした。
+テストの方法をもう少し詳しく説明しよう。上記 “Snapshot” にある3つに加え、そこに載っていないが最新のブラウザーで利用できるCSSモジュールを加えて、全部で4つの規準によりCSSモジュールを選定することにした。
 
 つぎに、選定したCSSモジュールごとに、対応の可否を一目で識別できるテスト用EPUBファイルを制作した。これは以下のリポジトリで公開しているので、お読みの方はぜひご自分でも試していただきたい。<span class="notetext">ライセンスは[CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/deed.ja)で、著作権を放棄している。詳細はリポジトリを参照。</span>
 
@@ -51,11 +51,11 @@ lang: 'ja'
 
 - [EPUBリーダー表示チェック（JAGAT次世代パブリッシング研究会）2023](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?usp=sharing)（以下、「EPUBリーダー表示チェック」）
 
-ただし、実際に調査結果をまとめてみると、あまりにテスト項目が多すぎて報告書には収まりきらないことが判明した。やむなく本報告書ではEPUB 3.3で利用できることを求められているモジュール（前述「CSSの公式的な定義に含まれるCSSモジュール」）に絞って結果を掲載することにした。その他のテスト結果を知りたい方は、申し訳ないが上掲「EPUBリーダー表示チェック」を直接ご参照いただきたい。<span class="notetext">報告書に掲載しなかった3つの規準、「かなり安定しているが実装経験が限定的」「大まかな相互運用性がある」「CSS Snapshot 2023に載っていないが最新のブラウザーで利用できる」に分類されるCSSモジュールの明細も、「EPUBリーダーのCSS仕様適合性テスト」を参照してほしい。</span>
+ただし、実際に調査結果をまとめてみると、あまりにテスト項目が多すぎて報告書には収まりきらないことが判明した。やむなく本報告書ではEPUB 3.3で利用できることを求められているモジュール（前述「1. CSSの公式的な定義に含まれるCSSモジュール」）に絞って結果を掲載することにする。その他のテスト結果を知りたい方は、申し訳ないが上掲「EPUBリーダー表示チェック」を直接ご参照いただきたい。<span class="notetext">報告書に掲載しなかった3つの規準、「かなり安定しているが実装経験が限定的」「大まかな相互運用性がある」「CSS Snapshot 2023に載っていないが最新のブラウザーで利用できる」に分類されるCSSモジュールの明細も、「EPUBリーダーのCSS仕様適合性テスト」を参照してほしい。</span>
 
 ### 2-1-2 テスト結果を掲載したCSSモジュール
 
-前述したように、本報告書では[CSS Snapshot 2023](https://www.w3.org/TR/css-2023/)のうち、[2.1. Cascading Style Sheets (CSS) — The Official Definition（CSSの公式的な定義に含まれるCSSモジュール）](https://www.w3.org/TR/CSS/#css-official)にあるものだけを報告するが、そのうち以下はあまりに基礎的な仕様であり、実装の可否を調べるまでもないのでテストそのものから外している。
+前述したように、本報告書では「1. CSSの公式的な定義に含まれるCSSモジュール」（[2.1. Cascading Style Sheets (CSS) — The Official Definition（CSSの公式的な定義に含まれるCSSモジュール）](https://www.w3.org/TR/CSS/#css-official)）だけを報告するが、そのうち以下はあまりに基礎的な仕様であり、実装の可否を調べるまでもないのでテストそのものから外している。
 
 - [CSS Level 2, latest revision](https://www.w3.org/TR/CSS2/) (including errata)
 - [CSS Syntax Level 3](https://www.w3.org/TR/css-syntax-3/)
@@ -65,7 +65,7 @@ lang: 'ja'
 - [CSS Box Model Level 3](https://www.w3.org/TR/css-box-3/)
 - [CSS Easing Functions Level 1](https://www.w3.org/TR/css-easing-1/)
 
-のこりを次節以降で報告する。以下に仕様へのリンクとともに挙げる。全部で17のモジュール、61のCSSモジュールである。
+のこりをテストの対象として、結果を次節以降で報告する。以下にテストしたCSSモジュールを仕様へのリンクとともに挙げる。全部で17のCSS仕様、61のCSSモジュールである。
 
 - [CSS Conditional Rules Level 3](https://www.w3.org/TR/css-conditional-3/)
   - @supports ルール
@@ -744,7 +744,7 @@ lang: 'ja'
 
 つまり、現在Webの閲覧に使われているブラウザーのレイアウトエンジンであれば、本報告書に掲載した最も実装が安定した「CSSの公式的な定義に含まれるCSSモジュール」は、問題なく表示できるはずだ。
 
-一方で、EPUBという限定的なフォーマットのレイアウトに特化した独自エンジン系にとっては、余計なコストをかけてまで “CSS Working Group Snapshot” の規準をクリアするメリットはないだろう（少なくともEPUB 3.3でそのサポートが掲げられる以前は、なのだが）。
+一方で、EPUBという限定的なフォーマットのレイアウトに特化した独自エンジン系にとっては、余計なコストをかけてまで “Snapshot” の規準をクリアするメリットはないだろう（少なくともEPUB 3.3でそのサポートが掲げられる以前は、なのだが）。
 
 こうして、本報告書でテストしたCSSモジュールを帰納法的なモノサシにして、それらが表示できたEPUBリーダーをモダンブラウザー系、そうでなかったEPUBリーダーを独自エンジン系と分別できることになる。
 
