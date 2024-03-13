@@ -7,11 +7,17 @@ lang: 'ja'
 
 # 第2章 CSS表示テスト
 
+<div class="author">
+
+村上真雄／小形克宏（Vivliostyle Foundation）
+
+</div>
+
 ## 2-1 はじめに
 
 <div class="no-indent" style="margin-top:24.5Q;">
 
-**情報開示：**本報告書のテストで取り上げたCSSモジュールの選定、及びテストの制作は、本稿の共著者である村上真雄（[Vivliostyle Foundation](https://vivliostyle.org/ja/)）がおこなった。村上はテスト対象であるVivliostyle Viewerの開発者でもある。また、もう一人の共著者である小形克宏もVivliostyle Foundationに所属する。この点、[テストファイル開発](https://github.com/jagat-xpub/epub-css-test/tree/main)や[原稿執筆](https://github.com/jagat-xpub/viewer-test-2023)に利用したGitHubリポジトリや、[テスト結果](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?usp=sharing)をまとめたGoogleスプレッドシートを公開することで客観性の担保に努めた。
+**情報開示：**本報告書のテストで取り上げたCSSモジュールの選定、及びテストの制作は、本稿の共著者である村上真雄（[Vivliostyle Foundation](https://vivliostyle.org/ja/)）がおこなった。村上はテスト対象であるVivliostyle Viewerの開発者でもある。また、もう一人の共著者である小形克宏もVivliostyle Foundationに所属する。この点、[テストファイル開発](https://github.com/jagat-xpub/epub-css-test/tree/main)や[原稿執筆](https://github.com/jagat-xpub/viewer-test-2023)、[議論のまとめ](https://github.com/jagat-xpub/viewer-test-2023/wiki/viewer%E2%80%90test%E2%80%902023%E2%80%90%E3%82%B3%E3%83%A1%E3%83%B3%E3%83%88%E3%81%A8%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%E9%9B%86)に利用したGitHubリポジトリや、[テスト結果](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?usp=sharing)を記録したGoogleスプレッドシートを公開することで客観性の担保に努めた。
 
 </div>
 
@@ -33,13 +39,15 @@ lang: 'ja'
 2. [かなり安定しているが実装経験が限定的なCSSモジュール（Fairly Stable Modules with limited implementation experience）](https://www.w3.org/TR/CSS/#fairly-stable)
 3. [大まかな相互運用性のあるCSSモジュール（Modules with Rough Interoperability）](https://www.w3.org/TR/CSS/#rough-interop)
 
-前掲EPUB 3.3の引用にある「Snapshotで定義されているCSS」とは、上記のうち1のことだ。つまり、EPUB 3.3では上記1でリストアップされているCSSモジュールが使えることが求められている。では、**現在我が国で利用されているEPUBリーダーは、これらのCSSモジュールを表示できるのだろうか？**
+前掲EPUB 3.3の引用にある「Snapshotで定義されているCSS」とは、上記のうち1のことだ。つまりEPUB 3.3では数多くあるCSSモジュールの中でも、上記1でリストアップされているCSSモジュールだけは使えるよう求められている。では、**現在我が国で利用されているEPUBリーダーは、これらのCSSモジュールを表示できるのだろうか？**
 
-もうひとつ、前掲の引用で分かるように、旧仕様で許されていた`-epub-`接頭辞付きのCSSプロパティは、最新仕様でも後方互換性のために残された。とはいえ、[§6.3.1.3 Prefixed properties](https://www.w3.org/TR/epub-33/#sec-css-prefixed)で、「EPUB制作者は接頭辞なしのプロパティを使用するべきで、リーディングシステム（EPUBリーダー）は現行のCSS仕様をサポートするべき」、「Working Groupは、EPUBの次のメジャーバージョンでこれらの接頭辞付きプロパティをサポートする見込みがないため、現在これらの接頭辞付きプロパティを使用しているEPUB制作者は、サポートが可能になり次第、接頭辞なしバージョンに移行することを推奨する」と規定されている。
+もうひとつ、前掲の引用で分かるように、旧仕様で許されていた`-epub-`接頭辞付きのCSSプロパティは、最新仕様でも後方互換性のために残された。ここでいう`-epub-`接頭辞とは、[CSS 2.1で規定されているCSSプロパティを独自に拡張する構文](https://www.w3.org/TR/CSS2/syndata.html#vendor-keywords)のひとつ。任意のベンダーが独自に定義し、冒頭に付けることから「ベンダー接頭辞」とも呼ばれる。2010年当時のCSS仕様では、まだ縦書き用プロパティは定義されていなかった。そこでAppleは、このベンダー接頭辞を使って独自にプロパティを定義し、それを自らSafariに実装にした。それが`-epub-`接頭辞だ。
 
-つまりEPUB 3.3では、接頭辞は使わないことが推薦されている。では、**現在使われているEPUBリーダーは、本当に`-epub-`接頭辞付きプロパティなしで表示できるのだろうか？**
+とはいえ、試行錯誤の時代は過ぎ去り縦書き用のプロパティはすっかり安定した。そこでEPUB 3.3では[§6.3.1.3 Prefixed properties](https://www.w3.org/TR/epub-33/#sec-css-prefixed)として、「EPUB制作者は接頭辞なしのプロパティを使用するべきで、リーディングシステム（EPUBリーダー）は現行のCSS仕様をサポートするべき」とされ、また「Working Groupは、EPUBの次のメジャーバージョンでこれらの接頭辞付きプロパティをサポートする見込みがないため、現在これらの接頭辞付きプロパティを使用しているEPUB制作者は、サポートが可能になり次第、接頭辞なしバージョンに移行することを推奨する」と規定した。
 
-これらのことを実際にテストすることによって、現在使われているEPUBリーダーが最新のEPUB 3.3にどの程度対応しているかが分かる。それだけではない、EPUB 3.3は国際規格だ。ということは、このテストにより「日本のEPUBリーダーの国際的な立ち位置」も明らかにできるのではないか、そのように私達は考えた。
+つまりEPUB 3.3になって、接頭辞は使わないよう推奨された。では、**現在使われているEPUBリーダーは、本当に`-epub-`接頭辞付きプロパティなしで表示できるのだろうか？**
+
+これらのことを実際にテストすることによって、現在使われているEPUBリーダーが最新のEPUB 3.3にどの程度対応しているかが分かる。それだけではない、EPUB 3.3は国際規格だ。ということは、このテストによって「日本のEPUBリーダーの国際的な立ち位置」も明らかにできるのではないか、そのように私達は考えた。
 
 テストの方法をもう少し詳しく説明しよう。上記 “Snapshot” にある3段階に加え、そこに載っていないが最新のブラウザーで利用できるCSSモジュールを加えて、全部で4段階の規準によりCSSモジュールを選定することにした。
 
@@ -155,7 +163,7 @@ lang: 'ja'
 
 他方、54のうち18は掲載していない。その理由は一部テストファイルの不具合が判明し部分的に更新したことに伴い、それ以前のテスト結果は不正確であることが判明したので掲載をやめたものだ。この不具合については○○で詳述することにして、それらリーダーの明細を<a href="#2-1-3-2-掲載しなかったテスト環境の一覧">2-1-3-2 掲載しなかったテスト環境の一覧</a>に掲げる。
 
-なお、背景色が緑色はモダンブラウザ系、水色は独自エンジン系である。これらの分類については<a href="#2-2-1-はじめにレイアウトエンジンの違いとテストとの関係">2-2-1 はじめに：レイアウトエンジンの違いとテストとの関係</a>を参照されたい。
+なお、背景色が緑色はモダンブラウザ系、水色は独自エンジン系である。これらの分類については<a href="#2-2-1-レイアウトエンジンと本テストとの関係">2-2-1 レイアウトエンジンと本テストとの関係</a>を参照されたい。
 
 #### 2-1-3-1 掲載したテスト環境の一覧
 
@@ -728,52 +736,51 @@ lang: 'ja'
 
 ## 2-2 CSS表示テストの結果
 
-### 2-2-1 はじめに：レイアウトエンジンの違いとテストとの関係
+### 2-2-1 レイアウトエンジンと本テストとの関係
 
 テスト結果を報告する前に、まずレイアウトエンジンとは何か、そしてCSS表示テスト（以下、本テスト）とどのような関係があるのかを説明する。
 
-ここでいうレイアウトエンジンとは、文字や画像を特定の仕様にもとづいて描画するプログラムのことだ。レンダリングエンジンともいう。たとえばブラウザーの場合、もとづく仕様はHTML、CSS、JavaScriptになる。
+ここでいうレイアウトエンジンとは、特定の仕様にもとづいて文字や画像を描画するプログラムのことだ。レンダリングエンジンともいう。たとえばブラウザーの場合、もとづく仕様はHTML、CSS、JavaScriptになる。
 
-同様にEPUBもHTML、CSSにもとづくことから、EPUBリーダーのレイアウトエンジンとしてブラウザーのものが流用されることが多い。とくに2010年代前半「電子書籍元年」に湧いていた我が国で、EPUBリーダー用レイアウトエンジンとして大歓迎されたのがAppleの[WebKit](https://webkit.org/)だった。その理由はWebKitが2011年10月に制定された[EPUB 3.0](https://idpf.org/epub/30/spec/epub30-overview.html)に先んじて、[同年7月](https://developer.mozilla.org/ja/docs/Web/CSS/writing-mode#%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6%E3%83%BC%E3%81%AE%E4%BA%92%E6%8F%9B%E6%80%A7)からCSS縦書き用プロパティ`writing-mode: vertical-rl;`を実装したこと、同時にWebKitが一定の条件で無料利用できるオープンソースソフトウェア（以下、OSS）なので、これを使えば開発コストを抑えると同時に、日本語書籍に必須の縦書きをはじめとする機能がすぐに実装できたことが大きい。<span class="notetext">ただし、仕様が制定される前だったこともあり、当時は`-webkit-`接頭辞が必要とされていた。2-1-1で述べた、後方互換性のために残された「いくつかの接頭辞付きのCSSプロパティ」の一つが、まさにこれだ。</span>
+同様にEPUBもHTML、CSSにもとづくことから、そのレイアウトエンジンとしてブラウザーのものを流用されることが多い。とくに2010年代前半「電子書籍元年」に湧いていた我が国で、EPUBリーダー用レイアウトエンジンとして大歓迎されたのがAppleの[WebKit](https://webkit.org/)だった。
+
+その理由は、WebKitが2011年10月に制定された[EPUB 3.0](https://idpf.org/epub/30/spec/epub30-overview.html)に先んじて、[同年7月](https://developer.mozilla.org/ja/docs/Web/CSS/writing-mode#%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6%E3%83%BC%E3%81%AE%E4%BA%92%E6%8F%9B%E6%80%A7)からCSS縦書き用プロパティ`writing-mode: vertical-rl;`を実装したこと、同時に一定の条件で無料利用できるオープンソースソフトウェア（以下、OSS）なので、これを使えば開発コストを抑えると同時に、縦書きをはじめ日本語書籍に必須の機能がすぐに実装できたことが大きい。
 
 本稿では、現在使われている（つまりモダンな<span class="notetext">「モダン」の定義を補足すると、WebにおけるCSS仕様の使われ方が大きく変わったのは、2014年〜2016年に実装がはじまった[CSS変数（カスタムプロパティ）](https://developer.mozilla.org/ja/docs/Web/CSS/var#%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6%E3%83%BC%E3%81%AE%E4%BA%92%E6%8F%9B%E6%80%A7)だ。そこでこれが使えるかどうかを重要な指標とした。</span>）ブラウザーのレイアウトエンジンを利用したEPUBリーダーを、一括して**「モダンブラウザー系」**と呼ぶことにする。
 
 他方、レイアウトエンジンは中枢となるモジュールであり、これを外部から調達すれば独自機能の追加がむずかしくなるなど、開発の柔軟性を損なうデメリットが考えられる。これを嫌ってだろうか、コストをかけても独自のレイアウトエンジンを実装するEPUBリーダーも多い。本稿ではこれらを一括して**「独自エンジン系」**と呼ぶ。
 
-では、本テストで対象としたEPUBリーダーのうち、どれがモダンブラウザー系で、どれが独自エンジン系なのだろう。ここで、本報告書がもとづく “Snapshot” は、主要なブラウザーにおけるCSSモジュールの実装安定性によって分類したリストであったことを思い出してほしい。
+ではどのようにすれば、これはモダンブラウザー系、これは独自エンジン系と分かるのだろう。ここで、本報告書がもとづく “Snapshot” は、主要なブラウザーにおけるCSSモジュールの実装安定性を分類したリストであったことを思い出してほしい。
 
-つまり、現在使われているブラウザーのレイアウトエンジンであれば、本報告書に掲載した最も実装が安定している「CSSの公式的な定義に含まれるCSSモジュール」は、問題なく表示できるはずだ。
+つまり、現在使われているブラウザーのレイアウトエンジンであれば、 “Snapshot” の中で最も実装が安定している「CSSの公式的な定義に含まれるCSSモジュール」は、問題なく表示できるはずだ。
 
-一方で、EPUBという限定的なフォーマットに特化した独自エンジン系にとって、余計なコストをかけてまで “Snapshot” の規準をクリアするメリットはあまりないだろう（あくまでそのサポートを規定したEPUB 3.3の制定以前は、なのだが）。
+一方で、EPUBという限定的なフォーマットに特化した独自エンジン系にとって、余計なコストをかけてまで “Snapshot” の規準をクリアするメリットはあまりない（あくまで “Snapshot” のサポートを規定したEPUB 3.3制定以前は、なのだが）。すくなくともブラウザーのレイアウトエンジンとは比較的異なった実装をしているのではないか。
 
-こうして、本報告書でテストしたCSSモジュールを帰納法的なモノサシにして、それらが表示できたEPUBリーダーをモダンブラウザー系（セルの背景色が緑色）、そうでなかったEPUBリーダーを独自エンジン系（セルの背景色が水色）と分別できると期待される。
+つまり、“Snapshot” にリストアップされたCSSモジュールを帰納法的なモノサシにして、それらの多くを表示できたEPUBリーダーがモダンブラウザー系（セルの背景色が緑色）、そうでなかったEPUBリーダーが独自エンジン系（セルの背景色が水色）と分別できるだろう。そのように考えて、私達はテストにとりかかったのである。
 
-とはいえ、実際にテストしてみると、モダンブラウザー系と考えられるEPUBリーダーは「CSSの公式的な定義に含まれるCSSモジュール」の多くをサポートするのは確かだが、決してすべてに対応しているのでなく、細部にバラツキが見られることが分かった。
+しかし、実際にテストしてみると、「CSSの公式的な定義に含まれるCSSモジュール」のうち、すべてのEPUBリーダーにサポートされたものはなかった。かろうじて[「長さの単位 rem」](https://www.w3.org/TR/css-values-3/#font-relative-lengths)（CSS Values and Units Level 3）だけがhontoを除く全てのEPUBリーダーにサポートされていた。
 
-他方、水色の独自エンジン系の方
+つまり、確かにモダンブラウザー系と考えられるEPUBリーダーは「CSSの公式的な定義に含まれるCSSモジュール」のほとんどをサポートするが、その範囲は意外にバラツキが見られることが分かった。
 
-はKindle、超縦書のようにすべて「OK」のものもあれば、Romancerのようにすべて「NG」もあるというように
 
-多種多様だ。このように不統一なのが独自エンジン系の特徴で、これはそれぞれが独自の意図や目的によって開発をすすめているからだ。
 
-以上の結果を踏まえて、「CSSの公式的な定義に含まれるCSSモジュール」を以下の2つのグループに分けることにした。
 
-- <a href="#2-2-2-メジャーなEPUBリーダーでサポートされるCSSモジュール">2-2-2 メジャーなEPUBリーダーでサポートされるCSSモジュール</a>
-- <a href="#2-2-3-おもにモダンブラウザー系でサポートされるCSSモジュール">2-2-3 おもにモダンブラウザー系でサポートされるCSSモジュール</a>
 
-前者はわずかな例外を除いて、ほとんどのEPUBリーダーがサポートしたCSSモジュールであり、後者はその他である。
+
+
+
+他方、水色の独自エンジン系の方は多種多様だ。考えるまでもなく、それぞれが独自の意図や目的によって開発をすすめているからこそ多種多様なのだろう。こうして、テスト結果を踏まえて、「CSSの公式的な定義に含まれるCSSモジュール」を以下の2つのグループに分けた。
+
+1. <a href="#2-2-2-メジャーなEPUBリーダーでサポートされるCSSモジュール">2-2-2 メジャーなEPUBリーダーでサポートされるCSSモジュール</a>
+2. <a href="#2-2-3-おもにモダンブラウザー系でサポートされるCSSモジュール">2-2-3 おもにモダンブラウザー系でサポートされるCSSモジュール</a>
+
+前者はわずかな例外を除いて、ほとんどのEPUBリーダーがサポートしたCSSモジュールのグループであり、後者はその他のグループである。
 
 
 <!-- 要調査：KoboのiOS版とAndroid版のテスト結果を見ると、iOS版は最新のブラウザ（たぶんiOSに入っているWebKit）で、Android版は2020年ごろのChromiumのようです。分けてもよいかもしれませんね。（2024/01/30 @shinyu Discord） -->
 
 <!-- たとえば、<a href="#2-2-2-メジャーなEPUBリーダーでサポートされるCSSモジュール">2-2-2 メジャーなEPUBリーダーでサポートされるCSSモジュール</a>をみると、緑色のモダンブラウザー系は、MURASAKIのbox-shadow プロパティを唯一の例外として、すべて「OK」になっている<span class="notetext">このNGについては○○を参照</span>。ベンダーが異なっても足並みはきれいに揃っており、まさにブラウザーが “Snapshot” の規準を意識して開発されていることを証明する結果と言える。 -->
 
-
-
-ではモダンブラウザ系と同様にすべて「OK」だったKindleまで、どうして独自エンジン系と決められるのだろうか。
-
-
-まず、OSSで進められているブラウザーのレイアウトエンジンのプロジェクトでは、積極的に情報発信をしている。
 
 
 とはいえ、“Snapshot” だけで簡単に分別できるほど現実は甘くない。そこにはレイアウトエンジンのバージョンや、アップデートの頻度が関わってくる。
@@ -1239,6 +1246,39 @@ lang: 'ja'
       <td align="center">OK</td>
       <td align="center">OK</td>
     </tr>
+      <th valign="bottom">CSS Values and Units Level 3</th>
+      <td align="center"></td>
+      <td align="center"></td>
+      <td align="center"></td>
+      <td align="center"></td>
+      <td align="center"></td>
+      <td align="center"></td>
+      <td align="center"></td>
+      <td align="center"></td>
+      <td align="center"></td>
+      <td align="center"></td>
+      <td align="center"></td>
+      <td align="center"></td>
+      <td align="center"></td>
+      <td align="center"></td>
+    </tr>
+    <tr>
+      <td valign="bottom">長さの単位 rem</td>
+      <td align="center">OK</td>
+      <td align="center">OK</td>
+      <td align="center">OK</td>
+      <td align="center">OK</td>
+      <td align="center">OK</td>
+      <td align="center">OK</td>
+      <td style="color:#ff0000" align="center">NG</td>
+      <td align="center">OK</td>
+      <td align="center">OK</td>
+      <td align="center">OK</td>
+      <td align="center">OK</td>
+      <td align="center">OK</td>
+      <td align="center">OK</td>
+      <td align="center">OK</td>
+    </tr>
     <tr>
       <th valign="bottom">CSS Backgrounds and Borders Level 3</th>
       <td align="center"></td>
@@ -1484,23 +1524,6 @@ lang: 'ja'
       <td align="center">OK</td>
       <td style="color:#ea4335" align="center">NG</td>
       <td style="color:#ea4335" align="center">NG</td>
-      <td align="center">OK</td>
-      <td align="center">OK</td>
-      <td align="center">OK</td>
-      <td align="center">OK</td>
-    </tr>
-    <tr>
-      <td valign="bottom">長さの単位 rem</td>
-      <td align="center">OK</td>
-      <td align="center">OK</td>
-      <td align="center">OK</td>
-      <td align="center">OK</td>
-      <td align="center">OK</td>
-      <td align="center">OK</td>
-      <td style="color:#ff0000" align="center">NG</td>
-      <td align="center">OK</td>
-      <td align="center">OK</td>
-      <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
@@ -2680,3 +2703,7 @@ lang: 'ja'
 - 13……Windows 10はOK（ただし青枠の幅が他の半分しかない）、AndroidはNG
 - 14……Chrome（113.0.5672.127）がOK、Edge（113.0.1774.57）がNG
 - 15……Windows<br/>アプリ（2.3.0）がNG、Macアプリ（2.2.0）がNG
+
+## 2-3 おわりに
+
+今回の調査で分かったことは、モダンCSSをサポートしているのはモダンブラウザエンジンを利用しているEPUBリーダーのみであるということ。そうではないEPUBリーダーでは、基本的に EPUB 3.0 で規定されていた "EPUB 3 CSS Profile" の範囲しかサポートしていない。
