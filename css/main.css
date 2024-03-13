@@ -38,14 +38,14 @@ h1 {
 }
 /* 著者名 */
 .author {
-  font-size: 20Q;
   text-align: center;
-  text-indent: 0;
+  font-size: 20Q;
+  /* text-indent: 0; */
   /* 縦書きにして自由位置に移動 */
-  writing-mode: vertical-rl;
-  position: absolute;
-  inset-block-start: 70mm;
-  inset-inline-start: 120mm;
+  /* writing-mode: vertical-rl; */
+  /* position: static; */
+  /* inset-block-start: 70mm; */
+  /* inset-inline-start: 120mm; */
 }
 
 /* h1::before {

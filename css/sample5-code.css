@@ -14,17 +14,17 @@ pre {
   background: #DCDCDC
   font-size: 14Q;
   line-height: 24.5Q;
-  border: solid 0.5mm #585656;
-  padding-block: 0.5mm;
+  border: solid 0.2mm #585656;
+  /* padding-block: 0.5mm; */
   padding-inline: 1.5mm;
   margin-block: 6mm;
   margin-inline: 0;
-  /* background: repeating-linear-gradient(#eee 0, #eee 24.5Q, #fff 24.5Q, #fff 49Q); */
-  background-image: url("img/vs_pre_bg.png");
-  background-size: var(--page-body-width) 9mm;
-  background-repeat: repeat-y;
-  background-position-y: 0.5mm;
-  border-radius: 1mm;
+  background: repeating-linear-gradient(#eee 0, #eee 24.5Q, #fff 24.5Q, #fff 49Q);
+  /* background-image: url("img/vs_pre_bg.png"); */
+  /* background-size: var(--page-body-width) 9mm; */
+  /* background-repeat: repeat-y; */
+  /* background-position-y: 0.5mm; */
+  /* border-radius: 1mm; */
 }
 .codenum-elem {
   width: 2em;
