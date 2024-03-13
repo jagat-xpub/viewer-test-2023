@@ -37,6 +37,7 @@ EPUBで見開き表示の際に各XHTMLファイルを左右どちらに配置�
 #### 3-1-3-1 本調査におけるテスト環境の一覧
 
 <table>
+<thead>
   <tr>
     <th style="color:#434343" align="center">リーダー名</th>
     <th style="color:#434343" align="center">略称</th>
@@ -47,6 +48,8 @@ EPUBで見開き表示の際に各XHTMLファイルを左右どちらに配置�
     <th style="color:#434343" align="center">担当者</th>
     <th style="color:#434343" align="center">テスト日</th>
   </tr>
+</thead>
+<tbody>
   <tr>
     <td bgcolor="#c9daf8" align="center">Kindle for Android</td>
     <td bgcolor="#c9daf8" align="center">Kindle</td>
@@ -447,6 +450,7 @@ EPUBで見開き表示の際に各XHTMLファイルを左右どちらに配置�
     <td bgcolor="#c9daf8" align="center">村上</td>
     <td bgcolor="#c9daf8" align="center">2023/5/23</td>
   </tr>
+</tbody>
 </table>
 
 - *1……自作機もあるWindows環境ではハードウェアを区別する意味はあまりないので省略
@@ -558,6 +562,7 @@ EPUB内に紙の本のページ番号の記述を指定するには、ナビゲ�
 
 #### 3-2-3-1 本調査におけるテスト環境の一覧
 <table>
+<thead>
   <tr>
     <th style="color:#434343" align="center">リーダー名</th>
     <th style="color:#434343" align="center">略称</th>
@@ -568,6 +573,8 @@ EPUB内に紙の本のページ番号の記述を指定するには、ナビゲ�
     <th style="color:#434343" align="center">担当者</th>
     <th style="color:#434343" align="center">テスト日</th>
   </tr>
+</thead>
+<tbody>
   <tr>
     <td bgcolor="#c9daf8" align="center">Kindle for Android</td>
     <td bgcolor="#c9daf8" align="center">Kindle</td>
@@ -978,6 +985,7 @@ EPUB内に紙の本のページ番号の記述を指定するには、ナビゲ�
     <td bgcolor="#c9daf8" align="center">村上</td>
     <td bgcolor="#c9daf8" align="center">2023/5/23</td>
   </tr>
+</tbody>
 </table>
 
 - *1……自作機もあるWindows環境ではハードウェアを区別する意味はあまりないので省略
@@ -1085,6 +1093,7 @@ DTPでの和文組版処理では、一般的に句読点や全角カッコ類�
 
 #### 3-3-3-1 本調査におけるテスト環境の一覧
 <table>
+<thead>
   <tr>
     <th style="color:#434343" align="center">リーダー名</th>
     <th style="color:#434343" align="center">略称</th>
@@ -1095,6 +1104,8 @@ DTPでの和文組版処理では、一般的に句読点や全角カッコ類�
     <th style="color:#434343" align="center">担当者</th>
     <th style="color:#434343" align="center">テスト日</th>
   </tr>
+</thead>
+<tbody>
   <tr>
     <td bgcolor="#c9daf8" align="center">Kindle for Android</td>
     <td bgcolor="#c9daf8" align="center">Kindle</td>
@@ -1515,6 +1526,7 @@ DTPでの和文組版処理では、一般的に句読点や全角カッコ類�
     <td bgcolor="#c9daf8" align="center">田嶋</td>
     <td bgcolor="#c9daf8" align="center">2023/08/25</td>
   </tr>
+</tbody>
 </table>
 
 - *1……自作機もあるWindows環境ではハードウェアを区別する意味はあまりないので省略
@@ -1711,6 +1723,7 @@ XHTML
 #### 3-4-3-1 本調査におけるテスト環境の一覧
 
 <table>
+<thead>
   <tr>
     <th style="color:#434343" align="center">リーダー名</th>
     <th style="color:#434343" align="center">略称</th>
@@ -1721,6 +1734,8 @@ XHTML
     <th style="color:#434343" align="center">担当者</th>
     <th style="color:#434343" align="center">テスト日</th>
   </tr>
+</thead>
+<tbody>
   <tr>
     <td bgcolor="#c9daf8" align="center">Kindle for Android</td>
     <td bgcolor="#c9daf8" align="center">Kindle</td>
@@ -2161,6 +2176,7 @@ XHTML
     <td bgcolor="#c9daf8" align="center">村上</td>
     <td bgcolor="#c9daf8" align="center">2023/5/23</td>
   </tr>
+</tbody>
 </table>
 
 - *1……自作機もあるWindows環境ではハードウェアを区別する意味はあまりないので省略
@@ -2339,6 +2355,7 @@ EPUBビューア内の画像には読み上げ・検索用に代替文字（alt�
 
 #### 3-5-3-1 本調査におけるテスト環境の一覧
 <table>
+<thead>
   <tr>
     <th style="color:#434343" align="center">リーダー名</th>
     <th style="color:#434343" align="center">略称</th>
@@ -2349,6 +2366,8 @@ EPUBビューア内の画像には読み上げ・検索用に代替文字（alt�
     <th style="color:#434343" align="center">担当者</th>
     <th style="color:#434343" align="center">テスト日</th>
   </tr>
+</thead>
+<tbody>
   <tr>
     <td bgcolor="#c9daf8" align="center">Kindle for Android</td>
     <td bgcolor="#c9daf8" align="center">Kindle</td>
@@ -2719,6 +2738,7 @@ EPUBビューア内の画像には読み上げ・検索用に代替文字（alt�
     <td bgcolor="#c9daf8" align="center">村上</td>
     <td bgcolor="#c9daf8" align="center">2023/5/23</td>
   </tr>
+</tbody>
 </table>
 
 - *1……自作機もあるWindows環境ではハードウェアを区別する意味はあまりないので省略
