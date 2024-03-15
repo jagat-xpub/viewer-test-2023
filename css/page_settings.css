@@ -12,6 +12,11 @@
   src: url("fonts/keyboard-JP-Regular.otf");
 }
 
+@font-face {
+  font-family: IBM Plex Mono;
+  src: url("fonts/IBMPlexMono-Regular.ttf");
+}
+
 :root {
   /* 基本体裁 */
   --base-font-size: 14Q;
@@ -27,7 +32,7 @@
   /* --main-text-font: 'Shippori Mincho'; メインフォント */
   --main-text-font: "Noto Sans JP";
   --header-font: "Zen Maru Gothic";
-  --code-font: "udevgothic-r"; /*コードフォント*/
+  --code-font: "IBM Plex Mono"; /*コードフォント*/
   
 
   /* ページマージン自動計算 */
