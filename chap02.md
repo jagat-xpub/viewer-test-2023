@@ -762,14 +762,19 @@ lang: 'ja'
 
 他方、独自エンジン系の方は「CSSの公式的な定義に含まれるCSSモジュール」の範囲に限ってもサポートするCSSモジュールはあまり多くない。赤字のテスト結果「NG」が目立つのが、独自エンジン系の特徴と言える。
 
-こうして、テスト結果を踏まえて、「CSSの公式的な定義に含まれるCSSモジュール」を以下の2つのグループに分けた。
+ただし、OKの多さだけできれいに判別できた訳ではなかった。たとえば[楽天koboのリーダー](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=396838262&range=C1:K7)に関しては、2種（[iOS](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=396838262&range=D1:D153)、[Android](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=396838262&range=F1:F153)）のモダンブラウザー系とそれ以外すべてが独自エンジン系と、合計3種類に分かれていることがわかった。
 
-1. <a href="#2-2-2-メジャーなEPUBリーダーでサポートされるCSSモジュール">2-2-2 メジャーなEPUBリーダーでサポートされるCSSモジュール</a>
-2. <a href="#2-2-3-おもにモダンブラウザー系でサポートされるCSSモジュール">2-2-3 おもにモダンブラウザー系でサポートされるCSSモジュール</a>
+モダンブラウザー系と独自エンジン系の違いは分かりやすいが、モダンブラウザー系のなかでさらに2種類に分かれることが不思議に思われるかもしれない。2種類の内訳はiOS版のレイアウトエンジンがWebKit（Appleの規制によりWebKit以外のレイアウトエンジンが使えない）であるのに対し、Android版のものは2020年ごろのChromiumと推測される。
 
-1はモダンブラウザー系はもちろん、独自エンジン系のいくつかをふくめてもサポートするEPUBリーダーがとくに多かったCSSモジュールであり、2はそれ以外の「CSSの公式的な定義に含まれるCSSモジュール」である。次項からは、この2つにわけて詳しくテスト結果を述べることにする。
+では、なぜピンポイントで「2020年ごろのChromium」と分かるのだろう。
 
-ただし、“Snapshot” だけでは分別できないEPUBリーダーもあった。そこにはレイアウトエンジンのバージョンや、アップデートの頻度が関わってくる。
+[MDN Web Docs](https://developer.mozilla.org/ja/)というWebサイトがある。
+
+
+
+
+
+“Snapshot” だけでは分別できないEPUBリーダーもあった。そこにはレイアウトエンジンのバージョンや、アップデートの頻度が関わってくる。
 
 たとえば、超縦書はレイアウトエンジンにChromeのOSS版、[Chromium](https://www.chromium.org/chromium-projects/)を採用している<span class="notetext">EPUBビューア「超縦書」Windows版 よくある質問（BPS株式会社、baba、2017年6月）<https://techracho.bpsinc.jp/baba/2017_06_30/42515></span>。しかしテスト結果をみると、現在使われているブラウザーでは安定的に実装されている「Flexboxによる上下中央揃え」はサポートしているものの、同じく「[CSS変数](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=1234705026&range=G43:H43)」や「[Grid Layout](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=1234705026&range=G124)」はサポートしていない。そこで超縦書のプロパティを調べてみると、2017年7月3日に更新されたことが分かった（図1）。
 
@@ -830,6 +835,19 @@ lang: 'ja'
   </table>
 </div>
 </div>
+
+
+
+その上で、テスト結果を踏まえて「CSSの公式的な定義に含まれるCSSモジュール」を以下の2つのグループに分けた。
+
+1. <a href="#2-2-2-メジャーなEPUBリーダーでサポートされるCSSモジュール">2-2-2 メジャーなEPUBリーダーでサポートされるCSSモジュール</a>
+2. <a href="#2-2-3-おもにモダンブラウザー系でサポートされるCSSモジュール">2-2-3 おもにモダンブラウザー系でサポートされるCSSモジュール</a>
+
+1はモダンブラウザー系はもちろん、独自エンジン系のいくつかをふくめてもサポートするEPUBリーダーがとくに多かったCSSモジュールであり、2はそれ以外の「CSSの公式的な定義に含まれるCSSモジュール」である。次項から、この2つにわけて詳しくテスト結果を述べる。
+
+
+
+
 
 --------
 
