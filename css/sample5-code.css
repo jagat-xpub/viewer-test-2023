@@ -3,7 +3,7 @@
 /* コード */
 code {
   font-family: var(--code-font);
-  /* background: #DCDCDC; */
+  background: #DCDCDC;
 }
 
 pre {
