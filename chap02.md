@@ -766,7 +766,7 @@ lang: 'ja'
 
 モダンブラウザー系と独自エンジン系の違いは分かりやすいが、なぜモダンブラウザー系のなかでレイアウトエンジンの違いが分かるのか、不思議に思われるかもしれない。
 
-そもそもiOSはAppleの規約によりWebKit以外のレイアウトエンジンが使えないことが知られているのだが、Android版はそのiOS版と微妙にテスト結果が違う。そうした結果の異なるCSSモジュールの実装時期を調べていくと、2020年ごろのChrome Android版と一致することがわかったのである。
+そもそもiOSはAppleの規約によりWebKit以外のレイアウトエンジンが使えないことが知られている。しかし、Android版はそのiOS版と微妙にテスト結果が違う。そうした結果の異なるCSSモジュールの実装時期を調べていくと、2020年ごろのChrome Android版と一致することがわかったのである。
 
 この種の調査で有用なのが、多種多様なブラウザーの実装情報を通時的に集積する[MDN Web Docs](https://developer.mozilla.org/ja/)である。運営は黎明期からブラウザー開発を見守り、自らも[Firefox](https://www.mozilla.org/ja/firefox/)を供給するオープンソース開発団体、[Mozilla Foundation](https://foundation.mozilla.org/en/)だ。
 
