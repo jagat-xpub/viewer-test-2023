@@ -762,13 +762,13 @@ lang: 'ja'
 
 他方、独自エンジン系の方は「CSSの公式的な定義に含まれるCSSモジュール」の範囲に限ってもサポートするCSSモジュールはあまり多くない。赤字のテスト結果「NG」が目立つのが、独自エンジン系の特徴と言える。
 
-ただし、OKの多少だけを見てきれいに判別できた訳ではない。たとえば[楽天koboのリーダー](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=396838262&range=C1:K7)に関しては、[iOS](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=396838262&range=D1:D153)と[Android](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=396838262&range=F1:F153)は同じモダンブラウザー系でありながら、それぞれ種類の異なるレイアウトエンジンを実装し、それ以外すべてが独自のレイアウトエンジンを実装すると考えられる。
+ただし、OKの多少だけを見てきれいに判別できた訳ではない。たとえば[楽天koboのリーダー](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=396838262&range=C1:K7)に関しては、[iOS](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=396838262&range=D1:D153)と[Android](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=396838262&range=F1:F153)は同じモダンブラウザー系でありながら、それぞれ種類の異なるレイアウトエンジンを実装しており、さらにそれ以外すべてが独自のレイアウトエンジンを実装するようだ。つまり、同じ楽天koboの中で3種類ものリーダーがあるようなのだ。
 
 モダンブラウザー系と独自エンジン系の違いは分かりやすいが、なぜモダンブラウザー系のなかでレイアウトエンジンの違いが分かるのか、不思議に思われるかもしれない。
 
-iOSではそもそもAppleの開発規約によりWebKit以外のレイアウトエンジンが使えないことが知られているのだが、それに対してAndroid版はWebKitとテスト結果が微妙に違っており、そうしたテスト結果の異なるCSSモジュールの実装時期を調べていくと、2020年ごろの[Chromium](https://www.chromium.org/chromium-projects/)のレイアウトエンジンの実装時期と一致することがわかったのである。
+そもそもiOSはAppleの開発規約によりWebKit以外のレイアウトエンジンが使えないことが知られているのだが、それに対してAndroid版はWebKitともテスト結果が微妙に違っており、そうした結果の異なるCSSモジュールの実装時期を調べていくと、2020年ごろの[Chromium](https://www.chromium.org/chromium-projects/)のレイアウトエンジンの実装時期と一致することがわかったのである。
 
-こうした判断で有用だったのが、多種多様なブラウザーの通時的な実装情報を集積する[MDN Web Docs](https://developer.mozilla.org/ja/)である。運営は黎明期からブラウザー開発を見守り、自らも[Firefox](https://www.mozilla.org/ja/firefox/)を供給するオープンソース開発団体、[Mozilla Foundation](https://foundation.mozilla.org/en/)だ。
+こうした判断にあたり有用だったのが、多種多様なブラウザーの通時的な実装情報を集積する[MDN Web Docs](https://developer.mozilla.org/ja/)である。運営は黎明期からブラウザー開発を見守り、自らも[Firefox](https://www.mozilla.org/ja/firefox/)を供給するオープンソース開発団体、[Mozilla Foundation](https://foundation.mozilla.org/en/)だ。
 
 
 *MDNのbrowser-compat-dataは  https://github.com/mdn/browser-compat-data でコントリビュータがpull reqすることにより更新されています。詳しくはREADMEに書かれてます。*
