@@ -762,13 +762,13 @@ lang: 'ja'
 
 他方、独自エンジン系の方は「CSSの公式的な定義に含まれるCSSモジュール」の範囲に限ってもサポートするCSSモジュールはあまり多くない。赤字のテスト結果「NG」が目立つのが、独自エンジン系の特徴と言える。
 
-ただし、OKの多少だけを見てきれいに判別できた訳ではない。たとえば[楽天koboのリーダー](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=396838262&range=C1:K7)に関しては、[iOS](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=396838262&range=D1:D153)と[Android](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=396838262&range=F1:F153)は同じモダンブラウザー系でありながら、それぞれ種類の異なるレイアウトエンジンを実装しており、さらにそれ以外すべてが独自のレイアウトエンジンを実装するようだ。つまり、同じ楽天koboの中で3種類ものリーダーがあるようなのだ。
+ただし、OKの多少だけを見てきれいに判別できた訳ではない。たとえば[楽天koboのリーダー](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=396838262&range=C1:K7)に関しては、[iOS](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=396838262&range=D1:D153)と[Android](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=396838262&range=F1:F153)は同じモダンブラウザー系でありながら、それぞれ種類の異なるレイアウトエンジンを実装しており、さらにそれ以外すべてが独自のレイアウトエンジンを実装するようだ。つまり、同じ楽天koboのリーダーの中で、3種類のレイアウトエンジンを使い分けていると推測できる。
 
 モダンブラウザー系と独自エンジン系の違いは分かりやすいが、なぜモダンブラウザー系のなかでレイアウトエンジンの違いが分かるのか、不思議に思われるかもしれない。
 
-そもそもiOSはAppleの開発規約によりWebKit以外のレイアウトエンジンが使えないことが知られているのだが、それに対してAndroid版はWebKitともテスト結果が微妙に違っており、そうした結果の異なるCSSモジュールの実装時期を調べていくと、2020年ごろの[Chromium](https://www.chromium.org/chromium-projects/)のレイアウトエンジンの実装時期と一致することがわかったのである。
+そもそもiOSはAppleの規約によりWebKit以外のレイアウトエンジンが使えないことが知られているのだが、Android版はそのiOS版と微妙にテスト結果が違う。そうした結果の異なるCSSモジュールの実装時期を調べていくと、2020年ごろのChrome Android版と一致することがわかったのである。
 
-こうした判断にあたり有用だったのが、多種多様なブラウザーの通時的な実装情報を集積する[MDN Web Docs](https://developer.mozilla.org/ja/)である。運営は黎明期からブラウザー開発を見守り、自らも[Firefox](https://www.mozilla.org/ja/firefox/)を供給するオープンソース開発団体、[Mozilla Foundation](https://foundation.mozilla.org/en/)だ。
+この種の調査で有用なのが、多種多様なブラウザーの実装情報を通時的に集積する[MDN Web Docs](https://developer.mozilla.org/ja/)である。運営は黎明期からブラウザー開発を見守り、自らも[Firefox](https://www.mozilla.org/ja/firefox/)を供給するオープンソース開発団体、[Mozilla Foundation](https://foundation.mozilla.org/en/)だ。
 
 
 *MDNのbrowser-compat-dataは  https://github.com/mdn/browser-compat-data でコントリビュータがpull reqすることにより更新されています。詳しくはREADMEに書かれてます。*
@@ -778,7 +778,7 @@ lang: 'ja'
 
 “Snapshot” だけでは分別できないEPUBリーダーもあった。そこにはレイアウトエンジンのバージョンや、アップデートの頻度が関わってくる。
 
-たとえば、超縦書はレイアウトエンジンにChromeのOSS版、Chromiumを採用している<span class="notetext">EPUBビューア「超縦書」Windows版 よくある質問（BPS株式会社、baba、2017年6月）<https://techracho.bpsinc.jp/baba/2017_06_30/42515></span>。しかしテスト結果をみると、現在使われているブラウザーでは安定的に実装されている「Flexboxによる上下中央揃え」はサポートしているものの、同じく「[CSS変数](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=1234705026&range=G43:H43)」や「[Grid Layout](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=1234705026&range=G124)」はサポートしていない。そこで超縦書のプロパティを調べてみると、2017年7月3日に更新されたことが分かった（図1）。
+たとえば、超縦書はレイアウトエンジンにChromeのOSS版、[Chromium](https://www.chromium.org/chromium-projects/)を採用している<span class="notetext">EPUBビューア「超縦書」Windows版 よくある質問（BPS株式会社、baba、2017年6月）<https://techracho.bpsinc.jp/baba/2017_06_30/42515></span>。しかしテスト結果をみると、現在使われているブラウザーでは安定的に実装されている「Flexboxによる上下中央揃え」はサポートしているものの、同じく「[CSS変数](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=1234705026&range=G43:H43)」や「[Grid Layout](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=1234705026&range=G124)」はサポートしていない。そこで超縦書のプロパティを調べてみると、2017年7月3日に更新されたことが分かった（図1）。
 
 <div class="figure-right">
 
