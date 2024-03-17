@@ -768,7 +768,7 @@ lang: 'ja'
 
 iOSではそもそもAppleの開発規約によりWebKit以外のレイアウトエンジンが使えないことが知られているのだが、それに対してAndroid版はWebKitとテスト結果が微妙に違っており、そうしたテスト結果の異なるCSSモジュールの実装時期を調べていくと、2020年ごろの[Chromium](https://www.chromium.org/chromium-projects/)のレイアウトエンジンの実装時期と一致することがわかったのである。
 
-こうした判断で有用だったのが、多種多様なブラウザーの通時的な実装情報を集積する[MDN Web Docs](https://developer.mozilla.org/ja/)である。運営は黎明期からブラウザー開発を見守り、そして自らも[Firefox](https://www.mozilla.org/ja/firefox/)を開発する[Mozilla Foundation](https://foundation.mozilla.org/en/)だ。
+こうした判断で有用だったのが、多種多様なブラウザーの通時的な実装情報を集積する[MDN Web Docs](https://developer.mozilla.org/ja/)である。運営は黎明期からブラウザー開発を見守り、そして自らも[Firefox](https://www.mozilla.org/ja/firefox/)を供給するオープンソース開発団体、[Mozilla Foundation](https://foundation.mozilla.org/en/)だ。
 
 
 *MDNのbrowser-compat-dataは  https://github.com/mdn/browser-compat-data でコントリビュータがpull reqすることにより更新されています。詳しくはREADMEに書かれてます。*
