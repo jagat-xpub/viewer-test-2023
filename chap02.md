@@ -754,24 +754,24 @@ lang: 'ja'
 
 つまり、現在使われているブラウザーのレイアウトエンジンであれば、 “Snapshot” の中で最も実装が安定している「CSSの公式的な定義に含まれるCSSモジュール」は、問題なく表示できるはずだ。
 
-一方で、EPUBという限定的なフォーマットに特化した独自エンジン系にとって、余計なコストをかけてまで “Snapshot” の規準をクリアするメリットはあまりない（あくまで “Snapshot” のサポートを規定したEPUB 3.3制定以前は、なのだが）。すくなくともブラウザーのレイアウトエンジンとは比較的異なった実装をしているのではないか。
+一方で、EPUBという限定的なフォーマットに特化した独自エンジン系にとって、余計なコストをかけてまで “Snapshot” の規準をクリアするメリットはあまりない（あくまでEPUB 3.3が “Snapshot” のサポートを規定する以前は、なのだが）。すくなくとも汎用性が求められるブラウザーのレイアウトエンジンとは、比較的異なった実装になるはずだ。
 
 つまり、“Snapshot” にリストアップされたCSSモジュールを帰納法的なモノサシにして、それらの多くを表示できたEPUBリーダーがモダンブラウザー系（セルの背景色が緑色）、そうでなかったEPUBリーダーが独自エンジン系（セルの背景色が水色）と分別できるだろう。そのように考えて、私達はテストにとりかかったのである。
 
-実際にテストしてみると、モダンブラウザー系と考えられるEPUBリーダーは、確かに「CSSの公式的な定義に含まれるCSSモジュール」のほとんどをサポートする。いくつかサポートしていないCSSモジュールはあっても、黒字のテスト結果「OK」が多いのがモダンブラウザー系の特徴と言える。
+実際にテストしてみると、モダンブラウザー系と考えられるEPUBリーダーは、案の定「CSSの公式的な定義に含まれるCSSモジュール」のほとんどをサポートすることが分かった。いくつかサポートしていないCSSモジュールはあっても、比較的黒字のテスト結果「OK」が多いのがモダンブラウザー系の特徴と言える。
 
 他方、独自エンジン系の方は「CSSの公式的な定義に含まれるCSSモジュール」の範囲に限ってもサポートするCSSモジュールはあまり多くない。赤字のテスト結果「NG」が目立つのが、独自エンジン系の特徴と言える。
 
-ただし、OKの多少のみできれいに判別できた訳ではなかった。たとえば[楽天koboのリーダー](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=396838262&range=C1:K7)に関しては、[iOS](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=396838262&range=D1:D153)と[Android](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=396838262&range=F1:F153)がそれぞれ種類の違うモダンブラウザー系のレイアウトエンジンを実装し、残りすべてが独自のレイアウトエンジンを実装すると考えられる。
+ただし、OKの多少だけを見てきれいに判別できた訳ではない。たとえば[楽天koboのリーダー](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=396838262&range=C1:K7)に関しては、[iOS](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=396838262&range=D1:D153)と[Android](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=396838262&range=F1:F153)が同じモダンブラウザー系でありながら、それぞれ種類の異なるレイアウトエンジンを実装し、それ以外すべてが独自のレイアウトエンジンを実装すると考えられる。
 
 モダンブラウザー系と独自エンジン系の違いは分かりやすいが、なぜモダンブラウザー系のなかでレイアウトエンジンの違いが分かるのか、不思議に思われるかもしれない。
 
-iOSではそもそもAppleの開発規約によりWebKit以外のレイアウトエンジンが使えないことが知られているのだが、それに対してAndroid版のテスト結果はWebKitとも微妙に違っており、そうしたCSSモジュールの実装時期を調べていくと、2020年ごろの[Chromium](https://www.chromium.org/chromium-projects/)のレイアウトエンジンの実装時期と一致することがわかったのである。
+iOSではそもそもAppleの開発規約によりWebKit以外のレイアウトエンジンが使えないことが知られているのだが、それに対してAndroid版はWebKitとテスト結果が微妙に違っており、そうしたテスト結果の異なるCSSモジュールの実装時期を調べていくと、2020年ごろの[Chromium](https://www.chromium.org/chromium-projects/)のレイアウトエンジンの実装時期と一致することがわかったのである。
 
-そうした詳細な実装情報が集積されているのが、[MDN Web Docs](https://developer.mozilla.org/ja/)というWebサイトである。運営は黎明期からブラウザー開発を見守り、そして自らも[Firefox](https://www.mozilla.org/ja/firefox/)を開発する[Mozilla Foundation](https://foundation.mozilla.org/en/)だ。
+こうした判断で有用だったのが、多種多様なブラウザーの通時的な実装情報を集積する[MDN Web Docs](https://developer.mozilla.org/ja/)である。運営は黎明期からブラウザー開発を見守り、そして自らも[Firefox](https://www.mozilla.org/ja/firefox/)を開発する[Mozilla Foundation](https://foundation.mozilla.org/en/)だ。
 
 
-
+*MDNのbrowser-compat-dataは  https://github.com/mdn/browser-compat-data でコントリビュータがpull reqすることにより更新されています。詳しくはREADMEに書かれてます。*
 
 
 “Snapshot” だけでは分別できないEPUBリーダーもあった。そこにはレイアウトエンジンのバージョンや、アップデートの頻度が関わってくる。
