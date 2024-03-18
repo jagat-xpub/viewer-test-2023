@@ -41,7 +41,7 @@ lang: 'ja'
 
 前掲EPUB 3.3の引用にある「Snapshotで定義されているCSS」とは、上記のうち1のことだ。つまりEPUB 3.3では数多くあるCSSモジュールの中でも、上記1でリストアップされているCSSモジュールだけは使えるよう求められている。では、**現在我が国で利用されているEPUBリーダーは、これらのCSSモジュールを表示できるのだろうか？**
 
-もうひとつ、前掲の引用で分かるように、旧仕様で許されていた`-epub-`接頭辞付きのCSSプロパティは、最新仕様でも後方互換性のために残された。ここでいう`-epub-`接頭辞とは、[CSS 2.1で規定されているCSSプロパティを独自に拡張する構文](https://www.w3.org/TR/CSS2/syndata.html#vendor-keywords)のひとつ。任意のベンダーが独自に定義し、冒頭に付けることから「ベンダー接頭辞」とも呼ばれる。2010年当時のCSS仕様では、まだ縦書き用プロパティは定義されていなかった。そこでAppleは、このベンダー接頭辞を使って独自にプロパティを定義し、それを自らSafariに実装にした。それが`-epub-`接頭辞だ。
+もうひとつ、前掲の引用で分かるように、旧仕様で許されていた`-epub-`接頭辞付きのCSSプロパティは、最新仕様でも後方互換性のために残された。ここでいう`-epub-`接頭辞とは、[CSS 2.1で規定されているCSSプロパティを独自に拡張する構文](https://www.w3.org/TR/CSS2/syndata.html#vendor-keywords)のひとつ。プロパティ冒頭に付ける接頭辞をベンダーが独自に定義することから「ベンダー接頭辞」とも呼ばれる。2010年当時のCSS仕様では、まだ縦書き用プロパティは定義されていなかった。そこでAppleは、このベンダー接頭辞を使って独自にプロパティを定義し、それを自らSafariに実装にした。それが`-epub-`接頭辞だ。
 
 とはいえ、試行錯誤の時代は過ぎ去り縦書き用のプロパティはすっかり安定した。そこでEPUB 3.3では[§6.3.1.3 Prefixed properties](https://www.w3.org/TR/epub-33/#sec-css-prefixed)として、「EPUB制作者は接頭辞なしのプロパティを使用するべきで、リーディングシステム（EPUBリーダー）は現行のCSS仕様をサポートするべき」とされ、また「Working Groupは、EPUBの次のメジャーバージョンでこれらの接頭辞付きプロパティをサポートする見込みがないため、現在これらの接頭辞付きプロパティを使用しているEPUB制作者は、サポートが可能になり次第、接頭辞なしバージョンに移行することを推奨する」と規定した。
 
@@ -740,7 +740,7 @@ lang: 'ja'
 
 テスト結果を報告する前に、まずレイアウトエンジンとは何か、そしてCSS表示テスト（以下、本テスト）とどのような関係があるのかを説明する。
 
-ここでいうレイアウトエンジンとは、特定の仕様にもとづいて文字や画像を描画するプログラムのことだ。レンダリングエンジンともいう。たとえばブラウザーの場合、もとづく仕様はHTML、CSS、JavaScriptになる。
+ここでいうレイアウトエンジンとは、ある仕様にもとづいて文字や画像を描画するプログラムのことだ。レンダリングエンジンともいう。たとえばブラウザーの場合、もとづく仕様はHTML、CSS、JavaScriptになる。
 
 同様にEPUBもHTML、CSSにもとづくことから、そのレイアウトエンジンとしてブラウザーのものを流用されることが多い。とくに2010年代前半「電子書籍元年」に湧いていた我が国で、EPUBリーダー用レイアウトエンジンとして大歓迎されたのがAppleの[WebKit](https://webkit.org/)だった。
 
@@ -762,7 +762,7 @@ lang: 'ja'
 
 他方、独自エンジン系の方は「CSSの公式的な定義に含まれるCSSモジュール」の範囲に限ってもサポートするCSSモジュールはあまり多くない。赤字のテスト結果「NG」が目立つのが、独自エンジン系の特徴と言える。
 
-ただし、OKの多少だけを見てきれいに判別できた訳ではない。たとえば[楽天koboのリーダー](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=396838262&range=C1:K7)に関しては、[iOS](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=396838262&range=D1:D153)と[Android](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=396838262&range=F1:F153)は同じモダンブラウザー系でありながら、それぞれ種類の異なるレイアウトエンジンを実装しており、さらにそれ以外すべてが独自のレイアウトエンジンを実装するようだ。つまり、同じ楽天koboのリーダーの中で、3種類のレイアウトエンジンを使い分けていると推測できる。
+ただし、OKの多少だけを見てきれいに判別できた訳ではない。たとえば[楽天koboのリーダー](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=396838262&range=C1:K7)に関しては、[iOS](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=396838262&range=D1:D153)と[Android](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=396838262&range=F1:F153)は同じモダンブラウザー系でありながら、それぞれ種類の異なるレイアウトエンジンを実装しており、それら以外はすべて独自のレイアウトエンジンを実装するようだ。つまり楽天koboのリーダーの中で、3種類のレイアウトエンジンを使い分けていると推測できる。
 
 モダンブラウザー系と独自エンジン系の違いは分かりやすいが、なぜモダンブラウザー系のなかでレイアウトエンジンの違いが分かるのか、不思議に思われるかもしれない。
 
@@ -770,11 +770,19 @@ lang: 'ja'
 
 この種の調査で有用なのが、多種多様なブラウザーの実装情報を通時的に集積する[MDN Web Docs](https://developer.mozilla.org/ja/)である。運営は黎明期からブラウザー開発を見守り、自らも[Firefox](https://www.mozilla.org/ja/firefox/)を供給するオープンソース開発団体、[Mozilla Foundation](https://foundation.mozilla.org/en/)だ。
 
+たとえば前述したCSS縦書き用プロパティ`writing-mode: vertical-rl;`がWebKit（Safari）において2011年7月から実装されたという情報は、MDNの`writing-mode`リファレンスページの、[ブラウザーの互換性](https://developer.mozilla.org/ja/docs/Web/CSS/writing-mode#%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6%E3%83%BC%E3%81%AE%E4%BA%92%E6%8F%9B%E6%80%A7)の項で、「Safari」をクリックすると、ベンダー接頭辞`-webkit-`により実装されたことも含めて確認できる（図1）。
+
+![図1 writing-modeの「ブラウザーの互換性」（MDN Web Docs）](img/chap2/fig-1.png){width=480}
+
+では、本題に戻って
+
+
+![revertの「ブラウザーの互換性」（MDN Web Docs）](img/chap2/fig-2.png){width=540}
 
 *MDNのbrowser-compat-dataは  https://github.com/mdn/browser-compat-data でコントリビュータがpull reqすることにより更新されています。詳しくはREADMEに書かれてます。*
 
 
-*[WebKitにおけるwriting-mode: vertical-rl;の実装時期](https://developer.mozilla.org/ja/docs/Web/CSS/writing-mode#%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6%E3%83%BC%E3%81%AE%E4%BA%92%E6%8F%9B%E6%80%A7)*
+
 
 “Snapshot” だけでは分別できないEPUBリーダーもあった。そこにはレイアウトエンジンのバージョンや、アップデートの頻度が関わってくる。
 
@@ -782,7 +790,7 @@ lang: 'ja'
 
 <div class="figure-right">
 
-![図1 超縦書のプロパティ](img/chap2/fig-1.png){width=240}
+![図2 超縦書のプロパティ](img/chap2/fig-3.png){width=240}
 
 </div>
 
