@@ -762,19 +762,31 @@ lang: 'ja'
 
 他方、独自エンジン系の方は「CSSの公式的な定義に含まれるCSSモジュール」の範囲に限ってもサポートするCSSモジュールはあまり多くない。赤字のテスト結果「NG」が目立つのが、独自エンジン系の特徴と言える。
 
-ただし、OKの多少だけを見てきれいに判別できた訳ではない。たとえば[楽天koboのリーダー](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=396838262&range=C1:K7)に関しては、[iOS](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=396838262&range=D1:D153)と[Android](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=396838262&range=F1:F153)は同じモダンブラウザー系でありながら、それぞれ種類の異なるレイアウトエンジンを実装しており、それら以外はすべて独自のレイアウトエンジンを実装するようだ。つまり楽天koboのリーダーの中で、3種類のレイアウトエンジンを使い分けていると推測できる。
+ただし、OKの多少だけを見てきれいに判別できた訳ではない。たとえば[楽天koboのリーダー](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=396838262&range=C1:K7)に関しては、[iOS（以下、kobo-1）](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=396838262&range=D1:D153)と[Android（以下、kobo-2）](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=396838262&range=F1:F153)は同じモダンブラウザー系でありながら、それぞれ種類の異なるレイアウトエンジンを実装しており、それら以外はすべて独自のレイアウトエンジンを実装するようだ（以下、kobo-3）。つまり楽天koboのリーダーの中で、3種類のレイアウトエンジンを使い分けていると推測できる。
 
-モダンブラウザー系と独自エンジン系の違いは分かりやすいが、なぜモダンブラウザー系のなかでレイアウトエンジンの違いが分かるのか、不思議に思われるかもしれない。
+モダンブラウザー系と独自エンジン系の違いは分かりやすいが、なぜモダンブラウザー系のなかのレイアウトエンジンの違いまで分かるのか、不思議に思われるかもしれない。
 
-そもそもiOSはAppleの規約によりWebKit以外のレイアウトエンジンが使えないことが知られている。しかし、Android版はそのiOS版と微妙にテスト結果が違う。そうした結果の異なるCSSモジュールの実装時期を調べていくと、2020年ごろのChrome Android版と一致することがわかったのである。
+そもそもkobo-1のiOSは、Appleの規約によりWebKit以外のレイアウトエンジンが使えないことが知られている。しかし、Androidのkobo-2はkobo-1とも微妙にテスト結果が違い、そうした結果の異なるCSSモジュールの実装時期を調べていくと、2020年ごろのChrome Androidと一致することがわかったのである。
 
-この種の調査で有用なのが、多種多様なブラウザーの実装情報を通時的に集積する[MDN Web Docs](https://developer.mozilla.org/ja/)である。運営は黎明期からブラウザー開発を見守り、自らも[Firefox](https://www.mozilla.org/ja/firefox/)を供給するオープンソース開発団体、[Mozilla Foundation](https://foundation.mozilla.org/en/)だ。
+この種の調査で有用なのが、HTMLやCSS、JavaScriptのリファレンスサイトとして有名な[MDN Web Docs](https://developer.mozilla.org/ja/)である。運営しているのは黎明期からブラウザー開発を見守り、自らも[Firefox](https://www.mozilla.org/ja/firefox/)を供給するオープンソース開発団体、[Mozilla Foundation](https://foundation.mozilla.org/en/)だ。
 
-たとえば前述したCSS縦書き用プロパティ`writing-mode: vertical-rl;`がWebKit（Safari）において2011年7月から実装されたという情報は、MDNの`writing-mode`リファレンスページの、[ブラウザーの互換性](https://developer.mozilla.org/ja/docs/Web/CSS/writing-mode#%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6%E3%83%BC%E3%81%AE%E4%BA%92%E6%8F%9B%E6%80%A7)の項で、「Safari」をクリックすると、ベンダー接頭辞`-webkit-`により実装されたことも含めて確認できる（図1）。
+このサイトでは多種多様なブラウザーの実装情報を通時的に集積しており、これが役に立つ。たとえば前述したCSS縦書き用プロパティ`writing-mode: vertical-rl;`がWebKit（Safari）において2011年7月から実装されたという情報は、MDNの`writing-mode`リファレンスページの、[ブラウザーの互換性](https://developer.mozilla.org/ja/docs/Web/CSS/writing-mode#%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6%E3%83%BC%E3%81%AE%E4%BA%92%E6%8F%9B%E6%80%A7)の項で「Safari」をクリックすれば、2011年7月20日にリリースされたバージョン10.1においてベンダー接頭辞`-webkit-`により実装されたことが確認できる（図1）。
 
 ![図1 writing-modeの「ブラウザーの互換性」（MDN Web Docs）](img/chap2/fig-1.png){width=480}
 
-では、本題に戻って
+本題に戻って、このMDN Web Docsのどんな情報から、kobo-2のレイアウトエンジンが2020年ごろのChrome Androidと推測できるのだろう。
+
+[kobo-2における「CSSの公式的な定義に含まれるCSSモジュール」のテスト結果](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=396838262&range=F1:F120)のうち、NGとなったCSSモジュールを抜き出し、それらがChrome Androidでいつ実装されたか調べてみよう。
+
+- [::first-line 擬似要素 - 2012-06-27](https://developer.mozilla.org/ja/docs/Web/CSS/::first-line#%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6%E3%83%BC%E3%81%AE%E4%BA%92%E6%8F%9B%E6%80%A7)
+- [段組 2段組（column-count） - 2016-04-13](https://developer.mozilla.org/ja/docs/Web/CSS/column-count#%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6%E3%83%BC%E3%81%AE%E4%BA%92%E6%8F%9B%E6%80%A7)
+- [プロパティの値 revert - 2020-07-27](https://developer.mozilla.org/ja/docs/Web/CSS/revert#%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6%E3%83%BC%E3%81%AE%E4%BA%92%E6%8F%9B%E6%80%A7)
+- [hwb() 関数 - 2022-04-26](https://developer.mozilla.org/ja/docs/Web/CSS/color_value/hwb#%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6%E3%83%BC%E3%81%AE%E4%BA%92%E6%8F%9B%E6%80%A7)
+- [@counter-style ルール - 2021-05-25](https://developer.mozilla.org/ja/docs/Web/CSS/@counter-style#%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6%E3%83%BC%E3%81%AE%E4%BA%92%E6%8F%9B%E6%80%A7)
+- [定義済みカウンタースタイル cjk-decimal - 2021-05-25](https://developer.mozilla.org/ja/docs/Web/CSS/list-style-type#%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6%E3%83%BC%E3%81%AE%E4%BA%92%E6%8F%9B%E6%80%A7)
+- [定義済みカウンタースタイル japanese-informal - 2021-05-25](https://developer.mozilla.org/ja/docs/Web/CSS/list-style-type#%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6%E3%83%BC%E3%81%AE%E4%BA%92%E6%8F%9B%E6%80%A7)
+
+
 
 
 ![revertの「ブラウザーの互換性」（MDN Web Docs）](img/chap2/fig-2.png){width=540}
