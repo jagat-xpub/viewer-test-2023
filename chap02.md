@@ -163,7 +163,7 @@ lang: 'ja'
 
 他方、残りの18は掲載していない。その理由は一部テストファイルの不具合が判明し部分的に更新したことに伴い、それ以前のテスト結果は不正確であることが判明したので掲載をやめたものだ。この不具合については○○で詳述することにして、それらリーダーの明細を<a href="#2-1-3-2-掲載しなかったテスト環境の一覧">2-1-3-2 掲載しなかったテスト環境の一覧</a>に掲げる。
 
-なお、背景色が緑色はモダンブラウザー系、水色は独自エンジン系である。これらの分類については<a href="#2-2-1-レイアウトエンジンと本テストとの関係">2-2-1 レイアウトエンジンと本テストとの関係</a>を参照されたい。
+なお、背景色が緑色はモダンブラウザー系、水色は独自エンジン系である。これらの分類については<a href="#2-2-1-レイアウトエンジンと本テストとの関係">2-2-1 レイアウトエンジンと本テストとの関係</a>、及び<a href="#2-2-2-MDN「ブラウザーの互換性」を活用">2-2-2 MDN「ブラウザーの互換性」を活用</a>を参照されたい。
 
 #### 2-1-3-1 掲載したテスト環境の一覧
 
@@ -750,31 +750,38 @@ lang: 'ja'
 
 他方、レイアウトエンジンは中枢となるモジュールであり、これを外部から調達すれば独自機能の追加がむずかしくなるなど、開発の柔軟性を損なうデメリットが考えられる。これを嫌ってだろうか、コストをかけても独自のレイアウトエンジンを実装するEPUBリーダーも多い。本稿ではこれらを一括して**「独自エンジン系」**と呼ぶ。
 
-ではどのようにすれば、これはモダンブラウザー系、これは独自エンジン系と分かるのだろう。ここで、本報告書がもとづく指標 “Snapshot” は、主要なブラウザーにおけるCSSモジュールの実装安定性を分類したリストであったことを思い出してほしい。
+ではどのようにすれば、これはモダンブラウザー系、これは独自エンジン系と判別できるのだろう。ここで、本報告書がもとづく指標 “Snapshot” は、主要なブラウザーにおけるCSSモジュールの実装安定性を分類したリストであったことを思い出してほしい。
 
 つまり、現在使われているブラウザーのレイアウトエンジンであれば、 “Snapshot” の中で最も実装が安定している「CSSの公式的な定義に含まれるCSSモジュール」は、問題なく表示できるはずだ。
 
-一方で、EPUBという限定的なフォーマットに特化した独自エンジン系にとって、余計なコストをかけてまで “Snapshot” の規準をクリアするメリットはあまりない（あくまでEPUB 3.3が “Snapshot” のサポートを規定する以前は、なのだが）。すくなくとも汎用性が求められるブラウザーのレイアウトエンジンとは、比較的異なった実装になるはずだ。
+一方で、EPUBという限定的なフォーマットに特化した独自エンジン系にとって、余計なコストをかけてまで “Snapshot” の規準をクリアするメリットはあまりない（あくまでEPUB 3.3が “Snapshot” のサポートを規定する以前は、なのだが）。すくなくとも汎用性が求められるブラウザーのレイアウトエンジンとは、かなり異なった実装になるはずだ。
 
-つまり、“Snapshot” にリストアップされたCSSモジュールを帰納法的なモノサシにして、それらの多くを表示できたEPUBリーダーがモダンブラウザー系（セルの背景色が緑色）、そうでなかったEPUBリーダーが独自エンジン系（セルの背景色が水色）と分別できるだろう。そのように考えて、私達はテストにとりかかったのである。
+つまり、“Snapshot” にリストアップされたCSSモジュールを帰納法的なモノサシにして、それらの多くを表示できたEPUBリーダーがモダンブラウザー系（セルの背景色が緑色）、そうでなかったEPUBリーダーが独自エンジン系（セルの背景色が水色）と判別できるのではないか。そのように考えて、私達はテストにとりかかったのである。
 
-実際にテストしてみると、モダンブラウザー系と考えられるEPUBリーダーは、案の定「CSSの公式的な定義に含まれるCSSモジュール」のほとんどをサポートすることが分かった。いくつかサポートしていないCSSモジュールはあっても、比較的黒字のテスト結果「OK」が多いのがモダンブラウザー系の特徴と言える。
+詳細なテスト結果は<a href="#2-2-3-メジャーなepubリーダーでサポートされるcssモジュール">2-2-3</a>以降にゆずるが、モダンブラウザー系と考えられるEPUBリーダーは、案の定「CSSの公式的な定義に含まれるCSSモジュール」のほとんどをサポートすることが分かった。いくつかサポートしていないCSSモジュールはあっても、比較的黒字のテスト結果「OK」が多いのがモダンブラウザー系の特徴と言える。
 
 他方、独自エンジン系の方は「CSSの公式的な定義に含まれるCSSモジュール」の範囲に限ってもサポートするCSSモジュールはあまり多くない。赤字のテスト結果「NG」が目立つのが、独自エンジン系の特徴と言える。
 
-ただし、OKの多少だけを見てきれいに判別できた訳ではない。たとえば[楽天koboのリーダー](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=396838262&range=C1:K7)に関しては、[iOS（以下、kobo-1）](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=396838262&range=D1:D153)と[Android（以下、kobo-2）](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=396838262&range=F1:F153)は同じモダンブラウザー系でありながら、それぞれ種類の異なるレイアウトエンジンを実装しており、それら以外はすべて独自のレイアウトエンジンを実装するようだ（以下、kobo-3）。つまり楽天koboのリーダーの中で、3種類のレイアウトエンジンを使い分けていると推測できる。
+
+### 2-2-2 MDN Web Docsの活用
+
+
+ただし、OKの多少だけできれいに判別できる訳ではなく、追加調査が必要なものもあった。たとえば[楽天koboのリーダー](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=396838262&range=C1:K7)に関しては、[iOS（以下、kobo-1）](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=396838262&range=D1:D153)と[Android（以下、kobo-2）](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=396838262&range=F1:F153)は同じモダンブラウザー系でありながら、それぞれ種類の異なるレイアウトエンジンを実装しており、それら以外はすべて独自のレイアウトエンジンを実装するようだ（以下、kobo-3）。つまり楽天koboのリーダーの中で、3種類のレイアウトエンジンを使い分けていると推測できる。
 
 モダンブラウザー系と独自エンジン系の違いは分かりやすいが、なぜモダンブラウザー系のなかのレイアウトエンジンの違いまで分かるのか、不思議に思われるかもしれない。
 
-そもそもkobo-1のiOSは、Appleの規約によりWebKit以外のレイアウトエンジンが使えないことが知られている。しかし、Androidのkobo-2はkobo-1とも微妙にテスト結果が違い、そうした結果の異なるCSSモジュールの実装時期を調べていくと、2020年ごろのChrome Androidと一致することがわかったのである。
+そもそもkobo-1のiOSは、Appleの規約によりWebKit以外のレイアウトエンジンが使えないことがよく知られている。しかし、Androidのkobo-2はkobo-1とも微妙にテスト結果が違い、そうした結果の異なるCSSモジュールの実装時期を調べていくと、2020年ごろのChrome Androidと一致することがわかったのである。
 
-この種の調査で有用なのが、HTMLやCSS、JavaScriptのリファレンスサイトとして有名な[MDN Web Docs](https://developer.mozilla.org/ja/)である。運営しているのは黎明期からブラウザー開発を見守り、自らも[Firefox](https://www.mozilla.org/ja/firefox/)を供給するオープンソース開発団体、[Mozilla Foundation](https://foundation.mozilla.org/en/)だ。
+こうした調査で有用なのが、HTMLやCSS、JavaScriptのリファレンスサイトとして著名な[MDN Web Docs](https://developer.mozilla.org/ja/)（以下、MDN）である。運営しているのは黎明期からブラウザー開発を見守り、自らも[Firefox](https://www.mozilla.org/ja/firefox/)を供給するオープンソース開発団体、[Mozilla Foundation](https://foundation.mozilla.org/en/)だ。
 
-このサイトでは多種多様なブラウザーの実装情報を通時的に集積しており、これが役に立つ。たとえば前述したCSS縦書き用プロパティ`writing-mode: vertical-rl;`がWebKit（Safari）において2011年7月から実装されたという情報は、MDNの`writing-mode`リファレンスページの、[ブラウザーの互換性](https://developer.mozilla.org/ja/docs/Web/CSS/writing-mode#%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6%E3%83%BC%E3%81%AE%E4%BA%92%E6%8F%9B%E6%80%A7)の項で「Safari」をクリックすれば、2011年7月20日にリリースされたバージョン10.1においてベンダー接頭辞`-webkit-`により実装されたことが確認できる（図1）。
+このサイトでは多種多様なブラウザーの実装情報を通時的に集積している。たとえば前の方で、WebKit（Safari）ではCSS縦書き用プロパティ`writing-mode: vertical-rl;`を2011年7月に実装したと書いたが、この典拠はMDNの`writing-mode`リファレンスページの、[ブラウザーの互換性](https://developer.mozilla.org/ja/docs/Web/CSS/writing-mode#%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6%E3%83%BC%E3%81%AE%E4%BA%92%E6%8F%9B%E6%80%A7)だ。表の中の「Safari」をクリックすると、2011年7月20日にリリースされたバージョン10.1においてベンダー接頭辞`-webkit-`により実装されたことが確認できる（図1）。<span class="notetext">「ブラウザーの互換性」で表示される実装情報そのものは、[@mdn/browser-compat-data](https://github.com/mdn/browser-compat-data)（略称、BCD）というオープンソースプロジェクトが、テストの制作と実施を担当している。詳細はREADMEを参照。</span>
 
-![図1 writing-modeの「ブラウザーの互換性」（MDN Web Docs）](img/chap2/fig-1.png){width=480}
+<figure style="text-align: center;">
+  <img src="img/chap2/fig-1.png" alt="writing-modeの「ブラウザーの互換性」（MDN）" width="364">
+  <figcaption>図1 writing-modeの「ブラウザーの互換性」（MDN）</figcaption>
+</figure>
 
-本題に戻って、このMDN Web Docsのどんな情報から、kobo-2のレイアウトエンジンが2020年ごろのChrome Androidと推測できるのだろう。
+本題に戻ろう。では、このMDNのどんな情報から、kobo-2のレイアウトエンジンが2020年ごろのChrome Androidと推測できるのだろう。
 
 [kobo-2における「CSSの公式的な定義に含まれるCSSモジュール」のテスト結果](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=396838262&range=F1:F120)のうち、NGとなったCSSモジュールを抜き出し、それらがChrome Androidでいつ実装されたか調べてみよう。
 
@@ -787,14 +794,10 @@ lang: 'ja'
 - [定義済みカウンタースタイル japanese-informal - 2021-05-25](https://developer.mozilla.org/ja/docs/Web/CSS/list-style-type#%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6%E3%83%BC%E3%81%AE%E4%BA%92%E6%8F%9B%E6%80%A7)
 
 
-
-
-![revertの「ブラウザーの互換性」（MDN Web Docs）](img/chap2/fig-2.png){width=540}
-
-*MDNのbrowser-compat-dataは  https://github.com/mdn/browser-compat-data でコントリビュータがpull reqすることにより更新されています。詳しくはREADMEに書かれてます。*
-
-
-
+<figure style="text-align: center;">
+  <img src="img/chap2/fig-2.png" alt="revertの「ブラウザーの互換性」（MDN）" width="380">
+  <figcaption>図2 revertの「ブラウザーの互換性」（MDN）</figcaption>
+</figure>
 
 “Snapshot” だけでは分別できないEPUBリーダーもあった。そこにはレイアウトエンジンのバージョンや、アップデートの頻度が関わってくる。
 
@@ -802,7 +805,7 @@ lang: 'ja'
 
 <div class="figure-right">
 
-![図2 超縦書のプロパティ](img/chap2/fig-3.png){width=240}
+![図3 超縦書のプロパティ](img/chap2/fig-3.png){width=240}
 
 </div>
 
@@ -862,8 +865,8 @@ lang: 'ja'
 
 その上で、テスト結果を踏まえて「CSSの公式的な定義に含まれるCSSモジュール」を以下の2つのグループに分けた。
 
-1. <a href="#2-2-2-メジャーなEPUBリーダーでサポートされるCSSモジュール">2-2-2 メジャーなEPUBリーダーでサポートされるCSSモジュール</a>
-2. <a href="#2-2-3-おもにモダンブラウザー系でサポートされるCSSモジュール">2-2-3 おもにモダンブラウザー系でサポートされるCSSモジュール</a>
+1. <a href="#2-2-3-メジャーなepubリーダーでサポートされるcssモジュール">2-2-3 メジャーなEPUBリーダーでサポートされるCSSモジュール</a>
+2. <a href="#2-2-4-おもにモダンブラウザー系でサポートされるcssモジュール">2-2-4 おもにモダンブラウザー系でサポートされるCSSモジュール</a>
 
 1はモダンブラウザー系はもちろん、独自エンジン系のいくつかをふくめてもサポートするEPUBリーダーがとくに多かったCSSモジュールであり、2はそれ以外の「CSSの公式的な定義に含まれるCSSモジュール」である。次項から、この2つにわけて詳しくテスト結果を述べる。
 
@@ -873,7 +876,7 @@ lang: 'ja'
 
 --------
 
-### 2-2-2 メジャーなEPUBリーダーでサポートされるCSSモジュール
+### 2-2-3 メジャーなEPUBリーダーでサポートされるCSSモジュール
 
 <table>
   <thead>
@@ -1462,7 +1465,7 @@ lang: 'ja'
 - 1……同じWindows 11 Proで、ブラウザーを変えてテストしたところ、Chrome（113.0.5672.127）でNG、Edge（113.0.1774.57）ではOK
 - 2……ただし他の箇条書きに比べて1文字落ちている
 
-### 2-2-3 おもにモダンブラウザー系でサポートされるCSSモジュール
+### 2-2-4 おもにモダンブラウザー系でサポートされるCSSモジュール
 
 <table>
   <thead>
