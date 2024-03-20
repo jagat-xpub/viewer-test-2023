@@ -787,7 +787,7 @@ lang: 'ja'
 
 - [::first-line 擬似要素 - 2012-06-27](https://developer.mozilla.org/ja/docs/Web/CSS/::first-line#%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6%E3%83%BC%E3%81%AE%E4%BA%92%E6%8F%9B%E6%80%A7)
 - [段組 2段組（column-count） - 2016-04-13](https://developer.mozilla.org/ja/docs/Web/CSS/column-count#%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6%E3%83%BC%E3%81%AE%E4%BA%92%E6%8F%9B%E6%80%A7)
-- [プロパティの値 revert - 2020-07-27](https://developer.mozilla.org/ja/docs/Web/CSS/revert#%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6%E3%83%BC%E3%81%AE%E4%BA%92%E6%8F%9B%E6%80%A7)
+- [プロパティの値 revert - 2020-07-27](https://developer.mozilla.org/ja/docs/Web/CSS/revert#%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6%E3%83%BC%E3%81%AE%E4%BA%92%E6%8F%9B%E6%80%A7)（図2）
 - [hwb() 関数 - 2022-04-26](https://developer.mozilla.org/ja/docs/Web/CSS/color_value/hwb#%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6%E3%83%BC%E3%81%AE%E4%BA%92%E6%8F%9B%E6%80%A7)
 - [@counter-style ルール - 2021-05-25](https://developer.mozilla.org/ja/docs/Web/CSS/@counter-style#%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6%E3%83%BC%E3%81%AE%E4%BA%92%E6%8F%9B%E6%80%A7)
 - [定義済みカウンタースタイル cjk-decimal - 2021-05-25](https://developer.mozilla.org/ja/docs/Web/CSS/list-style-type#%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6%E3%83%BC%E3%81%AE%E4%BA%92%E6%8F%9B%E6%80%A7)
@@ -799,7 +799,7 @@ lang: 'ja'
   <figcaption>図2 revertの「ブラウザーの互換性」（MDN）</figcaption>
 </figure>
 
-“Snapshot” だけでは分別できないEPUBリーダーもあった。そこにはレイアウトエンジンのバージョンや、アップデートの頻度が関わってくる。
+もっとも、ここまで述べたような情報によっても分別できないEPUBリーダーもあった。そこにはレイアウトエンジンのバージョンや、アップデートの頻度が関わってくる。
 
 たとえば、超縦書はレイアウトエンジンにChromeのOSS版、[Chromium](https://www.chromium.org/chromium-projects/)を採用している<span class="notetext">EPUBビューア「超縦書」Windows版 よくある質問（BPS株式会社、baba、2017年6月）<https://techracho.bpsinc.jp/baba/2017_06_30/42515></span>。しかしテスト結果をみると、現在使われているブラウザーでは安定的に実装されている「Flexboxによる上下中央揃え」はサポートしているものの、同じく「[CSS変数](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=1234705026&range=G43:H43)」や「[Grid Layout](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=1234705026&range=G124)」はサポートしていない。そこで超縦書のプロパティを調べてみると、2017年7月3日に更新されたことが分かった（図1）。
 
@@ -819,7 +819,6 @@ lang: 'ja'
 
 ここまで説明したテスト結果を踏まえて、レイアウトエンジンの種別ごとに<a href="#2-1-3-1-掲載したテスト環境の一覧">2-1-3-1</a>の「略称」を振り分けたのが表1である。
 
-<div style=margin-top:24.5Q>
 <div class="float-table">
   <table>
     <tr>
@@ -858,9 +857,8 @@ lang: 'ja'
       <td bgcolor="#d9ead3" align="center">Thorium Reader</td>
       <td bgcolor="#FFFFFF" align="center"></td>
     </tr>
-    <caption>表1 EPUBリーダーの分類</caption>
+    <caption>表1 EPUBリーダーの種別</caption>
   </table>
-</div>
 </div>
 
 その上で、本報告書でテスト結果を報告する「CSSの公式的な定義に含まれるCSSモジュール」を、サポートするEPUBリーダーの多少により以下の2つに分け、次項以降でこのグループごとにテスト結果を述べることにする。
