@@ -301,7 +301,7 @@ img[src$=".svg"] {
   float-reference: inline;
   float: inline-end;
   margin-left: 1.5rem;
-  margin-top: 1rem;
+  margin-top: 0rem;
   margin-bottom: 1.5rem;
 }
 
