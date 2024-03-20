@@ -18,6 +18,10 @@ table {
   border-collapse: collapse;
   font-size: 12Q;
   line-height: 1.25em;
+  line-height: 1.25em;
+  margin-left: 1.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
 
