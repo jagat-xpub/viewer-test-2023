@@ -756,9 +756,9 @@ lang: 'ja'
 
 一方で、EPUBという限定的なフォーマットに特化した独自エンジン系にとって、余計なコストをかけてまで “Snapshot” の規準をクリアするメリットはあまりない（あくまでEPUB 3.3が “Snapshot” のサポートを規定する以前は、なのだが）。すくなくとも汎用性が求められるブラウザーのレイアウトエンジンとは、かなり異なった実装になるはずだ。
 
-つまり、“Snapshot” にリストアップされたCSSモジュールを帰納法的なモノサシにして、それらの多くを表示できたEPUBリーダーがモダンブラウザー系（セルの背景色が緑色）、そうでなかったEPUBリーダーが独自エンジン系（セルの背景色が水色）と判別できるのではないか。そのように考えて、私達はテストにとりかかったのである。
+つまり、“Snapshot” にリストアップされたCSSモジュールを帰納法的なモノサシにして、それらの多くを表示できたEPUBリーダーがモダンブラウザー系、そうでなかったEPUBリーダーが独自エンジン系と判別できるのではないか。そのように考えて、私達はテストにとりかかったのである。
 
-詳細なテスト結果は<a href="#2-2-3-メジャーなepubリーダーでサポートされるcssモジュール">2-2-3</a>以降にゆずるが、モダンブラウザー系と考えられるEPUBリーダーは、案の定「CSSの公式的な定義に含まれるCSSモジュール」のほとんどをサポートすることが分かった。いくつかサポートしていないCSSモジュールはあっても、比較的黒字のテスト結果「OK」が多いのがモダンブラウザー系の特徴と言える。
+詳細なテスト結果は<a href="#2-2-4-メジャーなepubリーダーでサポートされるcssモジュール">2-2-4</a>以降にゆずるが、モダンブラウザー系と考えられるEPUBリーダーは、案の定「CSSの公式的な定義に含まれるCSSモジュール」のほとんどをサポートすることが分かった。いくつかサポートしていないCSSモジュールはあっても、比較的黒字のテスト結果「OK」が多いのがモダンブラウザー系の特徴と言える。
 
 他方、独自エンジン系の方は「CSSの公式的な定義に含まれるCSSモジュール」の範囲に限ってもサポートするCSSモジュールはあまり多くない。赤字のテスト結果「NG」が目立つのが、独自エンジン系の特徴と言える。
 
@@ -768,11 +768,11 @@ lang: 'ja'
 
 ただし、OKの多少だけできれいに判別できる訳ではなく、追加調査が必要なものもあった。たとえば[楽天koboのリーダー](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=396838262&range=C1:K7)に関しては、[iOS（以下、kobo-1）](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=396838262&range=D1:D153)と[Android（以下、kobo-2）](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=396838262&range=F1:F153)は同じモダンブラウザー系でありながら、それぞれ種類の異なるレイアウトエンジンを実装しており、それら以外はすべて独自のレイアウトエンジンを実装するようだ（以下、kobo-3）。つまり楽天koboのリーダーの中で、3種類のレイアウトエンジンを使い分けていると推測できる。
 
-そもそもiOSではAppleの規約によりWebKit以外のレイアウトエンジンが使えないことが知られている。だからiOSのkobo-1はWebKitだろう。一方、AndroidではiOSのような規約はないものの、OSベンダーであるGoogleが供給するChrome Android（Chromium）が使われることが多い。それでもkono-2は最新版と微妙にテスト結果が違い、そうした結果の異なるCSSモジュールの実装時期を調べていくと、2020年ごろのChrome Androidと一致することがわかったのである。
+そもそもiOSではAppleの規約によりWebKit以外のレイアウトエンジンが使えないことが知られている。だからiOSのkobo-1はWebKitと考えられる。一方、AndroidではiOSのような規約はないものの、OSベンダーであるGoogleが供給するChrome Android（Chromium）が使われることが多い。ところが、kono-2に関しては最新版のChrome Androidともテスト結果が違い、そうした結果の異なるCSSモジュールの実装時期を調べていくと、どうやら2020年ごろのバージョンと一致することがわかったのである。
 
 こうした調査で有用なのが、HTMLやCSS、JavaScriptのリファレンスサイトとして著名な[MDN Web Docs](https://developer.mozilla.org/ja/)（以下、MDN）である。運営しているのは黎明期からブラウザー開発を見守り、自らも[Firefox](https://www.mozilla.org/ja/firefox/)を供給するオープンソース開発団体、[Mozilla Foundation](https://foundation.mozilla.org/en/)だ。
 
-このサイトでは多種多様なブラウザーの実装情報を通時的に集積している。たとえば前の方で、WebKit（Safari）では縦書き用CSSプロパティ`writing-mode: vertical-rl;`を2011年7月に実装したと書いたが、その根拠はMDNの`writing-mode`リファレンスページにある、[ブラウザーの互換性](https://developer.mozilla.org/ja/docs/Web/CSS/writing-mode#%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6%E3%83%BC%E3%81%AE%E4%BA%92%E6%8F%9B%E6%80%A7)だ。表の中の「Safari」をクリックすると、2011年7月20日にリリースされたバージョン10.1においてベンダー接頭辞`-webkit-`により実装されたと表示される（図1）。<span class="notetext">「ブラウザーの互換性」で表示される実装情報そのものは、[@mdn/browser-compat-data](https://github.com/mdn/browser-compat-data)（略称、BCD）というオープンソースプロジェクトが、テストの制作と実施を担当している。詳細はREADMEを参照。</span>
+このサイトでは多種多様なブラウザーの実装情報を通時的に集積している。たとえば前の方で、WebKit（Safari）では縦書き用CSSプロパティ`writing-mode: vertical-rl;`を2011年7月に実装したと書いたが、その根拠はMDNの`writing-mode`リファレンスページにある、[ブラウザーの互換性](https://developer.mozilla.org/ja/docs/Web/CSS/writing-mode#%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6%E3%83%BC%E3%81%AE%E4%BA%92%E6%8F%9B%E6%80%A7)だ。表の中の「Safari」をクリックすると、2011年7月20日にリリースされたバージョン10.1においてベンダー接頭辞`-webkit-`により実装されたと表示される（図1）。<span class="notetext">「ブラウザーの互換性」で表示される実装情報用のテスト制作とその実施は、オープンソースプロジェクト[@mdn/browser-compat-data](https://github.com/mdn/browser-compat-data)（略称、BCD）が担当している。詳細はREADMEを参照。</span>
 
 <figure style="text-align: center;">
   <img src="img/chap2/fig-1.png" alt="writing-modeの「ブラウザーの互換性」（MDN）" width="364">
@@ -781,8 +781,7 @@ lang: 'ja'
 
 ここで本題に戻ろう。では、こうしたMDNのどんな情報から、kobo-2のレイアウトエンジンが2020年ごろのChrome Androidと推測できるのだろう。
 
-[kobo-2における「CSSの公式的な定義に含まれるCSSモジュール」のテスト結果](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=396838262&range=F1:F120)のうち、NGとなったCSSモジュールを抜き出し、それらをChrome Androidで実装された順に並べてみよう。
-
+[kobo-2における「CSSの公式的な定義に含まれるCSSモジュール」のテスト結果](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=396838262&range=F1:F120)のうち、NGとなったCSSモジュールを抜き出し、それらをChrome Androidで実装された順に並べてみたのが以下のリストだ。
 
 - [段組 2段組`column-count` | 2016-04-13](https://developer.mozilla.org/ja/docs/Web/CSS/column-count#%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6%E3%83%BC%E3%81%AE%E4%BA%92%E6%8F%9B%E6%80%A7)
 - [プロパティの値 `revert` | 2020-07-27](https://developer.mozilla.org/ja/docs/Web/CSS/revert#%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6%E3%83%BC%E3%81%AE%E4%BA%92%E6%8F%9B%E6%80%A7)（図2）
@@ -796,7 +795,7 @@ lang: 'ja'
   <figcaption>図2 revertの「ブラウザーの互換性」（MDN）</figcaption>
 </figure>
 
-いったん「段組 2段組`column-count`」を脇に置くと、2020年7月27日に実装された「プロパティの値 `revert`」を先頭に並ぶことが分かると思う。kobo-2が2020年頃のChrome Androidを実装した場合、この時よりも後に実装されたCSSモジュールなど知るすべもないのだから、それらがすべて「NG」になるのは当然の結果と言える。
+いったん「段組 2段組`column-count`」を脇に置くと、2020年7月27日に実装された「プロパティの値 `revert`」を先頭に並ぶことが分かると思う。kobo-2が2020年頃のChrome Androidを実装した場合、この時よりも後に実装されたCSSモジュールなど知るすべもないのだから、これらがすべて「NG」になるのは当然の結果と言える。
 
 逆に「OK」だったCSSモジュールの実装時期もいくつか見ておこう。すべて2020年頃よりも前に実装されていることが分かる。
 
@@ -804,13 +803,9 @@ lang: 'ja'
 - [CSS変数（カスタムプロパティ）`var()` | 2016-03-09](https://developer.mozilla.org/ja/docs/Web/CSS/var#%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6%E3%83%BC%E3%81%AE%E4%BA%92%E6%8F%9B%E6%80%A7)
 - [Gridレイアウトによる上下中央揃え `grid` | 2017-03-16](https://developer.mozilla.org/ja/docs/Web/CSS/grid#%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6%E3%83%BC%E3%81%AE%E4%BA%92%E6%8F%9B%E6%80%A7)
 
-このように、実装時期という「足跡」を辿ることで、レイアウトエンジンの種別を特定することができる。
+このように、実装時期という「足跡」を辿ることで、レイアウトエンジンの種別を特定することができる。こうなると不自然なのは「段組 2段組`column-count`」の実装時期だが、レイアウトエンジンを外部調達する場合でも、そのまま使うとは限らない。ベンダーごとのなんらかの事情により元からある機能を無効にするなどの調整をおこなうことが多い。この「段組 2段組`column-count`」も同じだ。たとえば、スマートフォンの小さな画面で段組が効くとかえって読みにくいため無効にしたことで「NG」になった等の推測ができる。
 
-こうなると不自然なのは「段組 2段組`column-count`」の実装時期だが、レイアウトエンジンを外部調達する場合でも、そのまま使うとは限らない。ベンダーごとのなんらかの事情により元からある機能を無効にするなどの調整をおこなうことが多い。
-
-この「段組 2段組`column-count`」も同じだ。たとえば、スマートフォンの小さな画面で段組が効くとかえって読みにくいため無効にしたので「NG」になった等の推測ができる。
-
-もっとも、ここまで述べたような情報によっても、まだ分別できないEPUBリーダーもあった。たとえば、超縦書はレイアウトエンジンにChromeのOSS版、[Chromium](https://www.chromium.org/chromium-projects/)を採用している<span class="notetext">EPUBビューア「超縦書」Windows版 よくある質問（BPS株式会社、baba、2017年6月）<https://techracho.bpsinc.jp/baba/2017_06_30/42515></span>。しかしテスト結果をみると、現在使われているブラウザーでは安定的に実装されている「Flexboxによる上下中央揃え」はサポートしているものの、同じく「[CSS変数](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=1234705026&range=G43:H43)」や「[Grid Layout](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=1234705026&range=G124)」はサポートしていない。そこで超縦書のプロパティを調べてみると、2017年7月3日に更新されたことが分かった（図1）。
+もっとも、ここまで述べたような分析によっても、まだ分別できないEPUBリーダーもあった。たとえば、超縦書はレイアウトエンジンにChromeのOSS版、[Chromium](https://www.chromium.org/chromium-projects/)を採用している<span class="notetext">EPUBビューア「超縦書」Windows版 よくある質問（BPS株式会社、baba、2017年6月）<https://techracho.bpsinc.jp/baba/2017_06_30/42515></span>。しかしテスト結果をみると、現在使われているブラウザーでは安定的に実装されている「Flexboxによる上下中央揃え」はサポートしているものの、同じく「[CSS変数](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=1234705026&range=G43:H43)」や「[Grid Layout](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=1234705026&range=G124)」はサポートしていない。そこで超縦書のプロパティを調べてみると、2017年7月3日に更新されている（図1）。
 
 <div class="figure-right">
 
@@ -820,9 +815,9 @@ lang: 'ja'
 
 さらにプログラムのフォルダ内を見ると、Qt5というフレームワークのライブラリがある。このうちQt5Core.dllのバージョン（5.6.1）とChromiumのバージョンには対応関係があることが知られており、ここから超縦書で使われたChromiumのバージョンは2015年9月にリリースされた45.0.2554.101と推測できる。<span class="notetext">Qt5とChromiumのバージョン対応については以下を参照。<br/>https://wiki.qt.io/QtWebEngine/ChromiumVersions<br/>また、Chrome 45のリリース日については以下を参照。<br/>https://chrome.softwaredownload.co.in/chrome-45-0-2454</span>
 
-実際にはChromiumをカスタマイズしている可能性あるので、Chrome 45とまで断定しづらい。しかし、現行バージョンのタイムスタンプが2017年7月3日であり、Chromiumはそこからさらにさかのぼることは確かだ。
+実際にはChromiumをカスタマイズしている可能性があるので、Chrome 45とまで断定しづらい。しかし、現行バージョンのタイムスタンプが2017年7月3日であることから、Chromiumはそこからさらにさかのぼることは確かだ。
 
-このことから、超縦書はかなり古いレイアウトエンジンを実装したまま現在までアップデートしていないようだ。これだけ古いと「モダン」の要件からははずれる。そこで、超縦書はブラウザーのレイアウトエンジンを利用しているが、独自エンジン系に分類することにした。
+このことから、超縦書はかなり古いレイアウトエンジンを実装したまま現在までアップデートしていないと推測できる。これだけ古いと「モダン」の要件からはずれるだろう。そこで、超縦書はブラウザーのレイアウトエンジンを利用しているが、独自エンジン系に分類することにした。
 
 ### 2-2-3 レイアウトエンジンの種別とCSSモジュールのグループ分け
 
@@ -875,7 +870,7 @@ lang: 'ja'
 1. <a href="#2-2-4-メジャーなepubリーダーでサポートされるcssモジュール">2-2-4 メジャーなEPUBリーダーでサポートされるCSSモジュール</a>
 2. <a href="#2-2-5-おもにモダンブラウザー系でサポートされるcssモジュール">2-2-5 おもにモダンブラウザー系でサポートされるCSSモジュール</a>
 
-1はモダンブラウザー系はもちろん、独自エンジン系のいくつかをふくめてもサポートするEPUBリーダーがとくに多かったCSSモジュールであり、2はそれ以外の「CSSの公式的な定義に含まれるCSSモジュール」である。
+1はモダンブラウザー系はもちろん、独自エンジン系のいくつかをふくめてもサポートするEPUBリーダーがとくに多かったCSSモジュールであり、2はそれ以外の「CSSの公式的な定義に含まれるCSSモジュール」である。なお、セルの背景色が緑色はモダンブラウザー系、水色は独自エンジン系だ。
 
 では、次項以降で上記グループごとにテスト結果を述べていくことにしよう。
 
