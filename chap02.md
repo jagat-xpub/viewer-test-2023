@@ -33,7 +33,7 @@ lang: 'ja'
 
 上記にある “CSS Working Group Snapshot”（以下、“Snapshot”）とはなんだろう。バージョン2まで、CSS仕様はすべてのプロパティを単一の仕様書で規定していた。しかしその次のバージョン3では飛躍的に規模が大きくなることが確実になった。そこで審議するCSS Working Groupは、機能や目的ごとの「モジュール」に仕様を分割することにし、更新はモジュールごとにすすめることにした。ところが更新のペースがバラバラになると、今度はCSS仕様全体の状況が把握しづらくなってしまう。そこで考え出されたのが、インターネットブラウザー（以下、ブラウザー）に実装されたCSSモジュールを、安定レベルごとに分けたリストを作成し、これを1年ごとに更新していく “Snapshot” だ。<span class="notetext"> “Snapshot” のURLは<https://www.w3.org/TR/CSS/>に固定されている。本稿を執筆している2024年3月では “CSS Snapshot 2023” というタイトルだが、1年後の2025年3月に同じURLをクリックすれば “CSS Snapshot 2024” になっているはずだ。なお、2023年版のパーマネント・リンクは<https://www.w3.org/TR/css-2023/>である。</span>
 
-ここで重要なのが安定性のレベル分けだが、以下の3段階に分類されることになっている。
+ここで重要なのが安定性のレベル分けだが、以下の3段階に分類されることになっている（少ない数字が安定度が高い）。
 
 1. [CSSの公式的な定義に含まれるCSSモジュール（Cascading Style Sheets (CSS) — The Official Definition）](https://www.w3.org/TR/CSS/#css-official)
 2. [かなり安定しているが実装経験が限定的なCSSモジュール（Fairly Stable Modules with limited implementation experience）](https://www.w3.org/TR/CSS/#fairly-stable)
@@ -63,7 +63,7 @@ lang: 'ja'
 
 ### 2-1-2 テスト結果を掲載したCSSモジュール
 
-前述のように、本報告書では「1. CSSの公式的な定義に含まれるCSSモジュール」（[2.1. Cascading Style Sheets (CSS) — The Official Definition（CSSの公式的な定義に含まれるCSSモジュール）](https://www.w3.org/TR/CSS/#css-official)）だけを報告するが、そのうち以下はあまりに基礎的な仕様であり、実装の可否を調べるまでもないのでテストそのものから外している。
+前述のように、本報告書では「1. CSSの公式的な定義に含まれるCSSモジュール」（[2.1. Cascading Style Sheets (CSS) — The Official Definition（CSSの公式的な定義に含まれるCSSモジュール）](https://www.w3.org/TR/CSS/#css-official)）だけを報告するが、そのうち以下はあまりに基礎的な仕様であり、実装の可否を調べるまでもないと考えてテストそのものから外している。
 
 - [CSS Level 2, latest revision](https://www.w3.org/TR/CSS2/) (including errata)
 - [CSS Syntax Level 3](https://www.w3.org/TR/css-syntax-3/)
@@ -163,7 +163,7 @@ lang: 'ja'
 
 他方、残りの18は掲載していない。その理由は一部テストファイルの不具合が判明し部分的に更新したことに伴い、それ以前のテスト結果は不正確であることが判明したので掲載をやめたものだ。この不具合については○○で詳述することにして、それらリーダーの明細を<a href="#2-1-3-2-掲載しなかったテスト環境の一覧">2-1-3-2 掲載しなかったテスト環境の一覧</a>に掲げる。
 
-なお、背景色が緑色はモダンブラウザー系、水色は独自エンジン系である。これらの分類については<a href="#2-2-1-レイアウトエンジンと本テストとの関係">2-2-1 レイアウトエンジンと本テストとの関係</a>、及び<a href="#2-2-2-MDN「ブラウザーの互換性」を活用">2-2-2 MDN「ブラウザーの互換性」を活用</a>を参照されたい。
+なお、背景色が緑色はモダンブラウザー系、水色は独自エンジン系である。これらの分類については<a href="#2-2-1-レイアウトエンジンと本テストとの関係">2-2-1 レイアウトエンジンと本テストとの関係</a>、及び<a href="#2-2-2-mdn-web-docsの実装情報を活用">2-2-2 MDN Web Docsの実装情報を活用</a>を参照されたい。
 
 #### 2-1-3-1 掲載したテスト環境の一覧
 
@@ -799,7 +799,7 @@ lang: 'ja'
 
 逆に「OK」だったCSSモジュールの実装時期もいくつか見ておこう。すべて2020年よりも前に実装されていることが分かる。
 
-- [Flexboxによる上下中央揃え `flexbox` | 2013-08-21](https://developer.mozilla.org/ja/docs/Web/CSS/flex#%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6%E3%83%BC%E3%81%AE%E4%BA%92%E6%8F%9B%E6%80%A7)
+- [Flexboxによる上下中央揃え `flex` | 2013-08-21](https://developer.mozilla.org/ja/docs/Web/CSS/flex#%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6%E3%83%BC%E3%81%AE%E4%BA%92%E6%8F%9B%E6%80%A7)
 - [CSS変数（カスタムプロパティ）`var()` | 2016-03-09](https://developer.mozilla.org/ja/docs/Web/CSS/var#%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6%E3%83%BC%E3%81%AE%E4%BA%92%E6%8F%9B%E6%80%A7)
 - [Gridレイアウトによる上下中央揃え `grid` | 2017-03-16](https://developer.mozilla.org/ja/docs/Web/CSS/grid#%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6%E3%83%BC%E3%81%AE%E4%BA%92%E6%8F%9B%E6%80%A7)
 
