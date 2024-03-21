@@ -779,7 +779,7 @@ lang: 'ja'
   <figcaption>図1 writing-modeの「ブラウザーの互換性」（MDN）</figcaption>
 </figure>
 
-ここで本題に戻ろう。では、こうしたMDNのどんな情報から、kobo-2のレイアウトエンジンが2020年ごろのChrome Androidと推測できるのだろう。
+本題に戻ろう。では、こうしたMDNのどんな情報から、kobo-2のレイアウトエンジンが2020年ごろのChrome Androidと推測できるのだろう。
 
 [kobo-2における「CSSの公式的な定義に含まれるCSSモジュール」のテスト結果](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=396838262&range=F1:F120)のうち、NGとなったCSSモジュールを抜き出し、それらをChrome Androidで実装された順に並べてみたのが以下のリストだ。
 
@@ -795,7 +795,7 @@ lang: 'ja'
   <figcaption>図2 revertの「ブラウザーの互換性」（MDN）</figcaption>
 </figure>
 
-いったん「段組 2段組`column-count`」を脇に置くと、2020年7月27日に実装された「プロパティの値 `revert`」を先頭に並ぶことが分かると思う。kobo-2が2020年頃のChrome Androidを実装したとすれば、この時よりも後に実装されたCSSモジュールなど知るすべもないのだから、これらがすべて「NG」になるのは当然の結果と言える。
+いったん「段組 2段組`column-count`」を脇に置くと、2020年7月27日に実装された「プロパティの値 `revert`」を先頭に降順で並ぶことが分かると思う。kobo-2が2020年頃のChrome Androidを実装したとすれば、この時よりも後に実装されたCSSモジュールなど知るすべもないのだから、これらがすべて「NG」になるのは当然の結果と言える。
 
 逆に「OK」だったCSSモジュールの実装時期もいくつか見ておこう。すべて2020年よりも前に実装されていることが分かる。
 
