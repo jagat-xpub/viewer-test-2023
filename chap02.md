@@ -63,7 +63,7 @@ lang: 'ja'
 
 ### 2-1-2 テスト結果を掲載したCSSモジュール
 
-前述のように、本報告書では「1. CSSの公式的な定義に含まれるCSSモジュール」（[2.1. Cascading Style Sheets (CSS) — The Official Definition（CSSの公式的な定義に含まれるCSSモジュール）](https://www.w3.org/TR/CSS/#css-official)）だけを報告するが、そのうち以下はあまりに基礎的な仕様であり、実装の可否を調べるまでもないと考えてテストそのものから外している。
+前述のように、本報告書では「1. CSSの公式的な定義に含まれるCSSモジュール」（[2.1. Cascading Style Sheets (CSS) — The Official Definition（CSSの公式的な定義に含まれるCSSモジュール）](https://www.w3.org/TR/CSS/#css-official)）だけを報告するが、そのうち以下はあまりに基礎的な仕様であるか、EPUBでの利用はあまり想定できずテストが難しいなどの理由でテストそのものから外している。
 
 - [CSS Level 2, latest revision](https://www.w3.org/TR/CSS2/) (including errata)
 - [CSS Syntax Level 3](https://www.w3.org/TR/css-syntax-3/)
