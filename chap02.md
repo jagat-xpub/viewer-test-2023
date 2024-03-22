@@ -2728,7 +2728,7 @@ lang: 'ja'
 - 10……テストファイルepubcsstest_voyager-epubのバグによりN/A
 - 11……Android（13）がOK、iOS（16.4.1 ）がNG
 - 12……iOS（16.4.1 ）がOK、Android（13）がNG
-- 13……Windows 10はOK（ただし青枠の幅が他の半分しかない）、AndroidはNG
+- 13……Windows 10はOK、AndroidはNG
 - 14……Chrome（113.0.5672.127）がOK、Edge（113.0.1774.57）がNG
 - 15……Windows<br/>アプリ（2.3.0）がNG、Macアプリ（2.2.0）がNG
 
