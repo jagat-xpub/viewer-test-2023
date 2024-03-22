@@ -39,7 +39,7 @@ lang: 'ja'
 2. [かなり安定しているが実装経験が限定的なCSSモジュール（Fairly Stable Modules with limited implementation experience）](https://www.w3.org/TR/CSS/#fairly-stable)
 3. [大まかな相互運用性のあるCSSモジュール（Modules with Rough Interoperability）](https://www.w3.org/TR/CSS/#rough-interop)
 
-前掲EPUB 3.3の引用にある「Snapshotで定義されているCSS」とは、上記のうち1のことだ。つまりEPUB 3.3では数多くあるCSSモジュールの中でも、上記1でリストアップされているCSSモジュールだけは使えるよう求められている。では、**現在日本国内で利用されているEPUBリーダーは、これらのCSSモジュールをサポートしているのだろうか？**
+前掲EPUB 3.3の引用にある「CSS Snapshotで定義されているCSS」とは、上記のうち1のことだ。つまりEPUB 3.3では数多くあるCSSモジュールの中でも、上記1でリストアップされているCSSモジュールだけは使えるよう求められている。では、**現在日本国内で利用されているEPUBリーダーは、これらのCSSモジュールをサポートしているのだろうか？**
 
 もうひとつ、前掲の引用で分かるように、旧仕様で許されていた`-epub-`接頭辞付きのCSSプロパティは、最新仕様でも後方互換性のために残された。ここでいう`-epub-`接頭辞とは、[CSS 2.1で規定されているCSSプロパティを独自に拡張する構文](https://www.w3.org/TR/CSS2/syndata.html#vendor-keywords)のひとつ。プロパティ冒頭に付ける接頭辞をベンダーが独自に定義することから「ベンダー接頭辞」とも呼ばれる。EPUB 3.0仕様の策定時（2011年）のCSS仕様では、まだ縦書き用プロパティなどはドラフト仕様でしかなかった。そこでEPUB 3でこれらのプロパティを利用するための接頭辞が定められた。それが`-epub-`接頭辞だ。
 
@@ -768,7 +768,7 @@ lang: 'ja'
 
 ただし、OKの多少だけできれいに判別できる訳ではなく、追加調査が必要なものもあった。たとえば[楽天koboのリーダー](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=396838262&range=C1:K7)に関しては、[iOS（以下、kobo-1）](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=396838262&range=D1:D153)と[Android（以下、kobo-2）](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=396838262&range=F1:F153)は同じモダンブラウザー系でありながら、それぞれ種類の異なるレイアウトエンジンを実装しており、それら以外はすべて独自のレイアウトエンジンを実装するようだ（以下、kobo-3）。つまり楽天koboのリーダーの中で、3種類のレイアウトエンジンを使い分けていると推測できる。
 
-そもそもiOSではAppleの規約によりWebKit以外のブラウザのレイアウトエンジンが使えないことが知られている。だからiOSのkobo-1はWebKitと考えられる。一方、AndroidではiOSのような規約はないものの、OSベンダーであるGoogleが供給するChrome Android（Chromium）が使われることが多い。ところが、kono-2に関しては最新版のChrome Androidともテスト結果が違い、そうした結果の異なるCSSモジュールの実装時期を調べていくと、どうやら2020年ごろのバージョンと一致することがわかったのである。
+そもそもiOSではAppleの規約によりWebKit以外のブラウザのレイアウトエンジンが使えないことが知られている。だからiOSのkobo-1はWebKitと考えられる。一方、AndroidではiOSのような規約はないものの、OSベンダーであるGoogleが供給するChrome Android（Chromium）が使われることが多い。ところが、kobo-2に関しては最新版のChrome Androidともテスト結果が違い、そうした結果の異なるCSSモジュールの実装時期を調べていくと、どうやら2020年ごろのバージョンと一致することがわかったのである。
 
 こうした調査で有用なのが、HTMLやCSS、JavaScriptのリファレンスサイトとして著名な[MDN Web Docs](https://developer.mozilla.org/ja/)（以下、MDN）である。運営しているのは黎明期からブラウザー開発を見守り、自らも[Firefox](https://www.mozilla.org/ja/firefox/)を供給するオープンソース開発団体、[Mozilla Foundation](https://foundation.mozilla.org/en/)だ。
 
@@ -803,7 +803,7 @@ lang: 'ja'
 - [CSS変数（カスタムプロパティ）`var()` | 2016-03-09](https://developer.mozilla.org/ja/docs/Web/CSS/var#%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6%E3%83%BC%E3%81%AE%E4%BA%92%E6%8F%9B%E6%80%A7)
 - [Gridレイアウトによる上下中央揃え `grid` | 2017-03-16](https://developer.mozilla.org/ja/docs/Web/CSS/grid#%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6%E3%83%BC%E3%81%AE%E4%BA%92%E6%8F%9B%E6%80%A7)
 
-このように、実装時期という「足跡」を辿ることで、レイアウトエンジンの種別を特定することができる。整合しないのは「段組 2段組`column-count`」が2020年よりも前に実装されていたのにテスト結果が「NG」だったことだが、レイアウトエンジンを外部調達する場合でも、そのまま使うとは限らない。ベンダー特有の事情により元からある機能を無効にするなどの調整をおこなっていることが考えられる。スマートフォンの小さな画面で段組が効くとかえって読みにくいために無効にされ、それで「NG」になった等の推測ができる。
+このように、実装時期という「足跡」を辿ることで、レイアウトエンジンの種別を特定することができる。整合しないのは「段組 2段組`column-count`」が2020年よりも前に実装されていたのにテスト結果が「NG」だったことだが、レイアウトエンジンを外部調達する場合でも、そのまま使うとは限らない。ベンダー特有のなんらかの事情により元からある機能を無効にするなどの調整をする可能性がある。たとえば、スマートフォンの小さな画面で段組が効くとかえって読みにくいために無効にされ、それで「NG」になった等の推測ができる。
 
 もっとも、ここまで述べたような分析によっても、まだ分別できないEPUBリーダーもあった。たとえば、超縦書はレイアウトエンジンにChromeのOSS版、[Chromium](https://www.chromium.org/chromium-projects/)を採用している<span class="notetext">EPUBビューア「超縦書」Windows版 よくある質問（BPS株式会社、baba、2017年6月）<https://techracho.bpsinc.jp/baba/2017_06_30/42515></span>。しかしテスト結果をみると、現在使われているブラウザーでは安定的に実装されている「Flexboxによる上下中央揃え」はサポートしているものの、同じく「[CSS変数](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=1234705026&range=G43:H43)」や「[Grid Layout](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=1234705026&range=G124)」はサポートしていない。そこで超縦書のプロパティを調べてみると、2017年7月3日に更新されている（図1）。
 
