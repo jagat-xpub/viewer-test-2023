@@ -33,7 +33,7 @@ lang: 'ja'
 
 上記にある “CSS Working Group Snapshot”（以下、“Snapshot”）とはなんだろう。CSSレベル2まで、CSS仕様はすべてのプロパティを単一の仕様書で規定していた。しかしレベル2を超えるCSSでは飛躍的に規模が大きくなることが確実になった。そこで審議するCSS Working Groupは、機能や目的ごとの「モジュール」に仕様を分割することにし、更新はモジュールごとにすすめることにした。ところが更新のペースがバラバラになると、今度はCSS仕様全体の状況が把握しづらくなってしまう。そこで考え出されたのが、Webブラウザー（以下、ブラウザー）に実装されたCSSモジュールを、安定性の程度ごとに分けたリストを作成し、これを1年ごとに更新していく “Snapshot” だ。<span class="notetext"> “Snapshot” のURLは<https://www.w3.org/TR/CSS/>に固定されている。本稿を執筆している2024年3月では “CSS Snapshot 2023” というタイトルだが、1年後の2025年3月に同じURLをクリックすれば “CSS Snapshot 2024” になっているはずだ。なお、2023年版のパーマネント・リンクは<https://www.w3.org/TR/css-2023/>である。</span>
 
-ここで重要なのが安定性のレベル分けだが、以下の3段階に分類されることになっている（少ない数字が安定度が高い）。
+ここで重要なのが安定性の程度の分け方だが、以下の3段階に分類されることになっている（少ない数字が安定度が高い）。
 
 1. [CSSの公式的な定義に含まれるCSSモジュール（Cascading Style Sheets (CSS) — The Official Definition）](https://www.w3.org/TR/CSS/#css-official)
 2. [かなり安定しているが実装経験が限定的なCSSモジュール（Fairly Stable Modules with limited implementation experience）](https://www.w3.org/TR/CSS/#fairly-stable)
