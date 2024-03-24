@@ -48,6 +48,15 @@ h1 {
   /* inset-inline-start: 120mm; */
 }
 
+.author p {
+  text-align: inherit;
+}
+
+.author,
+.author p {
+  text-align: center;
+}
+
 /* h1::before {
   content: "chapter" counter(chapter-counter);
   font-size: 30Q;
