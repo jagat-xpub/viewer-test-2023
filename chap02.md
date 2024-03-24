@@ -803,7 +803,7 @@ lang: 'ja'
 - [CSS変数（カスタムプロパティ）`var()` | 2016-03-09](https://developer.mozilla.org/ja/docs/Web/CSS/var#%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6%E3%83%BC%E3%81%AE%E4%BA%92%E6%8F%9B%E6%80%A7)
 - [Gridレイアウトによる上下中央揃え `grid` | 2017-03-16](https://developer.mozilla.org/ja/docs/Web/CSS/grid#%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6%E3%83%BC%E3%81%AE%E4%BA%92%E6%8F%9B%E6%80%A7)
 
-このように、実装時期という「足跡」を辿ることで、レイアウトエンジンの種別を特定することができる。整合しないのは「段組 2段組`column-count`」が2020年よりも前に実装されていたのにテスト結果が「NG」だったことだが、レイアウトエンジンを外部調達する場合でも、そのまま使うとは限らない。ベンダー特有のなんらかの事情により元からある機能を無効にするなどの調整をする可能性がある。たとえば、スマートフォンの小さな画面で段組が効くとかえって読みにくいために無効にされ、それで「NG」になった等の推測ができる。
+整合しないのは「段組 2段組`column-count`」が2020年よりも前に実装されていたのにテスト結果が「NG」だったことだが、レイアウトエンジンを外部調達する場合でも、そのまま使うとは限らない。ベンダー特有のなんらかの事情により元からある機能を無効にするなどの調整をする可能性がある。たとえば、スマートフォンの小さな画面で段組が効くとかえって読みにくいために無効にされ、それで「NG」になった等の推測ができる。このように、実装時期という「足跡」を辿ることで、レイアウトエンジンの種別を特定することができる。
 
 もっとも、ここまで述べたような分析によっても、まだ分別できないEPUBリーダーもあった。たとえば、超縦書はレイアウトエンジンにChromeのOSS版、[Chromium](https://www.chromium.org/chromium-projects/)を採用している<span class="notetext">EPUBビューア「超縦書」Windows版 よくある質問（BPS株式会社、baba、2017年6月）<https://techracho.bpsinc.jp/baba/2017_06_30/42515></span>。しかしテスト結果をみると、現在使われているブラウザーでは安定的に実装されている「Flexboxによる上下中央揃え」はサポートしているものの、同じく「[CSS変数](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=1234705026&range=G43:H43)」や「[Grid Layout](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=1234705026&range=G124)」はサポートしていない。そこで超縦書のプロパティを調べてみると、2017年7月3日に更新されている（図1）。
 
