@@ -1177,6 +1177,23 @@ lang: 'ja'
       <td align="center">OK</td>
     </tr>
     <tr>
+      <td valign="bottom">::first-line 擬似要素</td>
+      <td align="center">OK</td>
+      <td align="center">OK</td>
+      <td align="center">OK</td>
+      <td align="center">OK</td>
+      <td align="center">OK</td>
+      <td align="center">OK</td>
+      <td align="center">OK</td>
+      <td style="color:#ea4335" align="center">OK / NG *¹¹</td>
+      <td style="color:#ea4335" align="center">NG</td>
+      <td style="color:#ea4335" align="center">NG</td>
+      <td align="center">OK</td>
+      <td align="center">OK</td>
+      <td align="center">OK</td>
+      <td align="center">OK</td>
+    </tr>
+    <tr>
       <td>::first-letter 擬似要素</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
@@ -1497,40 +1514,6 @@ lang: 'ja'
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th valign="bottom">Selectors Level 3</th>
-      <td valign="bottom"></td>
-      <td valign="bottom"></td>
-      <td valign="bottom"></td>
-      <td valign="bottom"></td>
-      <td align="center" valign="bottom"></td>
-      <td align="center" valign="bottom"></td>
-      <td valign="bottom"></td>
-      <td valign="bottom"></td>
-      <td valign="bottom"></td>
-      <td valign="bottom"></td>
-      <td valign="bottom"></td>
-      <td align="center" valign="bottom"></td>
-      <td align="center" valign="bottom"></td>
-      <td valign="bottom"></td>
-    </tr>
-    <tr>
-      <td valign="bottom">::first-line 擬似要素</td>
-      <td align="center">OK / NG *¹</td>
-      <td align="center">OK</td>
-      <td style="color:#ea4335" align="center">NG</td>
-      <td align="center">OK</td>
-      <td align="center">OK / NG *⁶</td>
-      <td align="center">OK</td>
-      <td align="center">OK</td>
-      <td style="color:#ea4335" align="center">OK / NG *¹¹</td>
-      <td style="color:#ea4335" align="center">NG</td>
-      <td style="color:#ea4335" align="center">NG</td>
-      <td align="center">OK</td>
-      <td style="color:#ea4335" align="center">NG</td>
-      <td align="center">OK</td>
-      <td align="center">OK</td>
-    </tr>
     <tr>
       <th valign="bottom">CSS Values and Units Level 3</th>
       <td align="center"></td>
@@ -2724,7 +2707,7 @@ lang: 'ja'
   </tbody>
 </table>
 
-- 1……iPhone（17.2.1）でのみOK
+- 1……
 - 2……vertical-rlがNGの場合、これを前提とするtext-orientationプロパティは無効（N/A）
 - 3……掲載した全てのテスト環境で2段組がNG。これを前提とする他のプロパティは無効（N/A）
 - 4……掲載した全てのテスト環境でmix-blend-modeがNG。これを前提とするisolationは無効（N/A）
