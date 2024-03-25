@@ -71,7 +71,7 @@ lang: 'ja'
 
 ところが実際に調査結果をまとめる段階になると、あまりにテスト項目が多すぎて報告書に収まりきらないことが判明した。やむなく本報告書ではEPUB 3.3で利用できることが求められているモジュール（前述「1. CSSの公式的な定義に含まれるCSSモジュール」）に絞って結果を掲載することにする。
 
-これも前項で述べたことだが、本報告書では “CSS Snapshot” で規定されているCSSモジュールから、EPUBリーダーでテストする意味を勘案して絞り込んでいる。たとえば、「1. CSSの公式的な定義に含まれるCSSモジュール」は24のCSSモジュールが規定されているが、本報告書ではそのうちの17のCSSモジュールに絞り、そこから82のテスト項目を選定している。ここで除外したCSSモジュールは以下のようなものだ。
+これも前項で述べたことだが、本報告書では “CSS Snapshot” で規定されているCSSモジュールから、EPUBリーダーでテストする意味を勘案して絞り込んでいる。たとえば、「1. CSSの公式的な定義に含まれるCSSモジュール」は24のCSSモジュールが規定されているが、本報告書ではそのうちの17のCSSモジュールに絞っている。ここで除外したCSSモジュールは以下のようなものだ。
 
 - [CSS Level 2, latest revision](https://www.w3.org/TR/CSS2/) (including errata)
 - [CSS Syntax Level 3](https://www.w3.org/TR/css-syntax-3/)
@@ -80,9 +80,8 @@ lang: 'ja'
 - [CSS Namespaces](https://www.w3.org/TR/css-namespaces/)
 - [CSS Box Model Level 3](https://www.w3.org/TR/css-box-3/)
 - [CSS Easing Functions Level 1](https://www.w3.org/TR/css-easing-1/)
-- [CSS Backgrounds and Borders Level 3](https://www.w3.org/TR/css-backgrounds-3/)
 
-残ったCSSモジュールとそのテスト項目を以下に仕様へのリンクとともに挙げる<span class="notetext">ここに挙げた以外の詳細なテスト項目の内容やCSSモジュールは、 [EPUBリーダー表示チェック](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?usp=sharing)を参照。</span>。全部で17のCSSモジュール、82のテスト項目である。テスト項目は、各CSSモジュールに含まれる機能のうち、EPUBでの利用が想定できてテストする価値がありそうなものを選定したものである。
+残ったCSSモジュールとそのテスト項目を以下に仕様へのリンクとともに挙げる<span class="notetext">ここに挙げた以外の詳細なテスト項目の内容やCSSモジュールは、 [EPUBリーダー表示チェック](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?usp=sharing)を参照。</span>。全部で17のCSSモジュール、82のテスト項目である。これらはいずれもEPUBでの利用が想定でき、テストする価値があると判断したものである。
 
 - [CSS Conditional Rules Level 3](https://www.w3.org/TR/css-conditional-3/)
   - @supports ルール
