@@ -47,23 +47,31 @@ lang: 'ja'
 
 つまりEPUB 3.3になって、接頭辞なしのプロパティを使うよう推奨された。では、**現在使われているEPUBリーダーは、`-epub-`接頭辞付きプロパティなしで表示できるのだろうか？**
 
-これらのことを実際にテストすることによって、現在使われているEPUBリーダーが最新のEPUB 3.3が要求するCSSにどの程度対応しているかが分かる。
+これらのことを実際にテストすることによって、現在使われているEPUBリーダーが最新のEPUB 3.3が要求するCSSにどの程度対応しているかが分かるはずだ。
 
-テストの方法をもう少し詳しく説明しよう。上記 “CSS Snapshot” にある3段階に加え、そこに載っていないが最新のメジャーなブラウザーで利用できるCSSモジュールを加え、全部で4段階の規準によりCSSモジュールを選定することにした。
+テストの方法をもう少し詳しく説明しよう。前記 “CSS Snapshot” にある3段階に加え、そこに載っていないが最新のメジャーなブラウザーで利用できるCSSモジュールを加え、全部で4段階の規準を設定することにした。
 
-つぎに、選定したCSSモジュールごとに、対応の可否を一目で識別できるテスト用EPUBファイルを制作した。これは以下のリポジトリで公開しているので、お読みの方はぜひご自分でも試していただきたい。<span class="notetext">ライセンスは[CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/deed.ja)で、著作権を放棄している。詳細はリポジトリを参照。</span>
+ただし、“CSS Snapshot” に規定されたCSSモジュールの中には、あまりに基礎的な仕様であったり、EPUBでの利用をあまり想定できないものもある。大事なことは「EPUBリーダーでテストする意味があるか」だろう。そこでそうしたCSSモジュールを外して、以下のようにテスト項目を選定した（テスト項目の具体的な内容は次項を参照）。
+
+- CSSの公式的な定義に含まれるCSSモジュール：**82項目**
+- かなり安定しているが実装経験が限定的なCSSモジュール：**25項目**
+- 大まかな相互運用性のあるCSSモジュール：**30項目**
+- CSS Snapshot 2023に載っていないが最新のブラウザで利用できるもの：**3項目**
+
+つぎに、選定したテスト項目ごとに、対応の可否が一目で識別できるテスト用EPUBファイルを制作した。これは以下のリポジトリで公開しているので、お読みの方はぜひご自分でも試していただきたい。<span class="notetext">ライセンスは[CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/deed.ja)で、著作権を放棄している。詳細はリポジトリを参照。</span>
 
 - [EPUBリーダーのCSS仕様適合性テスト](https://github.com/jagat-xpub/epub-css-test/tree/main)
 
-最後に、テスト対象のEPUBリーダーを選定し、当研究会のメンバーごとに割り振ってテストを開始した。各担当者は前述テスト用EPUBファイルを自分が担当するEPUBリーダーにサイドロードし、テスト結果を以下のGoogleスプレッドシートに記録していったのである。
+最後に、テスト対象のEPUBリーダーを選定し、当研究会のメンバーごとに割り振ってテストを開始した。各担当者は前述テスト用EPUBファイルを自分が担当するEPUBリーダーにサイドロードし、テスト結果を以下のGoogleスプレッドシートに記録していった。それが以下に公開するファイルである。
 
 - [EPUBリーダー表示チェック（JAGAT次世代パブリッシング研究会）2023](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?usp=sharing)（以下、「EPUBリーダー表示チェック」）
 
-ただし、実際に調査結果をまとめてみると、あまりにテスト項目が多すぎて報告書に収まりきらないことが判明した。やむなく本報告書ではEPUB 3.3で利用できることが求められているモジュール（前述「1. CSSの公式的な定義に含まれるCSSモジュール」）に絞って結果を掲載することにする。その他のテスト結果を知りたい方は、申し訳ないが上掲「EPUBリーダー表示チェック」を直接ご参照いただきたい。
 
 ### 2-1-2 テスト結果を掲載したCSSモジュール
 
-前述のように、本報告書では「1. CSSの公式的な定義に含まれるCSSモジュール」（[2.1. Cascading Style Sheets (CSS) — The Official Definition（CSSの公式的な定義に含まれるCSSモジュール）](https://www.w3.org/TR/CSS/#css-official)）だけを報告するが、そのうち以下はあまりに基礎的な仕様であるか、EPUBでの利用はあまり想定できずテストが難しいなどの理由でテストそのものから外している。
+ところが実際に調査結果をまとめる段階になると、あまりにテスト項目が多すぎて報告書に収まりきらないことが判明した。やむなく本報告書ではEPUB 3.3で利用できることが求められているモジュール（前述「1. CSSの公式的な定義に含まれるCSSモジュール」）に絞って結果を掲載することにする。
+
+これも前項で述べたことだが、本報告書では “CSS Snapshot” で規定されているCSSモジュールから、EPUBリーダーでテストする意味を勘案して絞り込んでいる。たとえば、「1. CSSの公式的な定義に含まれるCSSモジュール」は24のCSSモジュールが規定されているが、本報告書ではそのうちの17のCSSモジュールに絞っている。ここで除外したCSSモジュールは以下のようなものだ。
 
 - [CSS Level 2, latest revision](https://www.w3.org/TR/CSS2/) (including errata)
 - [CSS Syntax Level 3](https://www.w3.org/TR/css-syntax-3/)
@@ -73,7 +81,7 @@ lang: 'ja'
 - [CSS Box Model Level 3](https://www.w3.org/TR/css-box-3/)
 - [CSS Easing Functions Level 1](https://www.w3.org/TR/css-easing-1/)
 
-のこりをテストの対象として、結果を次節以降で報告する。以下にテストしたCSSモジュールを仕様へのリンクとともに挙げる。全部で17のCSSモジュール、61のテスト項目である。テスト項目は、各CSSモジュールに含まれる機能のうち、EPUBでの利用が想定できてテストする価値がありそうなものを選定したものである。
+残ったCSSモジュールとそのテスト項目を以下に仕様へのリンクとともに挙げる<span class="notetext">ここに挙げた以外の詳細なテスト項目の内容やCSSモジュールは、 [EPUBリーダー表示チェック](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?usp=sharing)を参照。</span>。全部で17のCSSモジュール、82のテスト項目だ。これらはいずれもEPUBでの利用が想定でき、テストする価値があると判断したものである。
 
 - [CSS Conditional Rules Level 3](https://www.w3.org/TR/css-conditional-3/)
   - @supports ルール
@@ -1173,6 +1181,23 @@ lang: 'ja'
       <td align="center">OK</td>
     </tr>
     <tr>
+      <td valign="bottom">::first-line 擬似要素</td>
+      <td align="center">OK</td>
+      <td align="center">OK</td>
+      <td align="center">OK</td>
+      <td align="center">OK</td>
+      <td align="center">OK</td>
+      <td align="center">OK</td>
+      <td align="center">OK</td>
+      <td style="color:#ea4335" align="center">OK / NG *¹¹</td>
+      <td style="color:#ea4335" align="center">NG</td>
+      <td style="color:#ea4335" align="center">NG</td>
+      <td align="center">OK</td>
+      <td align="center">OK</td>
+      <td align="center">OK</td>
+      <td align="center">OK</td>
+    </tr>
+    <tr>
       <td>::first-letter 擬似要素</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
@@ -1497,40 +1522,6 @@ lang: 'ja'
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th valign="bottom">Selectors Level 3</th>
-      <td valign="bottom"></td>
-      <td valign="bottom"></td>
-      <td valign="bottom"></td>
-      <td valign="bottom"></td>
-      <td align="center" valign="bottom"></td>
-      <td align="center" valign="bottom"></td>
-      <td valign="bottom"></td>
-      <td valign="bottom"></td>
-      <td valign="bottom"></td>
-      <td valign="bottom"></td>
-      <td valign="bottom"></td>
-      <td align="center" valign="bottom"></td>
-      <td align="center" valign="bottom"></td>
-      <td valign="bottom"></td>
-    </tr>
-    <tr>
-      <td valign="bottom">::first-line 擬似要素</td>
-      <td align="center">OK / NG *¹</td>
-      <td align="center">OK</td>
-      <td style="color:#ea4335" align="center">NG</td>
-      <td align="center">OK</td>
-      <td align="center">OK / NG *⁶</td>
-      <td align="center">OK</td>
-      <td align="center">OK</td>
-      <td style="color:#ea4335" align="center">OK / NG *¹¹</td>
-      <td style="color:#ea4335" align="center">NG</td>
-      <td style="color:#ea4335" align="center">NG</td>
-      <td align="center">OK</td>
-      <td style="color:#ea4335" align="center">NG</td>
-      <td align="center">OK</td>
-      <td align="center">OK</td>
-    </tr>
     <tr>
       <th valign="bottom">CSS Values and Units Level 3</th>
       <td align="center"></td>
@@ -2725,7 +2716,7 @@ lang: 'ja'
 </table>
 </div>
 
-- 1……iPhone（17.2.1）でのみOK
+- 1……
 - 2……vertical-rlがNGの場合、これを前提とするtext-orientationプロパティは無効（N/A）
 - 3……掲載した全てのテスト環境で2段組がNG。これを前提とする他のプロパティは無効（N/A）
 - 4……掲載した全てのテスト環境でmix-blend-modeがNG。これを前提とするisolationは無効（N/A）
