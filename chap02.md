@@ -831,8 +831,7 @@ lang: 'ja'
 
 ここまでの分析を踏まえて、レイアウトエンジンの種別ごとに<a href="#2-1-3-1-掲載したテスト環境の一覧">2-1-3-1</a>の「略称」を振り分けたのが表1である。
 
-<div style=margin-top:24.5Q>
-<div class="float-table">
+<div style=margin-top:24.5Q class="float-table">
   <table>
     <tr>
       <td style="margin-top:24.5Q;" bgcolor="#d9d9d9" align="center">モダンブラウザー系</td>
