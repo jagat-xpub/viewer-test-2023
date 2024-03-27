@@ -1516,11 +1516,9 @@ lang: 'ja'
 
 もともとこれは、EPUB 3をサポートするEPUBリーダーであれば、当然CSS レベル2.1にある`visibility`などはサポートしているはずという想定によるものだった。ところが独自エンジン系である一部のEPUBリーダーではこの想定が通用せず、いったんはおこなったテストを廃棄して、新しく作り直したテストですべてやり直すことになった。その廃棄したテストが、<a href="#2-1-3-2-掲載しなかったテスト環境の一覧">2-1-3-2 掲載しなかったテスト環境の一覧</a>に掲載したものだ。
 
-この時、新しく作り直したテストのファイル名を[epubcsstest_v1a.epub](https://github.com/jagat-xpub/epub-css-test/blob/main/epub/epubcsstest_v1a.epub)<span class="notetext">ZIP圧縮前のフォルダは以下を参照。<br/><https://github.com/jagat-xpub/epub-css-test/tree/main/epub-exp/epubcsstest_voyager></span>というが、これは当初この現象がVoyager社のRomancerで発生し、その対策として急きょ作られたという経緯による。その後、他の独自エンジン系のEPUBリーダーでも同様の現象が続出することになり、このテストファイルで再テストしたところ良好な結果が得られた。したがって「「EPUBリーダー表示チェック」をよく見ると、各所にこのファイル名が登場するが、「voyager」という文字列に深い意味はないことをお断りする。
+この時、新しく作り直したテストが[epubcsstest_v1a.epub](https://github.com/jagat-xpub/epub-css-test/blob/main/epub/epubcsstest_v1a.epub)<span class="notetext">ZIP圧縮前のフォルダは以下を参照。<br/><https://github.com/jagat-xpub/epub-css-test/tree/main/epub-exp/epubcsstest_v1a></span>である。
 
-`visibility`を使ったテストはかなり広範にわたっており、epubcsstest_v1a.epubでは大幅な書き直しをすることになった（他に「長さの単位」も書き直している）。本来であれば、テストファイルは1種類でなければならない。そこでなるべくモダンブラウザー系でもepubcsstest_v1a.epubでテストをおこなうよう努めたが、時間と労力が足りず、すべてはやり直せなかった。こうした事情により、このテストではやむを得ず本来あるべき原則が守られていないことをお断りする。
-
-ところが、独自エンジン系の実装に振り回されるのはこれが最後ではなかった。長くなるので詳細は省くが、締め切りも迫った2024年3月25日、「::first-line擬似要素」「rgb()関数のコンマなし形式」の2項目についても問題が発生し、やむなくテストの書き直しをすることになったのである。こうして作られたのが[epubcsstest_v2.epub](https://github.com/jagat-xpub/epub-css-test/blob/main/epub/epubcsstest_v2.epub)<span class="notetext">ZIP圧縮前のフォルダは以下を参照。<br/><https://github.com/jagat-xpub/epub-css-test/tree/main/epub-exp/epubcsstest_v2></span>であり、2項目に限って再テストしたEPUBリーダーは、Kindle、kobo-1（iOS）、kobo-2（Android）、ブック、MURASAKI、BOOK☆WALKER、超縦書、Vivliostyle、Thoriumである。
+ところが、独自エンジン系の実装に振り回されるのはこれが最後ではなかった。長くなるので詳細は省くが、締め切りも迫った2024年3月25日、「::first-line擬似要素」「rgb()関数のコンマなし形式」の2項目についても問題が発生し、やむなくテストの書き直しをすることになったのである。こうして作られたのが[epubcsstest_v2.epub](https://github.com/jagat-xpub/epub-css-test/blob/main/epub/epubcsstest_v2.epub)<span class="notetext">ZIP圧縮前のフォルダは以下を参照。<br/><https://github.com/jagat-xpub/epub-css-test/tree/main/epub-exp/epubcsstest_v2></span>であり、2項目に限って再テストしたEPUBリーダーは、Kindle、kobo-1（iOS）、kobo-2（Android）、ブック、MURASAKI、BOOK☆WALKER、超縦書である。
 
 ### 2-2-5 おもにモダンブラウザー系でサポートされるCSSモジュール
 
