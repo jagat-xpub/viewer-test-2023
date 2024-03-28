@@ -1834,19 +1834,19 @@ lang: 'ja'
     <tr>
       <td valign="bottom">rgb() 関数のコンマなし形式 例: rgb (0 255 0 / .5)</td>
       <td style="color:#ea4335" align="center">NG</td>
-      <td style="color:#ea4335" align="center">NG</td>
+      <td align="center">OK</td>
       <td align="center">OK</td>
       <td style="color:#ea4335" align="center">NG</td>
       <td align="center">OK</td>
-      <td align="center">OK / N/A *¹⁰</td>
-      <td style="color:#0000ff" align="center" valign="bottom">N/A *¹⁰</td>
       <td align="center">OK</td>
-      <td style="color:#0000ff" align="center" valign="bottom">N/A *¹⁰</td>
-      <td style="color:#0000ff" align="center" valign="bottom">N/A *¹⁰</td>
+      <td style="color:#ea4335" align="center" valign="bottom">NG</td>
       <td align="center">OK</td>
-      <td style="color:#ea4335" align="center" valign="bottom">NG / N/A *¹⁰</td>
-      <td align="center">OK / NG *¹⁰</td>
-      <td align="center">OK / NG *¹⁵</td>
+      <td style="color:#ea4335" align="center" valign="bottom">NG</td>
+      <td style="color:#ea4335" align="center" valign="bottom">NG</td>
+      <td align="center">OK</td>
+      <td style="color:#ea4335" align="center" valign="bottom">NG</td>
+      <td align="center">OK</td>
+      <td align="center">OK</td>
     </tr>
     <tr>
       <td valign="bottom">16進数のRGBA形式 (8桁）</td>
@@ -2745,12 +2745,12 @@ lang: 'ja'
 - 7……Mac（14.1.1）、及びiOS（16.4.1）でNG
 - 8……iOS（16.4.1）でのみNG
 - 9……Mac（v14.1.1）でのみNG
-- 10……テストファイルepubcsstest_voyager-epubのバグによりN/A
+- 10……
 - 11……Android（13）がOK、iOS（16.4.1 ）がNG
 - 12……iOS（16.4.1 ）がOK、Android（13）がNG
 - 13……Windows 10はOK、AndroidはNG
 - 14……Chrome（113.0.5672.127）がOK、Edge（113.0.1774.57）がNG
-- 15……Windows<br/>アプリ（2.3.0）がNG、Macアプリ（2.2.0）がNG
+- 15……
 
 ## 2-3 おわりに
 
