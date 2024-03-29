@@ -2739,9 +2739,9 @@ lang: 'ja'
 - 1……iOS（16.4.1 ）がOK、Android（13）がNG
 - 2……Mac（14.1.1）、及びiOS（16.4.1）でNG
 - 3……Chrome（113.0.5672.127）がOK、Edge（113.0.1774.57）がNG
-- 4……iOS（16.4.1）でのみNG
-- 5……Mac（v14.1.1）でのみNG
-- 6……vertical-rlがNGの場合、これを前提とするtext-orientationプロパティは無効（N/A）
+- 4……iOS（16.4.1）のみNG
+- 5……Mac（v14.1.1）のみNG
+- 6……`vertical-rl`がNGの場合、これを前提とするtext-orientationプロパティは無効（N/A）
 - 7……掲載した全てのテスト環境で2段組がNG。これを前提とする他のプロパティは無効（N/A）
 - 8……掲載した全てのテスト環境でmix-blend-modeがNG。これを前提とするisolationは無効（N/A）
 - 9……Windows上のKindle 2.3.0のみNG。他はすべてOK
