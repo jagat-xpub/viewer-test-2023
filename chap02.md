@@ -929,7 +929,7 @@ lang: 'ja'
       <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
-      <td style="color:#ea4335" align="center">NG</td>
+      <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
