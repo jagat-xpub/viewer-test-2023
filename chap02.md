@@ -789,19 +789,19 @@ lang: 'ja'
 
 では、こうしたMDNのどんな情報から、kobo-2のレイアウトエンジンが2020年ごろのChrome Androidと推測できるのだろう。
 
-[kobo-2における「CSSの公式的な定義に含まれるCSSモジュール」のテスト結果](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=396838262&range=F1:F120)のうち、NGとなったCSSモジュールを抜き出し、それらをChrome Androidで実装された順に並べてみたのが以下のリストだ。
+[kobo-2における「CSSの公式的な定義に含まれるCSSモジュール」のテスト結果](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=396838262&range=F1:F120)のうち、NGとなったCSSモジュールを抜き出し、それらをMDN「ブラウザーの互換性」によりChrome Androidで実装された順に並べてみたのが以下のリストだ。
 
 - [段組 2段組`column-count` | 2016-04-13](https://developer.mozilla.org/ja/docs/Web/CSS/column-count#%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6%E3%83%BC%E3%81%AE%E4%BA%92%E6%8F%9B%E6%80%A7)
-- [プロパティの値 `revert` | 2020-07-27](https://developer.mozilla.org/ja/docs/Web/CSS/revert#%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6%E3%83%BC%E3%81%AE%E4%BA%92%E6%8F%9B%E6%80%A7)（図2）
+- [プロパティの値 `revert` | 2020-07-27](https://developer.mozilla.org/ja/docs/Web/CSS/revert#%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6%E3%83%BC%E3%81%AE%E4%BA%92%E6%8F%9B%E6%80%A7)
 - [`hwb()` 関数 | 2022-04-26](https://developer.mozilla.org/ja/docs/Web/CSS/color_value/hwb#%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6%E3%83%BC%E3%81%AE%E4%BA%92%E6%8F%9B%E6%80%A7)
 - [`@counter-style` ルール | 2021-05-25](https://developer.mozilla.org/ja/docs/Web/CSS/@counter-style#%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6%E3%83%BC%E3%81%AE%E4%BA%92%E6%8F%9B%E6%80%A7)
 - [定義済みカウンタースタイル `cjk-decimal` | 2021-05-25](https://developer.mozilla.org/ja/docs/Web/CSS/list-style-type#%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6%E3%83%BC%E3%81%AE%E4%BA%92%E6%8F%9B%E6%80%A7)
 - [定義済みカウンタースタイル `japanese-informal` | 2021-05-25](https://developer.mozilla.org/ja/docs/Web/CSS/list-style-type#%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6%E3%83%BC%E3%81%AE%E4%BA%92%E6%8F%9B%E6%80%A7)
 
-<figure style="text-align: center;">
+<!-- <figure style="text-align: center;">
   <img src="img/chap2/fig-2.png" alt="revertの「ブラウザーの互換性」（MDN）" width="380">
   <figcaption>図2 revertの「ブラウザーの互換性」（MDN）</figcaption>
-</figure>
+</figure> -->
 
 いったん「段組 2段組`column-count`」を除外すると、2020年7月27日に実装された「プロパティの値 `revert`」を先頭に昇順で並ぶことが分かると思う。kobo-2が2020年頃のChrome Androidを実装したとすれば、この時よりも後に実装されたCSSモジュールなど知るすべもないのだから、これらがすべて「NG」になるのは当然の結果と言える。
 
@@ -877,7 +877,7 @@ lang: 'ja'
 
 ### 2-2-4 メジャーなEPUBリーダーでサポートされるCSSモジュール
 
-この項で報告するのは、6つのCSSモジュールにわたる28項目のテスト結果である（全82項目の約34%）。ここで言う「メジャーなEPUBリーダー」の定義については前項でも説明したが、要は「ほとんどの」ということだ。言い換えると、このクループは「ほとんどのEPUBリーダーでサポートされるCSSモジュール」である。ではテスト結果をまとめた表をご覧いただきたい。
+この項で報告するのは、6つのCSSモジュールにわたる28項目のテスト結果である（全82項目の約34%）。ここで言う「メジャーなEPUBリーダー」の定義については前項でも説明したが、要は「ほとんどの」ということだ。言い換えると、このクループは「ほとんどのEPUBリーダーでサポートされるCSSモジュール」である。ではテスト結果をまとめた表2をご覧いただきたい。
 
 <div style=margin-top:24.5Q>
 <table>
@@ -1478,6 +1478,7 @@ lang: 'ja'
       <td align="center">OK</td>
       <td align="center">OK</td>
     </tr>
+    <caption>表2 メジャーなEPUBリーダーでサポートされるCSSモジュール</caption>
   </tbody>
 </table>
 </div>
@@ -2726,6 +2727,7 @@ lang: 'ja'
       <td align="center">OK</td>
       <td align="center">OK</td>
     </tr>
+    <caption>表3 おもにモダンブラウザー系でサポートされるCSSモジュール</caption>
   </tbody>
 </table>
 </div>
