@@ -770,6 +770,60 @@ lang: 'ja'
 
 他方、独自エンジン系の方は「CSSの公式的な定義に含まれるCSSモジュール」の範囲に限ってもサポートするCSSモジュールはあまり多くない。赤字のテスト結果「NG」が目立つのが、独自エンジン系の特徴と言える。
 
+### 2-2-2 レイアウトエンジンの種別とCSSモジュールのグループ分け
+
+ここまでの分析を踏まえて、レイアウトエンジンの種別ごとに<a href="#2-1-3-1-掲載したテスト環境の一覧">2-1-3-1</a>の「略称」を振り分けたのが表1である。
+
+<div style=margin-top:24.5Q class="float-table">
+  <table>
+    <tr>
+      <td style="margin-top:24.5Q;" bgcolor="#d9d9d9" align="center">モダンブラウザー系</td>
+      <td bgcolor="#d9d9d9" align="center">独自エンジン系</td>
+    </tr>
+    <tr>
+      <td bgcolor="#d9ead3" align="center">kobo-1</td>
+      <td bgcolor="#c9daf8" align="center">Kindle</td>
+    </tr>
+    <tr>
+      <td bgcolor="#d9ead3" align="center">kobo-2</td>
+      <td bgcolor="#c9daf8" align="center">kobo-3</td>
+    </tr>
+    <tr>
+      <td bgcolor="#d9ead3" align="center">ブック</td>
+      <td bgcolor="#c9daf8" align="center">honto</td>
+    </tr>
+    <tr>
+      <td bgcolor="#d9ead3" align="center">MURASAKI</td>
+      <td bgcolor="#c9daf8" align="center">Kinoppy</td>
+    </tr>
+    <tr>
+      <td bgcolor="#d9ead3" align="center">BOOK WALKER</td>
+      <td bgcolor="#c9daf8" align="center">Romancer</td>
+    </tr>
+    <tr>
+      <td bgcolor="#d9ead3" align="center">Bibi</td>
+      <td bgcolor="#c9daf8" align="center">超縦書</td>
+    </tr>
+    <tr>
+      <td bgcolor="#d9ead3" align="center">Vivliostyle Viewer</td>
+      <td bgcolor="#FFFFFF" align="center"></td>
+    </tr>
+    <tr>
+      <td bgcolor="#d9ead3" align="center">Thorium Reader</td>
+      <td bgcolor="#FFFFFF" align="center"></td>
+    </tr>
+    <caption>表1 レイアウトエンジンの種別</caption>
+  </table>
+</div>
+
+その上で、
+「CSSの公式的な定義に含まれるCSSモジュール」を、サポートするEPUBリーダーの数によって以下の2つのグループに分け、テスト結果を掲載する。
+
+1. <a href="#2-2-4-メジャーなepubリーダーでサポートされるcssモジュール">2-2-4 メジャーなEPUBリーダーでサポートされるCSSモジュール</a>
+2. <a href="#2-2-5-おもにモダンブラウザー系でサポートされるcssモジュール">2-2-5 おもにモダンブラウザー系でサポートされるCSSモジュール</a>
+
+1はモダンブラウザー系はもちろん、独自エンジン系のいくつかを含めてもサポートするEPUBリーダーがとくに多かったCSSモジュールであり、2はそれ以外の「CSSの公式的な定義に含まれるCSSモジュール」である。では、次項以降でテスト結果を述べていこう。
+
 
 ### 2-2-3 メジャーなEPUBリーダーでサポートされるCSSモジュール
 
