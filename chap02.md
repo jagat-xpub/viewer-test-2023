@@ -2114,7 +2114,7 @@ lang: 'ja'
       <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
-      <td style="color:#0000ff" align="center">OK / N/A *⁵</td>
+      <td style="color:#0000ff" align="center">N/A *⁵</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
     </tr>
@@ -2130,7 +2130,7 @@ lang: 'ja'
       <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
-      <td style="color:#0000ff" align="center">OK / N/A *⁵</td>
+      <td style="color:#0000ff" align="center">N/A *⁵</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
     </tr>
