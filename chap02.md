@@ -1320,7 +1320,7 @@ lang: 'ja'
       <td align="center">OK</td>
       <td style="color:#ea4335" align="center">NG</td>
       <td style="color:#ea4335" align="center">NG</td>
-      <td style="color:#ea4335" bgcolor="#f3f3f3" align="center">OK / NG *¹</td>
+      <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
@@ -1352,7 +1352,7 @@ lang: 'ja'
       <td align="center">OK</td>
       <td style="color:#ea4335" align="center">NG</td>
       <td style="color:#ea4335" align="center">NG</td>
-      <td bgcolor="#f3f3f3" align="center">OK *²</td>
+      <td bgcolor="#f3f3f3" align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
@@ -1395,7 +1395,6 @@ lang: 'ja'
 </div>
 
 - 1……同じWindows 11 Proで、ブラウザーを変えてテストしたところ、Chrome（113.0.5672.127）でNG、Edge（113.0.1774.57）ではOK
-- 2……ただし他の箇条書きに比べて1文字落ちている
 
 結果は、RomancerとKinoppy、およびhonto以外のEPUBリーダーは、このグループのテスト項目をほとんどクリアした。ただし、このテスト結果が確定するまでいささかの曲折があった。その原因はまさに独自エンジン系の独自な実装にある。
 
@@ -2004,7 +2003,7 @@ lang: 'ja'
       <td align="center">OK</td>
       <td style="color:#ea4335" align="center">NG</td>
       <td style="color:#ea4335" align="center">NG</td>
-      <td style="color:#ea4335" align="center">OK / NG *³</td>
+      <td style="color:#ea4335" align="center">NG</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
