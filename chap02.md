@@ -2573,13 +2573,12 @@ lang: 'ja'
 
 - 1……iOSがOK、AndroidがNG
 - 2……Mac、及びiOSでNG
-- 3……ChromeがOK、EdgeがNG
-- 4……iOSのみNG
-- 5……MacのみNG
-- 6……`vertical-rl`がNGの場合、これを前提とするtext-orientationプロパティは無効（N/A）
-- 7……掲載した全てのテスト環境で2段組がNG。これを前提とする他のプロパティは無効（N/A）
-- 8……掲載した全てのテスト環境でmix-blend-modeがNG。これを前提とするisolationは無効（N/A）
-- 9……Windows上のKindle 2.3.0のみNG。他はすべてOK
+- 3……iOSのみNG
+- 4……MacのみNG
+- 5……`vertical-rl`がNGの場合、これを前提とするtext-orientationプロパティは無効（N/A）
+- 6……掲載した全てのテスト環境で2段組がNG。これを前提とする他のプロパティは無効（N/A）
+- 7……掲載した全てのテスト環境でmix-blend-modeがNG。これを前提とするisolationは無効（N/A）
+- 8……Windows上のKindle 2.3.0のみNG。他はすべてOK
 
 一見すると、黒の「OK」と赤の「NG」が不規則に入り乱れているように見えるかもしれない。しかし縦に見ていくとつながりが見て取れる。つまりリーダーごとに、OKが多いものとNGが多いものの2種類に分かれているのだ。上端のレイアウトエンジンの違いも含めてみれば違いがさらに分かる。OKの多いリーダーは緑色＝モダンブラウザー系であり、NGの多いリーダーは水色＝独自エンジン系なのである。
 
