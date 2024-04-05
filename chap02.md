@@ -1394,8 +1394,6 @@ lang: 'ja'
 </table>
 </div>
 
-- 1……同じWindows 11 Proで、ブラウザーを変えてテストしたところ、Chrome（113.0.5672.127）でNG、Edge（113.0.1774.57）ではOK
-
 結果は、RomancerとKinoppy、およびhonto以外のEPUBリーダーは、このグループのテスト項目をほとんどクリアした。ただし、このテスト結果が確定するまでいささかの曲折があった。その原因はまさに独自エンジン系の独自な実装にある。
 
 テストファイルの当初のバージョンでは、多くのテスト項目においてCSS レベル2.1のプロパティである`visibility`を使っていた。たとえば、Selector 3の「:root擬似クラス」のテスト項目は次のようになっている。
@@ -2100,7 +2098,7 @@ lang: 'ja'
       <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
-      <td style="color:#ea4335" align="center">OK / NG *⁶</td>
+      <td style="color:#ea4335" align="center">NG *⁶</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
     </tr>
