@@ -781,32 +781,28 @@ lang: 'ja'
       <td bgcolor="#d9d9d9" align="center">独自エンジン系</td>
     </tr>
     <tr>
-      <td bgcolor="#d9ead3" align="center">kobo-1</td>
+      <td bgcolor="#d9ead3" align="center">kobo-mobile</td>
       <td bgcolor="#c9daf8" align="center">Kindle</td>
     </tr>
     <tr>
-      <td bgcolor="#d9ead3" align="center">kobo-2</td>
-      <td bgcolor="#c9daf8" align="center">kobo-3</td>
-    </tr>
-    <tr>
       <td bgcolor="#d9ead3" align="center">ブック</td>
-      <td bgcolor="#c9daf8" align="center">honto</td>
+      <td bgcolor="#c9daf8" align="center">kobo-other</td>
     </tr>
     <tr>
       <td bgcolor="#d9ead3" align="center">MURASAKI</td>
-      <td bgcolor="#c9daf8" align="center">Kinoppy</td>
+      <td bgcolor="#c9daf8" align="center">honto</td>
     </tr>
     <tr>
       <td bgcolor="#d9ead3" align="center">BOOK WALKER</td>
-      <td bgcolor="#c9daf8" align="center">Romancer</td>
+      <td bgcolor="#c9daf8" align="center">Kinoppy</td>
     </tr>
     <tr>
       <td bgcolor="#d9ead3" align="center">Bibi</td>
-      <td bgcolor="#c9daf8" align="center">超縦書</td>
+      <td bgcolor="#c9daf8" align="center">Romancer</td>
     </tr>
     <tr>
       <td bgcolor="#d9ead3" align="center">Vivliostyle Viewer</td>
-      <td bgcolor="#FFFFFF" align="center"></td>
+      <td bgcolor="#c9daf8" align="center">超縦書</td>
     </tr>
     <tr>
       <td bgcolor="#d9ead3" align="center">Thorium Reader</td>
