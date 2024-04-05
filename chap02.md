@@ -261,7 +261,7 @@ lang: 'ja'
     </tr>
     <tr>
       <td bgcolor="#d9ead3" align="center">楽天Koboアプリ for iPhone *¹</td>
-      <td bgcolor="#d9ead3" align="center">kobo-1</td>
+      <td bgcolor="#d9ead3" align="center">kobo-mobile</td>
       <td bgcolor="#d9ead3" align="center">iOSアプリ</td>
       <td bgcolor="#d9ead3" align="center">iPhone 13 mini</td>
       <td bgcolor="#d9ead3" align="center">iOS17.2.1</td>
@@ -271,7 +271,7 @@ lang: 'ja'
     </tr>
     <tr>
       <td bgcolor="#d9ead3" align="center">楽天Koboアプリ for Android</td>
-      <td bgcolor="#d9ead3" align="center">kobo-2</td>
+      <td bgcolor="#d9ead3" align="center">kobo-mobile</td>
       <td bgcolor="#d9ead3" align="center">Android<br/>アプリ</td>
       <td bgcolor="#d9ead3" align="center">Galaxy Tab S8 Ultra</td>
       <td bgcolor="#d9ead3" align="center">Android　13</td>
@@ -281,7 +281,7 @@ lang: 'ja'
     </tr>
     <tr>
       <td bgcolor="#c9daf8" align="center">Kobo Libra 2</td>
-      <td bgcolor="#c9daf8" align="center">kobo-3</td>
+      <td bgcolor="#c9daf8" align="center">kobo-other</td>
       <td bgcolor="#c9daf8" align="center">専用<br/>タブレット</td>
       <td bgcolor="#c9daf8" align="center">リーダーと同</td>
       <td bgcolor="#c9daf8" align="center">4.38.21908 (fac580f37d, 2023/08/22)</td>
@@ -291,7 +291,7 @@ lang: 'ja'
     </tr>
     <tr>
       <td bgcolor="#c9daf8" align="center">楽天Koboデスクトップ</td>
-      <td bgcolor="#c9daf8" align="center">kobo-3</td>
+      <td bgcolor="#c9daf8" align="center">kobo-other</td>
       <td bgcolor="#c9daf8" align="center">Windows<br/>アプリ</td>
       <td bgcolor="#c9daf8" align="center">N/A *⁶</td>
       <td bgcolor="#c9daf8" align="center">Windows 10 Pro (22H2　19045.3208)</td>
@@ -301,7 +301,7 @@ lang: 'ja'
     </tr>
     <tr>
       <td bgcolor="#c9daf8" align="center">楽天Koboデスクトップ</td>
-      <td bgcolor="#c9daf8" align="center">kobo-3</td>
+      <td bgcolor="#c9daf8" align="center">kobo-other</td>
       <td bgcolor="#c9daf8" align="center">Macアプリ</td>
       <td bgcolor="#c9daf8" align="center">MacBook (Retina, 12-12inch, Early 2016)</td>
       <td bgcolor="#c9daf8" align="center">macOS 12.6.6</td>
@@ -311,7 +311,7 @@ lang: 'ja'
     </tr>
     <tr>
       <td bgcolor="#c9daf8" align="center">楽天Koboデスクトップ *¹</td>
-      <td bgcolor="#c9daf8" align="center">kobo-3</td>
+      <td bgcolor="#c9daf8" align="center">kobo-other</td>
       <td bgcolor="#c9daf8" align="center">Macアプリ</td>
       <td bgcolor="#c9daf8" align="center">MacBook (Retina, 12-12inch, Early 2016)</td>
       <td bgcolor="#c9daf8" align="center">macOS 12.7.2</td>
@@ -420,7 +420,7 @@ lang: 'ja'
       <td bgcolor="#c9daf8" align="center">2024/01/24</td>
     </tr>
     <tr>
-      <td bgcolor="#d9ead3" align="center">BOOK WALKER</td>
+      <td bgcolor="#d9ead3" align="center">Book Walker</td>
       <td bgcolor="#d9ead3" align="center">→</td>
       <td bgcolor="#d9ead3" align="center">iOSアプリ</td>
       <td bgcolor="#d9ead3" align="center">iPhone 13 mini</td>
@@ -430,7 +430,7 @@ lang: 'ja'
       <td bgcolor="#d9ead3" align="center">2023/05/20</td>
     </tr>
     <tr>
-      <td bgcolor="#d9ead3" align="center">BOOK WALKER</td>
+      <td bgcolor="#d9ead3" align="center">Book Walker</td>
       <td bgcolor="#d9ead3" align="center">→</td>
       <td bgcolor="#d9ead3" align="center">Android<br/>アプリ</td>
       <td bgcolor="#d9ead3" align="center">Galaxy Tab S8 Ultra</td>
@@ -793,7 +793,7 @@ lang: 'ja'
       <td bgcolor="#c9daf8" align="center">honto</td>
     </tr>
     <tr>
-      <td bgcolor="#d9ead3" align="center">BOOK WALKER</td>
+      <td bgcolor="#d9ead3" align="center">Book Walker</td>
       <td bgcolor="#c9daf8" align="center">Kinoppy</td>
     </tr>
     <tr>
@@ -831,13 +831,13 @@ lang: 'ja'
     <tr>
       <td style="color:#434343" align="right"></td>
       <td style="writing-mode: vertical-lr" bgcolor="#c9daf8" align="center">Kindle</td>
-      <td style="writing-mode: vertical-lr" bgcolor="#d9ead3" align="center">kobo-1</td>
+      <td style="writing-mode: vertical-lr" bgcolor="#d9ead3" align="center">kobo-mobile</td>
       <td style="writing-mode: vertical-lr" bgcolor="#d9ead3" align="center">kobo-2</td>
-      <td style="writing-mode: vertical-lr" bgcolor="#c9daf8" align="center">kobo-3</td>
+      <td style="writing-mode: vertical-lr" bgcolor="#c9daf8" align="center">kobo-other</td>
       <td style="writing-mode: vertical-lr" bgcolor="#d9ead3" align="center">ブック</td>
       <td style="writing-mode: vertical-lr" bgcolor="#d9ead3" align="center">MURASAKI</td>
       <td style="writing-mode: vertical-lr" bgcolor="#c9daf8" align="center">honto</td>
-      <td style="writing-mode: vertical-lr" bgcolor="#d9ead3" align="center">BOOK☆ WALKER</td>
+      <td style="writing-mode: vertical-lr" bgcolor="#d9ead3" align="center">Book Walker</td>
       <td style="writing-mode: vertical-lr" bgcolor="#c9daf8" align="center">Kinoppy</td>
       <td style="writing-mode: vertical-lr" bgcolor="#c9daf8" align="center">Romancer</td>
       <td style="writing-mode: vertical-lr" bgcolor="#d9ead3" align="center">Bibi</td>
@@ -1457,7 +1457,7 @@ lang: 'ja'
 
 もともとこれは、EPUB 3をサポートするEPUBリーダーであれば、当然CSS レベル2.1にある`visibility`などはサポートしているはずという想定によるものだった。ところが独自エンジン系である一部のEPUBリーダーではこの想定が通用せず、いったんはおこなったテストを廃棄して、新しく作り直したテストですべてやり直すことになった。その廃棄したテスト結果が、<a href="#2-1-3-2-掲載しなかったテスト環境の一覧">2-1-3-2 掲載しなかったテスト環境の一覧</a>に掲載したものであり、新しく作り直したテストファイルが[epubcsstest_v1a.epub](https://github.com/jagat-xpub/epub-css-test/blob/main/epub/epubcsstest_v1a.epub)<span class="notetext">ZIP圧縮前のフォルダは以下を参照。<br/><https://github.com/jagat-xpub/epub-css-test/tree/main/epub-exp/epubcsstest_v1a></span>である。
 
-ところが、独自エンジン系の実装に振り回されるのはこれが最後ではなかった。長くなるので詳細は省くが、締め切りも迫った2024年3月25日、「::first-line擬似要素」「rgb()関数のコンマなし形式」の2項目についても同じような問題が発生し、やむなくテストを書き直すことになったのである。こうして作られたのが[epubcsstest_v2.epub](https://github.com/jagat-xpub/epub-css-test/blob/main/epub/epubcsstest_v2.epub)<span class="notetext">ZIP圧縮前のフォルダは以下を参照。<br/><https://github.com/jagat-xpub/epub-css-test/tree/main/epub-exp/epubcsstest_v2></span>であり、これを使って前述2項目、及びテスト結果に疑問があった項目も合わせて再テストしたEPUBリーダーは、[Kindle](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=0&range=R27:X27)、[kobo-1（iOS）](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=396838262&range=D45)、[kobo-2（Android）](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=396838262&range=F27)、[ブック](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=212733997&range=L27)、[MURASAKI](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=610814699&range=F45)、[honto](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=1733190750&range=D25)、[BOOK WALKER](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=968182416&range=F27)、[超縦書](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=1234705026&range=H27)である。
+ところが、独自エンジン系の実装に振り回されるのはこれが最後ではなかった。長くなるので詳細は省くが、締め切りも迫った2024年3月25日、「::first-line擬似要素」「rgb()関数のコンマなし形式」の2項目についても同じような問題が発生し、やむなくテストを書き直すことになったのである。こうして作られたのが[epubcsstest_v2.epub](https://github.com/jagat-xpub/epub-css-test/blob/main/epub/epubcsstest_v2.epub)<span class="notetext">ZIP圧縮前のフォルダは以下を参照。<br/><https://github.com/jagat-xpub/epub-css-test/tree/main/epub-exp/epubcsstest_v2></span>であり、これを使って前述2項目、及びテスト結果に疑問があった項目も合わせて再テストしたEPUBリーダーは、[Kindle](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=0&range=R27:X27)、[kobo-mobile（iOS）](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=396838262&range=D45)、[kobo-mobile（Android）](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=396838262&range=F27)、[ブック](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=212733997&range=L27)、[MURASAKI](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=610814699&range=F45)、[honto](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=1733190750&range=D25)、[Book Walker](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=968182416&range=F27)、[超縦書](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=1234705026&range=H27)である。
 
 ### 2-2-4 おもにモダンブラウザー系でサポートされるCSSモジュール
 
@@ -1469,13 +1469,13 @@ lang: 'ja'
     <tr>
       <td style="color:#434343" align="right"></td>
       <td style="writing-mode: vertical-lr" bgcolor="#c9daf8" align="center">Kindle</td>
-      <td style="writing-mode: vertical-lr" bgcolor="#d9ead3" align="center">kobo-1</td>
+      <td style="writing-mode: vertical-lr" bgcolor="#d9ead3" align="center">kobo-mobile</td>
       <td style="writing-mode: vertical-lr" bgcolor="#d9ead3" align="center">kobo-2</td>
-      <td style="writing-mode: vertical-lr" bgcolor="#c9daf8" align="center">kobo-3</td>
+      <td style="writing-mode: vertical-lr" bgcolor="#c9daf8" align="center">kobo-other</td>
       <td style="writing-mode: vertical-lr" bgcolor="#d9ead3" align="center">ブック</td>
       <td style="writing-mode: vertical-lr" bgcolor="#d9ead3" align="center">MURASAKI</td>
       <td style="writing-mode: vertical-lr" bgcolor="#c9daf8" align="center">honto</td>
-      <td style="writing-mode: vertical-lr" bgcolor="#d9ead3" align="center">BOOK☆ WALKER</td>
+      <td style="writing-mode: vertical-lr" bgcolor="#d9ead3" align="center">Book Walker</td>
       <td style="writing-mode: vertical-lr" bgcolor="#c9daf8" align="center">Kinoppy</td>
       <td style="writing-mode: vertical-lr" bgcolor="#c9daf8" align="center">Romancer</td>
       <td style="writing-mode: vertical-lr" bgcolor="#d9ead3" align="center">Bibi</td>
@@ -2692,7 +2692,7 @@ lang: 'ja'
 
 一見すると、黒の「OK」と赤の「NG」が不規則に入り乱れているように見えるかもしれない。しかし縦に見ていくとつながりが見て取れる。つまりリーダーごとに、OKが多いものとNGが多いものの2種類に分かれているのだ。上端のレイアウトエンジンの違いも含めてみれば違いがさらに分かる。OKの多いリーダーは緑色＝モダンブラウザー系であり、NGの多いリーダーは水色＝独自エンジン系なのである。
 
-前項でNGが多かったRomancerとKinoppy、およびhontoが、この項でもNGが多いのは変わらない。しかし、加えて前項ではOKばかりだったKindle、kobo-3、超縦書が、この項ではNGが多くなっている。これらは全て独自エンジン系のリーダーである。
+前項でNGが多かったRomancerとKinoppy、およびhontoが、この項でもNGが多いのは変わらない。しかし、加えて前項ではOKばかりだったKindle、kobo-other、超縦書が、この項ではNGが多くなっている。これらは全て独自エンジン系のリーダーである。
 
 すべてのテスト項目を説明するには紙幅が足りないので、ここまでとくに拘ってきた「writing-mode プロパティ vertical-rl」を取り上げよう。
 
