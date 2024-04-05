@@ -832,7 +832,6 @@ lang: 'ja'
       <td style="color:#434343" align="right"></td>
       <td style="writing-mode: vertical-lr" bgcolor="#c9daf8" align="center">Kindle</td>
       <td style="writing-mode: vertical-lr" bgcolor="#d9ead3" align="center">kobo-mobile</td>
-      <td style="writing-mode: vertical-lr" bgcolor="#d9ead3" align="center">kobo-2</td>
       <td style="writing-mode: vertical-lr" bgcolor="#c9daf8" align="center">kobo-other</td>
       <td style="writing-mode: vertical-lr" bgcolor="#d9ead3" align="center">ブック</td>
       <td style="writing-mode: vertical-lr" bgcolor="#d9ead3" align="center">MURASAKI</td>
@@ -862,11 +861,9 @@ lang: 'ja'
       <td valign="bottom"></td>
       <td valign="bottom"></td>
       <td valign="bottom"></td>
-      <td valign="bottom"></td>
     </tr>
     <tr>
       <td>部分文字列マッチング属性セレクタ [att^=val]</td>
-      <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
@@ -888,7 +885,6 @@ lang: 'ja'
       <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
-      <td align="center">OK</td>
       <td style="color:#ea4335" align="center">NG</td>
       <td align="center">OK</td>
       <td style="color:#ea4335" align="center">NG</td>
@@ -900,7 +896,6 @@ lang: 'ja'
     </tr>
     <tr>
       <td>部分文字列マッチング属性セレクタ[att*=val]</td>
-      <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
@@ -922,7 +917,6 @@ lang: 'ja'
       <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
-      <td align="center">OK</td>
       <td style="color:#ea4335" align="center">NG</td>
       <td align="center">OK</td>
       <td style="color:#ea4335" align="center">NG</td>
@@ -934,7 +928,6 @@ lang: 'ja'
     </tr>
     <tr>
       <td>:nth-child() 擬似クラス</td>
-      <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
@@ -956,7 +949,6 @@ lang: 'ja'
       <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
-      <td align="center">OK</td>
       <td style="color:#ea4335" align="center">NG</td>
       <td align="center">OK</td>
       <td style="color:#ea4335" align="center">NG</td>
@@ -968,7 +960,6 @@ lang: 'ja'
     </tr>
     <tr>
       <td>:nth-of-type() 擬似クラス</td>
-      <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
@@ -990,7 +981,6 @@ lang: 'ja'
       <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
-      <td align="center">OK</td>
       <td style="color:#ea4335" align="center">NG</td>
       <td align="center">OK</td>
       <td style="color:#ea4335" align="center">NG</td>
@@ -1002,7 +992,6 @@ lang: 'ja'
     </tr>
     <tr>
       <td>:last-child 擬似クラス</td>
-      <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
@@ -1024,7 +1013,6 @@ lang: 'ja'
       <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
-      <td align="center">OK</td>
       <td style="color:#ea4335" align="center">NG</td>
       <td align="center">OK</td>
       <td style="color:#ea4335" align="center">NG</td>
@@ -1036,7 +1024,6 @@ lang: 'ja'
     </tr>
     <tr>
       <td>:first-of-type 擬似クラス</td>
-      <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
@@ -1058,7 +1045,6 @@ lang: 'ja'
       <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
-      <td align="center">OK</td>
       <td style="color:#ea4335" align="center">NG</td>
       <td align="center">OK</td>
       <td style="color:#ea4335" align="center">NG</td>
@@ -1070,7 +1056,6 @@ lang: 'ja'
     </tr>
     <tr>
       <td>:only-of-type 擬似クラス</td>
-      <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
@@ -1092,7 +1077,6 @@ lang: 'ja'
       <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
-      <td align="center">OK</td>
       <td style="color:#ea4335" align="center">NG</td>
       <td align="center">OK</td>
       <td style="color:#ea4335" align="center">NG</td>
@@ -1104,7 +1088,6 @@ lang: 'ja'
     </tr>
     <tr>
       <td>:not 擬似クラス</td>
-      <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
@@ -1126,7 +1109,6 @@ lang: 'ja'
       <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
-      <td align="center">OK</td>
       <td style="color:#ea4335" align="center">NG</td>
       <td align="center">OK</td>
       <td style="color:#ea4335" align="center">NG</td>
@@ -1138,7 +1120,6 @@ lang: 'ja'
     </tr>
     <tr>
       <td>::first-letter 擬似要素</td>
-      <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
@@ -1160,7 +1141,6 @@ lang: 'ja'
       <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
-      <td align="center">OK</td>
       <td style="color:#ea4335" align="center">NG</td>
       <td align="center">OK</td>
       <td style="color:#ea4335" align="center">NG</td>
@@ -1177,7 +1157,6 @@ lang: 'ja'
       <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
-      <td align="center">OK</td>
       <td style="color:#ea4335" align="center">NG</td>
       <td align="center">OK</td>
       <td style="color:#ea4335" align="center">NG</td>
@@ -1189,7 +1168,6 @@ lang: 'ja'
     </tr>
     <tr>
       <td>後続兄弟結合子 E ~ F</td>
-      <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
@@ -1219,11 +1197,9 @@ lang: 'ja'
       <td align="center"></td>
       <td align="center"></td>
       <td align="center"></td>
-      <td align="center"></td>
     </tr>
     <tr>
       <td valign="bottom">プロパティの値 initial</td>
-      <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
@@ -1252,11 +1228,9 @@ lang: 'ja'
       <td align="center"></td>
       <td align="center"></td>
       <td align="center"></td>
-      <td align="center"></td>
     </tr>
     <tr>
       <td valign="bottom">長さの単位 rem</td>
-      <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
@@ -1286,11 +1260,9 @@ lang: 'ja'
       <td align="center"></td>
       <td align="center"></td>
       <td align="center"></td>
-      <td align="center"></td>
     </tr>
     <tr>
       <td valign="bottom">border-radius プロパティ</td>
-      <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
@@ -1307,7 +1279,6 @@ lang: 'ja'
     </tr>
     <tr>
       <td valign="bottom">box-shadow プロパティ</td>
-      <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
@@ -1337,11 +1308,9 @@ lang: 'ja'
       <td align="center"></td>
       <td align="center"></td>
       <td align="center"></td>
-      <td align="center"></td>
     </tr>
     <tr>
       <td valign="bottom">outline プロパティ</td>
-      <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
@@ -1371,11 +1340,9 @@ lang: 'ja'
       <td align="center"></td>
       <td align="center"></td>
       <td align="center"></td>
-      <td align="center"></td>
     </tr>
     <tr>
       <td valign="bottom">定義済みカウンタースタイル lower-greek</td>
-      <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
@@ -1399,7 +1366,6 @@ lang: 'ja'
       <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
-      <td align="center">OK</td>
       <td style="color:#ea4335" align="center">NG</td>
       <td style="color:#ea4335" align="center">NG</td>
       <td align="center">OK</td>
@@ -1409,7 +1375,6 @@ lang: 'ja'
     </tr>
     <tr>
       <td valign="bottom">定義済みカウンタースタイル katakana-iroha</td>
-      <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
