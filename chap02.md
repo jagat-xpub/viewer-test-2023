@@ -2591,13 +2591,35 @@ lang: 'ja'
   <figcaption><strong>図2</strong> 左からKindle（Windows）、kobo-other (Mac)、超縦書。テストファイルは全てepubcsstest_v2.epub。</figcaption>
 </figure>
 
+<figure style="text-align: center; margin-top:24.5Q; " class="figure-right">
+  <img src="img/chap2/1-KindleiPhone-Kindlemac-koboiPhone.png" alt="img/chap2/1-KindleiPhone-Kindlemac-koboiPhone">
+  <figcaption><strong>図3</strong></figcaption>
+</figure>
+
+<figure style="text-align: center; margin-top:24.5Q; " class="figure-right">
+  <img src="img/chap2/2-Book-MURASAKI-honto.png" alt="img/chap2/2-Book-MURASAKI-honto">
+  <figcaption><strong>図4</strong></figcaption>
+</figure>
+
+<figure style="text-align: center; margin-top:24.5Q; " class="figure-right">
+  <img src="img/chap2/3-BOOK☆WALKER-Kinoppy-Romancer.png" alt="img/chap2/3-BOOK☆WALKER-Kinoppy-Romancer">
+  <figcaption><strong>図5</strong></figcaption>
+</figure>
+
+<figure style="text-align: center; margin-top:24.5Q; " class="figure-right">
+  <img src="img/chap2/4-Bibi-Vivliostyle-Thorium.png" alt="img/chap2/4-Bibi-Vivliostyle-Thorium">
+  <figcaption><strong>図6</strong></figcaption>
+</figure>
+
+
+
 一見すると、黒の「OK」と赤の「NG」が不規則に入り乱れているように見えるかもしれない。しかし縦に見ていくとつながりが見て取れる。つまりリーダーごとに、OKが多いものとNGが多いものの2種類に分かれているのだ。上端のレイアウトエンジンの違いも含めてみれば違いがさらに分かる。OKの多いリーダーは緑色＝モダンブラウザー系であり、NGの多いリーダーは水色＝独自エンジン系なのである。
 
 前項でNGが多かったRomancerとKinoppy、hontoが、この項でもNGが多いのは変わらない。しかし、加えて前項ではOKばかりだったKindle、kobo-other、超縦書が、この項ではNGが多くなっている。
 
 すべてのテスト項目を説明するには紙幅が足りないので、ここまでとくに拘ってきた「writing-mode プロパティ vertical-rl」を例に挙げて、スクリーンショットとともに詳しく見てみよう。
 
-まずNGだったものから紹介すると、KindleのうちWindows（リーダー名「Kindle for PC」）、kobo-other（リーダー名「楽天Koboデスクトップ」。スクリーンショットはMacだが、Windowsも同様）、それから超縦書はプレフィクスなしの`writing-mode: vertical-rl;`を指定したところ、縦書きで表示しなかった（**図2**）。
+まずNGだったものから紹介すると、KindleのうちWindows（リーダー名「Kindle for PC」）、kobo-other（スクリーンショットはMacだが、Windowsも同様）、それから超縦書の3つは、プレフィクスなしの`writing-mode: vertical-rl;`を指定しても縦書きで表示しなかった（**図2**）。
 
 
 
