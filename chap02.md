@@ -1417,11 +1417,11 @@ lang: 'ja'
 
 もしも:root擬似クラスが機能していれば`visibility: visible`が適用され「OK」が表示される、そうでない場合には`visibility: hidden`が適用され「OK」が非表示になる、そういうアルゴリズムだ。ところが、そもそも`visibility`をサポートしていないEPUBリーダーでは`visibility: hidden`も機能せず、テスト結果に関わらず常に「OK」が表示されてしまう。つまり正しいテスト結果は得られない。
 
-もともとこれは、EPUB 3をサポートするEPUBリーダーであれば、当然CSS レベル2.1にある`visibility`などはサポートしているはずという想定によるものだった。ところが独自エンジン系である一部のEPUBリーダーではこの想定が通用せず、いったんはおこなったテストを廃棄して、新しく作り直したテストですべてやり直すことになった。その廃棄したテスト結果が、<a href="#2-1-3-2-掲載しなかったテスト環境の一覧">2-1-3-2 掲載しなかったテスト環境の一覧</a>に掲載したものであり、新しく作り直したテストファイルが[epubcsstest_v1a.epub](https://github.com/jagat-xpub/epub-css-test/blob/main/epub/epubcsstest_v1a.epub)<span class="notetext">ZIP圧縮前のフォルダは以下を参照。<br/><https://github.com/jagat-xpub/epub-css-test/tree/main/epub-exp/epubcsstest_v1a></span>である（図1）。
+もともとこれは、EPUB 3をサポートするEPUBリーダーであれば、当然CSS レベル2.1にある`visibility`などはサポートしているはずという想定によるものだった。ところが独自エンジン系である一部のEPUBリーダーではこの想定が通用せず、いったんはおこなったテストを廃棄して、新しく作り直したテストですべてやり直すことになった。その廃棄したテスト結果が、<a href="#2-1-3-2-掲載しなかったテスト環境の一覧">2-1-3-2 掲載しなかったテスト環境の一覧</a>に掲載したものであり、新しく作り直したテストファイルが[epubcsstest_v1a.epub](https://github.com/jagat-xpub/epub-css-test/blob/main/epub/epubcsstest_v1a.epub)<span class="notetext">ZIP圧縮前のフォルダは以下を参照。<br/><https://github.com/jagat-xpub/epub-css-test/tree/main/epub-exp/epubcsstest_v1a></span>である（**図1**）。
 
 <figure style="text-align: center;" class="figure-bottom">
   <img src="img/chap2/selector-3.png" alt="">
-  <figcaption>図1 左からhonto (Android)、Kinoppy (Windows)、Romancer (Chrome)。テストファイルはRomancerのみepubcsstest_v1a.epub、それ以外はepubcsstest_v2.epub。</figcaption>
+  <figcaption><strong>図1</strong> 左からhonto (Android)、Kinoppy (Windows)、Romancer (Chrome)。テストファイルはRomancerのみepubcsstest_v1a.epub、それ以外はepubcsstest_v2.epub。</figcaption>
 </figure>
 
 
@@ -2586,12 +2586,18 @@ lang: 'ja'
 - 7……掲載した全てのテスト環境でmix-blend-modeがNG。これを前提とするisolationは無効（N/A）
 - 8……Windows上のKindle 2.3.0のみNG。他はすべてOK
 
+<figure style="text-align: center; margin-top:24.5Q; " class="figure-right">
+  <img src="img/chap2/writing-mode-NG.png" alt="writing-mode-NG">
+  <figcaption><strong>図2</strong> 左からKindle（Windows）、kobo-other (Mac)、超縦書。テストファイルは全てepubcsstest_v2.epub。</figcaption>
+</figure>
+
 一見すると、黒の「OK」と赤の「NG」が不規則に入り乱れているように見えるかもしれない。しかし縦に見ていくとつながりが見て取れる。つまりリーダーごとに、OKが多いものとNGが多いものの2種類に分かれているのだ。上端のレイアウトエンジンの違いも含めてみれば違いがさらに分かる。OKの多いリーダーは緑色＝モダンブラウザー系であり、NGの多いリーダーは水色＝独自エンジン系なのである。
 
 前項でNGが多かったRomancerとKinoppy、hontoが、この項でもNGが多いのは変わらない。しかし、加えて前項ではOKばかりだったKindle、kobo-other、超縦書が、この項ではNGが多くなっている。
 
-すべてのテスト項目を説明するには紙幅が足りないので、ここまでとくに拘ってきた「writing-mode プロパティ vertical-rl」を例に挙げて詳しく見てみよう。
+すべてのテスト項目を説明するには紙幅が足りないので、ここまでとくに拘ってきた「writing-mode プロパティ vertical-rl」を例に挙げて、スクリーンショットとともに詳しく見てみよう。
 
+まずNGだったものから紹介すると、KindleのうちWindows（リーダー名「Kindle for PC」）、kobo-other（リーダー名「楽天Koboデスクトップ」。スクリーンショットはMacだが、Windowsも同様）、それから超縦書はプレフィクスなしの`writing-mode: vertical-rl;`を指定したところ、縦書きで表示しなかった（**図2**）。
 
 
 
