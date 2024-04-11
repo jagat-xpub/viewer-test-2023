@@ -772,7 +772,7 @@ lang: 'ja'
 
 ### 2-2-2 レイアウトエンジンの種別とCSSモジュールのグループ分け
 
-ここまでの分析を踏まえて、レイアウトエンジンの種別ごとに<a href="#2-1-3-1-掲載したテスト環境の一覧">2-1-3-1</a>の「略称」を振り分けたのが表1である。
+ここまでの分析を踏まえて、レイアウトエンジンの種別ごとに<a href="#2-1-3-1-掲載したテスト環境の一覧">2-1-3-1</a>の「略称」を振り分けたのが**表1**である。
 
 <div style=margin-top:24.5Q class="float-table">
   <table>
@@ -808,7 +808,7 @@ lang: 'ja'
       <td bgcolor="#d9ead3" align="center">Thorium Reader</td>
       <td bgcolor="#FFFFFF" align="center"></td>
     </tr>
-    <caption>表1 レイアウトエンジンの種別</caption>
+    <caption><strong>表1 </strong>レイアウトエンジンの種別</caption>
   </table>
 </div>
 
@@ -823,7 +823,7 @@ lang: 'ja'
 
 ### 2-2-3 メジャーなEPUBリーダーでサポートされるCSSモジュール
 
-この項で報告するのは、6つのCSSモジュールにわたる28項目のテスト結果である（全82項目の約34%）。ここで言う「メジャーなEPUBリーダー」の定義については前項でも説明したが、要は「ほとんどの」ということだ。言い換えると、このクループは「ほとんどのEPUBリーダーでサポートされるCSSモジュール」である。ではテスト結果をまとめた表2をご覧いただきたい。
+この項で報告するのは、6つのCSSモジュールにわたる28項目のテスト結果である（全82項目の約34%）。ここで言う「メジャーなEPUBリーダー」の定義については前項でも説明したが、要は「ほとんどの」ということだ。言い換えると、このクループは「ほとんどのEPUBリーダーでサポートされるCSSモジュール」である。ではテスト結果をまとめた**表2**をご覧いただきたい。
 
 <div style=margin-top:24.5Q>
 <table>
@@ -1389,7 +1389,7 @@ lang: 'ja'
       <td align="center">OK</td>
       <td align="center">OK</td>
     </tr>
-    <caption>表2 メジャーなEPUBリーダーでサポートされるCSSモジュール</caption>
+    <caption><strong>表2 </strong>メジャーなEPUBリーダーでサポートされるCSSモジュール</caption>
   </tbody>
 </table>
 </div>
@@ -1429,7 +1429,7 @@ lang: 'ja'
 
 ### 2-2-4 おもにモダンブラウザー系でサポートされるCSSモジュール
 
-この項で報告するのは、11つのCSSモジュールにわたる54項目のテスト結果である（全82項目の約66%）。ここで言う「おもにモダンブラウザー系でサポートされるSSモジュール」とは、簡単に言うと前項で掲載したテスト項目以外全てである。では表3を見ていただこう。
+この項で報告するのは、11つのCSSモジュールにわたる54項目のテスト結果である（全82項目の約66%）。ここで言う「おもにモダンブラウザー系でサポートされるSSモジュール」とは、簡単に言うと前項で掲載したテスト項目以外全てである。では**表3**を見ていただこう。
 
 <div style=margin-top:24.5Q>
 <table>
@@ -2572,7 +2572,7 @@ lang: 'ja'
       <td align="center">OK</td>
       <td align="center">OK</td>
     </tr>
-    <caption>表3 おもにモダンブラウザー系でサポートされるCSSモジュール</caption>
+    <caption><strong>表3 </strong>おもにモダンブラウザー系でサポートされるCSSモジュール</caption>
   </tbody>
 </table>
 </div>
@@ -2581,28 +2581,28 @@ lang: 'ja'
 - 2……Mac、及びiOSでNG
 - 3……iOSのみNG
 - 4……MacのみNG
-- 5……`vertical-rl`がNGの場合、これを前提とするtext-orientationプロパティは無効（N/A）
-- 6……掲載した全てのテスト環境で2段組がNG。これを前提とする他のプロパティは無効（N/A）
-- 7……掲載した全てのテスト環境でmix-blend-modeがNG。これを前提とするisolationは無効（N/A）
+- 5……`vertical-rl`がNGの場合、これを前提とするtext-orientationは無効（N/A）
+- 6……掲載した全てのテスト環境で2段組がNGの場合、これを前提とする他のプロパティは無効（N/A）
+- 7……掲載した全てのテスト環境でmix-blend-modeがNGの場合、これを前提とするisolationは無効（N/A）
 - 8……Windows上のKindle 2.3.0のみNG。他はすべてOK
 
-<figure style="text-align: center; margin-top:24.5Q; " class="figure-right">
+<figure style="text-align: center;" class="figure-bottom">
   <img src="img/chap2/writing-mode-NG.png" alt="writing-mode-NG">
   <figcaption><strong>図2</strong> 左からKindle（Windows）、kobo-other (Mac)、超縦書。テストファイルは全てepubcsstest_v2.epub。</figcaption>
 </figure>
 
-一見すると、黒の「OK」と赤の「NG」が不規則に入り乱れているように見えるかもしれない。しかし縦に見ていくとつながりが見て取れる。つまりリーダーごとに、OKが多いものとNGが多いものの2種類に分かれているのだ。上端のレイアウトエンジンの違いも含めてみれば違いがさらに分かる。OKの多いリーダーは緑色＝モダンブラウザー系であり、NGの多いリーダーは水色＝独自エンジン系なのである。
+<figure style="text-align: center; margin-top:24.5Q; " class="figure-bottom">
+  <img src="img/chap2/1-KindleiPhone-Kindlemac-koboiPhone.png" alt="img/chap2/1-KindleiPhone-Kindlemac-koboiPhone">
+  <figcaption><strong>図3</strong> 左からKindle（iPhone版v7.7）、Kindle（Mac版v7.6.0.0(1.329899)）、kobo-mobile（iPhone版v10.5.3）</figcaption>
+</figure>
+
+一見すると、黒の「OK」と赤の「NG」が不規則に入り乱れているように見えるかもしれない。しかし縦に見ていくとつながりが見て取れる。つまりリーダーごとに、OKが多いものとNGが多いものの2種類に分かれている。上端のレイアウトエンジンの違いも含めてみれば違いがさらに分かる。OKの多いリーダーは緑色＝モダンブラウザー系であり、NGの多いリーダーは水色＝独自エンジン系なのである。
 
 前項でNGが多かったRomancerとKinoppy、hontoが、この項でもNGが多いのは変わらない。しかし、加えて前項ではOKばかりだったKindle、kobo-other、超縦書が、この項ではNGが多くなっている。
 
-すべてのテスト項目を説明するには紙幅が足りないので、ここまでとくに拘ってきた「writing-mode プロパティ vertical-rl」を例に挙げて、スクリーンショットとともに詳しく見てみよう。
+すべてのテスト項目を説明するには紙幅が足りないので、ここまでとくに拘ってきた「writing-mode プロパティ vertical-rl」を例に挙げて、スクリーンショットとともに見てみよう。なお、テストから本稿執筆まで間隔が空いてしまったので、スクリーンショットは執筆時点（2024年4月11日）の最新版で撮り直した。テスト時のバージョンと異同があるものはいちいちコメントしたが、すべてテスト結果に変わりはなかった。
 
-まずNGだったものから紹介すると、KindleのうちWindows（リーダー名「Kindle for PC」）、kobo-other（スクリーンショットはMacだが、Windowsも同様）、それから超縦書の3つは、プレフィクスなしの`writing-mode: vertical-rl;`を指定しても縦書きで表示しなかった（**図2**）。
-
-<figure style="text-align: center; margin-top:24.5Q; " class="figure-right">
-  <img src="img/chap2/1-KindleiPhone-Kindlemac-koboiPhone.png" alt="img/chap2/1-KindleiPhone-Kindlemac-koboiPhone">
-  <figcaption><strong>図3</strong></figcaption>
-</figure>
+まずNGだったものから紹介すると、KindleのうちWindows（リーダー名「Kindle for PC」、テスト時v2.3.0 (70673)→v2.3.1(70682)）、kobo-other（スクリーンショットはMacだが、Windowsも同じ結果）、それから超縦書の3つは、プレフィクスなしの`writing-mode: vertical-rl;`を指定しても縦書きで表示しなかった（**図2**）。
 
 <figure style="text-align: center; margin-top:24.5Q; " class="figure-right">
   <img src="img/chap2/2-Book-MURASAKI-honto.png" alt="img/chap2/2-Book-MURASAKI-honto">
