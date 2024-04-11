@@ -167,7 +167,7 @@ lang: 'ja'
 
 ### 2-1-3 本調査におけるテスト環境の一覧
 
-今回の調査でテストしたEPUBリーダーの数は、全部で54にのぼる。そのうち、テスト結果を掲載したリーダーは36だ。その明細を<a href="#2-1-3-1-掲載したテスト環境の一覧">2-1-3-1 掲載したテスト環境の一覧</a>に掲げる。
+今回の調査でテストしたEPUBリーダーの数は、全部で55にのぼる。そのうち、テスト結果を掲載したリーダーは37だ。その明細を<a href="#2-1-3-1-掲載したテスト環境の一覧">2-1-3-1 掲載したテスト環境の一覧</a>に掲げる。
 
 他方、残りの18は掲載していない。その理由は一部テストファイルの不具合が判明し部分的に更新したことに伴い、それ以前のテスト結果は不正確であることが判明したので掲載をやめたものだ。この不具合については<a href="#2-2-3-メジャーなepubリーダーでサポートされるcssモジュール">2-2-3</a>で詳述することにして、それらリーダーの明細を<a href="#2-1-3-2-掲載しなかったテスト環境の一覧">2-1-3-2 掲載しなかったテスト環境の一覧</a>に掲げる。
 
@@ -238,6 +238,16 @@ lang: 'ja'
       <td bgcolor="#c9daf8" align="center">8.89.3.0 (2.0.2766.0)</td>
       <td bgcolor="#c9daf8" align="center">村上</td>
       <td bgcolor="#c9daf8" align="center">2024/01/09</td>
+    </tr>
+    <tr>
+      <td bgcolor="#c9daf8" align="center">iPhone用のKindle *¹</td>
+      <td bgcolor="#c9daf8" align="center">Kindle</td>
+      <td bgcolor="#c9daf8" align="center">iOS<br/>アプリ</td>
+      <td bgcolor="#c9daf8" align="center">iPhone13mini</td>
+      <td bgcolor="#c9daf8" align="center">iOS 17.2.1</td>
+      <td bgcolor="#c9daf8" align="center">7.1</td>
+      <td bgcolor="#c9daf8" align="center">古門</td>
+      <td bgcolor="#c9daf8" align="center">2024/1/21</td>
     </tr>
     <tr>
       <td bgcolor="#c9daf8" align="center">Kinoppy for iOS *¹</td>
@@ -2588,37 +2598,49 @@ lang: 'ja'
 
 <figure style="text-align: center;" class="figure-bottom">
   <img src="img/chap2/writing-mode-NG.png" alt="writing-mode-NG">
-  <figcaption><strong>図2</strong> 左からKindle（Windows）、kobo-other (Mac)、超縦書。テストファイルは全てepubcsstest_v2.epub。</figcaption>
+  <figcaption><strong>図2</strong> 左からKindle（Windows）、kobo-other (Mac)、超縦書。</figcaption>
 </figure>
 
 <figure style="text-align: center; margin-top:24.5Q; " class="figure-bottom">
-  <img src="img/chap2/1-KindleiPhone-Kindlemac-koboiPhone.png" alt="img/chap2/1-KindleiPhone-Kindlemac-koboiPhone">
-  <figcaption><strong>図3</strong> 左からKindle（iPhone版v7.7）、Kindle（Mac版v7.6.0.0(1.329899)）、kobo-mobile（iPhone版v10.5.3）</figcaption>
+  <img src="img/chap2/1-KindleiPhone-KindleMac-KindlePaperwhite.png" alt="1-KindleiPhone-KindleMac-KindlePaperwhitee">
+  <figcaption><strong>図3</strong> 左からKindle（iPhone v7.8）、Kindle（Mac v7.6.0.0(1.329899)）、Kindle Paperwhite Signeture Edition（第11世代）5.16.7（4193160020）</figcaption>
 </figure>
 
 一見すると、黒の「OK」と赤の「NG」が不規則に入り乱れているように見えるかもしれない。しかし縦に見ていくとつながりが見て取れる。つまりリーダーごとに、OKが多いものとNGが多いものの2種類に分かれている。上端のレイアウトエンジンの違いも含めてみれば違いがさらに分かる。OKの多いリーダーは緑色＝モダンブラウザー系であり、NGの多いリーダーは水色＝独自エンジン系なのである。
 
 前項でNGが多かったRomancerとKinoppy、hontoが、この項でもNGが多いのは変わらない。しかし、加えて前項ではOKばかりだったKindle、kobo-other、超縦書が、この項ではNGが多くなっている。
 
-すべてのテスト項目を説明するには紙幅が足りないので、ここまでとくに拘ってきた「writing-mode プロパティ vertical-rl」を例に挙げて、スクリーンショットとともに見てみよう。なお、テストから本稿執筆まで間隔が空いてしまったので、スクリーンショットは執筆時点（2024年4月11日）の最新版で撮り直した。テスト時のバージョンと異同があるものはいちいちコメントしたが、すべてテスト結果に変わりはなかった。
+すべてのテスト項目を説明するには紙幅が足りないので、ここまでとくに拘ってきた「writing-mode プロパティ vertical-rl」を例に挙げて、スクリーンショットとともに見てみよう。なお、テストから本稿執筆まで間隔が空いてしまったので、スクリーンショットは執筆時点（2024年4月11日）の最新版で撮り直した。テスト時のバージョンと異同があるものはいちいちコメントしたが、すべてテスト結果に変わりはなかった。それから、テストファイルは基本的にepubcsstest_v2.epubとし、そうでない場合のみコメントした（ただし、「writing-mode プロパティ」に関して、テストファイルは変わってもその内容は基本的に異同がないので結果が変わることはない）。
 
-まずNGだったものから紹介すると、KindleのうちWindows（リーダー名「Kindle for PC」、テスト時v2.3.0 (70673)→v2.3.1(70682)）、kobo-other（スクリーンショットはMacだが、Windowsも同じ結果）、それから超縦書の3つは、プレフィクスなしの`writing-mode: vertical-rl;`を指定しても縦書きで表示しなかった（**図2**）。
+まずNGだったものから紹介すると、**図2**左からKindleのうちWindows（テスト時v2.3.0 (70673)→v2.3.1(70682)）、kobo-other（スクリーンショットはMacだが、Windowsも同じ結果）、それから超縦書の3つは、プレフィクスなしの`writing-mode: vertical-rl;`を指定しても縦書きで表示しなかった。これらのリーダーで縦書きを表示したい場合はプレフィックスをつけなければならない。
+
+
+残りはすべてOKだったものだ。**図3**左からKindleのうちiPhone（テスト時v7.1→v7.8）、KindleのうちMac（テスト時v7.0.0.100 (1.316222)→v7.6.0.0(1.329899)）、kobo-mobileのうちiPhone（テスト時v10.4.3→v10.5.3）。
+
+
+**図4**左から、
+
+
 
 <figure style="text-align: center; margin-top:24.5Q; " class="figure-right">
-  <img src="img/chap2/2-Book-MURASAKI-honto.png" alt="img/chap2/2-Book-MURASAKI-honto">
-  <figcaption><strong>図4</strong></figcaption>
+  <img src="img/chap2/2-koboiPhone-BookMac-MurasakiMac.png" alt="2-koboiPhone-BookMac-MurasakiMac">
+  <figcaption><strong>図4</strong> 左からkobo-mobile（iPhone v10.5.3）、ブック（Mac-Arm v6.3）、MURASAKI（Mac-Arm v2.4.1）</figcaption>
 </figure>
 
 <figure style="text-align: center; margin-top:24.5Q; " class="figure-right">
-  <img src="img/chap2/3-BOOK☆WALKER-Kinoppy-Romancer.png" alt="img/chap2/3-BOOK☆WALKER-Kinoppy-Romancer">
-  <figcaption><strong>図5</strong></figcaption>
+  <img src="img/chap2/3-hontoiPhone-BookWalkeriPhone-KinoppyWin.png" alt="3-hontoiPhone-BookWalkeriPhone-KinoppyWin">
+  <figcaption><strong>図5 </strong>左からhonto（iOS v6.62.0）</figcaption>
 </figure>
 
 <figure style="text-align: center; margin-top:24.5Q; " class="figure-right">
-  <img src="img/chap2/4-Bibi-Vivliostyle-Thorium.png" alt="img/chap2/4-Bibi-Vivliostyle-Thorium">
+  <img src="img/chap2/4-Romancer-Bibi.png" alt="4-Romancer-Bibi">
   <figcaption><strong>図6</strong></figcaption>
 </figure>
 
+<figure style="text-align: center; margin-top:24.5Q; " class="figure-right">
+  <img src="img/chap2/5-Vivliostyle-ThoriumMac.png" alt="5-Vivliostyle-ThoriumMac">
+  <figcaption><strong>図7</strong></figcaption>
+</figure>
 
 
 
