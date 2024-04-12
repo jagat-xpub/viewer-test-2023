@@ -2598,12 +2598,12 @@ lang: 'ja'
 
 <figure style="text-align: center;" class="figure-bottom">
   <img src="img/chap2/writing-mode-NG.png" alt="writing-mode-NG">
-  <figcaption><strong>図2</strong> 左からKindle（Windows）、kobo-other (Mac)、超縦書。</figcaption>
+  <figcaption><strong>図2</strong> 左からKindle（Windows）、kobo-other (Mac)、超縦書。テストファイルは全てepubcsstest_v2.epub。</figcaption>
 </figure>
 
 <figure style="text-align: center; margin-top:24.5Q; " class="figure-bottom">
-  <img src="img/chap2/1-KindleiPhone-KindleMac-KindlePaperwhite.png" alt="1-KindleiPhone-KindleMac-KindlePaperwhitee">
-  <figcaption><strong>図3</strong> 左からKindle（iPhone v7.8）、Kindle（Mac v7.6.0.0(1.329899)）、Kindle Paperwhite Signeture Edition（第11世代）5.16.7（4193160020）</figcaption>
+  <img src="img/chap2/1-KindleiPhone-Kindlemac-koboiPhone.png" alt="img/chap2/1-KindleiPhone-Kindlemac-koboiPhone">
+  <figcaption><strong>図3</strong> 左からKindle（iPhone版v7.7）、Kindle（Mac版v7.6.0.0(1.329899)）、kobo-mobile（iPhone版v10.5.3）</figcaption>
 </figure>
 
 一見すると、黒の「OK」と赤の「NG」が不規則に入り乱れているように見えるかもしれない。しかし縦に見ていくとつながりが見て取れる。つまりリーダーごとに、OKが多いものとNGが多いものの2種類に分かれている。上端のレイアウトエンジンの違いも含めてみれば違いがさらに分かる。OKの多いリーダーは緑色＝モダンブラウザー系であり、NGの多いリーダーは水色＝独自エンジン系なのである。
@@ -2623,25 +2623,19 @@ lang: 'ja'
 
 
 <figure style="text-align: center; margin-top:24.5Q; " class="figure-right">
-  <img src="img/chap2/2-koboiPhone-BookMac-MurasakiMac.png" alt="2-koboiPhone-BookMac-MurasakiMac">
-  <figcaption><strong>図4</strong> 左からkobo-mobile（iPhone v10.5.3）、ブック（Mac-Arm v6.3）、MURASAKI（Mac-Arm v2.4.1）</figcaption>
+  <img src="img/chap2/2-Book-MURASAKI-honto.png" alt="img/chap2/2-Book-MURASAKI-honto">
+  <figcaption><strong>図4</strong></figcaption>
 </figure>
 
 <figure style="text-align: center; margin-top:24.5Q; " class="figure-right">
-  <img src="img/chap2/3-hontoiPhone-BookWalkeriPhone-KinoppyWin.png" alt="3-hontoiPhone-BookWalkeriPhone-KinoppyWin">
-  <figcaption><strong>図5 </strong>左からhonto（iOS v6.62.0）</figcaption>
+  <img src="img/chap2/3-BOOK☆WALKER-Kinoppy-Romancer.png" alt="img/chap2/3-BOOK☆WALKER-Kinoppy-Romancer">
+  <figcaption><strong>図5</strong></figcaption>
 </figure>
 
 <figure style="text-align: center; margin-top:24.5Q; " class="figure-right">
-  <img src="img/chap2/4-Romancer-Bibi.png" alt="4-Romancer-Bibi">
+  <img src="img/chap2/4-Bibi-Vivliostyle-Thorium.png" alt="img/chap2/4-Bibi-Vivliostyle-Thorium">
   <figcaption><strong>図6</strong></figcaption>
 </figure>
-
-<figure style="text-align: center; margin-top:24.5Q; " class="figure-right">
-  <img src="img/chap2/5-Vivliostyle-ThoriumMac.png" alt="5-Vivliostyle-ThoriumMac">
-  <figcaption><strong>図7</strong></figcaption>
-</figure>
-
 
 
 
