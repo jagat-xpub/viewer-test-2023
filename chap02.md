@@ -2652,7 +2652,7 @@ koboについても触れておこう。同じkoboでありながらkobo-other�
   <figcaption><strong>図4 </strong>左からBook Walker（v7.6.0）、Kinoppy（Windows版 v3.3.20.329851E）、BinB（バージョン非表示）</figcaption>
 </figure>
 
-最後に**図5**を見てみよう。左からBibi（v1.2.0）、Vivliostyle（テスト時v2.25.0、Chrome 113で確認→v2.28.1、Chrome 123で確認）、Thorium Reader（Mac版、テスト時v2.2.0→v2.4.1）。これらは3つともモダンブラウザー系であり、順当な結果と言える。
+最後に**図5**を見てみよう。左からBibi（v1.2.0、松島智）、Vivliostyle（テスト時v2.25.0、Chrome 113で確認→v2.28.1、Chrome 123で確認、ビブリオスタイル）、Thorium Reader（Mac版、テスト時v2.2.0→v2.4.1、EDRLab）。これらは3つともモダンブラウザー系であり、順当な結果と言える。
 
 <figure style="text-align: center; margin-top:24.5Q; " class="figure-right">
   <img src="img/chap2/4-Bibi-Vivliostyle-Thorium.png" alt="img/chap2/4-Bibi-Vivliostyle-Thorium">
