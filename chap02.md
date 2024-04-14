@@ -2594,9 +2594,9 @@ lang: 'ja'
 - 7……掲載した全てのテスト環境でmix-blend-modeがNGの場合、これを前提とするisolationは無効（N/A）
 - 8……Windows上のKindle 2.3.0のみNG。他はすべてOK
 
-一見すると、黒の「OK」と赤の「NG」が不規則に入り乱れているように見えるかもしれない。しかし縦に見ていくとつながりが見て取れる。つまりリーダーごとに、OKが多いものとNGが多いものの2種類に分かれている。上端のレイアウトエンジンの違いも含めてみれば違いがさらに分かる。OKの多いリーダーは緑色＝モダンブラウザー系であり、NGの多いリーダーは水色＝独自エンジン系なのである。
+一見すると、黒の「OK」と赤の「NG」が不規則に入り乱れているように見えるかもしれない。しかし縦に見ていくとつながりが見て取れる。つまりリーダーごとに、「OK」が多いものと「NG」が多いものの2種類に分かれている。上端のレイアウトエンジンの違いも含めてみれば違いがさらに分かる。「OK」の多いリーダーは緑色＝モダンブラウザー系であり、「NG」の多いリーダーは水色＝独自エンジン系なのである。
 
-前項でNGが多かったBinBとKinoppy、hontoだが、この項でもNGが多いのは変わらない。しかし、それらに加えて前項ではOKが多かったKindle、kobo-other（楽天Kobo）、超縦書もNGが多くなった。
+前項で「NG」が多かったBinBとKinoppy、hontoだが、この項でも「NG」が多いのは変わらない。しかし、それらに加えて前項では「OK」が多かったKindle、kobo-other（楽天Kobo）、超縦書も「NG」が多くなった。
 
 #### 2-2-4-2　「writing-mode プロパティ vertical-rl」に絞ったテスト結果
 
@@ -2609,9 +2609,9 @@ lang: 'ja'
 
 それから、テストファイルはBinBだけがepubcsstest_v1a.epubで、他の全てはepubcsstest_v2.epubである。ただし「writing-mode プロパティ」に関してはテストファイルは変わってもテスト内容に基本的な違いはないので、結果が変わることは考えにくい。
 
-まずNGだったものから紹介すると、**図1**左からKindleのうちWindows（テスト時v2.3.0 (70673)→v2.3.1(70682)）、kobo-other（スクリーンショットはMac版だが、Windows版も同じ結果。v4.37.17113）、そして超縦書（Windows版 v2.3.1）。この3つのリーダーは`writing-mode: vertical-rl;`を指定しても縦書きで表示しなかった。これらのリーダーで縦書きを表示したい場合は、`-epub-`などの接頭辞をつける必要がある。
+まず「NG」だったものから紹介すると、**図1**左からKindleのうちWindows（テスト時v2.3.0 (70673)→v2.3.1(70682)）、kobo-other（スクリーンショットはMac版だが、Windows版も同じ結果。v4.37.17113）、そして超縦書（Windows版 v2.3.1）。この3つのリーダーは`writing-mode: vertical-rl;`を指定しても縦書きで表示しなかった。これらのリーダーで縦書きを表示したい場合は、`-epub-`などの接頭辞をつける必要がある。
 
-残りはすべてOKだったものだ。**図2**左からKindleのうちiPhone版（テスト時v7.1→v7.8）、KindleのうちMac版（テスト時v7.0.0.100 (1.316222)→v7.6.0.0(1.329899)）、kobo-mobileのうちiPhone版（テスト時v10.4.3→v10.5.3）。
+残りはすべて「OK」だったものだ。**図2**左からKindleのうちiPhone版（テスト時v7.1→v7.8）、KindleのうちMac版（テスト時v7.0.0.100 (1.316222)→v7.6.0.0(1.329899)）、kobo-mobileのうちiPhone版（テスト時v10.4.3→v10.5.3）。
 
 <figure style="text-align: center; margin-top:24.5Q; " class="figure-bottom">
   <img src="img/chap2/1-KindleiPhone-Kindlemac-koboiPhone.png" alt="img/chap2/1-KindleiPhone-Kindlemac-koboiPhone">
@@ -2624,7 +2624,7 @@ lang: 'ja'
 
 なお、専用端末に関しては再テストをしていないのでアップデート後の対応は不明だが、参考のためKindle Paperwhite Signeture Edition（第11世代、v5.16.7（4193160020））で、「writing-mode プロパティ vertical-rl」に限ってテストしたところ、やはり「OK」に変わっていた。
 
-他方、Kindle（専用端末、モバイル端末、デスクトップ）と[Kindle Previewer](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=0&range=P2:Q6)は、それぞれCSSモジュールの対応程度が異なる。しかしKindleの中では、CSSモジュールの対応程度はハードウェアやOSの違いが少ない。つまり、Kindleの中ではいくつかの例外を除きハードウェアやOSの違いに関わらずOKとNGがよく揃っていると言える。ただし、ここでも「writing-mode プロパティ vertical-rl」はその例外で、Windows版のKindleだけが「NG」だった（図1）。
+他方、Kindle（専用端末、モバイル端末、デスクトップ）と[Kindle Previewer](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=0&range=P2:Q6)は、それぞれCSSモジュールの対応程度が異なる。しかしKindleの中では、CSSモジュールの対応程度はハードウェアやOSの違いが少ない。つまり、Kindleの中ではいくつかの例外を除きハードウェアやOSの違いに関わらず「OK」と「NG」がよく揃っていると言える。ただし、ここでも「writing-mode プロパティ vertical-rl」はその例外で、Windows版のKindleだけが「NG」だった（図1）。
 
 koboについても触れておこう。同じkoboでありながらkobo-otherが「NG」（図1）、kobo-mobileが「OK」（図2）と結果が分かれていることに興味が引かれるかもしれない。しかし、前者は独自エンジン系、後者はモダンブラウザー系なので、じつはレイアウトエンジンの違いが出た、分かりやすい結果とも言える。
 
