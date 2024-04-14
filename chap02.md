@@ -460,7 +460,7 @@ lang: 'ja'
       <td bgcolor="#c9daf8" align="center">2023/12/07</td>
     </tr>
     <tr>
-      <td bgcolor="#c9daf8" align="center">Romancer *¹</td>
+      <td bgcolor="#c9daf8" align="center">BinB *¹</td>
       <td bgcolor="#c9daf8" align="center">→</td>
       <td bgcolor="#c9daf8" align="center">Webアプリ</td>
       <td bgcolor="#c9daf8" align="center">Galaxy Tab S8 Ultra</td>
@@ -470,7 +470,7 @@ lang: 'ja'
       <td bgcolor="#c9daf8" align="center">2023/07/23</td>
     </tr>
     <tr>
-      <td bgcolor="#c9daf8" align="center">Romancer *¹</td>
+      <td bgcolor="#c9daf8" align="center">BinB *¹</td>
       <td bgcolor="#c9daf8" align="center">→</td>
       <td bgcolor="#c9daf8" align="center">Webアプリ</td>
       <td bgcolor="#c9daf8" align="center">N/A *²</td>
@@ -808,7 +808,7 @@ lang: 'ja'
     </tr>
     <tr>
       <td bgcolor="#d9ead3" align="center">Bibi</td>
-      <td bgcolor="#c9daf8" align="center">Romancer</td>
+      <td bgcolor="#c9daf8" align="center">BinB</td>
     </tr>
     <tr>
       <td bgcolor="#d9ead3" align="center">Vivliostyle Viewer</td>
@@ -848,7 +848,7 @@ lang: 'ja'
       <td style="writing-mode: vertical-lr" bgcolor="#c9daf8" align="center">honto</td>
       <td style="writing-mode: vertical-lr" bgcolor="#d9ead3" align="center">Book Walker</td>
       <td style="writing-mode: vertical-lr" bgcolor="#c9daf8" align="center">Kinoppy</td>
-      <td style="writing-mode: vertical-lr" bgcolor="#c9daf8" align="center">Romancer</td>
+      <td style="writing-mode: vertical-lr" bgcolor="#c9daf8" align="center">BinB</td>
       <td style="writing-mode: vertical-lr" bgcolor="#d9ead3" align="center">Bibi</td>
       <td style="writing-mode: vertical-lr" bgcolor="#c9daf8" align="center">超縦書</td>
       <td style="writing-mode: vertical-lr" bgcolor="#d9ead3" align="center">Vivliostyle</td>
@@ -1404,7 +1404,7 @@ lang: 'ja'
 </table>
 </div>
 
-結果は、RomancerとKinoppy、honto以外のEPUBリーダーは、このグループのテスト項目をほとんどクリアした。ただし、このテスト結果が確定するまでいささかの曲折があった。その原因はまさに独自エンジン系の独自な実装にある。
+結果は、BinB（ボイジャー）とKinoppy（紀伊國屋書店）、honto（大日本印刷）以外のEPUBリーダーは、このグループのテスト項目をほとんどクリアした。ただし、このテスト結果が確定するまでいささかの曲折があった。その原因はまさに独自エンジン系の独自な実装にある。
 
 テストファイルの当初のバージョンでは、多くのテスト項目においてCSS レベル2.1のプロパティである`visibility`を使っていた。たとえば、Selector 3の「:root擬似クラス」のテスト項目は次のようになっている。
 
@@ -1429,7 +1429,9 @@ lang: 'ja'
 
 もともとこれは、EPUB 3をサポートするEPUBリーダーであれば、当然CSS レベル2.1にある`visibility`などはサポートしているはずという想定によるものだった。ところが独自エンジン系である一部のEPUBリーダーではこの想定が通用せず、いったんはおこなったテストを廃棄して、新しく作り直したテストですべてやり直すことになった。その廃棄したテスト結果が、<a href="#2-1-3-2-掲載しなかったテスト環境の一覧">2-1-3-2 掲載しなかったテスト環境の一覧</a>に掲載したものであり、新しく作り直したテストファイルが[epubcsstest_v1a.epub](https://github.com/jagat-xpub/epub-css-test/blob/main/epub/epubcsstest_v1a.epub)<span class="notetext">ZIP圧縮前のフォルダは以下を参照。<br/><https://github.com/jagat-xpub/epub-css-test/tree/main/epub-exp/epubcsstest_v1a></span>である（**図1**）。
 
-ところが、独自エンジン系の実装に振り回されるのはこれが最後ではなかった。長くなるので詳細は省くが、締め切りも迫った2024年3月25日、「::first-line擬似要素」「rgb()関数のコンマなし形式」の2項目についても同じような問題が発生し、やむなくテストを書き直すことになったのである。こうして作られたのが[epubcsstest_v2.epub](https://github.com/jagat-xpub/epub-css-test/blob/main/epub/epubcsstest_v2.epub)<span class="notetext">ZIP圧縮前のフォルダは以下を参照。<br/><https://github.com/jagat-xpub/epub-css-test/tree/main/epub-exp/epubcsstest_v2></span>であり、これを使って前述2項目、及びテスト結果に疑問があった項目も合わせて再テストしたEPUBリーダーは、[Kindle](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=0&range=R27:X27)、[kobo-mobile（iOS）](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=396838262&range=D45)、[kobo-mobile（Android）](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=396838262&range=F27)、[ブック](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=212733997&range=L27)、[MURASAKI](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=610814699&range=F45)、[honto](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=1733190750&range=D25)、[Book Walker](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=968182416&range=F27)、[超縦書](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=1234705026&range=H27)である。
+ところが、独自エンジン系の実装に振り回されるのはこれが最後ではなかった。長くなるので詳細は省くが、締め切りも迫った2024年3月25日、「::first-line擬似要素」「rgb()関数のコンマなし形式」の2項目についても同じような問題が発生し、やむなくテストを書き直すことになったのである。
+
+こうして作られたのが[epubcsstest_v2.epub](https://github.com/jagat-xpub/epub-css-test/blob/main/epub/epubcsstest_v2.epub)<span class="notetext">ZIP圧縮前のフォルダは以下を参照。<br/><https://github.com/jagat-xpub/epub-css-test/tree/main/epub-exp/epubcsstest_v2></span>であり、これを使って前述2項目、及びテスト結果に疑問があった項目も合わせて再テストしたEPUBリーダーは、[Kindle（アマゾン）](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=0&range=R27:X27)、[iOS版](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=396838262&range=D45)と[Android版](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=396838262&range=F27)の[kobo-mobile（楽天Kobo）]、[ブック（アップル）](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=212733997&range=L27)、[MURASAKI（Genji App）](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=610814699&range=F45)、[honto](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=1733190750&range=D25)、[Book Walker（ブックウォーカー）](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=968182416&range=F27)、[超縦書（BPS）](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=1234705026&range=H27)である。
 
 ### 2-2-4 おもにモダンブラウザー系でサポートされるCSSモジュール
 
@@ -1448,7 +1450,7 @@ lang: 'ja'
       <td style="writing-mode: vertical-lr" bgcolor="#c9daf8" align="center">honto</td>
       <td style="writing-mode: vertical-lr" bgcolor="#d9ead3" align="center">Book Walker</td>
       <td style="writing-mode: vertical-lr" bgcolor="#c9daf8" align="center">Kinoppy</td>
-      <td style="writing-mode: vertical-lr" bgcolor="#c9daf8" align="center">Romancer</td>
+      <td style="writing-mode: vertical-lr" bgcolor="#c9daf8" align="center">BinB</td>
       <td style="writing-mode: vertical-lr" bgcolor="#d9ead3" align="center">Bibi</td>
       <td style="writing-mode: vertical-lr" bgcolor="#c9daf8" align="center">超縦書</td>
       <td style="writing-mode: vertical-lr" bgcolor="#d9ead3" align="center">Vivliostyle</td>
@@ -2590,45 +2592,56 @@ lang: 'ja'
 - 7……掲載した全てのテスト環境でmix-blend-modeがNGの場合、これを前提とするisolationは無効（N/A）
 - 8……Windows上のKindle 2.3.0のみNG。他はすべてOK
 
-<figure style="text-align: center;" class="figure-bottom">
+一見すると、黒の「OK」と赤の「NG」が不規則に入り乱れているように見えるかもしれない。しかし縦に見ていくとつながりが見て取れる。つまりリーダーごとに、OKが多いものとNGが多いものの2種類に分かれている。上端のレイアウトエンジンの違いも含めてみれば違いがさらに分かる。OKの多いリーダーは緑色＝モダンブラウザー系であり、NGの多いリーダーは水色＝独自エンジン系なのである。
+
+前項でNGが多かったBinBとKinoppy、hontoについて、この項でもNGが多いのは変わらない。しかし、それらに加えて前項ではOKが多かったKindle、kobo-other、超縦書が、この項ではNGが多くなっている。
+
+すべてのテスト項目を説明するには紙幅が足りないので、ここまでとくに拘ってきた「writing-mode プロパティ vertical-rl」を例に挙げて、スクリーンショットとともに見てみよう。なお、テストから本稿執筆まで間隔が空いてしまったので、スクリーンショットは執筆時点（2024年4月11日）の最新版で撮り直した。テスト時のバージョンと異同があるものはいちいちコメントしたが、テスト結果に変わりはなかった。それから、テストファイルは基本的にepubcsstest_v2.epubとし、そうでない場合のみコメントした（ただし「writing-mode プロパティ」に関してはテストファイルは変わってもテスト内容に基本的な違いはないので、結果が変わることは考えにくい）。
+
+<figure style="text-align: center;" class="figure-right">
   <img src="img/chap2/writing-mode-NG.png" alt="writing-mode-NG">
-  <figcaption><strong>図2</strong> 左からKindle（Windows）、kobo-other (Mac)、超縦書。テストファイルは全てepubcsstest_v2.epub。</figcaption>
+  <figcaption><strong>図1</strong> 左からKindle（Windows）、kobo-other (Mac)、超縦書。テストファイルは全てepubcsstest_v2.epub。</figcaption>
 </figure>
+
+まずNGだったものから紹介すると、**図1**左からKindleのうちWindows（テスト時v2.3.0 (70673)→v2.3.1(70682)）、kobo-other（スクリーンショットはMacだが、Windowsも同じ結果）、そして超縦書。この3つのリーダーは`writing-mode: vertical-rl;`を指定しても縦書きで表示しなかった。これらのリーダーで縦書きを表示したい場合は、`-epub-`などの接頭辞をつける必要がある。
+
+残りはすべてOKだったものだ。**図2**左からKindleのうちiPhone（テスト時v7.1→v7.8）、KindleのうちMac（テスト時v7.0.0.100 (1.316222)→v7.6.0.0(1.329899)）、kobo-mobileのうちiPhone（テスト時v10.4.3→v10.5.3）。
+
+図1と図2でKindleのスクリーンショットが3つ揃ったので、これについてコメントしよう。本テストが始動したのは2023年5月頃だったが、同年8月にKindleは[メジャーアップデート](https://forest.watch.impress.co.jp/docs/news/1526058.html)をおこなっている。しかし、CSSモジュールに対応しているかどうかをみる本テストに関しては、アップデートの前後で大きな違いは見られない<span class="notetext">ここでは[2023年5月〜同年7月にepubcsstest_v1でおこなったテスト（不掲載分）](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=0&range=E2:Q6)と、[2023年12月〜翌1月におこなったepubcsstest_v1aでおこなったテスト（掲載分）](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=0&range=R2:X6)の結果を比較している。Kindleに関しては、epubcsstest_v1で誤判定があったのは「::first-line 擬似要素」だけであり、それ以外は問題ないことが分かっている。</span>。
+
+専用端末、モバイル端末、デスクトップPC向けKindleと、[Kindle Previewer](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=0&range=P2:Q6)はCSSモジュールの対応程度はそれぞれ異なる。しかし、Kindleの中では二三の例外を除きハードウェアやOSの違いに関わらずOKとNGが揃っている。つまり、比較的ハードウェアやOSの差が少ないと言える。
 
 <figure style="text-align: center; margin-top:24.5Q; " class="figure-bottom">
   <img src="img/chap2/1-KindleiPhone-Kindlemac-koboiPhone.png" alt="img/chap2/1-KindleiPhone-Kindlemac-koboiPhone">
-  <figcaption><strong>図3</strong> 左からKindle（iPhone版v7.7）、Kindle（Mac版v7.6.0.0(1.329899)）、kobo-mobile（iPhone版v10.5.3）</figcaption>
+  <figcaption><strong>図2</strong> 左からKindle（iPhone版v7.7）、Kindle（Mac版v7.6.0.0(1.329899)）、kobo-mobile（iPhone版v10.5.3）</figcaption>
 </figure>
 
-一見すると、黒の「OK」と赤の「NG」が不規則に入り乱れているように見えるかもしれない。しかし縦に見ていくとつながりが見て取れる。つまりリーダーごとに、OKが多いものとNGが多いものの2種類に分かれている。上端のレイアウトエンジンの違いも含めてみれば違いがさらに分かる。OKの多いリーダーは緑色＝モダンブラウザー系であり、NGの多いリーダーは水色＝独自エンジン系なのである。
+ここで取り上げている「writing-mode プロパティ vertical-rl」は、その数少ない例外の一つだ。2023年5月〜同年7月ではすべて「NG」だったものが、2023年12月〜翌1月におこなった再テストではWindows向けのKindleを除き、すべて「OK」に変わっている。なお、専用端末は再テストをおこなっていなかったが、参考のためにKindle Paperwhite Signeture Edition（第11世代、v5.16.7（4193160020））で「writing-mode プロパティ vertical-rl」に限りテストしたところ、これも「OK」に変わっていた。
 
-前項でNGが多かったRomancerとKinoppy、hontoが、この項でもNGが多いのは変わらない。しかし、加えて前項ではOKばかりだったKindle、kobo-other、超縦書が、この項ではNGが多くなっている。
+それから、同じkoboでありながらkobo-otherが「NG」（図1）、kobo-mobileが「OK」（図2）と結果が分かれている。前者は独自エンジン系、後者はモダンブラウザー系なので、分かりやすい結果とも言える。
 
-すべてのテスト項目を説明するには紙幅が足りないので、ここまでとくに拘ってきた「writing-mode プロパティ vertical-rl」を例に挙げて、スクリーンショットとともに見てみよう。なお、テストから本稿執筆まで間隔が空いてしまったので、スクリーンショットは執筆時点（2024年4月11日）の最新版で撮り直した。テスト時のバージョンと異同があるものはいちいちコメントしたが、すべてテスト結果に変わりはなかった。それから、テストファイルは基本的にepubcsstest_v2.epubとし、そうでない場合のみコメントした（ただし、「writing-mode プロパティ」に関して、テストファイルは変わってもその内容は基本的に異同がないので結果が変わることはない）。
+**図3**に移ろう。左からブック（Mac、テスト時v6.1→v6.3(6040)、MURASAKI（Mac、v2.4.1(30)）、honto（iPhone v6.62.0）。このうちブックとMURASAKIはモダンブラウザー系、hontoは独自エンジン系だ。よく知られているように、iOSでは[「App Reviewガイドライン」](https://developer.apple.com/jp/app-store/review/guidelines/#performance)によりレイアウトエンジンがWebKitに制限されているが、かなり珍しい実装と言える。
 
-まずNGだったものから紹介すると、**図2**左からKindleのうちWindows（テスト時v2.3.0 (70673)→v2.3.1(70682)）、kobo-other（スクリーンショットはMacだが、Windowsも同じ結果）、それから超縦書の3つは、プレフィクスなしの`writing-mode: vertical-rl;`を指定しても縦書きで表示しなかった。これらのリーダーで縦書きを表示したい場合はプレフィックスをつけなければならない。
-
-
-残りはすべてOKだったものだ。**図3**左からKindleのうちiPhone（テスト時v7.1→v7.8）、KindleのうちMac（テスト時v7.0.0.100 (1.316222)→v7.6.0.0(1.329899)）、kobo-mobileのうちiPhone（テスト時v10.4.3→v10.5.3）。
+hontoはMac版、Windows版もある。しかしサイドロードに対応しているのはiOS、Android版だけであり、さらにサイドロードしたEPUBは同期の対象外であることから、Mac版、Windows版のテストはあきらめざるを得なかった。したがって、それらが独自エンジン系かモダンブラウザー系であるかは分からない。しかし、前述のような状況の中、iOS版があえて独自エンジン系としていることを考えると、プラットフォーム間で組版表示をそろえるため、Mac版、Windows版も独自エンジン系としている可能性はある。
 
 
-**図4**左から、
+
 
 
 
 <figure style="text-align: center; margin-top:24.5Q; " class="figure-right">
   <img src="img/chap2/2-Book-MURASAKI-honto.png" alt="img/chap2/2-Book-MURASAKI-honto">
+  <figcaption><strong>図3</strong></figcaption>
+</figure>
+
+<figure style="text-align: center; margin-top:24.5Q; " class="figure-right">
+  <img src="img/chap2/3-BOOK☆WALKER-Kinoppy-BinB.png" alt="img/chap2/3-BOOK☆WALKER-Kinoppy-BinB">
   <figcaption><strong>図4</strong></figcaption>
 </figure>
 
 <figure style="text-align: center; margin-top:24.5Q; " class="figure-right">
-  <img src="img/chap2/3-BOOK☆WALKER-Kinoppy-Romancer.png" alt="img/chap2/3-BOOK☆WALKER-Kinoppy-Romancer">
-  <figcaption><strong>図5</strong></figcaption>
-</figure>
-
-<figure style="text-align: center; margin-top:24.5Q; " class="figure-right">
   <img src="img/chap2/4-Bibi-Vivliostyle-Thorium.png" alt="img/chap2/4-Bibi-Vivliostyle-Thorium">
-  <figcaption><strong>図6</strong></figcaption>
+  <figcaption><strong>図5</strong></figcaption>
 </figure>
 
 
