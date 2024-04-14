@@ -2641,7 +2641,7 @@ koboについても触れておこう。同じkoboでありながらkobo-other�
 
 次に**図4**。左から、Book Walker（スクリーンショットはiPhone版だが、Android版も同じ結果。テスト時v7.4.7→v7.6.0）、Kinoppy（Windows版 テスト時v3.2.19→v3.3.20.329851E）、BinB（バージョン非表示）。このうちBook Walkerのみモダンブラウザー系で、KinoppyとBinBは独自エンジン系だ。
 
-このうち、BinBは<a href="#2-2-3-メジャーなepubリーダーでサポートされるcssモジュール">2-2-3</a>のテスト結果だけでなく、本項の多くも「NG」だったが、「writing-mode プロパティ vertical-rl」については「OK」としている。
+このうち、BinBは<a href="#2-2-3-メジャーなepubリーダーでサポートされるcssモジュール">2-2-3</a>だけでなく、本項の多くのテスト結果も「NG」だったが、「writing-mode プロパティ vertical-rl」については「OK」としている。
 
 ここまで独自エンジン系で「writing-mode プロパティ vertical-rl」が「OK」だったKindle（Windows版を除く）、honto、Kinoppyは、これ以外のテスト結果では「NG」が多い。CSSモジュールについては選択的に実装する開発方針なのかもしれない。
 
