@@ -1404,9 +1404,9 @@ lang: 'ja'
 </table>
 </div>
 
-結果は、BinB（ボイジャー）とKinoppy（紀伊國屋書店）、honto（大日本印刷）以外のEPUBリーダーは、このグループのテスト項目をほとんどクリアした。ただし、このテスト結果が確定するまでいささかの曲折があった。その原因はまさに独自エンジン系の独自な実装にある。
+このグループに関しては、独自エンジン系に属するBinB（ボイジャー）、Kinoppy（紀伊國屋書店）、honto（大日本印刷）以外のEPUBリーダーはほぼ全てクリアした。ただし、このテスト結果が確定するまでいささかの曲折があった。その原因はまさに独自エンジン系の独自な実装にあった。
 
-テストファイルの当初のバージョンでは、多くのテスト項目においてCSS レベル2.1のプロパティである`visibility`を使っていた。たとえば、Selector 3の「:root擬似クラス」のテスト項目は次のようになっている。
+ここで使ったテストファイルの当初のバージョンでは、多くのテスト項目においてCSS レベル2.1のプロパティである`visibility`を使っていた。たとえば、Selector 3の「:root擬似クラス」のテスト項目は次のようになっている。
 
 ```html
 <style>
@@ -1427,15 +1427,15 @@ lang: 'ja'
 
 もしも:root擬似クラスが機能していれば`visibility: visible`が適用され「OK」が表示される、そうでない場合には`visibility: hidden`が適用され「OK」が非表示になる、そういうアルゴリズムだ。ところが、そもそも`visibility`をサポートしていないEPUBリーダーでは`visibility: hidden`も機能せず、テスト結果に関わらず常に「OK」が表示されてしまう。つまり正しいテスト結果は得られない。
 
-もともとこれは、EPUB 3をサポートするEPUBリーダーであれば、当然CSS レベル2.1にある`visibility`などはサポートしているはずという想定によるものだった。ところが独自エンジン系である一部のEPUBリーダーではこの想定が通用せず、いったんはおこなったテストを廃棄して、新しく作り直したテストですべてやり直すことになった。その廃棄したテスト結果が、<a href="#2-1-3-2-掲載しなかったテスト環境の一覧">2-1-3-2 掲載しなかったテスト環境の一覧</a>に掲載したものであり、新しく作り直したテストファイルが[epubcsstest_v1a.epub](https://github.com/jagat-xpub/epub-css-test/blob/main/epub/epubcsstest_v1a.epub)<span class="notetext">ZIP圧縮前のフォルダは以下を参照。<br/><https://github.com/jagat-xpub/epub-css-test/tree/main/epub-exp/epubcsstest_v1a></span>である（**図1**）。
+もともとこれは、EPUB 3をサポートするEPUBリーダーであれば、当然CSS レベル2.1にある`visibility`などはサポートしているはずという想定によるものだった。ところが独自エンジン系EPUBリーダーの一部にはこの想定が通用せず、これ以前におこなったテスト結果を廃棄して、新しく作り直したテストをやり直すことになった。その廃棄したテスト結果が、<a href="#2-1-3-2-掲載しなかったテスト環境の一覧">2-1-3-2 掲載しなかったテスト環境の一覧</a>に掲載したものであり、新しく作り直したテストファイルが[epubcsstest_v1a.epub](https://github.com/jagat-xpub/epub-css-test/blob/main/epub/epubcsstest_v1a.epub)<span class="notetext">ZIP圧縮前のフォルダは以下を参照。<br/><https://github.com/jagat-xpub/epub-css-test/tree/main/epub-exp/epubcsstest_v1a></span>である（**図1**）。
 
-ところが、独自エンジン系の実装に振り回されるのはこれが最後ではなかった。長くなるので詳細は省くが、締め切りも迫った2024年3月25日、「::first-line擬似要素」「rgb()関数のコンマなし形式」の2項目についても同じような問題が発生し、やむなくテストを書き直すことになったのである。
+ところが、独自エンジン系の実装に振り回されるのはこれが最後ではなかった。長くなるので詳細は省くが、締め切りも迫った2024年3月25日、「::first-line擬似要素」「rgb()関数のコンマなし形式」の2項目についても同じような問題が発生し、やむなくテストを書き直すことになった。こうして作られたのが[epubcsstest_v2.epub](https://github.com/jagat-xpub/epub-css-test/blob/main/epub/epubcsstest_v2.epub)<span class="notetext">ZIP圧縮前のフォルダは以下を参照。<br/><https://github.com/jagat-xpub/epub-css-test/tree/main/epub-exp/epubcsstest_v2></span>だ。
 
-こうして作られたのが[epubcsstest_v2.epub](https://github.com/jagat-xpub/epub-css-test/blob/main/epub/epubcsstest_v2.epub)<span class="notetext">ZIP圧縮前のフォルダは以下を参照。<br/><https://github.com/jagat-xpub/epub-css-test/tree/main/epub-exp/epubcsstest_v2></span>であり、これを使って前述2項目、及びテスト結果に疑問があった項目も合わせて再テストしたEPUBリーダーは、[Kindle（アマゾン）](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=0&range=R27:X27)、[iOS版](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=396838262&range=D45)と[Android版](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=396838262&range=F27)の[kobo-mobile（楽天Kobo）]、[ブック（アップル）](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=212733997&range=L27)、[MURASAKI（Genji App）](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=610814699&range=F45)、[honto](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=1733190750&range=D25)、[Book Walker（ブックウォーカー）](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=968182416&range=F27)、[超縦書（BPS）](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=1234705026&range=H27)である。
+このとき前述2項目と、以前からテスト結果に疑問があった項目も合わせて再テストしたEPUBリーダーは、[Kindle（アマゾン）](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=0&range=R27:X27)、[iOS版](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=396838262&range=D45)と[Android版](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=396838262&range=F27)のkobo-mobile（楽天Kobo）、[ブック（アップル）](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=212733997&range=L27)、[MURASAKI（Genji App）](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=610814699&range=F45)、[honto](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=1733190750&range=D25)、[Book Walker（ブックウォーカー）](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=968182416&range=F27)、[超縦書（BPS）](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=1234705026&range=H27)の7つであった。
 
 ### 2-2-4 おもにモダンブラウザー系でサポートされるCSSモジュール
 
-この項で報告するのは、11つのCSSモジュールにわたる54項目のテスト結果である（全82項目の約66%）。ここで言う「おもにモダンブラウザー系でサポートされるSSモジュール」とは、簡単に言うと前項で掲載したテスト項目以外全てである。では**表3**を見ていただこう。
+この項で報告するのは、11つのCSSモジュールにわたる54項目のテスト結果である（全82項目の約66%）。ここで言う「おもにモダンブラウザー系でサポートされるSSモジュール」とは、簡単に言うと前項で掲載したテスト項目以外全てである。言い換えると、「モダンブラウザー系だけでなく、独自エンジン系の一部でもサポートされるCSSモジュール」とも言える。では**表3**のテスト結果を見ていただこう。
 
 <div style=margin-top:24.5Q>
 <table>
@@ -2594,7 +2594,7 @@ lang: 'ja'
 
 一見すると、黒の「OK」と赤の「NG」が不規則に入り乱れているように見えるかもしれない。しかし縦に見ていくとつながりが見て取れる。つまりリーダーごとに、OKが多いものとNGが多いものの2種類に分かれている。上端のレイアウトエンジンの違いも含めてみれば違いがさらに分かる。OKの多いリーダーは緑色＝モダンブラウザー系であり、NGの多いリーダーは水色＝独自エンジン系なのである。
 
-前項でNGが多かったBinBとKinoppy、hontoについて、この項でもNGが多いのは変わらない。しかし、それらに加えて前項ではOKが多かったKindle、kobo-other、超縦書が、この項ではNGが多くなっている。
+前項でNGが多かったBinBとKinoppy、hontoについて、この項でもNGが多いのは変わらない。しかし、それらに加えて前項ではOKが多かったKindle、kobo-other（楽天Kobo）、超縦書が、この項ではNGが多くなっている。
 
 すべてのテスト項目を説明するには紙幅が足りないので、ここまでとくに拘ってきた「writing-mode プロパティ vertical-rl」を例に挙げて、スクリーンショットとともに見てみよう。なお、テストから本稿執筆まで間隔が空いてしまったので、スクリーンショットは執筆時点（2024年4月11日）の最新版で撮り直した。テスト時のバージョンと異同があるものはいちいちコメントしたが、テスト結果に変わりはなかった。それから、テストファイルは基本的にepubcsstest_v2.epubとし、そうでない場合のみコメントした（ただし「writing-mode プロパティ」に関してはテストファイルは変わってもテスト内容に基本的な違いはないので、結果が変わることは考えにくい）。
 
