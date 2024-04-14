@@ -2643,7 +2643,7 @@ koboについても触れておこう。同じkoboでありながらkobo-other�
 
 このうち、BinBは<a href="#2-2-3-メジャーなepubリーダーでサポートされるcssモジュール">2-2-3</a>だけでなく、本項の多くのテスト結果も「NG」だったが、「writing-mode プロパティ vertical-rl」については「OK」としている。
 
-ここまで独自エンジン系で「writing-mode プロパティ vertical-rl」が「OK」だったKindle（Windows版を除く）、honto、Kinoppyは、これ以外のテスト結果では「NG」が多い。CSSモジュールについては選択的に実装する開発方針なのかもしれない。
+ここまで独自エンジン系で「writing-mode プロパティ vertical-rl」が「OK」だったKindle（Windows版を除く）、honto、Kinoppy、そしてこのBinBは、これ以外のテスト結果では「NG」が多いのが特徴だ。CSSモジュールについては選択的に実装する開発方針なのかもしれない。
 
 なおまた、Kinoppyについては他にMac版、iOS版、Android版もあるが、これらはテストファイルをサイドロードして表示させると必ず落ちる現象に見舞われた。そこでテストファイルを細かく分割したところ、iOS版、Android版では改善したがMac版は変わりがなく、やむなくMac版のテストをあきらめた。ただし、結果を記録できたiOS版、Android版も<a href="#2-2-3-メジャーなepubリーダーでサポートされるcssモジュール">2-2-3</a>で述べた理由により、残念ながら不掲載としている。
 
