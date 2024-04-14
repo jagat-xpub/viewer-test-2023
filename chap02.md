@@ -2635,7 +2635,7 @@ koboについても触れておこう。同じkoboでありながらkobo-other�
   <figcaption><strong>図3 </strong>左からブック（v6.3(6040)）、MURASAKI（v2.4.1(30)）、honto（iPhone版 v6.62.0）</figcaption>
 </figure>
 
-よく知られているように、iOSでは「Webを閲覧するアプリ」<span class="notetext">[「App Reviewガイドライン」2.5.6（アップル）、最終更新日：2024年4月5日](https://developer.apple.com/jp/app-store/review/guidelines/#performance)</span>に関してはレイアウトエンジンをWebKitに制限されている。EPUBリーダーの多くもiOS版ではWebKitを使う中で珍しい実装と言える。
+よく知られているように、iOSでは「Webを閲覧するアプリ」<span class="notetext">[「App Reviewガイドライン」2.5.6（アップル）、最終更新日：2024年4月5日](https://developer.apple.com/jp/app-store/review/guidelines/#performance)</span>に関してはレイアウトエンジンをWebKitに制限している。EPUBリーダーの多くもiOS版ではWebKitを使う中で、珍しい実装と言える。
 
 なお、hontoはMac版、Windows版も用意されているが、サイドロードに対応しているのはiOS、Android版だけであり、さらにサイドロードしたEPUBは同期の対象外であることから、Mac版、Windows版のテストはあきらめざるを得なかった。
 
