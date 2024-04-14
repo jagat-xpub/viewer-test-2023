@@ -2598,7 +2598,7 @@ lang: 'ja'
 
 前項でNGが多かったBinBとKinoppy、hontoだが、この項でもNGが多いのは変わらない。しかし、それらに加えて前項ではOKが多かったKindle、kobo-other（楽天Kobo）、超縦書もNGが多くなった。
 
-#### 2-2-4-2 　「writing-mode プロパティ vertical-rl」に絞ったテスト結果
+#### 2-2-4-2　「writing-mode プロパティ vertical-rl」に絞ったテスト結果
 
 <figure style="text-align: center;" class="figure-right">
   <img src="img/chap2/writing-mode-NG.png" alt="writing-mode-NG">
@@ -2609,7 +2609,7 @@ lang: 'ja'
 
 それから、テストファイルはBinBだけがepubcsstest_v1a.epubで、他の全てはepubcsstest_v2.epubである。ただし「writing-mode プロパティ」に関してはテストファイルは変わってもテスト内容に基本的な違いはないので、結果が変わることは考えにくい。
 
-NGだったものから紹介すると、**図1**左からKindleのうちWindows（テスト時v2.3.0 (70673)→v2.3.1(70682)）、kobo-other（スクリーンショットはMac版だが、Windows版も同じ結果。v4.37.17113）、そして超縦書（Windows版 v2.3.1）。この3つのリーダーは`writing-mode: vertical-rl;`を指定しても縦書きで表示しなかった。これらのリーダーで縦書きを表示したい場合は、`-epub-`などの接頭辞をつける必要がある。
+まずNGだったものから紹介すると、**図1**左からKindleのうちWindows（テスト時v2.3.0 (70673)→v2.3.1(70682)）、kobo-other（スクリーンショットはMac版だが、Windows版も同じ結果。v4.37.17113）、そして超縦書（Windows版 v2.3.1）。この3つのリーダーは`writing-mode: vertical-rl;`を指定しても縦書きで表示しなかった。これらのリーダーで縦書きを表示したい場合は、`-epub-`などの接頭辞をつける必要がある。
 
 残りはすべてOKだったものだ。**図2**左からKindleのうちiPhone版（テスト時v7.1→v7.8）、KindleのうちMac版（テスト時v7.0.0.100 (1.316222)→v7.6.0.0(1.329899)）、kobo-mobileのうちiPhone版（テスト時v10.4.3→v10.5.3）。
 
@@ -2620,11 +2620,11 @@ NGだったものから紹介すると、**図1**左からKindleのうちWindows
 
 ここでKindleのスクリーンショットが3つ揃ったので、これについてコメントしよう。本テストが始動したのは2023年5月頃だったが、同年8月にKindleは[メジャーアップデート](https://forest.watch.impress.co.jp/docs/news/1526058.html)をおこなっている。しかし、特定のCSSモジュールに対応しているかどうかをみる本テストの立場からは、アップデートの前後で大きな違いは見られなかった<span class="notetext">ここでは[2023年5月〜同年7月にepubcsstest_v1でおこなったテスト（不掲載分）](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=0&range=E2:Q6)と、[2023年12月〜翌1月におこなったepubcsstest_v1aでおこなったテスト（掲載分）](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=0&range=R2:X6)の結果を比較している。Kindleに関しては、epubcsstest_v1で誤判定があったのは「::first-line 擬似要素」だけであり、それ以外は問題ない。</span>。
 
-この「writing-mode プロパティ vertical-rl」は、その数少ない例外の一つだ。2023年5月〜同年7月ではすべて「NG」だったものが、2023年12月〜2024年1月におこなった再テストでは「OK」に変わっている。
+ただし、この「writing-mode プロパティ vertical-rl」は、その数少ない例外の一つだ。2023年5月〜同年7月ではすべて「NG」だったものが、2023年12月〜2024年1月におこなった再テストでは「OK」に変わっている。
 
-なお、専用端末に関しては再テストをしていないのでアップデート後の対応は不明だが、参考のためKindle Paperwhite Signeture Edition（第11世代、v5.16.7（4193160020））で、「writing-mode プロパティ vertical-rl」に限ってテストしたところ、「OK」に変わっていた。
+なお、専用端末に関しては再テストをしていないのでアップデート後の対応は不明だが、参考のためKindle Paperwhite Signeture Edition（第11世代、v5.16.7（4193160020））で、「writing-mode プロパティ vertical-rl」に限ってテストしたところ、やはり「OK」に変わっていた。
 
-他方、Kindle（専用端末、モバイル端末、デスクトップ）と[Kindle Previewer](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=0&range=P2:Q6)は、それぞれCSSモジュールの対応程度が異なる。しかしKindleの中では、CSSモジュールの対応程度はハードウェアやOSの違いが少ない。つまり、Kindleの中ではいくつかの例外を除きハードウェアやOSの違いに関わらずOKとNGがよく揃っていると言える。ただし、「writing-mode プロパティ vertical-rl」はここでもその例外で、Windows版のKindleだけが他のKindleと違って「NG」だった（図1）。
+他方、Kindle（専用端末、モバイル端末、デスクトップ）と[Kindle Previewer](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=0&range=P2:Q6)は、それぞれCSSモジュールの対応程度が異なる。しかしKindleの中では、CSSモジュールの対応程度はハードウェアやOSの違いが少ない。つまり、Kindleの中ではいくつかの例外を除きハードウェアやOSの違いに関わらずOKとNGがよく揃っていると言える。ただし、ここでも「writing-mode プロパティ vertical-rl」はその例外で、Windows版のKindleだけが「NG」だった（図1）。
 
 koboについても触れておこう。同じkoboでありながらkobo-otherが「NG」（図1）、kobo-mobileが「OK」（図2）と結果が分かれていることに興味が引かれるかもしれない。しかし、前者は独自エンジン系、後者はモダンブラウザー系なので、じつはレイアウトエンジンの違いが出た、分かりやすい結果とも言える。
 
@@ -2641,29 +2641,23 @@ koboについても触れておこう。同じkoboでありながらkobo-other�
 
 次に**図4**。左から、Book Walker（スクリーンショットはiPhone版だが、Android版も同じ結果。テスト時v7.4.7→v7.6.0）、Kinoppy（Windows版 テスト時v3.2.19→v3.3.20.329851E）、BinB（バージョン非表示）。このうちBook Walkerのみモダンブラウザー系で、KinoppyとBinBは独自エンジン系だ。
 
-このうち、BinBは<a href="#2-2-3-メジャーなepubリーダーでサポートされるcssモジュール">2-2-3</a>だけでなく、本項のほとんども「NG」だったが、「writing-mode プロパティ vertical-rl」については「OK」としている。
+このうち、BinBは<a href="#2-2-3-メジャーなepubリーダーでサポートされるcssモジュール">2-2-3</a>のテスト結果だけでなく、本項の多くも「NG」だったが、「writing-mode プロパティ vertical-rl」については「OK」としている。
 
-ここまで取り上げた、独自エンジン系であるKindle（Windows版を除く）、honto、Kinoppyは「NG」のテスト結果が多いのが特徴なのだが、「writing-mode プロパティ vertical-rl」等いくつかのCSSモジュールを選択的に実装しているのかもしれない。
+ここまで独自エンジン系で「writing-mode プロパティ vertical-rl」が「OK」だったKindle（Windows版を除く）、honto、Kinoppyは、これ以外のテスト結果では「NG」が多い。CSSモジュールについては選択的に実装する開発方針なのかもしれない。
 
-なおまた、Kinoppyについては他にMac版、iOS版、Android版もあるが、これらはテストファイルをサイドロードして表示させると必ず落ちる現象に見舞われた。CSSを読み込んだ際に未対応のモジュールがあると落ちるのかもしれないと考え、テストファイルを細かく分割したところiOS版、Android版では改善したがMac版では変わりがなく、やむなくテストをあきらめた。ただし、結果を記録できたiOS版、Android版も<a href="#2-2-3-メジャーなepubリーダーでサポートされるcssモジュール">2-2-3</a>で述べた理由により、残念ながら不掲載としている。
+なおまた、Kinoppyについては他にMac版、iOS版、Android版もあるが、これらはテストファイルをサイドロードして表示させると必ず落ちる現象に見舞われた。そこでテストファイルを細かく分割したところ、iOS版、Android版では改善したがMac版は変わりがなく、やむなくMac版のテストをあきらめた。ただし、結果を記録できたiOS版、Android版も<a href="#2-2-3-メジャーなepubリーダーでサポートされるcssモジュール">2-2-3</a>で述べた理由により、残念ながら不掲載としている。
 
 <figure style="text-align: center; margin-top:24.5Q; " class="figure-right">
   <img src="img/chap2/3-BOOK☆WALKER-Kinoppy-BinB.png" alt="img/chap2/3-BOOK☆WALKER-Kinoppy-BinB">
   <figcaption><strong>図4 左からBook Walker（v7.6.0）、Kinoppy（Windows版 v3.3.20.329851E）、BinB（バージョン非表示）</strong></figcaption>
 </figure>
 
-最後に**図5**を見てみよう。左からBibi（v1.2.0）、Vivliostyle（テスト時v2.25.0、Chrome 113で確認→v2.28.1、Chrome 123で確認）、Thorium Reader（Mac版、テスト時v2.2.0→v2.4.1）。これらはいずれもモダンブラウザー系であり、順当な結果と言える。
-
+最後に**図5**を見てみよう。左からBibi（v1.2.0）、Vivliostyle（テスト時v2.25.0、Chrome 113で確認→v2.28.1、Chrome 123で確認）、Thorium Reader（Mac版、テスト時v2.2.0→v2.4.1）。これらは3つともモダンブラウザー系であり、順当な結果と言える。
 
 <figure style="text-align: center; margin-top:24.5Q; " class="figure-right">
   <img src="img/chap2/4-Bibi-Vivliostyle-Thorium.png" alt="img/chap2/4-Bibi-Vivliostyle-Thorium">
   <figcaption><strong>図5 </strong>Bibi（v1.2.0）、Vivliostylev2.28.1、Chrome 123で確認）、Thorium Reader（v2.4.1）</figcaption>
 </figure>
-
-
-
-
-
 
 ## 2-3 おわりに
 
