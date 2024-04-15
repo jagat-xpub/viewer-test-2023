@@ -9,7 +9,7 @@ lang: 'ja'
 
 <div class="author">
 
-村上真雄／小形克宏（Vivliostyle Foundation）
+小形克宏／村上真雄（Vivliostyle Foundation）
 
 </div>
 
