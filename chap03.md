@@ -375,8 +375,8 @@ EPUBで見開き表示の際に各XHTMLファイルを左右どちらに配置�
     <td bgcolor="#c9daf8" align="center">2023/8/21</td>
   </tr>
   <tr>
-    <td bgcolor="#c9daf8" align="center">Romancer</td>
-    <td bgcolor="#c9daf8" align="center">Voyager</td>
+    <td bgcolor="#c9daf8" align="center">BinB</td>
+    <td bgcolor="#c9daf8" align="center">→</td>
     <td bgcolor="#c9daf8" align="center">Webアプリ</td>
     <td bgcolor="#c9daf8" align="center">Galaxy Tab S8 Ultra</td>
     <td bgcolor="#c9daf8" align="center">Android 13</td>
@@ -385,8 +385,8 @@ EPUBで見開き表示の際に各XHTMLファイルを左右どちらに配置�
     <td bgcolor="#c9daf8" align="center">2023/7/23</td>
   </tr>
   <tr>
-    <td bgcolor="#c9daf8" align="center">Romancer</td>
-    <td bgcolor="#c9daf8" align="center">Voyager</td>
+    <td bgcolor="#c9daf8" align="center">BinB</td>
+    <td bgcolor="#c9daf8" align="center">→</td>
     <td bgcolor="#c9daf8" align="center">Webアプリ</td>
     <td bgcolor="#c9daf8" align="center">N/A *¹</td>
     <td bgcolor="#c9daf8" align="center">Windows 10 Pro</td>
@@ -492,7 +492,7 @@ EPUBで見開き表示の際に各XHTMLファイルを左右どちらに配置�
     <td bgcolor="#c9daf8" align="center">OK</td>
   </tr>
   <tr>
-    <th style="color:#434343" align="center">Voyager</th>
+    <th style="color:#434343" align="center">BinB</th>
     <td bgcolor="#c9daf8" align="center">NG</td>
   </tr>
   <tr>
@@ -910,8 +910,8 @@ EPUB内に紙の本のページ番号の記述を指定するには、ナビゲ�
     <td bgcolor="#c9daf8" align="center">2023/8/21</td>
   </tr>
   <tr>
-    <td bgcolor="#c9daf8" align="center">Romancer</td>
-    <td bgcolor="#c9daf8" align="center">Voyager</td>
+    <td bgcolor="#c9daf8" align="center">BinB</td>
+    <td bgcolor="#c9daf8" align="center">→</td>
     <td bgcolor="#c9daf8" align="center">Webアプリ</td>
     <td bgcolor="#c9daf8" align="center">Galaxy Tab S8 Ultra</td>
     <td bgcolor="#c9daf8" align="center">Android 13</td>
@@ -920,8 +920,8 @@ EPUB内に紙の本のページ番号の記述を指定するには、ナビゲ�
     <td bgcolor="#c9daf8" align="center">2023/7/23</td>
   </tr>
   <tr>
-    <td bgcolor="#c9daf8" align="center">Romancer</td>
-    <td bgcolor="#c9daf8" align="center">Voyager</td>
+    <td bgcolor="#c9daf8" align="center">BinB</td>
+    <td bgcolor="#c9daf8" align="center">→</td>
     <td bgcolor="#c9daf8" align="center">Webアプリ</td>
     <td bgcolor="#c9daf8" align="center">N/A *¹</td>
     <td bgcolor="#c9daf8" align="center">Windows 10 Pro</td>
@@ -1030,7 +1030,7 @@ EPUB内に紙の本のページ番号の記述を指定するには、ナビゲ�
     <td bgcolor="#c9daf8" align="center">NG</td>
   </tr>
   <tr>
-    <th style="color:#434343" align="center">Voyager</th>
+    <th style="color:#434343" align="center">BinB</th>
     <td bgcolor="#c9daf8" align="center">NG</td>
   </tr>
   <tr>
@@ -1461,8 +1461,8 @@ DTPでの和文組版処理では、一般的に句読点や全角カッコ類�
     <td bgcolor="#c9daf8" align="center">2023/8/21</td>
   </tr>
   <tr>
-    <td bgcolor="#c9daf8" align="center">Romancer</td>
-    <td bgcolor="#c9daf8" align="center">Voyager</td>
+    <td bgcolor="#c9daf8" align="center">BinB</td>
+    <td bgcolor="#c9daf8" align="center">→</td>
     <td bgcolor="#c9daf8" align="center">Webアプリ</td>
     <td bgcolor="#c9daf8" align="center">Galaxy Tab S8 Ultra</td>
     <td bgcolor="#c9daf8" align="center">Android 13</td>
@@ -1471,8 +1471,8 @@ DTPでの和文組版処理では、一般的に句読点や全角カッコ類�
     <td bgcolor="#c9daf8" align="center">2023/7/23</td>
   </tr>
   <tr>
-    <td bgcolor="#c9daf8" align="center">Romancer</td>
-    <td bgcolor="#c9daf8" align="center">Voyager</td>
+    <td bgcolor="#c9daf8" align="center">BinB</td>
+    <td bgcolor="#c9daf8" align="center">→</td>
     <td bgcolor="#c9daf8" align="center">Webアプリ</td>
     <td bgcolor="#c9daf8" align="center">N/A *¹</td>
     <td bgcolor="#c9daf8" align="center">Windows 10 Pro</td>
@@ -1617,7 +1617,7 @@ DTPでの和文組版処理では、一般的に句読点や全角カッコ類�
     <td align="center" valign="bottom">NG</td>
   </tr>
   <tr>
-    <th style="color:#434343" align="center">Voyager</th>
+    <th style="color:#434343" align="center">BinB</th>
     <td align="center" valign="bottom">OK</td>
     <td align="center" valign="bottom">NG</td>
     <td align="center" valign="bottom">NG</td>
@@ -2101,8 +2101,8 @@ XHTML
     <td bgcolor="#c9daf8" align="center">2023/8/21</td>
   </tr>
   <tr>
-    <td bgcolor="#c9daf8" align="center">Romancer</td>
-    <td bgcolor="#c9daf8" align="center">Voyager</td>
+    <td bgcolor="#c9daf8" align="center">BinB</td>
+    <td bgcolor="#c9daf8" align="center">→</td>
     <td bgcolor="#c9daf8" align="center">Webアプリ</td>
     <td bgcolor="#c9daf8" align="center">Galaxy Tab S8 Ultra</td>
     <td bgcolor="#c9daf8" align="center">Android 13</td>
@@ -2111,8 +2111,8 @@ XHTML
     <td bgcolor="#c9daf8" align="center">2023/7/23</td>
   </tr>
   <tr>
-    <td bgcolor="#c9daf8" align="center">Romancer</td>
-    <td bgcolor="#c9daf8" align="center">Voyager</td>
+    <td bgcolor="#c9daf8" align="center">BinB</td>
+    <td bgcolor="#c9daf8" align="center">→</td>
     <td bgcolor="#c9daf8" align="center">Webアプリ</td>
     <td bgcolor="#c9daf8" align="center">N/A *¹</td>
     <td bgcolor="#c9daf8" align="center">Windows 10 Pro</td>
@@ -2290,7 +2290,7 @@ XHTML
     <td bgcolor="#c9daf8" align="center">NG</td>
   </tr>
   <tr>
-    <th style="color:#434343" align="center">Voyager</th>
+    <th style="color:#434343" align="center">BinB</th>
     <td bgcolor="#c9daf8" align="center">NG</td>
     <td bgcolor="#c9daf8" align="center">NG</td>
     <td bgcolor="#c9daf8" align="center">NG</td>
@@ -2667,8 +2667,8 @@ EPUBリーダー内の画像には読み上げ・検索用に代替文字（alt�
     <td bgcolor="#c9daf8" align="center">2023/8/21</td>
   </tr>
   <tr>
-    <td bgcolor="#c9daf8" align="center">Romancer</td>
-    <td bgcolor="#c9daf8" align="center">Voyager</td>
+    <td bgcolor="#c9daf8" align="center">BinB</td>
+    <td bgcolor="#c9daf8" align="center">→</td>
     <td bgcolor="#c9daf8" align="center">Webアプリ</td>
     <td bgcolor="#c9daf8" align="center">Galaxy Tab S8 Ultra</td>
     <td bgcolor="#c9daf8" align="center">Android 13</td>
@@ -2677,8 +2677,8 @@ EPUBリーダー内の画像には読み上げ・検索用に代替文字（alt�
     <td bgcolor="#c9daf8" align="center">2023/7/23</td>
   </tr>
   <tr>
-    <td bgcolor="#c9daf8" align="center">Romancer</td>
-    <td bgcolor="#c9daf8" align="center">Voyager</td>
+    <td bgcolor="#c9daf8" align="center">BinB</td>
+    <td bgcolor="#c9daf8" align="center">→</td>
     <td bgcolor="#c9daf8" align="center">Webアプリ</td>
     <td bgcolor="#c9daf8" align="center">N/A *¹</td>
     <td bgcolor="#c9daf8" align="center">Windows 10 Pro</td>
@@ -2829,7 +2829,7 @@ EPUBリーダー内の画像には読み上げ・検索用に代替文字（alt�
     <td bgcolor="#c9daf8" align="center">NA</td>
   </tr>
   <tr>
-    <th style="color:#434343" align="center">Voyager</th>
+    <th style="color:#434343" align="center">BinB</th>
     <td bgcolor="#c9daf8" align="center">NG</td>
     <td bgcolor="#c9daf8" align="center">OK</td>
   </tr>
@@ -2845,4 +2845,4 @@ EPUBリーダー内の画像には読み上げ・検索用に代替文字（alt�
 こちらのテストは、テスト実行者が各デバイスの読み上げモードの使い方に必ずしも習熟していないため、読み上げの動作の実行自体に困難を伴ったことを最初に断っておきたい。それを前提に見ていただければ幸いである。
 
 まず、画像代替テキストの検索に対応していたのはhontoだけだった。検索ができることは紙の本と比べた時の電子書籍の大きなアドバンテージであるだけに、ここはもう少し各リーダーの対応が進んで欲しい思いはある。
-画像代替テキストの読み上げは「ブック」「honto」「Voyager」「Thorium Reader」で対応が確認できた。また、読み上げ対応は多くのアプリがOS等の仕組みを利用して実現していると考えられるため、特にブラウザエンジンに依拠するアプリでは今後のOS等のアップデートに伴って読み上げが可能になる可能性はある。今後の進展に期待したい。
+画像代替テキストの読み上げは「ブック」「honto」「BinB」「Thorium Reader」で対応が確認できた。また、読み上げ対応は多くのアプリがOS等の仕組みを利用して実現していると考えられるため、特にブラウザエンジンに依拠するアプリでは今後のOS等のアップデートに伴って読み上げが可能になる可能性はある。今後の進展に期待したい。
