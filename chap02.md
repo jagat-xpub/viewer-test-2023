@@ -1427,11 +1427,23 @@ lang: 'ja'
 
 もしも:root擬似クラスが機能していれば`visibility: visible`が適用され「OK」が表示される、そうでない場合には`visibility: hidden`が適用され「OK」が非表示になる、そういうアルゴリズムだ。ところが、そもそも`visibility`をサポートしていないEPUBリーダーでは`visibility: hidden`も機能せず、テスト結果に関わらず常に「OK」が表示されてしまう。つまり正しいテスト結果は得られない。
 
-もともとこれは、EPUB 3をサポートするEPUBリーダーであれば、当然CSS レベル2.1にある`visibility`などはサポートしているはずという想定によるものだった。ところが独自エンジン系EPUBリーダーの一部にはこの想定が通用せず、これ以前におこなったテスト結果を廃棄して、新しく作り直したテストをやり直すことになった。その廃棄したテスト結果が、<a href="#2-1-3-2-掲載しなかったテスト環境の一覧">2-1-3-2 掲載しなかったテスト環境の一覧</a>に掲載したものであり、新しく作り直したテストファイルが[epubcsstest_v1a.epub](https://github.com/jagat-xpub/epub-css-test/blob/main/epub/epubcsstest_v1a.epub)<span class="notetext">ZIP圧縮前のフォルダは以下を参照。<br/><https://github.com/jagat-xpub/epub-css-test/tree/main/epub-exp/epubcsstest_v1a></span>である（**図1**）。
+もともとこれは、EPUB 3をサポートするEPUBリーダーであれば、当然CSS レベル2.1にある[`visibility`](https://www.w3.org/TR/2011/REC-CSS2-20110607/visufx.html#visibility)などはサポートしているはずという想定によるものだった。ところが独自エンジン系EPUBリーダーの一部にはこの想定が通用せず、これ以前におこなったテスト結果を廃棄して、新しく作り直したテストをやり直すことになった。その廃棄したテスト結果が、<a href="#2-1-3-2-掲載しなかったテスト環境の一覧">2-1-3-2 掲載しなかったテスト環境の一覧</a>に掲載したものであり、新しく作り直したテストファイルが[epubcsstest_v1a.epub](https://github.com/jagat-xpub/epub-css-test/blob/main/epub/epubcsstest_v1a.epub)<span class="notetext">ZIP圧縮前のフォルダは以下を参照。<br/><https://github.com/jagat-xpub/epub-css-test/tree/main/epub-exp/epubcsstest_v1a></span>である。
 
-ところが、独自エンジン系の実装に振り回されるのはこれが最後ではなかった。長くなるので詳細は省くが、締め切りも迫った2024年3月25日、「::first-line擬似要素」「rgb()関数のコンマなし形式」の2項目についても同じような問題が発生し、やむなくテストを書き直すことになった。こうして作られたのが[epubcsstest_v2.epub](https://github.com/jagat-xpub/epub-css-test/blob/main/epub/epubcsstest_v2.epub)<span class="notetext">ZIP圧縮前のフォルダは以下を参照。<br/><https://github.com/jagat-xpub/epub-css-test/tree/main/epub-exp/epubcsstest_v2></span>だ。
+ところが締め切りも迫った2024年3月25日、長くなるので詳細は省くが、「::first-line擬似要素」「rgb()関数のコンマなし形式」の2項目についても同じような問題が発生し、やむなくテストを書き直すことになった。こうして作られたのが[epubcsstest_v2.epub](https://github.com/jagat-xpub/epub-css-test/blob/main/epub/epubcsstest_v2.epub)<span class="notetext">ZIP圧縮前のフォルダは以下を参照。<br/><https://github.com/jagat-xpub/epub-css-test/tree/main/epub-exp/epubcsstest_v2></span>だ。
 
-このとき前述2項目と、以前からテスト結果に疑問があった項目も合わせて再テストしたEPUBリーダーは、[Kindle（アマゾン）](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=0&range=R27:X27)、[iOS版](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=396838262&range=D45)と[Android版](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=396838262&range=F27)のkobo-mobile（楽天Kobo）、[ブック（アップル）](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=212733997&range=L27)、[MURASAKI（Genji App）](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=610814699&range=F45)、[honto](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=1733190750&range=D25)、[Book Walker（ブックウォーカー）](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=968182416&range=F27)、[超縦書（BPS）](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=1234705026&range=H27)の7つであった。
+このとき前述2項目と、以前からテスト結果に疑問があった項目も合わせて再テストしたEPUBリーダーのうち、誤判定がみつかった（言い換えれば`visibility`をサポートしていなかった）ものは、以下の11のリーダーであった。
+
+- [掲載分全てのKindle（アマゾン）](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=0&range=R27:X27)
+- [kobo-mobile〈iOS版〉](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=396838262&range=D45)
+- [kobo-mobile〈Android版〉](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=396838262&range=F27)
+- [kobo-other〈マック版〉](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=396838262&range=J27:K27)
+- [ブック（アップル）](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=212733997&range=L27)
+- [MURASAKI（Genji App）](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=610814699&range=F45)
+- [honto〈マック版〉](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=1733190750&range=D12:D31)
+- [Book Walker〈Android版〉](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=968182416&range=F27)
+- [Kinoppy〈ウィンドウズ版〉](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=30851012&range=K45)
+- [BinB](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=1836665287&range=G11:G92)
+- [超縦書（BPS）](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=1234705026&range=H27)
 
 ### 2-2-4 おもにモダンブラウザー系でサポートされるCSSモジュール
 
@@ -2661,4 +2673,13 @@ koboについても触れておこう。同じkoboでありながらkobo-other�
 
 ## 2-3 おわりに
 
-今回の調査で分かったことは、モダンCSSをサポートしているのはモダンブラウザーエンジンを利用しているEPUBリーダーのみであるということ。そうではないEPUBリーダーでは、基本的に EPUB 3.0 で規定されていた "EPUB 3 CSS Profile" の範囲しかサポートしていない。
+本テストは、各社EPUBリーディングシステムが現行のCSS仕様をどれだけサポートしているのかを調べたものだ。したがってEPUBリーダーの本質的な価値、たとえばユーザーにとっての読みやすさや操作しやすさといったことを調べたものではない。この点を確認した上で、本テストによって分かったことを最後に整理しておこう。
+
+本テストによって分かったことは、現在使われているEPUBリーダーは、利用しているレイアウトエンジンによってモダンブラウザー系と独自エンジン系の2種に分かれているということだ。この2種のレイアウトエンジンは開発方針が大きく異なり、互いの関係を表すには「二極分化」という言葉が相応しい。
+
+本章冒頭<a href="#2-1-はじめに">「はじめに」</a>で、EPUBの現行規格である3.3は、[“CSS Snapshot”]((https://www.w3.org/TR/CSS/)) のうち、「CSSの公式的な定義に含まれるCSSモジュール」、つまり最も実装が安定している（普及している）CSSモジュールのサポートを求めていることを説明した。2種のうちモダンブラウザー系のEPUBリーダーは、この要件を満たしていると言ってよい。
+
+一方、独自エンジン系をCSSモジュールのサポートという観点から見ると、厳しい見方をせざるを得ない。EPUBリーダーは、現行規格が求める“CSS Snapshot” はもちろん、前バージョンであるEPUB 3.0.1が求めるCSSモジュールの実装要件 “CSS Profile”（[原文](https://idpf.org/epub/301/spec/epub-contentdocs-20140626.html#sec-css-profile)、[和訳](https://imagedrive.github.io/spec/epub301-contentdocs.xhtml#sec-css)）も、そのまた前のバージョンEPUB 3.0の “CSS Profile”（[原文](https://idpf.org/epub/30/spec/epub30-contentdocs-20111011.html#sec-css-profile)、[和訳](https://imagedrive.github.io/spec/epub30-contentdocs.xhtml#sec-css-profile)）ですらサポートしているか怪しい。というのは、<a href="#2-2-4-メジャーなepubリーダーでサポートされるcssモジュール">2-2-4</a>で説明したように、多くの独自エンジン系のリーダーで再テストが必要だったことで、CSS レベル2.1のプロパティである[visibility](https://www.w3.org/TR/2011/REC-CSS2-20110607/visufx.html#visibility)をサポートしていないことが分かったからだ。
+
+それにしても、なぜ独自エンジン系はこれほどCSSモジュールのサポートに消極的なのか、そのような素朴な疑問も浮かんでくる。思案を巡らした末に、一つの仮説が浮かんだ。もしかしたら、独自エンジン系の多くのEPUBリーダーは、EPUBではなく、[電書協ガイド（2012年、日本電子書籍出版社協会〈現在はデジタル出版者連盟〉策定）](http://ebpaj.jp/counsel/guide)のサポートを目指したのではないだろうか。
+
