@@ -2598,7 +2598,7 @@ lang: 'ja'
 </div>
 
 - 1……iOSがOK、AndroidがNG
-- 2……一部のMac環境、及びiOSでNG
+- 2……一部のMac環境でNG
 - 3……iOSのみNG
 - 4……`vertical-rl`がNGの場合、これを前提とするtext-orientationは無効（N/A）
 - 5……掲載した全てのテスト環境で2段組がNGの場合、これを前提とする他のプロパティは無効（N/A）
