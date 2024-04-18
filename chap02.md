@@ -2674,7 +2674,7 @@ koboについても触れておこう。同じkoboでありながらkobo-other�
 この電書協ガイドとは、電子書籍の出版社による業界団体、日本電子書籍出版社協会（現在は[デジタル出版者連盟](http://ebpaj.jp/)）によって、「加盟社のための一般書のEPUB 3を制作する際のガイド」として2012年にver1.0が公開された規約だ<span class="notetext">[「電書協EPUB 3 制作ガイド ver.1.0」を公開します](http://www.ebpaj.jp/guide/guide.html)</span>
 。制定当時はEPUB 3.0に対応していたが、現在はEPUB 3.0.1（2014年）に対応した[ver.1.1.3 / 2015年1月1日版](http://www.idpf.org/epub/301/spec/epub-publications-20140626.html)にアップデートしている。
 
-このver.1.1.3をダウンロードすると「20150101-CSS機能一覧.pdf」という文書があり、そこに利用可能なCSS機能がリストアップされている。そのほとんどを占めるプロパティは、CSS レベル2.1のサブセットだが、以下のようなCSS レベル3のプロパティもふくまれている（一部は当該仕様が当時勧告前だったことから接頭辞を付けるよう指示）。
+このver.1.1.3をダウンロードすると「20150101-CSS機能一覧.pdf」という文書があり、そこに利用可能なCSS機能がリストアップされている。そのほとんどを占めるプロパティは、CSS レベル2.1のサブセットだが、以下のようなレベル3のプロパティも`-epub-`接頭辞つきでふくまれている。
 
 1. CSS Writing Modes Level 3（writing-mode プロパティ vertical-rl、text-combine-upright text-orientation）
 2. CSS Text Decoration Module Level 3 （text-emphasis-style）
