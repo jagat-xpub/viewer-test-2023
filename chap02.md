@@ -2676,9 +2676,9 @@ koboについても触れておこう。同じkoboでありながらkobo-other�
 
 このver.1.1.3をダウンロードすると「20150101-CSS機能一覧.pdf」という文書があり、そこに利用可能なCSS機能がリストアップされている。そのほとんどを占めるプロパティは、CSS レベル2.1のサブセットだが、以下のようなレベル3のプロパティも`-epub-`接頭辞つきでふくまれている。
 
-1. CSS Writing Modes Level 3（writing-mode プロパティ vertical-rl、text-combine-upright text-orientation）
-2. CSS Text Decoration Module Level 3 （text-emphasis-style）
-3. CSS Text（text-align、line-break）
+1. CSS Writing Modes Level 3（-epub-writing-mode、-epub-text-combine、-epub-text-orientation）
+2. CSS Text Decoration Module Level 3 （-epub-text-emphasis-style）
+3. CSS Text Module Level 3（-epub-line-break）
 
 ここまでをまとめると、電書協ガイドver.1.1.3で使用されているCSS機能は、CSS レベル2.1のサブセットと上記1〜3である。
 
