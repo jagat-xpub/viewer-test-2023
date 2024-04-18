@@ -2665,7 +2665,7 @@ koboについても触れておこう。同じkoboでありながらkobo-other�
 
 本章冒頭<a href="#2-1-はじめに">「はじめに」</a>で、EPUBの現行規格である3.3は、[“CSS Snapshot”]((https://www.w3.org/TR/CSS/)) のうち、「CSSの公式的な定義に含まれるCSSモジュール」、つまり最も実装が安定している（普及している）CSSモジュールのサポートを求めていることを説明した。2種のうちモダンブラウザー系のEPUBリーダーは、この要件を満たしていると言ってよい。
 
-一方、独自エンジン系をCSSモジュールのサポートという観点から見ると、厳しい見方をせざるを得ない。EPUBリーダーは、現行規格が求める “CSS Snapshot” はもちろん、前バージョンであるEPUB 3.0.1が求めるCSSモジュールの実装要件 “CSS Profile”（[原文](https://idpf.org/epub/301/spec/epub-contentdocs-20140626.html#sec-css-profile)、[和訳](https://imagedrive.github.io/spec/epub301-contentdocs.xhtml#sec-css)）も、そのまた前のバージョンEPUB 3.0の “CSS Profile”（[原文](https://idpf.org/epub/30/spec/epub30-contentdocs-20111011.html#sec-css-profile)、[和訳](https://imagedrive.github.io/spec/epub30-contentdocs.xhtml#sec-css-profile)）ですらサポートしているか怪しい。というのは、<a href="#2-2-4-メジャーなepubリーダーでサポートされるcssモジュール">2-2-4</a>で説明したように、多くの独自エンジン系のリーダーで再テストが必要だったことで、CSS レベル2.1のプロパティである[visibility](https://www.w3.org/TR/2011/REC-CSS2-20110607/visufx.html#visibility)をサポートしていないことが分かったからだ。前述 “CSS Profile” ではCSS レベル2.1のフルサポートが求められている。
+一方、独自エンジン系をCSSモジュールのサポートという観点から見ると、厳しい見方をせざるを得ない。EPUBリーダーは、現行規格が求める “CSS Snapshot” はもちろん、前バージョンであるEPUB 3.0.1が求めるCSSモジュールの実装要件 “CSS Profile”（[原文](https://idpf.org/epub/301/spec/epub-contentdocs-20140626.html#sec-css-profile)、[和訳](https://imagedrive.github.io/spec/epub301-contentdocs.xhtml#sec-css)）もサポートしているか怪しい。というのは、<a href="#2-2-4-メジャーなepubリーダーでサポートされるcssモジュール">2-2-4</a>で説明したように、いくつかの独自エンジン系のリーダーでCSS レベル2.1のプロパティである[visibility](https://www.w3.org/TR/2011/REC-CSS2-20110607/visufx.html#visibility)などをサポートしていないことが分かったからだ。前述 “CSS Profile” ではCSS レベル2.1のフルサポートが求められている。
 
 それにしても、なぜ独自エンジン系はこれほどCSSモジュールのサポートに消極的なのか、そのような素朴な疑問も浮かんでくる。本来この種の調査報告で推測など慎むべきだが、テストの結果得られた「仮説」として述べておきたい。
 
