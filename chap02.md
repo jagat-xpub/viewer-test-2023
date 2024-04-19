@@ -786,6 +786,7 @@ lang: 'ja'
 
 <div style=margin-top:24.5Q class="float-table">
   <table>
+    <caption><strong>表1 </strong>レイアウトエンジンの種別</caption>
     <tr>
       <td style="margin-top:24.5Q;" bgcolor="#d9d9d9" align="center">モダンブラウザー系</td>
       <td bgcolor="#d9d9d9" align="center">独自エンジン系</td>
@@ -818,7 +819,6 @@ lang: 'ja'
       <td bgcolor="#d9ead3" align="center">Thorium Reader</td>
       <td bgcolor="#FFFFFF" align="center"></td>
     </tr>
-    <caption><strong>表1 </strong>レイアウトエンジンの種別</caption>
   </table>
 </div>
 
@@ -837,6 +837,7 @@ lang: 'ja'
 
 <div style=margin-top:24.5Q>
 <table>
+  <caption><strong>表2 </strong>メジャーなEPUBリーダーでサポートされるCSSモジュール</caption>
   <thead>
     <tr>
       <td style="color:#434343" align="right"></td>
@@ -1399,7 +1400,6 @@ lang: 'ja'
       <td align="center">OK</td>
       <td align="center">OK</td>
     </tr>
-    <caption><strong>表2 </strong>メジャーなEPUBリーダーでサポートされるCSSモジュール</caption>
   </tbody>
 </table>
 </div>
@@ -1439,6 +1439,7 @@ lang: 'ja'
 
 <div style=margin-top:24.5Q>
 <table>
+  <caption><strong>表3 </strong>おもにモダンブラウザー系でサポートされるCSSモジュール</caption>
   <thead>
     <tr>
       <td style="color:#434343" align="right"></td>
@@ -2578,7 +2579,6 @@ lang: 'ja'
       <td align="center">OK</td>
       <td align="center">OK</td>
     </tr>
-    <caption><strong>表3 </strong>おもにモダンブラウザー系でサポートされるCSSモジュール</caption>
   </tbody>
 </table>
 </div>
