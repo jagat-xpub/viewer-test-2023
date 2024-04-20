@@ -17,7 +17,7 @@ lang: 'ja'
 
 <div class="no-indent" style="margin-top:24.5Q;">
 
-**情報開示：**本報告書のテストで取り上げたCSSモジュールの選定、及びテストの制作は、本稿の共著者である村上真雄（[Vivliostyle Foundation](https://vivliostyle.org/ja/)）がおこなった。村上はテスト対象であるVivliostyle Viewerの開発者でもある。また、もう一人の共著者である小形克宏もVivliostyle Foundationに所属する。この点、[テストファイル開発](https://github.com/jagat-xpub/epub-css-test/tree/main)や[原稿執筆](https://github.com/jagat-xpub/viewer-test-2023)に利用したGitHubリポジトリや、[テスト結果](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?usp=sharing)を記録したGoogleスプレッドシートを公開することで客観性の担保に努めた。
+**情報開示：**本報告書のテスト項目となるCSSモジュールの選定、テストファイル作成は村上真雄（[Vivliostyle Foundation](https://vivliostyle.org/ja/)）がおこなった。なお、村上はテスト対象であるVivliostyle Viewerの開発者でもある。小形克宏（Vivliostyle Foundation）は本稿をおもに執筆した。著者として利害は相反するが、[テストファイルの開発](https://github.com/jagat-xpub/epub-css-test/tree/main)や[原稿執筆](https://github.com/jagat-xpub/viewer-test-2023)に利用したGitHubリポジトリ、[テスト結果](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?usp=sharing)を記録したGoogleスプレッドシートを公開することで、客観性の担保に努めた。
 
 </div>
 
@@ -39,17 +39,17 @@ lang: 'ja'
 2. [かなり安定しているが実装経験が限定的なCSSモジュール（Fairly Stable Modules with limited implementation experience）](https://www.w3.org/TR/CSS/#fairly-stable)
 3. [大まかな相互運用性のあるCSSモジュール（Modules with Rough Interoperability）](https://www.w3.org/TR/CSS/#rough-interop)
 
-前掲EPUB 3.3の引用にある「CSS Snapshotで定義されているCSS」とは、上記のうち1のことだ。つまりEPUB 3.3では数多くあるCSSモジュールの中でも、上記1でリストアップされているCSSモジュールだけは使えるよう求められている。では、**現在日本国内で利用されているEPUBリーダーは、これらのCSSモジュールをサポートしているのだろうか？**
+前掲EPUB 3.3の引用にある「CSS Snapshotで定義されているCSS」とは、上記のうち1のことだ。つまりEPUB 3.3では数多くあるCSSモジュールの中でも、上記1でリストアップされているCSSモジュールはサポートするべきだとしている。
 
-もうひとつ、前掲の引用で分かるように、旧仕様で許されていた`-epub-`接頭辞付きのCSSプロパティは、最新仕様でも後方互換性のために残された。ここでいう`-epub-`接頭辞とは、[CSS レベル2.1で規定されているCSSプロパティを独自に拡張する構文](https://www.w3.org/TR/CSS2/syndata.html#vendor-keywords)のひとつ。プロパティ冒頭に付ける接頭辞をベンダーが独自に定義することから「ベンダー接頭辞」とも呼ばれる。EPUB 3.0仕様の策定時（2011年）のCSS仕様では、まだ縦書き用プロパティなどはドラフト仕様でしかなかった。そこでEPUB 3でこれらのプロパティを利用するための接頭辞が定められた。それが`-epub-`接頭辞だ。
+ただし注意が必要なのは、この「サポート」の主語は仕様であってリーダーではないということ。分かりづらいが、“CSS Snapshot” のサポートに関する規定はなく、上記は仕様として目指すべき目標を表明したものと解釈できる。したがって “CSS Snapshot” をリーダーがサポートすることはとくに求められてはいない。
 
-とはいえ、試行錯誤の時代は過ぎ去り縦書き用のプロパティはすっかり安定した。そこでEPUB 3.3では[§6.3.1.3 Prefixed properties](https://www.w3.org/TR/epub-33/#sec-css-prefixed)として、「EPUB制作者は接頭辞なしのプロパティを使用するべきで、リーディングシステム（EPUBリーダー）は現行のCSS仕様をサポートするべき」とされ、また「Working Groupは、EPUBの次のメジャーバージョンでこれらの接頭辞付きプロパティをサポートする見込みがないため、現在これらの接頭辞付きプロパティを使用しているEPUB制作者は、サポートが可能になり次第、接頭辞なしバージョンに移行することを推奨する」とある。
+とはいえ、**現在日本国内で利用されているEPUBリーダーは、“CSS Snapshot” をどのくらいサポートしているのか、**調べてみる意味はあるだろう。現在使われているEPUBリーダーが、現行規格EPUB 3.3が目標とするCSSにどの程度対応しているかが分かるし、その結果EPUBリーダーがCSS仕様をどのように考えているかも見えてくるはずだからだ。
 
-つまりEPUB 3.3になって、接頭辞なしのプロパティを使うよう推奨された。では、**現在使われているEPUBリーダーは、`-epub-`接頭辞付きプロパティなしで表示できるのだろうか？**
+もうひとつ、前掲の引用で分かるように、旧仕様で許されていた`-epub-`接頭辞付きのCSSプロパティは、最新仕様でも後方互換性のために残された。ここでいう`-epub-`接頭辞とは、[CSS レベル2.1で規定されているCSSプロパティを独自に拡張する構文](https://www.w3.org/TR/CSS2/syndata.html#vendor-keywords)のひとつだ。プロパティ冒頭に付ける接頭辞をベンダーが独自に定義することから「ベンダー接頭辞」とも呼ばれる。EPUB 3.0仕様の策定時（2011年）のCSS仕様では、まだ縦書き用プロパティなどはドラフト仕様でしかなかった。そこでEPUB 3でこれらのプロパティを利用するための接頭辞が定められた。それが`-epub-`接頭辞だ。
 
-これらのことを実際にテストすることによって、現在使われているEPUBリーダーが最新のEPUB 3.3が要求するCSSにどの程度対応しているかが分かるはずだ。
+とはいえ、試行錯誤の時代は過ぎ去り縦書き用のプロパティはすっかり安定した。そこでEPUB 3.3では[§6.3.1.3 Prefixed properties](https://www.w3.org/TR/epub-33/#sec-css-prefixed)として、「EPUB制作者は接頭辞なしのプロパティを使用するべきで、リーディングシステム（EPUBリーダー）は現行のCSS仕様をサポートするべき」とされ、また「Working Groupは、EPUBの次のメジャーバージョンでこれらの接頭辞付きプロパティをサポートする見込みがないため、現在これらの接頭辞付きプロパティを使用しているEPUB制作者は、サポートが可能になり次第、接頭辞なしバージョンに移行することを推奨する」とある。では、**現在使われているEPUBリーダーは、　本当に`-epub-`接頭辞なしで表示できるのか、**調べてみることにしよう。
 
-テストの方法をもう少し詳しく説明しよう。前記 “CSS Snapshot” にある3段階に加え、そこに載っていないが最新のメジャーなブラウザーで利用できるCSSモジュールを加え、全部で4段階の規準を設定することにした。
+テストの方法をもう少し詳しく説明しよう。前記 “CSS Snapshot” にある3段階に加え、それには漏れているが最新のメジャーなブラウザーで利用できるCSSモジュールを加え、全部で4段階の規準を設定することにした。
 
 ただし、“CSS Snapshot” に規定されたCSSモジュールの中には、あまりに基礎的な仕様であったり、EPUBでの利用をあまり想定できないものもある。大事なことは「EPUBリーダーでテストする意味があるか」だろう。そこでそうしたCSSモジュールを外して、以下のようにテスト項目を選定した（テスト項目の具体的な内容は次項を参照）。
 
@@ -766,15 +766,15 @@ lang: 'ja'
 
 本稿では、現在使われている（つまりモダンな<span class="notetext">「モダン」の定義を補足すると、WebにおけるCSS仕様の使われ方が大きく変わったのは、2014年〜2016年に実装がはじまった[CSS変数（カスタムプロパティ）](https://developer.mozilla.org/ja/docs/Web/CSS/var#%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6%E3%83%BC%E3%81%AE%E4%BA%92%E6%8F%9B%E6%80%A7)だ。そこでこれが使えるかどうかを重要な指標とした。</span>）ブラウザーのレイアウトエンジンを利用したEPUBリーダーを、一括して**「モダンブラウザー系」**と呼ぶことにする。
 
-他方、レイアウトエンジンは中枢となるモジュールであり、これを外部から調達すれば独自機能の追加がむずかしくなるなど、開発の柔軟性を損なうデメリットが考えられる。これを嫌ってコストをかけても独自のレイアウトエンジンを実装するEPUBリーダーもあるだろう。あるいは、ベンダー固有の事情によりモダンブラウザー以外のレイアウトエンジンを利用する場合もあるだろう。本稿ではこれらを一括して**「独自エンジン系」**と呼ぶことにする。
+他方、レイアウトエンジンは中枢となるモジュールであり、これを外部から調達すれば独自機能の追加がむずかしくなるなど、開発の柔軟性を損なうデメリットが考えられる。それ以外にも、過去の実装との互換性など、ベンダー固有の事情により独自のレイアウトエンジンを実装するEPUBリーダーもある。本稿ではこれらを一括して**「独自エンジン系」**と呼ぶことにする。
 
 ではどのようにすれば、これはモダンブラウザー系、これは独自エンジン系と判別できるのだろう。ここで、本報告書がもとづく指標 “CSS Snapshot” は、主要なブラウザーにおけるCSSモジュールの実装安定性を分類したリストであったことを思い出してほしい。
 
 つまり、現在使われているブラウザーのレイアウトエンジンであれば、 “CSS Snapshot” の中で最も実装が安定している「CSSの公式的な定義に含まれるCSSモジュール」は、問題なく表示できるはずだ。
 
-一方で、EPUBという限定的なフォーマットに特化した独自エンジン系にとって、余計なコストをかけてまで “CSS Snapshot” の規準をクリアするメリットはあまりない（あくまでEPUB 3.3が “CSS Snapshot” のサポートを規定する以前は、なのだが）。すくなくとも汎用性が求められるブラウザーのレイアウトエンジンとは、かなり異なった実装になるはずだ。
+一方で、EPUBという限定的なフォーマットに特化した独自エンジン系にとって、余計なコストをかけてまで “CSS Snapshot” の規準をクリアするメリットはあまりない。すくなくとも汎用性が求められるブラウザーのレイアウトエンジンとは、かなり異なった実装になるはずだ。
 
-つまり、“CSS Snapshot” にリストアップされたCSSモジュールを帰納法的なモノサシにして、それらの多くを表示できたEPUBリーダーがモダンブラウザー系、そうでなかったEPUBリーダーが独自エンジン系と判別できるのではないか。そのように考えて、私達はテストにとりかかったのである。
+つまり、“CSS Snapshot” にリストアップされたCSSモジュールを帰納法的なモノサシにして、それらの多くを表示できたEPUBリーダーがモダンブラウザー系、そうでなかったEPUBリーダーが独自エンジン系と判別できるのではないか。そのように考えて私達はテストにとりかかった。
 
 具体的なテスト結果は<a href="#2-2-3-メジャーなepubリーダーでサポートされるcssモジュール">2-2-3</a>以降にゆずるが、モダンブラウザー系と考えられるEPUBリーダーは、案の定「CSSの公式的な定義に含まれるCSSモジュール」のほとんどをサポートすることが分かった。いくつかサポートしていないCSSモジュールはあっても、比較的黒字のテスト結果「OK」が多いのがモダンブラウザー系の特徴と言える。
 
@@ -1429,7 +1429,7 @@ lang: 'ja'
 
 もともとこれは、EPUB 3をサポートするEPUBリーダーであれば、当然CSS レベル2.1にある[`visibility`](https://www.w3.org/TR/2011/REC-CSS2-20110607/visufx.html#visibility)などはサポートしているはずという想定によるものだった。ところが独自エンジン系EPUBリーダーの一部にはこの想定が通用せず、これ以前におこなったテスト結果を廃棄して、新しく作り直したテストをやり直すことになった。その廃棄したテスト結果が、<a href="#2-1-3-2-掲載しなかったテスト環境の一覧">2-1-3-2 掲載しなかったテスト環境の一覧</a>に掲載したものであり、新しく作り直したテストファイルが[epubcsstest_v1a.epub](https://github.com/jagat-xpub/epub-css-test/blob/main/epub/epubcsstest_v1a.epub)<span class="notetext">ZIP圧縮前のフォルダは以下を参照。<br/><https://github.com/jagat-xpub/epub-css-test/tree/main/epub-exp/epubcsstest_v1a></span>である。
 
-ところが締め切りも迫った2024年3月25日、長くなるので詳細は省くが、「::first-line擬似要素」「rgb()関数のコンマなし形式」の2項目についても同じような問題が発生し、やむなくテストを書き直すことになった。こうして作られたのが[epubcsstest_v2.epub](https://github.com/jagat-xpub/epub-css-test/blob/main/epub/epubcsstest_v2.epub)<span class="notetext">ZIP圧縮前のフォルダは以下を参照。<br/><https://github.com/jagat-xpub/epub-css-test/tree/main/epub-exp/epubcsstest_v2></span>だ。
+ところが締め切りも迫った2024年3月25日、長くなるので詳細は省くが、「::first-line擬似要素」「rgb()関数のコンマなし形式」の2項目についても同じような問題が発生し、やむなく再度テストの一部を書き直すことになった。こうして作られたのが[epubcsstest_v2.epub](https://github.com/jagat-xpub/epub-css-test/blob/main/epub/epubcsstest_v2.epub)<span class="notetext">ZIP圧縮前のフォルダは以下を参照。<br/><https://github.com/jagat-xpub/epub-css-test/tree/main/epub-exp/epubcsstest_v2></span>だ。
 
 ### 2-2-4 おもにモダンブラウザー系でサポートされるCSSモジュール
 
@@ -2616,30 +2616,24 @@ lang: 'ja'
   <figcaption><strong>図2</strong> 左からKindle（iPhone版v7.7）、Kindle（Mac版v7.6.0.0(1.329899)）、kobo-mobile（iPhone版v10.5.3）。</figcaption>
 </figure>
 
-ここでKindleのスクリーンショットが3つ揃ったので、これについてコメントしよう。本テストが始動したのは2023年5月頃だったが、同年8月にKindleは[メジャーアップデート](https://forest.watch.impress.co.jp/docs/news/1526058.html)をおこなっている。しかし、特定のCSSモジュールに対応しているかどうかをみる本テストの立場からは、アップデートの前後で大きな違いは見られなかった<span class="notetext">ここでは[2023年5月〜同年7月にepubcsstest_v1でおこなったテスト（不掲載分）](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=0&range=E2:Q6)と、[2023年12月〜翌1月におこなったepubcsstest_v1aでおこなったテスト（掲載分）](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=0&range=R2:X6)の結果を比較している。Kindleに関しては、epubcsstest_v1で誤判定があったのは「::first-line 擬似要素」だけであり、それ以外は問題ない。</span>。
-
-ただし、この「writing-mode プロパティ vertical-rl」は、その数少ない例外の一つだ。2023年5月〜同年7月ではすべて「NG」だったものが、2023年12月〜2024年1月におこなった再テストでは「OK」に変わっている。
+ここでKindleのスクリーンショットが3つ揃ったのでコメントしよう。本テストが始動したのは2023年5月頃だったが、同年8月にKindleは[メジャーアップデート](https://forest.watch.impress.co.jp/docs/news/1526058.html)をおこなっている。しかし、特定のCSSモジュールに対応しているかどうかをみる本テストの立場からは、アップデートの前後で大きな違いは見られなかった<span class="notetext">ここでは[2023年5月〜同年7月にepubcsstest_v1でおこなったテスト（不掲載分）](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=0&range=E2:Q6)と、[2023年12月〜翌1月におこなったepubcsstest_v1aでおこなったテスト（掲載分）](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=0&range=R2:X6)の結果を比較している。Kindleに関しては、epubcsstest_v1で誤判定があったのは「::first-line 擬似要素」だけであり、それ以外は問題ない。</span>。ただし、この「writing-mode プロパティ vertical-rl」は、その数少ない例外の一つだ。2023年5月〜同年7月ではすべて「NG」だったものが、2023年12月〜2024年1月におこなった再テストでは「OK」に変わっている。
 
 なお、専用端末に関しては再テストをしていないのでアップデート後の対応は不明だが、参考のためKindle Paperwhite Signeture Edition（第11世代、v5.16.7（4193160020））で、「writing-mode プロパティ vertical-rl」に限ってテストしたところ、やはり「OK」に変わっていた。
 
 他方、Kindle（専用端末、モバイル端末、デスクトップ）と[Kindle Previewer](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=0&range=P2:Q6)は、それぞれCSSモジュールの対応程度が異なる。しかしKindleの中では、CSSモジュールの対応程度はハードウェアやOSの違いが少ない。つまり、Kindleの中ではいくつかの例外を除きハードウェアやOSの違いに関わらず「OK」と「NG」がよく揃っていると言える。ただし、ここでも「writing-mode プロパティ vertical-rl」はその例外で、Windows版のKindleだけが「NG」だった（図1）。
 
-koboについても触れておこう。同じkoboでありながらkobo-otherが「NG」（図1）、kobo-mobileが「OK」（図2）と結果が分かれていることに興味が引かれるかもしれない。これは、前者は独自エンジン系（モダンではないブラウザーエンジン利用を含む）、後者はモダンブラウザー系というレイアウトエンジンの違いが出た、分かりやすい結果とも言える。
+koboについても触れておこう。同じkoboでありながらkobo-otherが「NG」（図1）、kobo-mobileが「OK」（図2）と結果が分かれていることに興味が引かれるかもしれない。これは、前者は独自エンジン系（モダンではないレイアウトエンジン利用を含む）、後者はモダンブラウザー系というレイアウトエンジンの違いが出た、分かりやすい結果とも言える。
 
-**図3**に移ろう。左からブック（Mac版、テスト時v6.1→v6.3(6040)、MURASAKI（Mac版、v2.4.1(30)）、honto（iPhone版 v6.62.0）。このうちブックとMURASAKIはモダンブラウザー系だ。残るhontoは独自エンジン系だが、「OK」の結果を出している。
+**図3**に移ろう。左からブック（Mac版、テスト時v6.1→v6.3(6040)、MURASAKI（Mac版、v2.4.1(30)）、honto（iPhone版 v6.62.0）。このうちブックとMURASAKIはモダンブラウザー系だ。残るhontoは独自エンジン系だが、「OK」の結果を出している。iOSでは「Webを閲覧するアプリ」<span class="notetext">[「App Reviewガイドライン」2.5.6（アップル）、最終更新日：2024年4月5日](https://developer.apple.com/jp/app-store/review/guidelines/#performance)</span>に関してはレイアウトエンジンをWebKitに制限している。EPUBリーダーの多くもiOS版に関してはWebKitを使う中で珍しい実装だ。
 
-<figure class="figure-top">
+<figure class="figure-bottom">
   <img src="img/chap2/2-Book-MURASAKI-honto.png" alt="img/chap2/2-Book-MURASAKI-honto">
   <figcaption><strong>図3 </strong>左からブック（v6.3(6040)）、MURASAKI（v2.4.1(30)）、honto（iPhone版 v6.62.0）</figcaption>
 </figure>
 
-よく知られているように、iOSでは「Webを閲覧するアプリ」<span class="notetext">[「App Reviewガイドライン」2.5.6（アップル）、最終更新日：2024年4月5日](https://developer.apple.com/jp/app-store/review/guidelines/#performance)</span>に関してはレイアウトエンジンをWebKitに制限している。EPUBリーダーの多くもiOS版に関してはWebKitを使う中で、珍しい実装と言える。
-
 なお、hontoはMac版、Windows版も用意されているが、サイドロードに対応しているのはiOS、Android版だけであり、さらにサイドロードしたEPUBは同期の対象外であることから、Mac版、Windows版のテストはあきらめざるを得なかった。
 
-次に**図4**。左から、Book Walker（スクリーンショットはiPhone版だが、Android版も同じ結果。テスト時v7.4.7→v7.6.0）、Kinoppy（Windows版 テスト時v3.2.19→v3.3.20.329851E）、BinB（バージョン非表示）。このうちBook Walkerのみモダンブラウザー系で、KinoppyとBinBは独自エンジン系だ。
-
-このうち、BinBは<a href="#2-2-3-メジャーなepubリーダーでサポートされるcssモジュール">2-2-3</a>だけでなく、本項の多くのテスト結果も「NG」だったが、「writing-mode プロパティ vertical-rl」については「OK」としている。
+次に**図4**。左から、Book Walker（スクリーンショットはiPhone版だが、Android版も同じ結果。テスト時v7.4.7→v7.6.0）、Kinoppy（Windows版 テスト時v3.2.19→v3.3.20.329851E）、BinB（バージョン非表示）。このうちBook Walkerのみモダンブラウザー系で、KinoppyとBinBは独自エンジン系だ。このうち、BinBは<a href="#2-2-3-メジャーなepubリーダーでサポートされるcssモジュール">2-2-3</a>だけでなく、本項の多くのテスト結果も「NG」だったが、「writing-mode プロパティ vertical-rl」については「OK」としている。
 
 ここまで独自エンジン系で「writing-mode プロパティ vertical-rl」が「OK」だったKindle（Windows版を除く）、honto、Kinoppy、そしてこのBinBは、これ以外のテスト結果では「NG」が多いのが特徴だ。CSSモジュールについては選択的に実装する開発方針なのかもしれない。
 
@@ -2650,9 +2644,9 @@ koboについても触れておこう。同じkoboでありながらkobo-other�
   <figcaption><strong>図4 </strong>左からBook Walker（v7.6.0）、Kinoppy（Windows版 v3.3.20.329851E）、BinB（バージョン非表示）</figcaption>
 </figure>
 
-最後に**図5**を見てみよう。左からBibi（v1.2.0、松島智）、Vivliostyle（テスト時v2.25.0、Chrome 113で確認→v2.28.1、Chrome 123で確認、ビブリオスタイル）、Thorium Reader（Mac版、テスト時v2.2.0→v2.4.1、EDRLab）。これらは3つともモダンブラウザー系であり、順当な結果と言える。
+最後に**図5**を見てみよう。左からBibi（v1.2.0、松島智）、Vivliostyle（テスト時v2.25.0、Chrome 113で確認→v2.28.1、Chrome 123で確認、ビブリオスタイル）、Thorium Reader（Mac版、テスト時v2.2.0→v2.4.1、EDRLab）。これらは3つともモダンブラウザー系で順当な結果だ。
 
-<figure class="figure-top">
+<figure class="figure-bottom">
   <img src="img/chap2/4-Bibi-Vivliostyle-Thorium.png" alt="img/chap2/4-Bibi-Vivliostyle-Thorium">
   <figcaption><strong>図5 </strong>Bibi（v1.2.0）、Vivliostylev2.28.1、Chrome 123で確認）、Thorium Reader（v2.4.1）</figcaption>
 </figure>
