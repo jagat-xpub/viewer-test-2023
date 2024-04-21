@@ -2624,7 +2624,7 @@ lang: 'ja'
 
 koboについても触れておこう。同じkoboでありながらkobo-otherが「NG」（図1）、kobo-mobileが「OK」（図2）と結果が分かれていることに興味が引かれるかもしれない。これは、前者は独自エンジン系（モダンではないブラウザーのレイアウトエンジン利用を含む）、後者はモダンブラウザー系というレイアウトエンジンの違いが出た、分かりやすい結果とも言える。
 
-**図3**に移ろう。左からブック（Mac版、テスト時v6.1→v6.3(6040)）、MURASAKI（Mac版、v2.4.1(30)）、honto（iPhone版 v6.62.0）。このうちブックとMURASAKIはモダンブラウザー系だ。残るhontoは独自エンジン系だが、「OK」の結果を出している。iOSでは「Webを閲覧するアプリ」<span class="notetext">[「App Reviewガイドライン」2.5.6（アップル）、最終更新日：2024年4月5日](https://developer.apple.com/jp/app-store/review/guidelines/#performance)</span>に関してはレイアウトエンジンをWebKitに制限されている。EPUBリーダーの多くがiOS版ではWebKitを使う中で、hontoが独自のレイアウトエンジンを選択したのは珍しい例と言える。
+**図3**に移ろう。左からブック（Mac版、テスト時v6.1→v6.3(6040)）、MURASAKI（Mac版、v2.4.1(30)）、honto（iPhone版 v6.62.0）。このうちブックとMURASAKIはモダンブラウザー系だ。残るhontoは独自エンジン系だが、「OK」の結果を出している。
 
 <figure class="figure-bottom">
   <img src="img/chap2/2-Book-MURASAKI-honto.png" alt="img/chap2/2-Book-MURASAKI-honto">
