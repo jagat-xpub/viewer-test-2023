@@ -2605,7 +2605,7 @@ lang: 'ja'
 
 すべてのテスト項目を説明するには紙幅が足りないので、日本語のEPUBで特に重要な「writing-mode プロパティ vertical-rl」を例に挙げて、スクリーンショットとともに見ていこう。
 
-なお、テストから本稿執筆まで間隔が空いてしまったので、スクリーンショットは執筆時点（2024年4月11日）の最新版で撮り直した。リーダーのバージョンがテスト時と違うものはいちいちコメントしたが、テスト結果に変わりはなかった。なおまた、テストファイルはBinBだけがepubcsstest_v1a.epubで、他の全てはepubcsstest_v2.epubである。ただし「writing-mode プロパティ」に関してはテストファイルが違ってもテスト内容に基本的な違いはないので、結果が変わることは考えにくい。
+なお、テストから本稿執筆まで間隔が空いてしまったので、スクリーンショットは執筆時点（2024年4月11日）の最新版で撮り直した。リーダーのバージョンがテスト時と違うものはいちいちコメントしたが、テスト結果に変わりはなかった。なおまた、テストファイルはBinBとhontoだけがepubcsstest_v1a.epubで、他は全てepubcsstest_v2.epubである。ただし「writing-mode プロパティ」に関してはテストファイルが違ってもテスト内容に基本的な違いはないので、結果が変わることは考えにくい。
 
 まず「NG」だったものから紹介すると、**図1**左からKindleのうちWindows（テスト時v2.3.0 (70673)→v2.3.1(70682)）、kobo-other（スクリーンショットはMac版だが、Windows版も同じ結果。v4.37.17113）、そして超縦書（Windows版 v2.3.1）。この3つのリーダーは`writing-mode: vertical-rl;`を指定しても縦書きで表示しなかった。これらのリーダーで縦書きを表示したい場合は、`-epub-`接頭辞をつける必要がある。
 
@@ -2620,11 +2620,11 @@ lang: 'ja'
 
 なお、専用端末に関しては再テストをしていないのでアップデート後の対応は不明だが、参考のためKindle Paperwhite Signeture Edition（第11世代、v5.16.7（4193160020））で、「writing-mode プロパティ vertical-rl」に限ってテストしたところ、やはり「OK」に変わっていた。
 
-他方、Kindle（専用端末、モバイル端末、デスクトップ）と[Kindle Previewer](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=0&range=P2:Q6)は、それぞれCSSモジュールの対応程度が異なる。しかしKindleの中では、CSSモジュールの対応程度はハードウェアやOSの違いが少ない。つまり、Kindleの中ではいくつかの例外を除きハードウェアやOSの違いに関わらず「OK」と「NG」がよく揃っていると言える。ただし、ここでも「writing-mode プロパティ vertical-rl」はその例外で、Windows版のKindleだけが「NG」だった（図1）。
+他方、Kindle（専用端末、モバイル端末、デスクトップ）と[Kindle Previewer](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=0&range=P2:Q6)とでは、それぞれCSSモジュールの対応程度が異なる。しかしKindleの中では、CSSモジュールの対応程度はハードウェアやOSの違いが少ない。つまり、Kindleの中ではいくつかの例外を除きハードウェアやOSの違いに関わらず「OK」と「NG」がよく揃っていると言える。ただし、ここでも「writing-mode プロパティ vertical-rl」はその例外で、Windows版のKindleだけが「NG」だった（図1）。
 
 koboについても触れておこう。同じkoboでありながらkobo-otherが「NG」（図1）、kobo-mobileが「OK」（図2）と結果が分かれていることに興味が引かれるかもしれない。これは、前者は独自エンジン系（モダンではないレイアウトエンジン利用を含む）、後者はモダンブラウザー系というレイアウトエンジンの違いが出た、分かりやすい結果とも言える。
 
-**図3**に移ろう。左からブック（Mac版、テスト時v6.1→v6.3(6040)、MURASAKI（Mac版、v2.4.1(30)）、honto（iPhone版 v6.62.0）。このうちブックとMURASAKIはモダンブラウザー系だ。残るhontoは独自エンジン系だが、「OK」の結果を出している。iOSでは「Webを閲覧するアプリ」<span class="notetext">[「App Reviewガイドライン」2.5.6（アップル）、最終更新日：2024年4月5日](https://developer.apple.com/jp/app-store/review/guidelines/#performance)</span>に関してはレイアウトエンジンをWebKitに制限している。EPUBリーダーの多くもiOS版に関してはWebKitを使う中で珍しい実装だ。
+**図3**に移ろう。左からブック（Mac版、テスト時v6.1→v6.3(6040)）、MURASAKI（Mac版、v2.4.1(30)）、honto（iPhone版 v6.62.0）。このうちブックとMURASAKIはモダンブラウザー系だ。残るhontoは独自エンジン系だが、「OK」の結果を出している。iOSでは「Webを閲覧するアプリ」<span class="notetext">[「App Reviewガイドライン」2.5.6（アップル）、最終更新日：2024年4月5日](https://developer.apple.com/jp/app-store/review/guidelines/#performance)</span>に関してはレイアウトエンジンをWebKitに制限されている。EPUBリーダーの多くがiOS版ではWebKitを使う中で、hontoが独自のレイアウトエンジンを選択したのは珍しい例と言える。
 
 <figure class="figure-bottom">
   <img src="img/chap2/2-Book-MURASAKI-honto.png" alt="img/chap2/2-Book-MURASAKI-honto">
@@ -2635,7 +2635,7 @@ koboについても触れておこう。同じkoboでありながらkobo-other�
 
 次に**図4**。左から、Book Walker（スクリーンショットはiPhone版だが、Android版も同じ結果。テスト時v7.4.7→v7.6.0）、Kinoppy（Windows版 テスト時v3.2.19→v3.3.20.329851E）、BinB（バージョン非表示）。このうちBook Walkerのみモダンブラウザー系で、KinoppyとBinBは独自エンジン系だ。このうち、BinBは<a href="#2-2-3-メジャーなepubリーダーでサポートされるcssモジュール">2-2-3</a>だけでなく、本項の多くのテスト結果も「NG」だったが、「writing-mode プロパティ vertical-rl」については「OK」としている。
 
-ここまで独自エンジン系で「writing-mode プロパティ vertical-rl」が「OK」だったKindle（Windows版を除く）、honto、Kinoppy、そしてこのBinBは、これ以外のテスト結果では「NG」が多いのが特徴だ。CSSモジュールについては選択的に実装する開発方針なのかもしれない。
+独自エンジン系では、BinB以外にも、hontoと、Kinoppy、そしてWindows版以外のKindleが「writing-mode プロパティ vertical-rl」の結果は「OK」であるものの、それ以外のテスト結果では「NG」が多かった。これらはCSSモジュールについて選択的に実装する開発方針なのかもしれない。
 
 なおまた、Kinoppyについては他にMac版、iOS版、Android版もあるが、これらはテストファイルをサイドロードして表示させると必ず落ちる現象に見舞われた。そこでテストファイルを細かく分割したところ、iOS版、Android版では改善したがMac版は変わりがなく、やむなくMac版のテストをあきらめた。ただし、結果を記録できたiOS版、Android版も<a href="#2-2-3-メジャーなepubリーダーでサポートされるcssモジュール">2-2-3</a>で述べた理由により、残念ながら不掲載としている。
 
@@ -2644,16 +2644,16 @@ koboについても触れておこう。同じkoboでありながらkobo-other�
   <figcaption><strong>図4 </strong>左からBook Walker（v7.6.0）、Kinoppy（Windows版 v3.3.20.329851E）、BinB（バージョン非表示）</figcaption>
 </figure>
 
-最後に**図5**を見てみよう。左からBibi（v1.2.0、松島智）、Vivliostyle（テスト時v2.25.0、Chrome 113で確認→v2.28.1、Chrome 123で確認、ビブリオスタイル）、Thorium Reader（Mac版、テスト時v2.2.0→v2.4.1、EDRLab）。これらは3つともモダンブラウザー系で順当な結果だ。
+最後に**図5**を見てみよう。左からBibi（v1.2.0、松島智）、Vivliostyle（テスト時v2.25.0、Chrome 113で確認→v2.28.1、Chrome 123で確認、ビブリオスタイル）、Thorium Reader（Mac版、テスト時v2.2.0→v2.4.1、EDRLab）。3つともモダンブラウザー系であり、順当な結果だ。
 
 <figure class="figure-bottom">
   <img src="img/chap2/4-Bibi-Vivliostyle-Thorium.png" alt="img/chap2/4-Bibi-Vivliostyle-Thorium">
   <figcaption><strong>図5 </strong>Bibi（v1.2.0）、Vivliostylev2.28.1、Chrome 123で確認）、Thorium Reader（v2.4.1）</figcaption>
 </figure>
 
-## 2-3 おわりに
+## 2-3 おわりに：EPUBのガラパゴス化？
 
-本テストは、各社EPUBリーディングシステムが現行のCSS仕様をどれだけサポートしているのかを調べたものだ。したがってEPUBリーダーの本質的な価値、たとえばユーザーにとっての読みやすさや操作しやすさといったことを調べたものではない。この点を確認した上で、最後に成果を整理しておこう。
+本テストは、各社EPUBリーディングシステムが現行のCSS仕様をどれだけサポートしているのかを調べたものだ。したがってEPUBリーダーの本質的な価値、たとえばユーザーにとっての読みやすさや操作しやすさといったことを調べるものではない。この点を確認した上で、最後に成果を整理しておこう。
 
 本テストによって分かったことは、現在使われているEPUBリーダーは、利用しているレイアウトエンジンによってモダンブラウザー系と独自エンジン系の2種に分かれているということだ。この2種のレイアウトエンジンは開発方針が大きく異なり、互いの関係を表すには「二極分化」という言葉が相応しい。
 
