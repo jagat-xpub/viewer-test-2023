@@ -2605,7 +2605,7 @@ lang: 'ja'
 
 すべてのテスト項目を説明するには紙幅が足りないので、日本語のEPUBで特に重要な「writing-mode プロパティ vertical-rl」を例に挙げて、スクリーンショットとともに見ていこう。
 
-なお、テストから本稿執筆まで間隔が空いてしまったので、スクリーンショットは執筆時点（2024年4月11日）の最新版で撮り直した。リーダーのバージョンがテスト時と違うものはいちいちコメントしたが、テスト結果に変わりはなかった。なおまた、テストファイルはBinBとhontoだけがepubcsstest_v1a.epubで、他は全てepubcsstest_v2.epubである。ただし「writing-mode プロパティ」に関してはテストファイルが違ってもテスト内容に基本的な違いはないので、結果が変わることは考えにくい。
+なお、テストから本稿執筆まで間隔が空いてしまったので、スクリーンショットは執筆時点（2024年4月11日）の最新版で撮り直した。リーダーのバージョンがテスト時と違うものはいちいちコメントしたが、テスト結果に変わりはなかった。なおまた、テストファイルはBinBだけがepubcsstest_v1a.epubで、他は全てepubcsstest_v2.epubである。ただし「writing-mode プロパティ」に関してはテストファイルが違ってもテスト内容に基本的な違いはないので、結果が変わることは考えにくい。
 
 まず「NG」だったものから紹介すると、**図1**左からKindleのうちWindows（テスト時v2.3.0 (70673)→v2.3.1(70682)）、kobo-other（スクリーンショットはMac版だが、Windows版も同じ結果。v4.37.17113）、そして超縦書（Windows版 v2.3.1）。この3つのリーダーは`writing-mode: vertical-rl;`を指定しても縦書きで表示しなかった。これらのリーダーで縦書きを表示したい場合は、`-epub-`接頭辞をつける必要がある。
 
@@ -2659,7 +2659,7 @@ koboについても触れておこう。同じkoboでありながらkobo-other�
 
 本章冒頭<a href="#2-1-はじめに">「はじめに」</a>で、EPUBの現行規格である3.3は、[“CSS Snapshot”]((https://www.w3.org/TR/CSS/)) のうち、「CSSの公式的な定義に含まれるCSSモジュール」、つまり最も実装が安定している（普及している）CSSモジュールのサポートを求めていることを説明した。2種のうちモダンブラウザー系のEPUBリーダーは、おおむねこの要件を満たしていると言ってよい。
 
-一方、独自エンジン系をCSSモジュールのサポートという観点から見ると、厳しい見方をせざるを得ない。EPUBリーダーは、現行規格が求める “CSS Snapshot” はもちろん、前バージョンであるEPUB 3.0.1が求めるCSSモジュールの実装要件 “CSS Profile”（[原文](https://idpf.org/epub/301/spec/epub-contentdocs-20140626.html#sec-css-profile)、[和訳](https://imagedrive.github.io/spec/epub301-contentdocs.xhtml#sec-css)）もサポートしているか怪しい。というのは、<a href="#2-2-4-メジャーなepubリーダーでサポートされるcssモジュール">2-2-4</a>で説明したように、いくつかの独自エンジン系のリーダーでCSS レベル2.1のプロパティである[visibility](https://www.w3.org/TR/2011/REC-CSS2-20110607/visufx.html#visibility)などをサポートしていないことが分かったからだ。前述 “CSS Profile” ではCSS レベル2.1のフルサポートが求められている。
+一方、独自エンジン系をCSSモジュールのサポートという観点から見ると、厳しい見方をせざるを得ない。EPUBリーダーは、現行規格が求める “CSS Snapshot” はもちろん、前バージョンであるEPUB 3.0.1が求めるCSSモジュールの実装要件 “CSS Profile”（[原文](https://idpf.org/epub/301/spec/epub-contentdocs-20140626.html#sec-css-profile)、[和訳](https://imagedrive.github.io/spec/epub301-contentdocs.xhtml#sec-css)）もサポートしているか怪しい。というのは、<a href="#2-2-4-メジャーなepubリーダーでサポートされるcssモジュール">2-2-4</a>で説明したように、いくつかの独自エンジン系のリーダーでCSS レベル2.1のプロパティである[visibility](https://www.w3.org/TR/2011/REC-CSS2-20110607/visufx.html#visibility)などをサポートしていないことが分かったからだ。
 
 それにしても、なぜ独自エンジン系はこれほどCSSモジュールのサポートに消極的なのか、そのような素朴な疑問も浮かんでくる。本来この種の調査報告で推測など慎むべきだが、テストの結果得られた「仮説」として述べておきたい。
 
@@ -2674,17 +2674,31 @@ koboについても触れておこう。同じkoboでありながらkobo-other�
 2. CSS Text Decoration Module Level 3 （-epub-text-emphasis-style）
 3. CSS Text Module Level 3（-epub-line-break）
 
-ここまでをまとめると、電書協ガイドver.1.1.3で使用されているCSS機能は、CSS レベル2.1のサブセットと`-epub-`接頭辞つきプロパティである。
+ここまでをまとめると、電書協ガイドver.1.1.3で使用されているCSS機能は、CSS レベル2.1のサブセットと`-epub-`接頭辞つきプロパティである。これを“CSS Snapshot” と比べると、ミニマムなセットと言えるだろう。
 
-本テストでは、<a href="#2-1-2-テスト結果を掲載したcssモジュール">2-1-2</a>、及び<a href="#2-2-1-レイアウトエンジンと本テストとの関係">2-2-1</a>でも述べたように、CSS レベル2.1をフルサポートしないEPUBリーダーがあるとは考えず、これをテスト項目から外していた。
+本テストでは、<a href="#2-1-2-テスト結果を掲載したcssモジュール">2-1-2</a>、及び<a href="#2-2-1-レイアウトエンジンと本テストとの関係">2-2-1</a>でも述べたように、CSS レベル2.1をフルサポートしないEPUBリーダーがあることまで思いが及ばず、これをテスト項目から外していた。この点、テストファイルの開発方針として不適切だったことを率直に認めたい。
 
-したがって、電書協ガイドver.1.1.3が求める「CSS レベル2.1のサブセットと`-epub-`接頭辞つきプロパティ」は本テストの対象外だ。その上での仮説だが、独自エンジン系のリーダーがこの「20150101-CSS機能一覧.pdf」のサポートだけでよいと割り切った実装をしたとすれば、最新のCSSモジュールのサポートに消極的だった理由として説明がつくのではないか。
+この結果、電書協ガイドver.1.1.3が求める「CSS レベル2.1のサブセットと`-epub-`接頭辞つきプロパティ」は本テストの対象外となっている。その上での仮説だが、独自エンジン系のリーダーがこの「20150101-CSS機能一覧.pdf」のサポートだけでよいと割り切った実装をしたとすれば、最新のCSSモジュールのサポートに消極的だった理由として説明がつくのではないか。
 
 たとえば、<a href="#2-2-4-2writing-mode-プロパティ-vertical-rlに絞ったテスト結果">2-1-2</a>、及び<a href="#2-2-1-レイアウトエンジンと本テストとの関係">2-2-4-2</a>で述べたように、Kindle（Windows版）、kobo-other (Mac版／Windows版)、超縦書の4つはwriting-mode プロパティは接頭辞をつける必要がある。これはまさに電書協ガイドver.1.1.3の通りなのだ。では、これら以外の独自エンジン系リーダーは、なぜ接頭辞をつけないよう修正したのかといえば、仕様が勧告になったのでその必要がなくなったと考えるのが自然だろう。
 
-むしろ勧告後も接頭辞付きのルールを変えない電書協ガイドの方が不自然と言える。互換性のために-epub-接頭辞つきプロパティを残すことは必要であるにしても、現在の標準である接頭辞なしのプロパティと併記するべきではないか。
+いささか話は逸れるが、むしろ勧告後も接頭辞を付けるルールを変えない電書協ガイドの方が、W3C仕様から見て不自然であることは指摘したい。互換性を保持するために`-epub-`接頭辞つきプロパティを残すことは必要としても、まず現在の標準である接頭辞なしのプロパティを規定することにし、その併記に留めるべきではないだろうか。
 
-ただし、この「CSS レベル2.1のサブセットと上記1〜3」というのは、あくまでもEPUB制作者の便を図るための国内ルールであることを忘れてはいけないだろう。国際規格を国内で効率よく運用するためサブセットを規定することはなんの問題もない。もっとも、それをリーダーが実装するとなると別次元の問題だ。万が一、電書協ガイドを実装したリーダーがあったとして、はたしてそれを「EPUB」リーダーと呼んでよいのか、いささか疑問が残るところではある。
+話を戻そう。では独自エンジン系のリーダーが、最新のCSSモジュールではなくミニマムな電書協ガイドのサポートに留まっている可能性が高いことを、私達はどのように考えればよいだろう。そこで思い起こされるのは、EPUB 3.3の一つ前のバージョン、EPUB 3.2では、“4.3 Reading System Conformance”（リーディングシステムの適格性）のセクションにおいて以下のように規定されていたことだ。
+
+> [4.3 Reading System Conformance](https://www.w3.org/publishing/epub32/epub-contentdocs.html#sec-css-rs-conf)<br/>
+> A conformant EPUB Reading System MUST meet all of the following criteria for processing CSS Style Sheets:
+> - It MUST support the official definition of CSS as described in the [CSSSnapshot](https://www.w3.org/TR/CSS/).
+> - It SHOULD support all applicable modules in [CSSSnapshot](https://www.w3.org/TR/CSS/) that have reached at least Candidate Recommendation status [W3CProcess](https://www.w3.org/publishing/epub32/epub-contentdocs.html#bib-w3cprocess) (and are widely implemented).
+> - （中略）
+> - It MUST support all prefixed properties defined in [CSS Style Sheets — Prefixed Properties](https://www.w3.org/publishing/epub32/epub-contentdocs.html#sec-css-prefixed).
+> - （後略）
+> 
+> 和訳:適合するEPUBリーディングシステムは、CSSスタイルシートを処理するための以下の基準をすべて満たさなければならない（MUST）
+> - [CSSSnapshot](https://www.w3.org/TR/CSS/)に記述されているCSSの公式定義をサポートしなければならない（MUST）。
+> - [CSSSnapshot]に記載されているモジュールのうち、少なくとも[W3CProcess]の勧告候補(Candidate Recommendation)のステータスに達しているもの（そして広く実装されているもの）をすべてサポートすべきである。
+> - CSS Style Sheets - Prefixed Propertiesで定義されているすべての接頭辞付きプロパティに対応しなければならない（MUST）。
 
 
+つまりEPUB 3.2では、EPUB仕様に適合するための要件の一つとして “CSS Snapshot” のサポートが必要だった。
 
