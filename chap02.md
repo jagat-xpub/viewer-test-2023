@@ -2622,7 +2622,7 @@ lang: 'ja'
 
 他方、Kindle（専用端末、モバイル端末、デスクトップ）と[Kindle Previewer](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=0&range=P2:Q6)とでは、それぞれCSSモジュールの対応程度が異なる。しかしKindleの中では、CSSモジュールの対応程度はハードウェアやOSの違いが少ない。つまり、Kindleの中ではいくつかの例外を除きハードウェアやOSの違いに関わらず「OK」と「NG」がよく揃っていると言える。ただし、ここでも「writing-mode プロパティ vertical-rl」はその例外で、Windows版のKindleだけが「NG」だった（図1）。
 
-koboについても触れておこう。同じkoboでありながらkobo-otherが「NG」（図1）、kobo-mobileが「OK」（図2）と結果が分かれていることに興味が引かれるかもしれない。これは、前者は独自エンジン系（モダンではないレイアウトエンジン利用を含む）、後者はモダンブラウザー系というレイアウトエンジンの違いが出た、分かりやすい結果とも言える。
+koboについても触れておこう。同じkoboでありながらkobo-otherが「NG」（図1）、kobo-mobileが「OK」（図2）と結果が分かれていることに興味が引かれるかもしれない。これは、前者は独自エンジン系（モダンではないブラウザーのレイアウトエンジン利用を含む）、後者はモダンブラウザー系というレイアウトエンジンの違いが出た、分かりやすい結果とも言える。
 
 **図3**に移ろう。左からブック（Mac版、テスト時v6.1→v6.3(6040)）、MURASAKI（Mac版、v2.4.1(30)）、honto（iPhone版 v6.62.0）。このうちブックとMURASAKIはモダンブラウザー系だ。残るhontoは独自エンジン系だが、「OK」の結果を出している。iOSでは「Webを閲覧するアプリ」<span class="notetext">[「App Reviewガイドライン」2.5.6（アップル）、最終更新日：2024年4月5日](https://developer.apple.com/jp/app-store/review/guidelines/#performance)</span>に関してはレイアウトエンジンをWebKitに制限されている。EPUBリーダーの多くがiOS版ではWebKitを使う中で、hontoが独自のレイアウトエンジンを選択したのは珍しい例と言える。
 
