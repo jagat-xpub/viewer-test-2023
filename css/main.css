@@ -359,6 +359,12 @@ figcaption {
   inset-block-start: -0.5em;
 }
 
+/* 文字間をわずかに詰めたい／開けたい */
+.justify-compress {
+  letter-spacing: -0.02em;
+}
+
+
 /* 以降は第3章の説明で使用するスタイル */
 
 /* インライン画像の配置 */
