@@ -457,6 +457,16 @@ lang: 'ja'
       <td bgcolor="#c9daf8" align="center">2024/01/24</td>
     </tr>
     <tr>
+      <td bgcolor="#c9daf8" align="center">honto電子書籍リーダー *¹</td>
+      <td bgcolor="#c9daf8" align="center">honto</td>
+      <td bgcolor="#c9daf8" align="center">Androidアプリ</td>
+      <td bgcolor="#c9daf8" align="center">OPPO A55s 5G</td>
+      <td bgcolor="#c9daf8" align="center">Android 12</td>
+      <td bgcolor="#c9daf8" align="center">6.62.0</td>
+      <td bgcolor="#c9daf8" align="center">村上</td>
+      <td bgcolor="#c9daf8" align="center">2024/04/01</td>
+    </tr>
+    <tr>
       <td bgcolor="#d9ead3" align="center">Book Walker</td>
       <td bgcolor="#d9ead3" align="center">→</td>
       <td bgcolor="#d9ead3" align="center">iOSアプリ</td>
