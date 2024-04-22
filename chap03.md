@@ -1084,9 +1084,7 @@ DTPでの和文組版処理では、一般的に句読点や全角カッコ類�
 
 こういったW3Cの規格としての文字ツメ／アケ関連プロパティ実装の動きと並行する形で、各EPUBリーダーで独自実装、強制適用という形で文字ツメ／アケ処理が行われるようになってきている状況がある。このため、このテストでは2023年12月時点での記録として、各リーダーの状況をレポートすることとした。ただし上記のように正式なCSS規格の規格が策定進展中という状態であるため、特に外部のブラウザエンジンをレンダリングに使用しているリーダーでは、環境の変化に連動する形で将来的に挙動が変化する可能性があることは最初に注記しておく。なお、CSSのtext-spacing-trim / text-autospace自体の先行実装を行っているVivliostyle Viewerはここではテストから除外した。  
 
-テストとしては各リーダーが「括弧類が段落行頭に来た場合に行頭に二分スペースが入るかどうか」「行中で約物が連続した場合にアキの自動ツメ処理を行うかどうか」「和欧文字間に自動でスペースを挿入する処理を行うかどうか」を観察している。  
-
-なお、「括弧類が段落行頭に来た場合に行頭に二分スペースが入るかどうか」のテストでも「OK」「NG」の表記を使っているが、こちらのテストで行頭二分下げの処理をすることが望ましいとする意図はないので留意されたい。単純な表示結果の区分として使っている。これは本来的には段落行頭二分下げ／折り返し天付きの組版処理ができているかを見たかったのだが、折り返し時の処理結果のチェックが難しかったため段落行頭二分下げの処理のみを記録した。「行中で約物が連続した場合にアキの自動ツメ処理を行うかどうか」と組み合わせて見ることで前述の処理ができているかの推測はできるように思う。  
+テストとしては各リーダーが「行中で約物が連続した場合にアキの自動ツメ処理を行うかどうか」「和欧文字間に自動でスペースを挿入する処理を行うかどうか」を観察している。  
 
 また、こちらのテスト結果は「各OSで利用できるブラウザエンジンに依拠するアプリの対応状況」と「独自レイアウトエンジンで動作するアプリの挙動の対応状況」に分けて記述した。これは、テストの性質上、特に「各OSで利用できるブラウザエンジンに依拠するアプリ」において、OSのメジャーアップデートなど外部環境の変化によって結果が変化する可能性が大きいからである。
 
@@ -1541,43 +1539,36 @@ DTPでの和文組版処理では、一般的に句読点や全角カッコ類�
 <table>
   <tr>
     <td align="center" valign="bottom"></td>
-    <th style="color:#434343" align="center">括弧類が行頭に来た場合に行頭に二分スペースが入るかどうか</th>
     <th style="color:#434343" align="center">行中で約物が連続した場合にアキの自動ツメ処理を行うかどうか</th>
     <th style="color:#434343" align="center">和欧文字間に自動でスペースを挿入する処理を行うかどうか</th>
   </tr>
   <tr>
     <th style="color:#434343" align="center">ブック</th>
-    <td align="center" valign="bottom">OK</td>
     <td align="center" valign="bottom">NG</td>
     <td align="center" valign="bottom">NG</td>
   </tr>
   <tr>
     <th style="color:#434343" align="center">Kobo(iOS/Android)</th>
-    <td align="center" valign="bottom">OK</td>
     <td align="center" valign="bottom">NG</td>
     <td align="center" valign="bottom">NG</td>
   </tr>
   <tr>
     <th style="color:#434343" align="center">MURASAKI</th>
-    <td align="center" valign="bottom">OK</td>
     <td align="center" valign="bottom">NG</td>
     <td align="center" valign="bottom">NG</td>
   </tr>
   <tr>
     <th style="color:#434343" align="center">BOOK☆WALKER</th>
-    <td align="center" valign="bottom">OK</td>
     <td align="center" valign="bottom">NG</td>
     <td align="center" valign="bottom">NG</td>
   </tr>
   <tr>
     <th style="color:#434343" align="center">Bibi</th>
-    <td align="center" valign="bottom">OK</td>
     <td align="center" valign="bottom">NG</td>
     <td align="center" valign="bottom">OK</td>
   </tr>
   <tr>
     <th style="color:#434343" align="center">Thorium</th>
-    <td align="center" valign="bottom">OK</td>
     <td align="center" valign="bottom">NG</td>
     <td align="center" valign="bottom">NG</td>
   </tr>
@@ -1588,19 +1579,16 @@ DTPでの和文組版処理では、一般的に句読点や全角カッコ類�
 <table>
   <tr>
     <td align="center" valign="bottom"></td>
-    <th style="color:#434343" align="center">括弧類が行頭に来た場合に行頭に二分スペースが入るかどうか</th>
     <th style="color:#434343" align="center">行中で約物が連続した場合にアキの自動ツメ処理を行うかどうか</th>
     <th style="color:#434343" align="center">和欧文字間に自動でスペースを挿入する処理を行うかどうか</th>
   </tr>
   <tr>
     <th style="color:#434343" align="center">Kindle</th>
-    <td align="center" valign="bottom">NG</td>
     <td align="center" valign="bottom">OK</td>
     <td align="center" valign="bottom">NG*¹</td>
   </tr>
   <tr>
     <th style="color:#434343" align="center">kobo(専用タブレット/Windows/Mac)</th>
-    <td align="center" valign="bottom">OK</td>
     <td align="center" valign="bottom">NG</td>
     <td align="center" valign="bottom">NG</td>
   </tr>
@@ -1608,23 +1596,19 @@ DTPでの和文組版処理では、一般的に句読点や全角カッコ類�
     <th style="color:#434343" align="center">honto</th>
     <td align="center" valign="bottom">OK</td>
     <td align="center" valign="bottom">OK</td>
-    <td align="center" valign="bottom">OK</td>
   </tr>
   <tr>
     <th style="color:#434343" align="center">Kinoppy</th>
-    <td align="center" valign="bottom">OK</td>
     <td align="center" valign="bottom">OK</td>
     <td align="center" valign="bottom">NG</td>
   </tr>
   <tr>
     <th style="color:#434343" align="center">BinB</th>
-    <td align="center" valign="bottom">OK</td>
     <td align="center" valign="bottom">NG</td>
     <td align="center" valign="bottom">NG</td>
   </tr>
   <tr>
     <th style="color:#434343" align="center">超縦書</th>
-    <td align="center" valign="bottom">OK</td>
     <td align="center" valign="bottom">NG</td>
     <td align="center" valign="bottom">NG</td>
   </tr>
