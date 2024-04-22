@@ -39,7 +39,7 @@ lang: 'ja'
 2. [かなり安定しているが実装経験が限定的なCSSモジュール（Fairly Stable Modules with limited implementation experience）](https://www.w3.org/TR/CSS/#fairly-stable)
 3. [大まかな相互運用性のあるCSSモジュール（Modules with Rough Interoperability）](https://www.w3.org/TR/CSS/#rough-interop)
 
-前掲EPUB 3.3の引用にある「CSS Snapshotで定義されているCSS」とは上記のうち1を指しており、このサブセットを「サポートする」と宣言している訳だ。さらに同仕様の[6.3 Cascading Style Sheets (CSS)](https://www.w3.org/TR/epub-rs-33/#sec-css)まで読み進むと、“CSS Snapshot” について以下のように規定している。
+前掲EPUB 3.3の引用にある「CSS Snapshotで定義されているCSS」とは上記のうち1を指しており、このサブセットを「サポートする」と宣言している訳だ。さらにEPUB Reading Systems 3.3仕様の[6.3 Cascading Style Sheets (CSS)](https://www.w3.org/TR/epub-rs-33/#sec-css)を読むと、“CSS Snapshot” について以下のように規定している。
 
 > To support CSS, a reading system:
 > 
