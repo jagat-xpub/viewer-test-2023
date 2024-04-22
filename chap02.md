@@ -29,7 +29,7 @@ lang: 'ja'
 > 
 > EPUB 3 supports CSS as defined by the CSS Working Group Snapshot [[csssnapshot]](https://www.w3.org/TR/CSS/). EPUB 3 also maintains some prefixed CSS properties, to ensure consistent support for global languages.
 > 
-> 和訳：**§1.3.3 CSSとの関係**　EPUB3は、CSS Working Group Snapshot [[csssnapshot]](https://www.w3.org/TR/CSS/)で定義されているCSSをサポートします。EPUB3は、グローバル言語のための一貫したサポートを保証するために、いくつかの接頭辞付きのCSSプロパティも維持します。
+> 和訳：**§1.3.3 CSSとの関係**　EPUB3は、CSS Working Group Snapshot [[csssnapshot]](https://www.w3.org/TR/CSS/)で定義されているCSSをサポートする。EPUB3はグローバル言語のための一貫したサポートを保証するために、いくつかの接頭辞付きのCSSプロパティも維持する。
 
 上記にある “CSS Working Group Snapshot”（以下、“CSS Snapshot”）とはなんだろう。CSSレベル2まで、CSS仕様はすべてのプロパティを単一の仕様書で規定していた。しかしレベル2を超えるCSSでは飛躍的に規模が大きくなることが確実になった。そこで審議するCSS Working Groupは、機能や目的ごとの「モジュール」に仕様を分割することにし、更新はモジュールごとにすすめることにした。ところが更新のペースがバラバラになると、今度はCSS仕様全体の状況が把握しづらくなってしまう。そこで考え出されたのが、Webブラウザー（以下、ブラウザー）に実装されたCSSモジュールを、安定性の程度を評価・分類したリストを作成し、これを1年ごとに更新していく “CSS Snapshot” だ。<span class="notetext"> “CSS Snapshot” のURLは<https://www.w3.org/TR/CSS/>に固定されている。本稿を執筆している2024年3月では “CSS Snapshot 2023” というタイトルだが、1年後の2025年3月に同じURLをクリックすれば “CSS Snapshot 2024” になっているはずだ。なお、2023年版のパーマネント・リンクは<https://www.w3.org/TR/css-2023/>である。</span>
 
@@ -39,19 +39,46 @@ lang: 'ja'
 2. [かなり安定しているが実装経験が限定的なCSSモジュール（Fairly Stable Modules with limited implementation experience）](https://www.w3.org/TR/CSS/#fairly-stable)
 3. [大まかな相互運用性のあるCSSモジュール（Modules with Rough Interoperability）](https://www.w3.org/TR/CSS/#rough-interop)
 
-前掲EPUB 3.3の引用にある「CSS Snapshotで定義されているCSS」とは、上記のうち1のことだ。つまりEPUB 3.3では数多くあるCSSモジュールの中でも、上記1でリストアップされているCSSモジュールはサポートするべきだとしている。
+前掲EPUB 3.3の引用にある「CSS Snapshotで定義されているCSS」とは上記のうち1を指しており、このサブセットを「サポートする」と宣言している訳だ。さらに同仕様の[6.3 Cascading Style Sheets (CSS)](https://www.w3.org/TR/epub-rs-33/#sec-css)まで読み進むと、“CSS Snapshot” について以下のように規定している。
 
-ただし注意が必要なのは、この「サポート」の主語は仕様であってリーダーではないということ。分かりづらいが、“CSS Snapshot” のサポートに関する規定はなく、上記は仕様として目指すべき目標を表明したものと解釈できる。したがって “CSS Snapshot” をリーダーがサポートすることはとくに求められてはいない（<a href="#2-3-おわりにepubのガラパゴス化">2-3</a>で詳述）。
+> To support CSS, a reading system:
+> 
+> - MUST support the official definition of CSS as described in the [csssnapshot](https://www.w3.org/TR/epub-rs-33/#bib-csssnapshot).
+> - SHOULD support all applicable modules in [csssnapshot](https://www.w3.org/TR/epub-rs-33/#bib-csssnapshot) that have reached at least Candidate Recommendation status [w3cprocess](https://www.w3.org/TR/epub-rs-33/#bib-w3cprocess) (and are widely implemented).
+> - （中略）
+> - SHOULD support all prefixed properties defined in [CSS Style Sheets — Prefixed properties](https://www.w3.org/TR/epub-33/#sec-css-prefixed) [epub-33](https://www.w3.org/TR/epub-rs-33/#bib-epub-33).
+> - （後略）
+> 
+> 和訳：リーディングシステムがCSSをサポートするには：
+> 
+> - [CSS Snapshot](https://www.w3.org/TR/epub-rs-33/#bib-csssnapshot)に記述されているCSSの公式定義をサポートしなければならない（MUST）。
+> - 少なくとも[W3C Process](https://www.w3.org/TR/epub-rs-33/#bib-w3cprocess) における[勧告候補](https://www.w3.org/Consortium/Process/#RecsCR)のステータスに達している（そして広く実装されている）[CSS Snapshot](https://www.w3.org/TR/epub-rs-33/#bib-csssnapshot)の適用可能なすべてのモジュールをサポートすべきである（SHOULD）。
+> - （中略）
+> - [epub-33](https://www.w3.org/TR/epub-rs-33/#bib-epub-33)における[CSS Style Sheets - Prefixed properties](https://www.w3.org/TR/epub-33/#sec-css-prefixed) で定義されているすべての接頭辞付きプロパティをサポートすべきである（SHOULD）。
+> - （後略）
 
-とはいえ、**現在日本国内で利用されているEPUBリーダーは、“CSS Snapshot” をどのくらいサポートしているのか、**調べてみる意味はあるだろう。現在使われているEPUBリーダーが、現行規格EPUB 3.3が目標とするCSSにどの程度対応しているかが分かるし、その結果それぞれのEPUBリーダーがCSS仕様をどのように考えているかも見えてくるはずだからだ。
+このように、EPUB 3.3に適合しようとするEPUBリーダーは、“CSS Snapshot” のうち「1. CSSの公式的な定義に含まれるCSSモジュール」をサポートしなければならないと規定された。では、**現在日本国内で利用されているEPUBリーダーは、“CSS Snapshot” をどのくらいサポートしているのだろう？**
 
-もうひとつ、前掲の引用で分かるように、旧仕様で許されていた`-epub-`接頭辞付きのCSSプロパティは、最新仕様でも後方互換性のために残された。ここでいう`-epub-`接頭辞とは、[CSS レベル2.1で規定されているCSSプロパティを独自に拡張する構文](https://www.w3.org/TR/CSS2/syndata.html#vendor-keywords)のひとつだ。プロパティ冒頭に付ける接頭辞をベンダーが独自に定義することから「ベンダー接頭辞」とも呼ばれる。EPUB 3.0仕様の策定時（2011年）のCSS仕様では、まだ縦書き用プロパティなどはドラフト仕様でしかなかった。そこでEPUB 3でこれらのプロパティを利用するための接頭辞が定められた。それが`-epub-`接頭辞だ。
+もうひとつ、前掲[6.3 Cascading Style Sheets (CSS)](https://www.w3.org/TR/epub-rs-33/#sec-css)に、旧仕様（[EPUB 1.0.1](https://imagedrive.github.io/spec/epub301-contentdocs.xhtml)）で許されていた`-epub-`接頭辞付きのCSSプロパティは、EPUB 3.3でも後方互換性のために残されている。ここでいう`-epub-`接頭辞とは、[CSS レベル2.1で規定されているCSSプロパティを独自に拡張する構文](https://www.w3.org/TR/CSS2/syndata.html#vendor-keywords)のひとつだ。プロパティ冒頭に付ける接頭辞をベンダーが独自に定義することから「ベンダー接頭辞」とも呼ばれる。EPUB 3.0仕様の策定時（2011年）のCSS仕様では、まだ縦書き用プロパティなどはドラフト仕様でしかなかった。そこでEPUB 3でこれらのプロパティを利用するための接頭辞が定められた。それが`-epub-`接頭辞だ。
 
-とはいえ、試行錯誤の時代は過ぎ去り縦書き用のプロパティはすっかり安定した。そこでEPUB 3.3では[§6.3.1.3 Prefixed properties](https://www.w3.org/TR/epub-33/#sec-css-prefixed)として、「EPUB制作者は接頭辞なしのプロパティを使用するべきで、リーディングシステム（EPUBリーダー）は現行のCSS仕様をサポートするべき」とされ、また「Working Groupは、EPUBの次のメジャーバージョンでこれらの接頭辞付きプロパティをサポートする見込みがないため、現在これらの接頭辞付きプロパティを使用しているEPUB制作者は、サポートが可能になり次第、接頭辞なしバージョンに移行することを推奨する」とある。では、**現在使われているEPUBリーダーは、　本当に`-epub-`接頭辞なしで表示できるのか、**調べてみることにしよう。
+とはいえ、試行錯誤の時代は過ぎ、縦書き用のプロパティはすっかり安定、普及した。そこでEPUB 3.3では、[6.3.1.3 Prefixed properties](https://www.w3.org/TR/epub-33/#sec-css-prefixed)として、以下のようなCAUTION（注意書き）をつけている。
 
-テストの方法をもう少し詳しく説明しよう。前記 “CSS Snapshot” にある3段階に加え、それには漏れているが最新のメジャーなブラウザーで利用できるCSSモジュールを加え、全部で4段階の規準を設定することにした。
+> EPUB creators should use unprefixed properties and reading systems should support current CSS specifications. 
+> 
+> （中略）
+> 
+> The Working Group recommends that EPUB creators currently using these prefixed properties move to unprefixed versions as soon as support allows, as the Working Group does not anticipate supporting them in the next major version of EPUB.
+> 和訳：EPUB制作者は接頭辞なしのプロパティを使用するべきで、リーディングシステム（EPUBリーダー）は現行のCSS仕様をサポートするべきである。
+> 
+> （中略）
+> 
+> Working Groupは、EPUBの次のメジャーバージョンでこれらの接頭辞付きプロパティをサポートする見込みがないため、現在これらの接頭辞付きプロパティを使用しているEPUB制作者は、サポートが可能になり次第、接頭辞なしバージョンに移行することを推奨する。
 
-ただし、“CSS Snapshot” に規定されたCSSモジュールの中には、あまりに基礎的な仕様であったり、EPUBでの利用をあまり想定できないものもある。大事なことは「EPUBリーダーでテストする意味があるか」だろう。そこでそうしたCSSモジュールを外して、以下のようにテスト項目を選定した（テスト項目の具体的な内容は次項を参照）。
+つまり、縦書き用のプロパティの接頭辞は用済みになったので、EPUB制作者は接頭辞なしで縦書き用プロパティを書くことが推奨されている。では、**現在使われているEPUBリーダーは、　本当に`-epub-`接頭辞なしで表示できるのだろう？**　
+
+以上2つについて、私達は調べてみることにしたのである。テストの方法をもう少し詳しく説明しよう。前記 “CSS Snapshot” にある3段階に加え、それには漏れているが最新のメジャーなブラウザーで利用できるCSSモジュールを加え、全部で4段階の規準を設定することにした。
+
+ただし、“CSS Snapshot” に規定されたCSSモジュールの中には、あまりに基礎的な仕様であったり、EPUBでの利用をあまり想定できないものもある。大事なことは「EPUBリーダーでテストする意味があるか」だろう。そこでそうしたCSSモジュールを外して、以下のようにテスト項目を選定した（具体的な内容は次項を参照）。
 
 - CSSの公式的な定義に含まれるCSSモジュール：**82項目**
 - かなり安定しているが実装経験が限定的なCSSモジュール：**25項目**
@@ -71,7 +98,7 @@ lang: 'ja'
 
 ところが実際に調査結果をまとめる段階になると、あまりにテスト項目が多すぎて報告書に収まりきらないことが判明した。やむなく本章ではEPUB 3.3で利用できることが求められているモジュール（前述「1. CSSの公式的な定義に含まれるCSSモジュール」）に絞って結果を掲載することにする。
 
-これも前項で述べたことだが、本章では “CSS Snapshot” で規定されているCSSモジュールから、EPUBリーダーでテストして意味があるかどうかを勘案して絞り込んでいる。たとえば、「1. CSSの公式的な定義に含まれるCSSモジュール」は24のCSSモジュールが規定されているが、本章ではそのうちの17のCSSモジュールに絞っている。ここで除外したCSSモジュールは以下のようなものだ。
+これも前項で述べたことだが、本章では “CSS Snapshot” で規定されているCSSモジュールから、EPUBリーダーでテストして意味があるかどうかを勘案して絞り込んでいる。たとえば、「1. CSSの公式的な定義に含まれるCSSモジュール」は24のCSSモジュールが規定されているが、本章ではそのうちの17のCSSモジュールに絞った。ここで除外したCSSモジュールは以下のようなものだ。
 
 - [CSS Level 2, latest revision](https://www.w3.org/TR/CSS2/) (including errata)
 - [CSS Syntax Level 3](https://www.w3.org/TR/css-syntax-3/)
