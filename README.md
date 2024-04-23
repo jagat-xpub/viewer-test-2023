@@ -10,6 +10,8 @@
   - [第3章 その他のEPUBリーダー表示テスト](https://github.com/jagat-xpub/viewer-test-2023/blob/main/chap03.pdf)
   - [第4章 国内EPUBリーダーにおける本文／alt属性の読み上げの状況（ダイジェスト版）](https://github.com/jagat-xpub/viewer-test-2023/blob/main/ALT_text_check_JEPAVersion_20240424.pdf)
 
+- [EPUBリーダー表示チェック（JAGAT次世代パブリッシング研究会）2023](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?usp=sharing)
+
 ## プレビュー、ビルドの方法（第1章〜第3章）
 
 1. 準備：[VSCode](https://azure.microsoft.com/ja-jp/products/visual-studio-code)に、機能拡張[vivliostyle-cli-helper](https://marketplace.visualstudio.com/items?itemName=Libroworks.vivliostyle-cli-helper)をインストールしておく
