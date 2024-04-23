@@ -17,6 +17,5 @@
 3. 第1章〜第3章のいずれかのMarkdownファイルを開く
 4. プレビュー：編集画面で以下の順に選択
     - 右クリック＞vivliostyle-cli-helper＞これプレビューvivliostyle preview (Current File)
-5. プレビューウィンドウを閉じる
-6. PDF作成：編集画面で以下の順に選択
+5. PDF作成：編集画面で以下の順に選択（プレビューしていた場合は必ずウィンドウを閉じる）
     - 右クリック＞vivliostyle-cli-helper＞これビルドvivliostyle build (Current File)
