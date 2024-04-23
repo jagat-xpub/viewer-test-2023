@@ -8,7 +8,8 @@
   - [第1章 この調査の目的と方法](https://github.com/jagat-xpub/viewer-test-2023/blob/main/chap01.pdf)
   - [第2章 CSS表示テスト](https://github.com/jagat-xpub/viewer-test-2023/blob/main/chap02.pdf)
   - [第3章 その他のEPUBリーダー表示テスト](https://github.com/jagat-xpub/viewer-test-2023/blob/main/chap03.pdf)
-  - [第4章 国内EPUBリーダーにおける本文／alt属性の読み上げの状況（ダイジェスト版）](https://github.com/jagat-xpub/viewer-test-2023/blob/main/ALT_text_check_JEPAVersion_20240424.pdf)
+  - [第4章 EPUB内文字、画像、背景表示テスト](https://github.com/jagat-xpub/viewer-test-2023/blob/main/EPUBviewerCheck_Chap4_20240424.pdf)
+  - [付録：国内EPUBリーダーにおける本文／alt属性の読み上げの状況（ダイジェスト版）](https://github.com/jagat-xpub/viewer-test-2023/blob/main/ALT_text_check_JEPAVersion_20240424.pdf)
 - テストファイル開発リポジトリ（GitHub）
    - [EPUBリーダーのCSS仕様適合性テスト](https://github.com/jagat-xpub/epub-css-test/tree/main)
 - テスト結果（Googleスプレッドシート）
