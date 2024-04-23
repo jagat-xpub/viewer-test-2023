@@ -2490,6 +2490,16 @@ EPUBリーダー内の画像には読み上げ・検索用に代替文字（alt�
     <td bgcolor="#c9daf8" align="center">古門</td>
     <td bgcolor="#c9daf8" align="center">2023/5/20</td>
   </tr>
+    <tr>
+    <td bgcolor="#c9daf8" align="center">楽天Koboアプリ for iPhone</td>
+    <td bgcolor="#c9daf8" align="center">kobo</td>
+    <td bgcolor="#c9daf8" align="center">iOSアプリ</td>
+    <td bgcolor="#c9daf8" align="center">iPhone15 Pro Max</td>
+    <td bgcolor="#c9daf8" align="center">iOS17.5</td>
+    <td bgcolor="#c9daf8" align="center">10.5.2</td>
+    <td bgcolor="#c9daf8" align="center">仁科</td>
+    <td bgcolor="#c9daf8" align="center">2024/4/21</td>
+  </tr>
   <tr>
     <td bgcolor="#c9daf8" align="center">楽天Koboアプリ for Android</td>
     <td bgcolor="#c9daf8" align="center">kobo</td>
@@ -2762,7 +2772,7 @@ EPUBリーダー内の画像には読み上げ・検索用に代替文字（alt�
   <tr>
     <th style="color:#434343" align="center">Kobo(iOS/Android)</th>
     <td bgcolor="#c9daf8" align="center">NG</td>
-    <td bgcolor="#c9daf8" align="center">NA</td>
+    <td bgcolor="#c9daf8" align="center">OK/NG *²</td>
   </tr>
   <tr>
     <th style="color:#434343" align="center">MURASAKI</th>
@@ -2792,7 +2802,7 @@ EPUBリーダー内の画像には読み上げ・検索用に代替文字（alt�
 </table>
 
 - *1 altテキスト読み上げにはタッピングによる図版の選択を要した
-- *2 iOS端末ではVoiceOverでの読み上げを確認、Macでは読み上げられず
+- *2 iOS端末ではVoiceOverでの読み上げを確認
 - *3 Macでの読み上げは確認
 
 #### 3-5-3-3 独自レイアウトエンジンで動作するアプリの挙動の対応状況
