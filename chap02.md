@@ -17,7 +17,7 @@ lang: 'ja'
 
 <div class="no-indent" style="margin-top:24.5Q;">
 
-**情報開示：**本報告書のテスト項目となるCSSモジュールの選定、テストファイル作成は村上真雄（[Vivliostyle Foundation](https://vivliostyle.org/ja/)）がおこなった。なお、村上はテスト対象であるVivliostyle Viewerの開発者でもある。小形克宏（Vivliostyle Foundation）は本稿をおもに執筆した。著者として利害は相反するが、[テストファイルの開発](https://github.com/jagat-xpub/epub-css-test/tree/main)や[原稿執筆](https://github.com/jagat-xpub/viewer-test-2023)に利用したGitHubリポジトリ、[テスト結果](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?usp=sharing)を記録したGoogleスプレッドシートを公開することで、客観性の担保に努めた。
+**情報開示：**本報告書のテスト項目となるCSSモジュールの選定、テストファイル作成は村上真雄（[Vivliostyle Foundation](https://vivliostyle.org/ja/)）がおこなった。なお、村上はテスト対象であるVivliostyle Viewerの開発者でもある。小形克宏（Vivliostyle Foundation）は本稿をおもに執筆した。著者として利害は相反するが、[テストファイルの開発](https://github.com/jagat-xpub/epub-css-test/tree/main)や[原稿執筆](https://github.com/jagat-xpub/viewer-test-2023)に利用したGitHubリポジトリ、[テスト結果](https://docs.google.com/spreadsheets/u/1/d/e/2PACX-1vSPaWWfqx2bZiRqK__XG_v_NEGY5OjB-lIcoG9Ll_D1aG5UA7RwpUi3dOq4fLTt40flSuFGhu38Iv7o/pubhtml#)を記録したGoogleスプレッドシートを公開することで、客観性の担保に努めた。
 
 </div>
 
@@ -91,7 +91,7 @@ lang: 'ja'
 
 最後に、テスト対象のEPUBリーダーを選定し、当研究会のメンバーごとに割り振ってテストを開始した。各担当者は前述テスト用EPUBファイルを自分が担当するEPUBリーダーにサイドロードし、テスト結果を以下のGoogleスプレッドシートに記録していった。それが以下に公開するファイルである。
 
-- [EPUBリーダー表示チェック（JAGAT次世代パブリッシング研究会）2023](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?usp=sharing)（以下、「EPUBリーダー表示チェック」）
+- [EPUBリーダー表示チェック（JAGAT次世代パブリッシング研究会）2023](https://docs.google.com/spreadsheets/u/1/d/e/2PACX-1vSPaWWfqx2bZiRqK__XG_v_NEGY5OjB-lIcoG9Ll_D1aG5UA7RwpUi3dOq4fLTt40flSuFGhu38Iv7o/pubhtml#)（以下、「EPUBリーダー表示チェック」）
 
 
 ### 2-1-2 テスト結果を掲載したCSSモジュール
@@ -108,7 +108,7 @@ lang: 'ja'
 - [CSS Box Model Level 3](https://www.w3.org/TR/css-box-3/)
 - [CSS Easing Functions Level 1](https://www.w3.org/TR/css-easing-1/)
 
-残ったCSSモジュールとそのテスト項目を以下に仕様へのリンクとともに挙げる<span class="notetext">ここに挙げた以外の詳細なテスト項目の内容やCSSモジュールは、 [EPUBリーダー表示チェック](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?usp=sharing)を参照。</span>。全部で17のCSSモジュール、82のテスト項目だ。これらはいずれもEPUBでの利用が想定でき、テストする価値があると判断したものである。
+残ったCSSモジュールとそのテスト項目を以下に仕様へのリンクとともに挙げる<span class="notetext">ここに挙げた以外の詳細なテスト項目の内容やCSSモジュールは、 [EPUBリーダー表示チェック](https://docs.google.com/spreadsheets/u/1/d/e/2PACX-1vSPaWWfqx2bZiRqK__XG_v_NEGY5OjB-lIcoG9Ll_D1aG5UA7RwpUi3dOq4fLTt40flSuFGhu38Iv7o/pubhtml#)を参照。</span>。全部で17のCSSモジュール、82のテスト項目だ。これらはいずれもEPUBでの利用が想定でき、テストする価値があると判断したものである。
 
 - [CSS Conditional Rules Level 3](https://www.w3.org/TR/css-conditional-3/)
   - @supports ルール
