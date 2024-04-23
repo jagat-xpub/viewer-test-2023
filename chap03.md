@@ -9,7 +9,7 @@ lang: 'ja'
 
 <div class="author">
 
-田嶋　淳
+田嶋　淳（株式会社三陽社）
 
 </div>
 
