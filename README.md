@@ -16,7 +16,7 @@
 2. このリポジトリをローカルに同期かダウンロードして、VSCodeで開く
 3. 第1章〜第3章のいずれかのMarkdownファイルを開く
 4. プレビュー：編集画面で以下の順に選択
-  4-1. 右クリック＞vivliostyle-cli-helper＞これプレビューvivliostyle preview (Current File)
+  - 右クリック＞vivliostyle-cli-helper＞これプレビューvivliostyle preview (Current File)
 5. プレビューウィンドウを閉じる
 6. PDF作成：編集画面で以下の順に選択
-  6-1. 右クリック＞vivliostyle-cli-helper＞これビルドvivliostyle build (Current File)
+  - 右クリック＞vivliostyle-cli-helper＞これビルドvivliostyle build (Current File)
