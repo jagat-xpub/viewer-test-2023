@@ -19,3 +19,5 @@
     - 右クリック＞vivliostyle-cli-helper＞これプレビューvivliostyle preview (Current File)
 5. PDF作成：編集画面で以下の順に選択（プレビューしていた場合は必ずウィンドウを閉じる）
     - 右クリック＞vivliostyle-cli-helper＞これビルドvivliostyle build (Current File)
+
+- 参考：[vivliostyle-cli-helper を使った本作り](https://vivliostyle.github.io/vivliostyle-cli-helper-doc/#/)
