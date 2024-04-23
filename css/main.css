@@ -293,10 +293,11 @@ a:active {
 
 img {
   max-inline-size: 100%;
-  border: solid 0.5mm #000;
+  /* border: solid 0.5mm #000; */
+  /* margin-block-end: 24.5Q */
 }
 
-img[src$=".svg"] {
+img[src$=".png"] {
   border: none;
 }
 
@@ -309,17 +310,32 @@ img[src$=".svg"] {
   margin-bottom: 1.5rem;
 }
 
+/* 図版上揃え */
+.figure-top {
+  float-reference: page;
+  float: block-start;
+  text-align: center;
+  margin-top: 0rem;
+  margin-bottom: 1.5rem;
+}
+
+/* 図版下揃え */
+.figure-bottom {
+  float-reference: page;
+  float: block-end;
+  text-align: center;
+  margin-top: 1.5rem;
+  margin-bottom: 0rem;
+}
+
 figcaption {
-  text-align:center;
   padding: 0.75lh;
   font-size: 0.86rem;
   font-family: var(--main-text-font);
-  line-height: 0.5lh;
+  line-height: 1lh;
   font-feature-settings: "palt";
   margin-block-start: 0.5em;
-  
 }
-
 
 /* 脚注 */
 .notetext {
@@ -342,6 +358,12 @@ figcaption {
   position: relative;
   inset-block-start: -0.5em;
 }
+
+/* 文字間をわずかに詰めたい／開けたい */
+.justify-compress {
+  letter-spacing: -0.02em;
+}
+
 
 /* 以降は第3章の説明で使用するスタイル */
 

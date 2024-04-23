@@ -9,7 +9,7 @@ lang: 'ja'
 
 <div class="author">
 
-村上真雄／小形克宏（Vivliostyle Foundation）
+小形克宏／村上真雄（Vivliostyle Foundation）
 
 </div>
 
@@ -17,7 +17,7 @@ lang: 'ja'
 
 <div class="no-indent" style="margin-top:24.5Q;">
 
-**情報開示：**本報告書のテストで取り上げたCSSモジュールの選定、及びテストの制作は、本稿の共著者である村上真雄（[Vivliostyle Foundation](https://vivliostyle.org/ja/)）がおこなった。村上はテスト対象であるVivliostyle Viewerの開発者でもある。また、もう一人の共著者である小形克宏もVivliostyle Foundationに所属する。この点、[テストファイル開発](https://github.com/jagat-xpub/epub-css-test/tree/main)や[原稿執筆](https://github.com/jagat-xpub/viewer-test-2023)に利用したGitHubリポジトリや、[テスト結果](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?usp=sharing)を記録したGoogleスプレッドシートを公開することで客観性の担保に努めた。
+**情報開示：**本報告書のテスト項目となるCSSモジュールの選定、テストファイル作成は村上真雄（[Vivliostyle Foundation](https://vivliostyle.org/ja/)）がおこなった。なお、村上はテスト対象であるVivliostyle Viewerの開発者でもある。小形克宏（Vivliostyle Foundation）は本稿をおもに執筆した。著者として利害は相反するが、[テストファイルの開発](https://github.com/jagat-xpub/epub-css-test/tree/main)や[原稿執筆](https://github.com/jagat-xpub/viewer-test-2023)に利用したGitHubリポジトリ、[テスト結果](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?usp=sharing)を記録したGoogleスプレッドシートを公開することで、客観性の担保に努めた。
 
 </div>
 
@@ -29,7 +29,7 @@ lang: 'ja'
 > 
 > EPUB 3 supports CSS as defined by the CSS Working Group Snapshot [[csssnapshot]](https://www.w3.org/TR/CSS/). EPUB 3 also maintains some prefixed CSS properties, to ensure consistent support for global languages.
 > 
-> 和訳：**§1.3.3 CSSとの関係**　EPUB3は、CSS Working Group Snapshot [[csssnapshot]](https://www.w3.org/TR/CSS/)で定義されているCSSをサポートします。EPUB3は、グローバル言語のための一貫したサポートを保証するために、いくつかの接頭辞付きのCSSプロパティも維持します。
+> 和訳：**§1.3.3 CSSとの関係**　EPUB3は、CSS Working Group Snapshot [[csssnapshot]](https://www.w3.org/TR/CSS/)で定義されているCSSをサポートする。EPUB3はグローバル言語のための一貫したサポートを保証するために、いくつかの接頭辞付きのCSSプロパティも維持する。
 
 上記にある “CSS Working Group Snapshot”（以下、“CSS Snapshot”）とはなんだろう。CSSレベル2まで、CSS仕様はすべてのプロパティを単一の仕様書で規定していた。しかしレベル2を超えるCSSでは飛躍的に規模が大きくなることが確実になった。そこで審議するCSS Working Groupは、機能や目的ごとの「モジュール」に仕様を分割することにし、更新はモジュールごとにすすめることにした。ところが更新のペースがバラバラになると、今度はCSS仕様全体の状況が把握しづらくなってしまう。そこで考え出されたのが、Webブラウザー（以下、ブラウザー）に実装されたCSSモジュールを、安定性の程度を評価・分類したリストを作成し、これを1年ごとに更新していく “CSS Snapshot” だ。<span class="notetext"> “CSS Snapshot” のURLは<https://www.w3.org/TR/CSS/>に固定されている。本稿を執筆している2024年3月では “CSS Snapshot 2023” というタイトルだが、1年後の2025年3月に同じURLをクリックすれば “CSS Snapshot 2024” になっているはずだ。なお、2023年版のパーマネント・リンクは<https://www.w3.org/TR/css-2023/>である。</span>
 
@@ -39,19 +39,46 @@ lang: 'ja'
 2. [かなり安定しているが実装経験が限定的なCSSモジュール（Fairly Stable Modules with limited implementation experience）](https://www.w3.org/TR/CSS/#fairly-stable)
 3. [大まかな相互運用性のあるCSSモジュール（Modules with Rough Interoperability）](https://www.w3.org/TR/CSS/#rough-interop)
 
-前掲EPUB 3.3の引用にある「CSS Snapshotで定義されているCSS」とは、上記のうち1のことだ。つまりEPUB 3.3では数多くあるCSSモジュールの中でも、上記1でリストアップされているCSSモジュールだけは使えるよう求められている。では、**現在日本国内で利用されているEPUBリーダーは、これらのCSSモジュールをサポートしているのだろうか？**
+前掲EPUB 3.3の引用にある「CSS Snapshotで定義されているCSS」とは上記のうち1を指しており、このサブセットを「サポートする」と宣言している訳だ。さらにEPUB Reading Systems 3.3仕様の[6.3 Cascading Style Sheets (CSS)](https://www.w3.org/TR/epub-rs-33/#sec-css)を読むと、“CSS Snapshot” について以下のように規定している。
 
-もうひとつ、前掲の引用で分かるように、旧仕様で許されていた`-epub-`接頭辞付きのCSSプロパティは、最新仕様でも後方互換性のために残された。ここでいう`-epub-`接頭辞とは、[CSS レベル2.1で規定されているCSSプロパティを独自に拡張する構文](https://www.w3.org/TR/CSS2/syndata.html#vendor-keywords)のひとつ。プロパティ冒頭に付ける接頭辞をベンダーが独自に定義することから「ベンダー接頭辞」とも呼ばれる。EPUB 3.0仕様の策定時（2011年）のCSS仕様では、まだ縦書き用プロパティなどはドラフト仕様でしかなかった。そこでEPUB 3でこれらのプロパティを利用するための接頭辞が定められた。それが`-epub-`接頭辞だ。
+> To support CSS, a reading system:
+> 
+> - MUST support the official definition of CSS as described in the [csssnapshot](https://www.w3.org/TR/epub-rs-33/#bib-csssnapshot).
+> - SHOULD support all applicable modules in [csssnapshot](https://www.w3.org/TR/epub-rs-33/#bib-csssnapshot) that have reached at least Candidate Recommendation status [w3cprocess](https://www.w3.org/TR/epub-rs-33/#bib-w3cprocess) (and are widely implemented).
+> - （中略）
+> - SHOULD support all prefixed properties defined in [CSS Style Sheets — Prefixed properties](https://www.w3.org/TR/epub-33/#sec-css-prefixed) [epub-33](https://www.w3.org/TR/epub-rs-33/#bib-epub-33).
+> - （後略）
+> 
+> 和訳：リーディングシステムがCSSをサポートするには：
+> 
+> - [CSS Snapshot](https://www.w3.org/TR/epub-rs-33/#bib-csssnapshot)に記述されているCSSの公式定義をサポートしなければならない（MUST）。
+> - 少なくとも[W3C Process](https://www.w3.org/TR/epub-rs-33/#bib-w3cprocess) における[勧告候補](https://www.w3.org/Consortium/Process/#RecsCR)のステータスに達している（そして広く実装されている）[CSS Snapshot](https://www.w3.org/TR/epub-rs-33/#bib-csssnapshot)の適用可能なすべてのモジュールをサポートすべきである（SHOULD）。
+> - （中略）
+> - [epub-33](https://www.w3.org/TR/epub-rs-33/#bib-epub-33)における[CSS Style Sheets - Prefixed properties](https://www.w3.org/TR/epub-33/#sec-css-prefixed) で定義されているすべての接頭辞付きプロパティをサポートすべきである（SHOULD）。
+> - （後略）
 
-とはいえ、試行錯誤の時代は過ぎ去り縦書き用のプロパティはすっかり安定した。そこでEPUB 3.3では[§6.3.1.3 Prefixed properties](https://www.w3.org/TR/epub-33/#sec-css-prefixed)として、「EPUB制作者は接頭辞なしのプロパティを使用するべきで、リーディングシステム（EPUBリーダー）は現行のCSS仕様をサポートするべき」とされ、また「Working Groupは、EPUBの次のメジャーバージョンでこれらの接頭辞付きプロパティをサポートする見込みがないため、現在これらの接頭辞付きプロパティを使用しているEPUB制作者は、サポートが可能になり次第、接頭辞なしバージョンに移行することを推奨する」とある。
+このように、EPUB 3.3に適合しようとするEPUBリーダーは、“CSS Snapshot” のうち「1. CSSの公式的な定義に含まれるCSSモジュール」をサポートしなければならないと規定された。では、**現在日本国内で利用されているEPUBリーダーは、“CSS Snapshot” をどのくらいサポートしているのだろう？**
 
-つまりEPUB 3.3になって、接頭辞なしのプロパティを使うよう推奨された。では、**現在使われているEPUBリーダーは、`-epub-`接頭辞付きプロパティなしで表示できるのだろうか？**
+もうひとつ、前掲[6.3 Cascading Style Sheets (CSS)](https://www.w3.org/TR/epub-rs-33/#sec-css)に、旧仕様（[EPUB 1.0.1](https://imagedrive.github.io/spec/epub301-contentdocs.xhtml)）で許されていた`-epub-`接頭辞付きのCSSプロパティは、EPUB 3.3でも後方互換性のために残されている。ここでいう`-epub-`接頭辞とは、[CSS レベル2.1で規定されているCSSプロパティを独自に拡張する構文](https://www.w3.org/TR/CSS2/syndata.html#vendor-keywords)のひとつだ。プロパティ冒頭に付ける接頭辞をベンダーが独自に定義することから「ベンダー接頭辞」とも呼ばれる。EPUB 3.0仕様の策定時（2011年）のCSS仕様では、まだ縦書き用プロパティなどはドラフト仕様でしかなかった。そこでEPUB 3でこれらのプロパティを利用するための接頭辞が定められた。それが`-epub-`接頭辞だ。
 
-これらのことを実際にテストすることによって、現在使われているEPUBリーダーが最新のEPUB 3.3が要求するCSSにどの程度対応しているかが分かるはずだ。
+その後、試行錯誤の時代は過ぎ、縦書き用のプロパティはすっかり安定、普及した。そこでEPUB 3.3では、[6.3.1.3 Prefixed properties](https://www.w3.org/TR/epub-33/#sec-css-prefixed)において、以下のようなCAUTION（注意書き）をつけている。
 
-テストの方法をもう少し詳しく説明しよう。前記 “CSS Snapshot” にある3段階に加え、そこに載っていないが最新のメジャーなブラウザーで利用できるCSSモジュールを加え、全部で4段階の規準を設定することにした。
+> EPUB creators should use unprefixed properties and reading systems should support current CSS specifications. 
+> 
+> （中略）
+> 
+> The Working Group recommends that EPUB creators currently using these prefixed properties move to unprefixed versions as soon as support allows, as the Working Group does not anticipate supporting them in the next major version of EPUB.
+> 和訳：EPUB制作者は接頭辞なしのプロパティを使用するべきで、リーディングシステム（EPUBリーダー）は現行のCSS仕様をサポートするべきである。
+> 
+> （中略）
+> 
+> Working Groupは、EPUBの次のメジャーバージョンでこれらの接頭辞付きプロパティをサポートする見込みがないため、現在これらの接頭辞付きプロパティを使用しているEPUB制作者は、サポートが可能になり次第、接頭辞なしバージョンに移行することを推奨する。
 
-ただし、“CSS Snapshot” に規定されたCSSモジュールの中には、あまりに基礎的な仕様であったり、EPUBでの利用をあまり想定できないものもある。大事なことは「EPUBリーダーでテストする意味があるか」だろう。そこでそうしたCSSモジュールを外して、以下のようにテスト項目を選定した（テスト項目の具体的な内容は次項を参照）。
+つまり、縦書き用のプロパティの接頭辞は用済みになったので、EPUB制作者は接頭辞なしで縦書き用プロパティを書くことが推奨されている。では、**現在使われているEPUBリーダーは、　本当に`-epub-`接頭辞なしで表示できるのだろう？**　
+
+以上2つについて、私達は調べてみることにしたのである。テストの方法をもう少し詳しく説明しよう。前記 “CSS Snapshot” にある3段階に加え、それには漏れているが最新のメジャーなブラウザーで利用できるCSSモジュールを加え、全部で4段階の規準を設定することにした。
+
+ただし、“CSS Snapshot” に規定されたCSSモジュールの中には、あまりに基礎的な仕様であったり、EPUBでの利用をあまり想定できないものもある。大事なことは「EPUBリーダーでテストする意味があるか」だろう。そこでそうしたCSSモジュールを外して、以下のようにテスト項目を選定した（具体的な内容は次項を参照）。
 
 - CSSの公式的な定義に含まれるCSSモジュール：**82項目**
 - かなり安定しているが実装経験が限定的なCSSモジュール：**25項目**
@@ -71,7 +98,7 @@ lang: 'ja'
 
 ところが実際に調査結果をまとめる段階になると、あまりにテスト項目が多すぎて報告書に収まりきらないことが判明した。やむなく本章ではEPUB 3.3で利用できることが求められているモジュール（前述「1. CSSの公式的な定義に含まれるCSSモジュール」）に絞って結果を掲載することにする。
 
-これも前項で述べたことだが、本章では “CSS Snapshot” で規定されているCSSモジュールから、EPUBリーダーでテストして意味があるかどうかを勘案して絞り込んでいる。たとえば、「1. CSSの公式的な定義に含まれるCSSモジュール」は24のCSSモジュールが規定されているが、本章ではそのうちの17のCSSモジュールに絞っている。ここで除外したCSSモジュールは以下のようなものだ。
+これも前項で述べたことだが、本章では “CSS Snapshot” で規定されているCSSモジュールから、EPUBリーダーでテストして意味があるかどうかを勘案して絞り込んでいる。たとえば、「1. CSSの公式的な定義に含まれるCSSモジュール」は24のCSSモジュールが規定されているが、本章ではそのうちの17のCSSモジュールに絞った。ここで除外したCSSモジュールは以下のようなものだ。
 
 - [CSS Level 2, latest revision](https://www.w3.org/TR/CSS2/) (including errata)
 - [CSS Syntax Level 3](https://www.w3.org/TR/css-syntax-3/)
@@ -167,11 +194,11 @@ lang: 'ja'
 
 ### 2-1-3 本調査におけるテスト環境の一覧
 
-今回の調査でテストしたEPUBリーダーの数は、全部で54にのぼる。そのうち、テスト結果を掲載したリーダーは36だ。その明細を<a href="#2-1-3-1-掲載したテスト環境の一覧">2-1-3-1 掲載したテスト環境の一覧</a>に掲げる。
+今回の調査でテストしたEPUBリーダーの数は、テスト環境の違いも入れると、全部で56にのぼる。そのうち、テスト結果を掲載したものは38だ。その明細を<a href="#2-1-3-1-掲載したテスト環境の一覧">2-1-3-1 掲載したテスト環境の一覧</a>に掲げる。
 
-他方、残りの18は掲載していない。その理由は一部テストファイルの不具合が判明し部分的に更新したことに伴い、それ以前のテスト結果は不正確であることが判明したので掲載をやめたものだ。この不具合については<a href="#2-2-4-メジャーなepubリーダーでサポートされるcssモジュール">2-2-4</a>で詳述することにして、それらリーダーの明細を<a href="#2-1-3-2-掲載しなかったテスト環境の一覧">2-1-3-2 掲載しなかったテスト環境の一覧</a>に掲げる。
+他方、残りの18は掲載していない。その理由は一部テストファイルの不具合が判明し部分的に更新したことに伴い、それ以前のテスト結果は不正確なものが含まれることが判明したので掲載をやめたものだ。この不具合については<a href="#2-2-3-メジャーなepubリーダーでサポートされるcssモジュール">2-2-3</a>で詳述することにして、それらリーダーの明細を<a href="#2-1-3-2-掲載しなかったテスト環境の一覧">2-1-3-2 掲載しなかったテスト環境の一覧</a>に掲げる。
 
-なお、背景色が緑色はモダンブラウザー系、水色は独自エンジン系である。これらの分類については<a href="#2-2-1-レイアウトエンジンと本テストとの関係">2-2-1 レイアウトエンジンと本テストとの関係</a>、及び<a href="#2-2-2-mdn-web-docsの実装情報を活用">2-2-2 MDN Web Docsの実装情報を活用</a>を参照されたい。
+なお、背景色が緑色はモダンブラウザー系、水色は独自エンジン系である。これらの分類については<a href="#2-2-1-レイアウトエンジンと本テストとの関係">2-2-1 レイアウトエンジンと本テストとの関係</a>を参照されたい。
 
 #### 2-1-3-1 掲載したテスト環境の一覧
 
@@ -240,6 +267,16 @@ lang: 'ja'
       <td bgcolor="#c9daf8" align="center">2024/01/09</td>
     </tr>
     <tr>
+      <td bgcolor="#c9daf8" align="center">iPhone用のKindle *¹</td>
+      <td bgcolor="#c9daf8" align="center">Kindle</td>
+      <td bgcolor="#c9daf8" align="center">iOS<br/>アプリ</td>
+      <td bgcolor="#c9daf8" align="center">iPhone13mini</td>
+      <td bgcolor="#c9daf8" align="center">iOS 17.2.1</td>
+      <td bgcolor="#c9daf8" align="center">7.1</td>
+      <td bgcolor="#c9daf8" align="center">古門</td>
+      <td bgcolor="#c9daf8" align="center">2024/1/21</td>
+    </tr>
+    <tr>
       <td bgcolor="#c9daf8" align="center">Kinoppy for iOS *¹</td>
       <td bgcolor="#c9daf8" align="center">Kinoppy</td>
       <td bgcolor="#c9daf8" align="center">iPadアプリ</td>
@@ -261,7 +298,7 @@ lang: 'ja'
     </tr>
     <tr>
       <td bgcolor="#d9ead3" align="center">楽天Koboアプリ for iPhone *¹</td>
-      <td bgcolor="#d9ead3" align="center">kobo-1</td>
+      <td bgcolor="#d9ead3" align="center">kobo-mobile</td>
       <td bgcolor="#d9ead3" align="center">iOSアプリ</td>
       <td bgcolor="#d9ead3" align="center">iPhone 13 mini</td>
       <td bgcolor="#d9ead3" align="center">iOS17.2.1</td>
@@ -271,7 +308,7 @@ lang: 'ja'
     </tr>
     <tr>
       <td bgcolor="#d9ead3" align="center">楽天Koboアプリ for Android</td>
-      <td bgcolor="#d9ead3" align="center">kobo-2</td>
+      <td bgcolor="#d9ead3" align="center">kobo-mobile</td>
       <td bgcolor="#d9ead3" align="center">Android<br/>アプリ</td>
       <td bgcolor="#d9ead3" align="center">Galaxy Tab S8 Ultra</td>
       <td bgcolor="#d9ead3" align="center">Android　13</td>
@@ -281,7 +318,7 @@ lang: 'ja'
     </tr>
     <tr>
       <td bgcolor="#c9daf8" align="center">Kobo Libra 2</td>
-      <td bgcolor="#c9daf8" align="center">kobo-3</td>
+      <td bgcolor="#c9daf8" align="center">kobo-other</td>
       <td bgcolor="#c9daf8" align="center">専用<br/>タブレット</td>
       <td bgcolor="#c9daf8" align="center">リーダーと同</td>
       <td bgcolor="#c9daf8" align="center">4.38.21908 (fac580f37d, 2023/08/22)</td>
@@ -291,7 +328,7 @@ lang: 'ja'
     </tr>
     <tr>
       <td bgcolor="#c9daf8" align="center">楽天Koboデスクトップ</td>
-      <td bgcolor="#c9daf8" align="center">kobo-3</td>
+      <td bgcolor="#c9daf8" align="center">kobo-other</td>
       <td bgcolor="#c9daf8" align="center">Windows<br/>アプリ</td>
       <td bgcolor="#c9daf8" align="center">N/A *⁶</td>
       <td bgcolor="#c9daf8" align="center">Windows 10 Pro (22H2　19045.3208)</td>
@@ -301,7 +338,7 @@ lang: 'ja'
     </tr>
     <tr>
       <td bgcolor="#c9daf8" align="center">楽天Koboデスクトップ</td>
-      <td bgcolor="#c9daf8" align="center">kobo-3</td>
+      <td bgcolor="#c9daf8" align="center">kobo-other</td>
       <td bgcolor="#c9daf8" align="center">Macアプリ</td>
       <td bgcolor="#c9daf8" align="center">MacBook (Retina, 12-12inch, Early 2016)</td>
       <td bgcolor="#c9daf8" align="center">macOS 12.6.6</td>
@@ -311,7 +348,7 @@ lang: 'ja'
     </tr>
     <tr>
       <td bgcolor="#c9daf8" align="center">楽天Koboデスクトップ *¹</td>
-      <td bgcolor="#c9daf8" align="center">kobo-3</td>
+      <td bgcolor="#c9daf8" align="center">kobo-other</td>
       <td bgcolor="#c9daf8" align="center">Macアプリ</td>
       <td bgcolor="#c9daf8" align="center">MacBook (Retina, 12-12inch, Early 2016)</td>
       <td bgcolor="#c9daf8" align="center">macOS 12.7.2</td>
@@ -333,7 +370,7 @@ lang: 'ja'
       <td bgcolor="#d9ead3" align="center">ブック</td>
       <td bgcolor="#d9ead3" align="center">→</td>
       <td bgcolor="#d9ead3" align="center" valign="top">Macアプリ</td>
-      <td bgcolor="#d9ead3" align="center">MacBookAir M2 2022</td>
+      <td bgcolor="#d9ead3" align="center">MacBookAir M2 2023</td>
       <td bgcolor="#d9ead3" align="center">macOS 13.6.3 (22G436)</td>
       <td bgcolor="#d9ead3" align="center">5.2 (5800.52)</td>
       <td bgcolor="#d9ead3" align="center">小形</td>
@@ -363,7 +400,7 @@ lang: 'ja'
       <td bgcolor="#d9ead3" align="center">ブック</td>
       <td bgcolor="#d9ead3" align="center">→</td>
       <td bgcolor="#d9ead3" align="center">Macアプリ</td>
-      <td bgcolor="#d9ead3" align="center">MacBookAir M2 2022</td>
+      <td bgcolor="#d9ead3" align="center">MacBookAir M2 2023</td>
       <td bgcolor="#d9ead3" align="center">macOS 14.1.1（23B81）</td>
       <td bgcolor="#d9ead3" align="center">6.1</td>
       <td bgcolor="#d9ead3" align="center">小形</td>
@@ -383,7 +420,7 @@ lang: 'ja'
       <td bgcolor="#d9ead3" align="center">MURASAKI</td>
       <td bgcolor="#d9ead3" align="center">→</td>
       <td bgcolor="#d9ead3" align="center">Macアプリ</td>
-      <td bgcolor="#d9ead3" align="center">MacBookAir M2 2022</td>
+      <td bgcolor="#d9ead3" align="center">MacBookAir M2 2023</td>
       <td bgcolor="#d9ead3" align="center">macOS 13.4</td>
       <td bgcolor="#d9ead3" align="center">2.4.1</td>
       <td bgcolor="#d9ead3" align="center">小形</td>
@@ -393,7 +430,7 @@ lang: 'ja'
       <td bgcolor="#d9ead3" align="center">MURASAKI</td>
       <td bgcolor="#d9ead3" align="center">→</td>
       <td bgcolor="#d9ead3" align="center">Macアプリ</td>
-      <td bgcolor="#d9ead3" align="center">MacBookAir M2 2022</td>
+      <td bgcolor="#d9ead3" align="center">MacBookAir M2 2023</td>
       <td bgcolor="#d9ead3" align="center">macOS 14.1.1 (23B81)</td>
       <td bgcolor="#d9ead3" align="center">2.4.1</td>
       <td bgcolor="#d9ead3" align="center">小形</td>
@@ -420,7 +457,17 @@ lang: 'ja'
       <td bgcolor="#c9daf8" align="center">2024/01/24</td>
     </tr>
     <tr>
-      <td bgcolor="#d9ead3" align="center">BOOK☆WALKER</td>
+      <td bgcolor="#c9daf8" align="center">honto電子書籍リーダー *¹</td>
+      <td bgcolor="#c9daf8" align="center">honto</td>
+      <td bgcolor="#c9daf8" align="center">Androidアプリ</td>
+      <td bgcolor="#c9daf8" align="center">OPPO A55s 5G</td>
+      <td bgcolor="#c9daf8" align="center">Android 12</td>
+      <td bgcolor="#c9daf8" align="center">6.62.0</td>
+      <td bgcolor="#c9daf8" align="center">村上</td>
+      <td bgcolor="#c9daf8" align="center">2024/04/01</td>
+    </tr>
+    <tr>
+      <td bgcolor="#d9ead3" align="center">Book Walker</td>
       <td bgcolor="#d9ead3" align="center">→</td>
       <td bgcolor="#d9ead3" align="center">iOSアプリ</td>
       <td bgcolor="#d9ead3" align="center">iPhone 13 mini</td>
@@ -430,7 +477,7 @@ lang: 'ja'
       <td bgcolor="#d9ead3" align="center">2023/05/20</td>
     </tr>
     <tr>
-      <td bgcolor="#d9ead3" align="center">BOOK☆WALKER</td>
+      <td bgcolor="#d9ead3" align="center">Book Walker</td>
       <td bgcolor="#d9ead3" align="center">→</td>
       <td bgcolor="#d9ead3" align="center">Android<br/>アプリ</td>
       <td bgcolor="#d9ead3" align="center">Galaxy Tab S8 Ultra</td>
@@ -450,7 +497,7 @@ lang: 'ja'
       <td bgcolor="#c9daf8" align="center">2023/12/07</td>
     </tr>
     <tr>
-      <td bgcolor="#c9daf8" align="center">Romancer *¹</td>
+      <td bgcolor="#c9daf8" align="center">BinB *¹</td>
       <td bgcolor="#c9daf8" align="center">→</td>
       <td bgcolor="#c9daf8" align="center">Webアプリ</td>
       <td bgcolor="#c9daf8" align="center">Galaxy Tab S8 Ultra</td>
@@ -460,7 +507,7 @@ lang: 'ja'
       <td bgcolor="#c9daf8" align="center">2023/07/23</td>
     </tr>
     <tr>
-      <td bgcolor="#c9daf8" align="center">Romancer *¹</td>
+      <td bgcolor="#c9daf8" align="center">BinB *¹</td>
       <td bgcolor="#c9daf8" align="center">→</td>
       <td bgcolor="#c9daf8" align="center">Webアプリ</td>
       <td bgcolor="#c9daf8" align="center">N/A *²</td>
@@ -505,7 +552,7 @@ lang: 'ja'
       <td bgcolor="#c9daf8" align="center">Windows<br/>アプリ</td>
       <td bgcolor="#c9daf8" align="center">N/A *²</td>
       <td bgcolor="#c9daf8" align="center">Windows 10 Pro 22H2</td>
-      <td bgcolor="#c9daf8" align="center">2.3.2</td>
+      <td bgcolor="#c9daf8" align="center">2.3.1</td>
       <td bgcolor="#c9daf8" align="center">小形</td>
       <td bgcolor="#c9daf8" align="center">2024/02/13</td>
     </tr>
@@ -552,7 +599,7 @@ lang: 'ja'
   </tbody>
 </table>
 
-- 1……テストファイルepubcsstest_voyagerによるテスト
+- 1……テストファイルepubcsstest_v1aによるテスト
 - 2……自作機もあるWindows環境ではハードウェアを区別する意味はあまりないので省略
 - 3……バージョン番号を表示する機能がない
 - 4……ブラウザー上で動作するのでブラウザーのバージョン名も併記
@@ -752,154 +799,94 @@ lang: 'ja'
 
 同様にEPUBもHTML、CSSにもとづくことから、そのレイアウトエンジンとしてブラウザーのものを流用することが多い。とくに2010年代前半「電子書籍元年」に湧いていた我が国で、EPUBリーダー用レイアウトエンジンとして大歓迎されたのがAppleの[WebKit](https://webkit.org/)だった。
 
-その理由は、WebKitが2011年10月に制定された[EPUB 3.0](https://idpf.org/epub/30/spec/epub30-overview.html)に先んじて、同年7月から縦書き用CSSプロパティ`writing-mode: vertical-rl;`を実装したこと、同時に一定の条件で無料利用できるオープンソースソフトウェア（以下、OSS）なので、これを使えば開発コストを抑えると同時に、縦書きをはじめ日本語書籍に必須の機能がすぐに実装できたことが大きい。
+その理由は、WebKitが2011年10月に制定された[EPUB 3.0](https://idpf.org/epub/30/spec/epub30-overview.html)に先んじて、同年7月から縦書き用CSSプロパティ`writing-mode: vertical-rl;`を実装したこと<span class="notetext">writing-mode, ブラウザーの互換性（MDN Web Docs, Mozilla Foundation）<br/><https://developer.mozilla.org/ja/docs/Web/CSS/writing-mode></span>、同時に一定の条件で無料利用できるオープンソースソフトウェア（以下、OSS）なので、これを使えば開発コストを抑えると同時に、縦書きをはじめ日本語書籍に必須の機能がすぐに実装できたことが大きい。
 
-本稿では、現在使われている（つまりモダンな<span class="notetext">「モダン」の定義を補足すると、WebにおけるCSS仕様の使われ方が大きく変わったのは、2014年〜2016年に実装がはじまった[CSS変数（カスタムプロパティ）](https://developer.mozilla.org/ja/docs/Web/CSS/var#%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6%E3%83%BC%E3%81%AE%E4%BA%92%E6%8F%9B%E6%80%A7)だ。そこでこれが使えるかどうかを重要な指標とした。</span>）ブラウザーのレイアウトエンジンを利用したEPUBリーダーを、一括して**「モダンブラウザー系」**と呼ぶことにする。
+本稿では、現在使われている（つまりモダンな<span class="notetext">「モダン」の定義を補足すると、WebにおけるCSS仕様の使われ方が大きく変わったのは、2014年〜2016年に実装がはじまった[CSS変数（カスタムプロパティ）](https://developer.mozilla.org/ja/docs/Web/CSS/var#%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6%E3%83%BC%E3%81%AE%E4%BA%92%E6%8F%9B%E6%80%A7)だ。そこでこれが使えるかどうかを重要な指標とした。</span>）ブラウザーのレイアウトエンジンを組み込んだEPUBリーダーを、一括して**「モダンブラウザー系」**と呼ぶことにする。
 
-他方、レイアウトエンジンは中枢となるモジュールであり、これを外部から調達すれば独自機能の追加がむずかしくなるなど、開発の柔軟性を損なうデメリットが考えられる。これを嫌ってだろうか、コストをかけても独自のレイアウトエンジンを実装するEPUBリーダーも多い。本稿ではこれらを一括して**「独自エンジン系」**と呼ぶ。
+他方、レイアウトエンジンは中枢となるモジュールであり、これを外部から調達すれば独自機能の追加がむずかしくなるなど、開発の柔軟性を損なうデメリットが考えられる。それ以外にも、過去の実装との互換性など、ベンダー固有の事情により独自のレイアウトエンジンを利用するEPUBリーダーもある。またブラウザーのレイアウトエンジンを利用したものの、そのまま使ううちに「モダン」ではなくなったものもあるようだ。本稿ではこれらを一括して**「独自エンジン系」**と呼ぶことにする。
 
 ではどのようにすれば、これはモダンブラウザー系、これは独自エンジン系と判別できるのだろう。ここで、本報告書がもとづく指標 “CSS Snapshot” は、主要なブラウザーにおけるCSSモジュールの実装安定性を分類したリストであったことを思い出してほしい。
 
-つまり、現在使われているブラウザーのレイアウトエンジンであれば、 “CSS Snapshot” の中で最も実装が安定している「CSSの公式的な定義に含まれるCSSモジュール」は、問題なく表示できるはずだ。
+つまり、現在使われているブラウザーのレイアウトエンジンであれば、 “CSS Snapshot” の中で最も実装が安定している（普及している）「CSSの公式的な定義に含まれるCSSモジュール」は、問題なく表示できるはずだ。
 
-一方で、EPUBという限定的なフォーマットに特化した独自エンジン系にとって、余計なコストをかけてまで “CSS Snapshot” の規準をクリアするメリットはあまりない（あくまでEPUB 3.3が “CSS Snapshot” のサポートを規定する以前は、なのだが）。すくなくとも汎用性が求められるブラウザーのレイアウトエンジンとは、かなり異なった実装になるはずだ。
+一方で、EPUBという限定的なフォーマットに特化した独自エンジン系にとって、余計なコストをかけてまで “CSS Snapshot” の規準をクリアするメリットはあまりない（すくなくともEPUB 3.3以前では、なのだが）。汎用性が求められるブラウザーのレイアウトエンジンと比べれば、かなり異なった実装になるはずだ。
 
-つまり、“CSS Snapshot” にリストアップされたCSSモジュールを帰納法的なモノサシにして、それらの多くを表示できたEPUBリーダーがモダンブラウザー系、そうでなかったEPUBリーダーが独自エンジン系と判別できるのではないか。そのように考えて、私達はテストにとりかかったのである。
+つまり、“CSS Snapshot” にリストアップされたCSSモジュールを帰納法的なモノサシにして、それらの多くを表示できたEPUBリーダーがモダンブラウザー系、そうでなかったEPUBリーダーが独自エンジン系と判別できるのではないか。そのように考えて私達はテストにとりかかった。
 
-詳細なテスト結果は<a href="#2-2-4-メジャーなepubリーダーでサポートされるcssモジュール">2-2-4</a>以降にゆずるが、モダンブラウザー系と考えられるEPUBリーダーは、案の定「CSSの公式的な定義に含まれるCSSモジュール」のほとんどをサポートすることが分かった。いくつかサポートしていないCSSモジュールはあっても、比較的黒字のテスト結果「OK」が多いのがモダンブラウザー系の特徴と言える。
+具体的なテスト結果は<a href="#2-2-3-メジャーなepubリーダーでサポートされるcssモジュール">2-2-3</a>以降にゆずるが、モダンブラウザー系と考えられるEPUBリーダーは、案の定「CSSの公式的な定義に含まれるCSSモジュール」のほとんどをサポートすることが分かった。いくつかサポートしていないCSSモジュールはあっても、比較的黒字のテスト結果「OK」が多いのがモダンブラウザー系の特徴と言える。
 
 他方、独自エンジン系の方は「CSSの公式的な定義に含まれるCSSモジュール」の範囲に限ってもサポートするCSSモジュールはあまり多くない。赤字のテスト結果「NG」が目立つのが、独自エンジン系の特徴と言える。
 
+### 2-2-2 レイアウトエンジンの種別とCSSモジュールのグループ分け
 
-### 2-2-2 MDN Web Docsの実装情報を活用
-
-
-ただし、OKの多少だけできれいに判別できる訳ではなく、追加調査が必要なものもあった。たとえば[楽天koboのリーダー](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=396838262&range=C1:K7)に関しては、[iOS（以下、kobo-1）](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=396838262&range=D1:D153)と[Android（以下、kobo-2）](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=396838262&range=F1:F153)は同じモダンブラウザー系でありながら、それぞれ種類の異なるレイアウトエンジンを実装しており、それら以外はすべて独自のレイアウトエンジンを実装するようだ（以下、kobo-3）。つまり楽天koboのリーダーの中で、3種類のレイアウトエンジンを使い分けていると推測できる。
-
-そもそもiOSではAppleの規約によりWebKit以外のブラウザのレイアウトエンジンが使えないことが知られており、だからiOSのkobo-1はWebKitと考えられる。一方、AndroidではiOSのような規約はないものの、OSベンダーであるGoogleが供給するChrome Android（Chromium）が使われることが多い。ところが、kobo-2に関しては最新版のChrome Androidともテスト結果が違い、そうした結果の異なるCSSモジュールの実装時期を調べていくと、どうやら2020年ごろのバージョンと一致することがわかったのである。
-
-こうした調査で有用なのが、HTMLやCSS、JavaScriptのリファレンスサイトとして著名な[MDN Web Docs](https://developer.mozilla.org/ja/)（以下、MDN）である。運営しているのは黎明期からブラウザー開発を見守り、自らも[Firefox](https://www.mozilla.org/ja/firefox/)を供給するオープンソース開発団体、[Mozilla Foundation](https://foundation.mozilla.org/en/)だ。
-
-このサイトでは多種多様なブラウザーの実装情報を通時的に集積している。たとえば前の方で、WebKit（Safari）では縦書き用CSSプロパティ`writing-mode: vertical-rl;`を2011年7月に実装したと書いたが、その根拠はMDNの`writing-mode`リファレンスページにある、[ブラウザーの互換性](https://developer.mozilla.org/ja/docs/Web/CSS/writing-mode#%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6%E3%83%BC%E3%81%AE%E4%BA%92%E6%8F%9B%E6%80%A7)だ。表の中の「Safari」をクリックすると、2011年7月20日にリリースされたバージョン10.1において、ベンダー接頭辞`-webkit-`により実装されたと表示される（図1）。<span class="notetext">「ブラウザーの互換性」で表示される実装情報用のテスト制作とその実施は、オープンソースプロジェクト[@mdn/browser-compat-data](https://github.com/mdn/browser-compat-data)（略称、BCD）が担当している。詳細はREADMEを参照。</span>
-
-<figure style="text-align: center;">
-  <img src="img/chap2/fig-1.png" alt="writing-modeの「ブラウザーの互換性」（MDN）" width="364">
-  <figcaption>図1 writing-modeの「ブラウザーの互換性」（MDN）</figcaption>
-</figure>
-
-本題に戻ろう。では、こうしたMDNのどんな情報から、kobo-2のレイアウトエンジンが2020年ごろのChrome Androidと推測できるのだろう。
-
-[kobo-2における「CSSの公式的な定義に含まれるCSSモジュール」のテスト結果](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=396838262&range=F1:F120)のうち、NGとなったCSSモジュールを抜き出し、それらをChrome Androidで実装された順に並べてみたのが以下のリストだ。
-
-- [段組 2段組`column-count` | 2016-04-13](https://developer.mozilla.org/ja/docs/Web/CSS/column-count#%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6%E3%83%BC%E3%81%AE%E4%BA%92%E6%8F%9B%E6%80%A7)
-- [プロパティの値 `revert` | 2020-07-27](https://developer.mozilla.org/ja/docs/Web/CSS/revert#%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6%E3%83%BC%E3%81%AE%E4%BA%92%E6%8F%9B%E6%80%A7)（図2）
-- [`hwb()` 関数 | 2022-04-26](https://developer.mozilla.org/ja/docs/Web/CSS/color_value/hwb#%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6%E3%83%BC%E3%81%AE%E4%BA%92%E6%8F%9B%E6%80%A7)
-- [`@counter-style` ルール | 2021-05-25](https://developer.mozilla.org/ja/docs/Web/CSS/@counter-style#%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6%E3%83%BC%E3%81%AE%E4%BA%92%E6%8F%9B%E6%80%A7)
-- [定義済みカウンタースタイル `cjk-decimal` | 2021-05-25](https://developer.mozilla.org/ja/docs/Web/CSS/list-style-type#%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6%E3%83%BC%E3%81%AE%E4%BA%92%E6%8F%9B%E6%80%A7)
-- [定義済みカウンタースタイル `japanese-informal` | 2021-05-25](https://developer.mozilla.org/ja/docs/Web/CSS/list-style-type#%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6%E3%83%BC%E3%81%AE%E4%BA%92%E6%8F%9B%E6%80%A7)
-
-<figure style="text-align: center;">
-  <img src="img/chap2/fig-2.png" alt="revertの「ブラウザーの互換性」（MDN）" width="380">
-  <figcaption>図2 revertの「ブラウザーの互換性」（MDN）</figcaption>
-</figure>
-
-いったん「段組 2段組`column-count`」を除外すると、2020年7月27日に実装された「プロパティの値 `revert`」を先頭に昇順で並ぶことが分かると思う。kobo-2が2020年頃のChrome Androidを実装したとすれば、この時よりも後に実装されたCSSモジュールなど知るすべもないのだから、これらがすべて「NG」になるのは当然の結果と言える。
-
-逆に「OK」だったCSSモジュールの実装時期もいくつか見ておこう。すべて2020年よりも前に実装されていることが分かる。
-
-- [Flexboxによる上下中央揃え `flex` | 2013-08-21](https://developer.mozilla.org/ja/docs/Web/CSS/flex#%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6%E3%83%BC%E3%81%AE%E4%BA%92%E6%8F%9B%E6%80%A7)
-- [CSS変数（カスタムプロパティ）`var()` | 2016-03-09](https://developer.mozilla.org/ja/docs/Web/CSS/var#%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6%E3%83%BC%E3%81%AE%E4%BA%92%E6%8F%9B%E6%80%A7)
-- [Gridレイアウトによる上下中央揃え `grid` | 2017-03-16](https://developer.mozilla.org/ja/docs/Web/CSS/grid#%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6%E3%83%BC%E3%81%AE%E4%BA%92%E6%8F%9B%E6%80%A7)
-
-整合しないのは「段組 2段組`column-count`」が2020年よりも前に実装されていたのにテスト結果が「NG」だったことだが、レイアウトエンジンを外部調達する場合でも、そのまま使うとは限らない。ベンダー特有のなんらかの事情により元からある機能を無効にするなどの調整をする可能性がある。たとえば、スマートフォンの小さな画面で段組が効くとかえって読みにくいために無効にされ、それで「NG」になった等の推測ができる。
-
-このように、実装時期という「足跡」を辿ることで、レイアウトエンジンの種別を特定することができる。もっとも、ここまで述べたような分析によっても、まだ分別できないEPUBリーダーもあった。たとえば、超縦書はレイアウトエンジンにChromeのOSS版、[Chromium](https://www.chromium.org/chromium-projects/)を採用している<span class="notetext">EPUBビューア「超縦書」Windows版 よくある質問（BPS株式会社、baba、2017年6月）<https://techracho.bpsinc.jp/baba/2017_06_30/42515></span>。しかしテスト結果をみると、現在使われているブラウザーでは安定的に実装されている「Flexboxによる上下中央揃え」はサポートしているものの、同じく「[CSS変数](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=1234705026&range=G43:H43)」や「[Grid Layout](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=1234705026&range=G124)」はサポートしていない。そこで超縦書のプロパティを調べてみると、2017年7月3日に更新されている（図1）。
-
-<div class="figure-right">
-
-![図3 超縦書のプロパティ](img/chap2/fig-3.png){width=240}
-
-</div>
-
-さらにプログラムのフォルダ内を見ると、Qt5というフレームワークのライブラリがある。このうちQt5Core.dllのバージョン（5.6.1）とChromiumのバージョンには対応関係があることが知られており、ここから超縦書で使われたChromiumのバージョンは2015年9月にリリースされた45.0.2554.101と推測できる。<span class="notetext">Qt5とChromiumのバージョン対応については以下を参照。<br/>https://wiki.qt.io/QtWebEngine/ChromiumVersions<br/>また、Chrome 45のリリース日については以下を参照。<br/>https://chrome.softwaredownload.co.in/chrome-45-0-2454</span>
-
-実際にはChromiumをカスタマイズしている可能性があるので必ずしもChrome 45とは限らない。しかし、現行バージョンのタイムスタンプが2017年7月3日であることから、Chromiumはそこからさらにさかのぼることは確かだろう。
-
-このことから、超縦書はかなり古いレイアウトエンジンを実装したまま現在までアップデートしていないと推測できる。これだけ古いと「モダン」の要件からはずれるだろう。そこで、超縦書はブラウザーのレイアウトエンジンを利用しているが、独自エンジン系に分類することにした。
-
-### 2-2-3 レイアウトエンジンの種別とCSSモジュールのグループ分け
-
-ここまでの分析を踏まえて、レイアウトエンジンの種別ごとに<a href="#2-1-3-1-掲載したテスト環境の一覧">2-1-3-1</a>の「略称」を振り分けたのが表1である。
+ここまでの分析を踏まえて、レイアウトエンジンの種別ごとに<a href="#2-1-3-1-掲載したテスト環境の一覧">2-1-3-1</a>の「略称」を振り分けたのが**表1**である。
 
 <div style=margin-top:24.5Q class="float-table">
   <table>
+    <caption><strong>表1 </strong>レイアウトエンジンの種別</caption>
     <tr>
       <td style="margin-top:24.5Q;" bgcolor="#d9d9d9" align="center">モダンブラウザー系</td>
       <td bgcolor="#d9d9d9" align="center">独自エンジン系</td>
     </tr>
     <tr>
-      <td bgcolor="#d9ead3" align="center">kobo-1</td>
+      <td bgcolor="#d9ead3" align="center">kobo-mobile</td>
       <td bgcolor="#c9daf8" align="center">Kindle</td>
     </tr>
     <tr>
-      <td bgcolor="#d9ead3" align="center">kobo-2</td>
-      <td bgcolor="#c9daf8" align="center">kobo-3</td>
-    </tr>
-    <tr>
       <td bgcolor="#d9ead3" align="center">ブック</td>
-      <td bgcolor="#c9daf8" align="center">honto</td>
+      <td bgcolor="#c9daf8" align="center">kobo-other</td>
     </tr>
     <tr>
       <td bgcolor="#d9ead3" align="center">MURASAKI</td>
+      <td bgcolor="#c9daf8" align="center">honto</td>
+    </tr>
+    <tr>
+      <td bgcolor="#d9ead3" align="center">Book Walker</td>
       <td bgcolor="#c9daf8" align="center">Kinoppy</td>
     </tr>
     <tr>
-      <td bgcolor="#d9ead3" align="center">BOOK☆WALKER</td>
-      <td bgcolor="#c9daf8" align="center">Romancer</td>
-    </tr>
-    <tr>
       <td bgcolor="#d9ead3" align="center">Bibi</td>
-      <td bgcolor="#c9daf8" align="center">超縦書</td>
+      <td bgcolor="#c9daf8" align="center">BinB</td>
     </tr>
     <tr>
       <td bgcolor="#d9ead3" align="center">Vivliostyle Viewer</td>
-      <td bgcolor="#FFFFFF" align="center"></td>
+      <td bgcolor="#c9daf8" align="center">超縦書</td>
     </tr>
     <tr>
       <td bgcolor="#d9ead3" align="center">Thorium Reader</td>
       <td bgcolor="#FFFFFF" align="center"></td>
     </tr>
-    <caption>表1 レイアウトエンジンの種別</caption>
   </table>
 </div>
 
-その上で
-「CSSの公式的な定義に含まれるCSSモジュール」を、サポートするEPUBリーダーの多少によって以下の2つのグループに分けて、テスト結果を掲載することにする。
+その上で、
+「CSSの公式的な定義に含まれるCSSモジュール」を、サポートするEPUBリーダーの数によって以下の2つのグループに分け、テスト結果を掲載する。
 
-1. <a href="#2-2-4-メジャーなepubリーダーでサポートされるcssモジュール">2-2-4 メジャーなEPUBリーダーでサポートされるCSSモジュール</a>
-2. <a href="#2-2-5-おもにモダンブラウザー系でサポートされるcssモジュール">2-2-5 おもにモダンブラウザー系でサポートされるCSSモジュール</a>
+1. <a href="#2-2-3-メジャーなepubリーダーでサポートされるcssモジュール">2-2-3 メジャーなEPUBリーダーでサポートされるCSSモジュール</a>
+2. <a href="#2-2-4-おもにモダンブラウザー系でサポートされるcssモジュール">2-2-4 おもにモダンブラウザー系でサポートされるCSSモジュール</a>
 
-1はモダンブラウザー系はもちろん、独自エンジン系のいくつかを含めてもサポートするEPUBリーダーがとくに多かったCSSモジュールであり、2はそれ以外の「CSSの公式的な定義に含まれるCSSモジュール」である。では、次項以降でテスト結果を述べていくことにしよう。
+1はモダンブラウザー系はもちろん、独自エンジン系のいくつかを含めてもサポートするEPUBリーダーがとくに多かったCSSモジュールであり、2はそれ以外の「CSSの公式的な定義に含まれるCSSモジュール」である。では、次項以降でテスト結果を述べていこう。
 
-### 2-2-4 メジャーなEPUBリーダーでサポートされるCSSモジュール
 
-この項で報告するのは、6つのCSSモジュールにわたる28項目のテスト結果である（全82項目の約34%）。ここで言う「メジャーなEPUBリーダー」の定義については前項でも説明したが、要は「ほとんどの」ということだ。言い換えると、このクループは「ほとんどのEPUBリーダーでサポートされるCSSモジュール」である。ではテスト結果をまとめた表をご覧いただきたい。
+### 2-2-3 メジャーなEPUBリーダーでサポートされるCSSモジュール
+
+この項で報告するのは、6つのCSSモジュールにわたる28項目のテスト結果である（全82項目の約34%）。ここで言う「メジャーなEPUBリーダー」の定義については前項でも説明したが、要は「ほとんどの」ということだ。言い換えると、このクループは「ほとんどのEPUBリーダーでサポートされるCSSモジュール」である。ではテスト結果をまとめた**表2**をご覧いただきたい。
 
 <div style=margin-top:24.5Q>
 <table>
+  <caption><strong>表2 </strong>メジャーなEPUBリーダーでサポートされるCSSモジュール</caption>
   <thead>
     <tr>
       <td style="color:#434343" align="right"></td>
       <td style="writing-mode: vertical-lr" bgcolor="#c9daf8" align="center">Kindle</td>
-      <td style="writing-mode: vertical-lr" bgcolor="#d9ead3" align="center">kobo-1</td>
-      <td style="writing-mode: vertical-lr" bgcolor="#d9ead3" align="center">kobo-2</td>
-      <td style="writing-mode: vertical-lr" bgcolor="#c9daf8" align="center">kobo-3</td>
+      <td style="writing-mode: vertical-lr" bgcolor="#d9ead3" align="center">kobo-mobile</td>
+      <td style="writing-mode: vertical-lr" bgcolor="#c9daf8" align="center">kobo-other</td>
       <td style="writing-mode: vertical-lr" bgcolor="#d9ead3" align="center">ブック</td>
       <td style="writing-mode: vertical-lr" bgcolor="#d9ead3" align="center">MURASAKI</td>
       <td style="writing-mode: vertical-lr" bgcolor="#c9daf8" align="center">honto</td>
-      <td style="writing-mode: vertical-lr" bgcolor="#d9ead3" align="center">BOOK☆ WALKER</td>
+      <td style="writing-mode: vertical-lr" bgcolor="#d9ead3" align="center">Book Walker</td>
       <td style="writing-mode: vertical-lr" bgcolor="#c9daf8" align="center">Kinoppy</td>
-      <td style="writing-mode: vertical-lr" bgcolor="#c9daf8" align="center">Romancer</td>
+      <td style="writing-mode: vertical-lr" bgcolor="#c9daf8" align="center">BinB</td>
       <td style="writing-mode: vertical-lr" bgcolor="#d9ead3" align="center">Bibi</td>
       <td style="writing-mode: vertical-lr" bgcolor="#c9daf8" align="center">超縦書</td>
       <td style="writing-mode: vertical-lr" bgcolor="#d9ead3" align="center">Vivliostyle</td>
@@ -922,17 +909,15 @@ lang: 'ja'
       <td valign="bottom"></td>
       <td valign="bottom"></td>
       <td valign="bottom"></td>
-      <td valign="bottom"></td>
     </tr>
     <tr>
       <td>部分文字列マッチング属性セレクタ [att^=val]</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
+      <td align="center">OK</td>
+      <td align="center">OK</td>
       <td style="color:#ea4335" align="center">NG</td>
-      <td align="center">OK</td>
-      <td align="center">OK</td>
-      <td align="center">OK</td>
       <td align="center">OK</td>
       <td style="color:#ea4335" align="center">NG</td>
       <td style="color:#ea4335" align="center">NG</td>
@@ -948,8 +933,7 @@ lang: 'ja'
       <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
-      <td align="center">OK</td>
-      <td align="center">OK</td>
+      <td style="color:#ea4335" align="center">NG</td>
       <td align="center">OK</td>
       <td style="color:#ea4335" align="center">NG</td>
       <td style="color:#ea4335" align="center">NG</td>
@@ -965,8 +949,7 @@ lang: 'ja'
       <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
-      <td align="center">OK</td>
-      <td align="center">OK</td>
+      <td style="color:#ea4335" align="center">NG</td>
       <td align="center">OK</td>
       <td style="color:#ea4335" align="center">NG</td>
       <td style="color:#ea4335" align="center">NG</td>
@@ -982,8 +965,7 @@ lang: 'ja'
       <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
-      <td align="center">OK</td>
-      <td align="center">OK</td>
+      <td style="color:#ea4335" align="center">NG</td>
       <td align="center">OK</td>
       <td style="color:#ea4335" align="center">NG</td>
       <td style="color:#ea4335" align="center">NG</td>
@@ -999,8 +981,7 @@ lang: 'ja'
       <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
-      <td align="center">OK</td>
-      <td align="center">OK</td>
+      <td style="color:#ea4335" align="center">NG</td>
       <td align="center">OK</td>
       <td style="color:#ea4335" align="center">NG</td>
       <td style="color:#ea4335" align="center">NG</td>
@@ -1016,8 +997,7 @@ lang: 'ja'
       <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
-      <td align="center">OK</td>
-      <td align="center">OK</td>
+      <td style="color:#ea4335" align="center">NG</td>
       <td align="center">OK</td>
       <td style="color:#ea4335" align="center">NG</td>
       <td style="color:#ea4335" align="center">NG</td>
@@ -1033,8 +1013,7 @@ lang: 'ja'
       <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
-      <td align="center">OK</td>
-      <td align="center">OK</td>
+      <td style="color:#ea4335" align="center">NG</td>
       <td align="center">OK</td>
       <td style="color:#ea4335" align="center">NG</td>
       <td style="color:#ea4335" align="center">NG</td>
@@ -1050,8 +1029,7 @@ lang: 'ja'
       <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
-      <td align="center">OK</td>
-      <td align="center">OK</td>
+      <td style="color:#ea4335" align="center">NG</td>
       <td align="center">OK</td>
       <td style="color:#ea4335" align="center">NG</td>
       <td style="color:#ea4335" align="center">NG</td>
@@ -1067,8 +1045,7 @@ lang: 'ja'
       <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
-      <td align="center">OK</td>
-      <td align="center">OK</td>
+      <td style="color:#ea4335" align="center">NG</td>
       <td align="center">OK</td>
       <td style="color:#ea4335" align="center">NG</td>
       <td style="color:#ea4335" align="center">NG</td>
@@ -1084,8 +1061,7 @@ lang: 'ja'
       <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
-      <td align="center">OK</td>
-      <td align="center">OK</td>
+      <td style="color:#ea4335" align="center">NG</td>
       <td align="center">OK</td>
       <td style="color:#ea4335" align="center">NG</td>
       <td style="color:#ea4335" align="center">NG</td>
@@ -1101,8 +1077,7 @@ lang: 'ja'
       <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
-      <td align="center">OK</td>
-      <td align="center">OK</td>
+      <td style="color:#ea4335" align="center">NG</td>
       <td align="center">OK</td>
       <td style="color:#ea4335" align="center">NG</td>
       <td style="color:#ea4335" align="center">NG</td>
@@ -1118,8 +1093,7 @@ lang: 'ja'
       <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
-      <td align="center">OK</td>
-      <td align="center">OK</td>
+      <td style="color:#ea4335" align="center">NG</td>
       <td align="center">OK</td>
       <td style="color:#ea4335" align="center">NG</td>
       <td style="color:#ea4335" align="center">NG</td>
@@ -1135,8 +1109,7 @@ lang: 'ja'
       <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
-      <td align="center">OK</td>
-      <td align="center">OK</td>
+      <td style="color:#ea4335" align="center">NG</td>
       <td align="center">OK</td>
       <td style="color:#ea4335" align="center">NG</td>
       <td style="color:#ea4335" align="center">NG</td>
@@ -1152,8 +1125,7 @@ lang: 'ja'
       <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
-      <td align="center">OK</td>
-      <td align="center">OK</td>
+      <td style="color:#ea4335" align="center">NG</td>
       <td align="center">OK</td>
       <td style="color:#ea4335" align="center">NG</td>
       <td style="color:#ea4335" align="center">NG</td>
@@ -1169,8 +1141,7 @@ lang: 'ja'
       <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
-      <td align="center">OK</td>
-      <td align="center">OK</td>
+      <td style="color:#ea4335" align="center">NG</td>
       <td align="center">OK</td>
       <td style="color:#ea4335" align="center">NG</td>
       <td style="color:#ea4335" align="center">NG</td>
@@ -1186,8 +1157,7 @@ lang: 'ja'
       <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
-      <td align="center">OK</td>
-      <td align="center">OK</td>
+      <td style="color:#ea4335" align="center">NG</td>
       <td align="center">OK</td>
       <td style="color:#ea4335" align="center">NG</td>
       <td style="color:#ea4335" align="center">NG</td>
@@ -1203,8 +1173,7 @@ lang: 'ja'
       <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
-      <td align="center">OK</td>
-      <td align="center">OK</td>
+      <td style="color:#ea4335" align="center">NG</td>
       <td align="center">OK</td>
       <td style="color:#ea4335" align="center">NG</td>
       <td style="color:#ea4335" align="center">NG</td>
@@ -1215,7 +1184,6 @@ lang: 'ja'
     </tr>
     <tr>
       <td>::before 擬似要素</td>
-      <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
@@ -1237,7 +1205,6 @@ lang: 'ja'
       <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
-      <td align="center">OK</td>
       <td style="color:#ea4335" align="center">NG</td>
       <td align="center">OK</td>
       <td style="color:#ea4335" align="center">NG</td>
@@ -1254,8 +1221,7 @@ lang: 'ja'
       <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
-      <td align="center">OK</td>
-      <td align="center">OK</td>
+      <td style="color:#ea4335" align="center">NG</td>
       <td align="center">OK</td>
       <td style="color:#ea4335" align="center">NG</td>
       <td style="color:#ea4335" align="center">NG</td>
@@ -1279,11 +1245,9 @@ lang: 'ja'
       <td align="center"></td>
       <td align="center"></td>
       <td align="center"></td>
-      <td align="center"></td>
     </tr>
     <tr>
       <td valign="bottom">プロパティの値 initial</td>
-      <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
@@ -1312,11 +1276,9 @@ lang: 'ja'
       <td align="center"></td>
       <td align="center"></td>
       <td align="center"></td>
-      <td align="center"></td>
     </tr>
     <tr>
       <td valign="bottom">長さの単位 rem</td>
-      <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
@@ -1346,11 +1308,9 @@ lang: 'ja'
       <td align="center"></td>
       <td align="center"></td>
       <td align="center"></td>
-      <td align="center"></td>
     </tr>
     <tr>
       <td valign="bottom">border-radius プロパティ</td>
-      <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
@@ -1371,9 +1331,8 @@ lang: 'ja'
       <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
-      <td align="center">OK</td>
       <td style="color:#ea4335" align="center">NG</td>
-      <td align="center">OK</td>
+      <td style="color:#ea4335" align="center">NG</td>
       <td align="center">OK</td>
       <td style="color:#ea4335" align="center">NG</td>
       <td style="color:#ea4335" align="center">NG</td>
@@ -1397,7 +1356,6 @@ lang: 'ja'
       <td align="center"></td>
       <td align="center"></td>
       <td align="center"></td>
-      <td align="center"></td>
     </tr>
     <tr>
       <td valign="bottom">outline プロパティ</td>
@@ -1406,19 +1364,17 @@ lang: 'ja'
       <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
-      <td align="center">OK</td>
       <td style="color:#ea4335" align="center">NG</td>
       <td align="center">OK</td>
       <td style="color:#ea4335" align="center">NG</td>
       <td style="color:#ea4335" align="center">NG</td>
-      <td bgcolor="#f3f3f3" align="center">OK / NG *¹</td>
+      <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
     </tr>
     <tr>
       <th valign="bottom">CSS Counter Styles Level 3</th>
-      <td align="center"></td>
       <td align="center"></td>
       <td align="center"></td>
       <td align="center"></td>
@@ -1440,19 +1396,17 @@ lang: 'ja'
       <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
-      <td align="center">OK</td>
       <td style="color:#ea4335" align="center">NG</td>
       <td align="center">OK</td>
       <td style="color:#ea4335" align="center">NG</td>
       <td style="color:#ea4335" align="center">NG</td>
-      <td bgcolor="#f3f3f3" align="center">OK *²</td>
+      <td bgcolor="#f3f3f3" align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
     </tr>
     <tr>
       <td valign="bottom">定義済みカウンタースタイル katakana</td>
-      <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
@@ -1476,7 +1430,6 @@ lang: 'ja'
       <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
-      <td align="center">OK</td>
       <td style="color:#ea4335" align="center">NG</td>
       <td style="color:#ea4335" align="center">NG</td>
       <td align="center">OK</td>
@@ -1488,12 +1441,9 @@ lang: 'ja'
 </table>
 </div>
 
-- 1……同じWindows 11 Proで、ブラウザーを変えてテストしたところ、Chrome（113.0.5672.127）でNG、Edge（113.0.1774.57）ではOK
-- 2……ただし他の箇条書きに比べて1文字落ちている
+このグループに関しては、独自エンジン系に属するBinB（ボイジャー）、Kinoppy（紀伊國屋書店）、honto（大日本印刷）以外のEPUBリーダーはほぼ全てクリアした。ただし、このテスト結果が確定するまでいささかの曲折があった。その原因はまさに独自エンジン系の独自な実装にある。
 
-結果は、RomancerとKinoppy（およびhontoの一部項目）以外のEPUBリーダーは、このグループのテスト項目をほとんどクリアした。ただし、このテスト結果が確定するまでいささかの曲折があった。その原因はまさに独自エンジン系の独自な実装にある。
-
-テストファイルの当初のバージョンでは、多くのテスト項目においてCSS レベル2.1のプロパティである`visibility`を使っていた。たとえば、Selector 3の「:root擬似クラス」のテスト項目は次のようになっている。
+一例をあげると、ここで使ったテストファイルの当初のバージョンでは、多くのテスト項目においてCSS レベル2.1のプロパティである`visibility`を使っていた。たとえば、Selector 3の「:root擬似クラス」のテスト項目は次のようになっている。
 
 ```html
 <style>
@@ -1514,27 +1464,31 @@ lang: 'ja'
 
 もしも:root擬似クラスが機能していれば`visibility: visible`が適用され「OK」が表示される、そうでない場合には`visibility: hidden`が適用され「OK」が非表示になる、そういうアルゴリズムだ。ところが、そもそも`visibility`をサポートしていないEPUBリーダーでは`visibility: hidden`も機能せず、テスト結果に関わらず常に「OK」が表示されてしまう。つまり正しいテスト結果は得られない。
 
-もともとこれは、EPUB 3をサポートするEPUBリーダーであれば、当然CSS レベル2.1にある`visibility`などはサポートしているはずという想定によるものだった。ところが独自エンジン系である一部のEPUBリーダーではこの想定が通用せず、いったんはおこなったテストを廃棄して、新しく作り直したテストですべてやり直すことになった。その廃棄したテスト結果が、<a href="#2-1-3-2-掲載しなかったテスト環境の一覧">2-1-3-2 掲載しなかったテスト環境の一覧</a>に掲載したものであり、新しく作り直したテストファイルが[epubcsstest_v1a.epub](https://github.com/jagat-xpub/epub-css-test/blob/main/epub/epubcsstest_v1a.epub)<span class="notetext">ZIP圧縮前のフォルダは以下を参照。<br/><https://github.com/jagat-xpub/epub-css-test/tree/main/epub-exp/epubcsstest_v1a></span>である。
+もともとこれは、EPUB 3をサポートするEPUBリーダーであれば、当然CSS レベル2.1にある[`visibility`](https://www.w3.org/TR/2011/REC-CSS2-20110607/visufx.html#visibility)などはサポートしているはずという想定によるものだった。ところが独自エンジン系EPUBリーダーの一部にはこの想定が通用せず、やむなくこれ以前におこなったテスト結果を廃棄して、新しく作り直したテストをやり直すことになった。その廃棄したテスト結果が、<a href="#2-1-3-2-掲載しなかったテスト環境の一覧">2-1-3-2 掲載しなかったテスト環境の一覧</a>に掲載したものであり、新しく作り直したテストファイルが[epubcsstest_v1a.epub](https://github.com/jagat-xpub/epub-css-test/blob/main/epub/epubcsstest_v1a.epub)<span class="notetext">ZIP圧縮前のフォルダは以下を参照。<br/><https://github.com/jagat-xpub/epub-css-test/tree/main/epub-exp/epubcsstest_v1a></span>である。
 
-ところが、独自エンジン系の実装に振り回されるのはこれが最後ではなかった。長くなるので詳細は省くが、締め切りも迫った2024年3月25日、「::first-line擬似要素」「rgb()関数のコンマなし形式」の2項目についても問題が発生し、やむなくテストの書き直しをすることになったのである。こうして作られたのが[epubcsstest_v2.epub](https://github.com/jagat-xpub/epub-css-test/blob/main/epub/epubcsstest_v2.epub)<span class="notetext">ZIP圧縮前のフォルダは以下を参照。<br/><https://github.com/jagat-xpub/epub-css-test/tree/main/epub-exp/epubcsstest_v2></span>であり、これを使って2項目に限り再テストしたEPUBリーダーは、[Kindle](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=0&range=R27:X27)、[kobo-1（iOS）](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=396838262&range=D45)、[kobo-2（Android）](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=396838262&range=F27)、[ブック](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=212733997&range=L27)、[MURASAKI](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=610814699&range=F45)、[BOOK☆WALKER](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=968182416&range=F27)、[超縦書](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=1234705026&range=H27)である。
+ところが締め切りも迫った2024年3月25日、長くなるので詳細は省くが、「::first-line擬似要素」「rgb()関数のコンマなし形式」の2項目についても同じような問題が発生し、仕方なく再度テストの一部を書き直すことになった。こうして作られたのが[epubcsstest_v2.epub](https://github.com/jagat-xpub/epub-css-test/blob/main/epub/epubcsstest_v2.epub)<span class="notetext">ZIP圧縮前のフォルダは以下を参照。<br/><https://github.com/jagat-xpub/epub-css-test/tree/main/epub-exp/epubcsstest_v2></span>だ。
 
-### 2-2-5 おもにモダンブラウザー系でサポートされるCSSモジュール
+### 2-2-4 おもにモダンブラウザー系でサポートされるCSSモジュール
+
+#### 2-2-4-1 テスト結果の概要
+
+この項で報告するのは、11のCSSモジュールにわたる54項目のテスト結果である（全82項目の約66%）。ここで言う「おもにモダンブラウザー系でサポートされるCSSモジュール」とは、簡単に言うと前項で掲載したテスト項目以外全てである。言い換えると、「モダンブラウザー系だけでなく、独自エンジン系の一部でもサポートされるCSSモジュール」とも言える。では**表3**のテスト結果を見ていただこう。
 
 <div style=margin-top:24.5Q>
 <table>
+  <caption><strong>表3 </strong>おもにモダンブラウザー系でサポートされるCSSモジュール</caption>
   <thead>
     <tr>
       <td style="color:#434343" align="right"></td>
       <td style="writing-mode: vertical-lr" bgcolor="#c9daf8" align="center">Kindle</td>
-      <td style="writing-mode: vertical-lr" bgcolor="#d9ead3" align="center">kobo-1</td>
-      <td style="writing-mode: vertical-lr" bgcolor="#d9ead3" align="center">kobo-2</td>
-      <td style="writing-mode: vertical-lr" bgcolor="#c9daf8" align="center">kobo-3</td>
+      <td style="writing-mode: vertical-lr" bgcolor="#d9ead3" align="center">kobo-mobile</td>
+      <td style="writing-mode: vertical-lr" bgcolor="#c9daf8" align="center">kobo-other</td>
       <td style="writing-mode: vertical-lr" bgcolor="#d9ead3" align="center">ブック</td>
       <td style="writing-mode: vertical-lr" bgcolor="#d9ead3" align="center">MURASAKI</td>
       <td style="writing-mode: vertical-lr" bgcolor="#c9daf8" align="center">honto</td>
-      <td style="writing-mode: vertical-lr" bgcolor="#d9ead3" align="center">BOOK☆ WALKER</td>
+      <td style="writing-mode: vertical-lr" bgcolor="#d9ead3" align="center">Book Walker</td>
       <td style="writing-mode: vertical-lr" bgcolor="#c9daf8" align="center">Kinoppy</td>
-      <td style="writing-mode: vertical-lr" bgcolor="#c9daf8" align="center">Romancer</td>
+      <td style="writing-mode: vertical-lr" bgcolor="#c9daf8" align="center">BinB</td>
       <td style="writing-mode: vertical-lr" bgcolor="#d9ead3" align="center">Bibi</td>
       <td style="writing-mode: vertical-lr" bgcolor="#c9daf8" align="center">超縦書</td>
       <td style="writing-mode: vertical-lr" bgcolor="#d9ead3" align="center">Vivliostyle</td>
@@ -1557,12 +1511,10 @@ lang: 'ja'
       <td align="center"></td>
       <td align="center"></td>
       <td align="center"></td>
-      <td align="center"></td>
     </tr>
     <tr>
       <td valign="bottom">長さの単位 ch</td>
       <td style="color:#ea4335" align="center">NG</td>
-      <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
@@ -1583,7 +1535,6 @@ lang: 'ja'
       <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
-      <td align="center">OK</td>
       <td style="color:#ea4335" align="center">NG</td>
       <td align="center">OK</td>
       <td style="color:#ea4335" align="center">NG</td>
@@ -1596,7 +1547,6 @@ lang: 'ja'
     <tr>
       <td valign="bottom">長さの単位 vh</td>
       <td style="color:#ea4335" align="center">NG</td>
-      <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
@@ -1617,7 +1567,6 @@ lang: 'ja'
       <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
-      <td align="center">OK</td>
       <td style="color:#ea4335" align="center">NG</td>
       <td align="center">OK</td>
       <td style="color:#ea4335" align="center">NG</td>
@@ -1634,7 +1583,6 @@ lang: 'ja'
       <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
-      <td align="center">OK</td>
       <td style="color:#ea4335" align="center">NG</td>
       <td align="center">OK</td>
       <td style="color:#ea4335" align="center">NG</td>
@@ -1647,7 +1595,6 @@ lang: 'ja'
     <tr>
       <td valign="bottom">長さの単位 Q</td>
       <td style="color:#ea4335" align="center">NG</td>
-      <td align="center">OK</td>
       <td align="center">OK</td>
       <td style="color:#ea4335" align="center">NG</td>
       <td align="center">OK</td>
@@ -1673,7 +1620,6 @@ lang: 'ja'
       <td align="center"></td>
       <td align="center"></td>
       <td align="center"></td>
-      <td align="center"></td>
       <td style="color:#ea4335" align="center"></td>
       <td align="center"></td>
       <td align="center"></td>
@@ -1681,7 +1627,6 @@ lang: 'ja'
     <tr>
       <td valign="bottom">@supports ルール</td>
       <td style="color:#ea4335" align="center">NG</td>
-      <td align="center">OK</td>
       <td align="center">OK</td>
       <td style="color:#ea4335" align="center">NG</td>
       <td align="center">OK</td>
@@ -1710,12 +1655,10 @@ lang: 'ja'
       <td align="center"></td>
       <td align="center"></td>
       <td align="center"></td>
-      <td align="center"></td>
     </tr>
     <tr>
       <td valign="bottom">all プロパティ</td>
       <td style="color:#ea4335" align="center">NG</td>
-      <td align="center">OK</td>
       <td align="center">OK</td>
       <td style="color:#ea4335" align="center">NG</td>
       <td align="center">OK</td>
@@ -1733,7 +1676,6 @@ lang: 'ja'
       <td valign="bottom">プロパティの値 unset</td>
       <td style="color:#ea4335" align="center">NG</td>
       <td align="center">OK</td>
-      <td align="center">OK</td>
       <td style="color:#ea4335" align="center">NG</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
@@ -1749,8 +1691,7 @@ lang: 'ja'
     <tr>
       <td valign="bottom">プロパティの値 revert</td>
       <td style="color:#ea4335" align="center">NG</td>
-      <td align="center">OK</td>
-      <td style="color:#ea4335" align="center">NG</td>
+      <td style="color:#ea4335" align="center">OK / NG *¹</td>
       <td style="color:#ea4335" align="center">NG</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
@@ -1775,7 +1716,6 @@ lang: 'ja'
       <td align="center"></td>
       <td align="center"></td>
       <td align="center"></td>
-      <td align="center"></td>
       <td style="color:#ea4335" align="center"></td>
       <td align="center"></td>
       <td align="center"></td>
@@ -1783,7 +1723,6 @@ lang: 'ja'
     <tr>
       <td valign="bottom">CSS変数</td>
       <td style="color:#ea4335" align="center">NG</td>
-      <td align="center">OK</td>
       <td align="center">OK</td>
       <td style="color:#ea4335" align="center">NG</td>
       <td align="center">OK</td>
@@ -1809,7 +1748,6 @@ lang: 'ja'
       <td align="center"></td>
       <td align="center"></td>
       <td align="center"></td>
-      <td align="center"></td>
       <td style="color:#ea4335" align="center"></td>
       <td align="center"></td>
       <td align="center"></td>
@@ -1817,7 +1755,6 @@ lang: 'ja'
     <tr>
       <td valign="bottom">opacity プロパティ</td>
       <td style="color:#ea4335" align="center">NG</td>
-      <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
@@ -1835,7 +1772,6 @@ lang: 'ja'
       <td valign="bottom">rgb() 関数のコンマなし形式 例: rgb (0 255 0 / .5)</td>
       <td style="color:#ea4335" align="center">NG</td>
       <td align="center">OK</td>
-      <td align="center">OK</td>
       <td style="color:#ea4335" align="center">NG</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
@@ -1851,7 +1787,6 @@ lang: 'ja'
     <tr>
       <td valign="bottom">16進数のRGBA形式 (8桁）</td>
       <td style="color:#ea4335" align="center">NG</td>
-      <td align="center">OK</td>
       <td align="center">OK</td>
       <td style="color:#ea4335" align="center">NG</td>
       <td align="center">OK</td>
@@ -1869,7 +1804,6 @@ lang: 'ja'
       <td valign="bottom">16進数のRGBA形式 (4桁）</td>
       <td style="color:#ea4335" align="center">NG</td>
       <td align="center">OK</td>
-      <td align="center">OK</td>
       <td style="color:#ea4335" align="center">NG</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
@@ -1886,7 +1820,6 @@ lang: 'ja'
       <td valign="bottom">hsl() 関数</td>
       <td style="color:#ea4335" align="center">NG</td>
       <td align="center">OK</td>
-      <td align="center">OK</td>
       <td style="color:#ea4335" align="center">NG</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
@@ -1902,8 +1835,7 @@ lang: 'ja'
     <tr>
       <td valign="bottom">hwb() 関数</td>
       <td style="color:#ea4335" align="center">NG</td>
-      <td align="center">OK</td>
-      <td style="color:#ea4335" align="center">NG</td>
+      <td style="color:#ea4335" align="center">OK / NG *¹</td>
       <td style="color:#ea4335" align="center">NG</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
@@ -1931,12 +1863,10 @@ lang: 'ja'
       <td align="center"></td>
       <td align="center"></td>
       <td align="center"></td>
-      <td align="center"></td>
     </tr>
     <tr>
       <td valign="bottom">複数の背景画像</td>
       <td style="color:#ea4335" align="center">NG</td>
-      <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
@@ -1957,8 +1887,7 @@ lang: 'ja'
       <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
-      <td align="center">OK</td>
-      <td align="center">OK</td>
+      <td style="color:#ea4335" align="center">NG</td>
       <td align="center">OK</td>
       <td style="color:#ea4335" align="center">NG</td>
       <td style="color:#ea4335" align="center">NG</td>
@@ -1982,12 +1911,10 @@ lang: 'ja'
       <td align="center"></td>
       <td align="center"></td>
       <td align="center"></td>
-      <td align="center"></td>
     </tr>
     <tr>
       <td valign="bottom">グラデーション関数 linear-gradient()</td>
       <td style="color:#ea4335" align="center">NG</td>
-      <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
@@ -2008,7 +1935,6 @@ lang: 'ja'
       <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
-      <td align="center">OK</td>
       <td style="color:#ea4335" align="center">NG</td>
       <td align="center">OK</td>
       <td style="color:#ea4335" align="center">NG</td>
@@ -2021,7 +1947,6 @@ lang: 'ja'
     <tr>
       <td valign="bottom">グラデーション関数 repeating-linear-gradient()</td>
       <td style="color:#ea4335" align="center">NG</td>
-      <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
@@ -2042,7 +1967,6 @@ lang: 'ja'
       <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
-      <td align="center">OK</td>
       <td style="color:#ea4335" align="center">NG</td>
       <td align="center">OK</td>
       <td style="color:#ea4335" align="center">NG</td>
@@ -2055,7 +1979,6 @@ lang: 'ja'
     <tr>
       <td valign="bottom">object-fit プロパティ contain</td>
       <td style="color:#ea4335" align="center">NG</td>
-      <td align="center">OK</td>
       <td align="center">OK</td>
       <td style="color:#ea4335" align="center">NG</td>
       <td align="center">OK</td>
@@ -2072,8 +1995,7 @@ lang: 'ja'
     <tr>
       <td valign="bottom">object-fit プロパティ cover</td>
       <td style="color:#ea4335" align="center">NG</td>
-      <td style="color:#ea4335" align="center">NG</td>
-      <td align="center">OK</td>
+      <td style="color:#ea4335" align="center">OK / NG *³</td>
       <td style="color:#ea4335" align="center">NG</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
@@ -2089,7 +2011,6 @@ lang: 'ja'
     <tr>
       <td valign="bottom">object-position プロパティ</td>
       <td style="color:#ea4335" align="center">NG</td>
-      <td align="center">OK</td>
       <td align="center">OK</td>
       <td style="color:#ea4335" align="center">NG</td>
       <td align="center">OK</td>
@@ -2115,7 +2036,6 @@ lang: 'ja'
       <td align="center"></td>
       <td align="center"></td>
       <td align="center"></td>
-      <td align="center"></td>
       <td style="color:#ea4335" align="center"></td>
       <td align="center"></td>
       <td align="center"></td>
@@ -2125,14 +2045,13 @@ lang: 'ja'
       <td style="color:#ea4335" align="center">NG</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
-      <td align="center">OK</td>
-      <td align="center">OK / NG *²</td>
-      <td align="center">OK</td>
-      <td style="color:#ea4335" align="center">NG</td>
+      <td style="color:#ea4335" align="center">OK / NG *²</td>
       <td align="center">OK</td>
       <td style="color:#ea4335" align="center">NG</td>
+      <td align="center">OK</td>
       <td style="color:#ea4335" align="center">NG</td>
-      <td align="center">OK / NG *³</td>
+      <td style="color:#ea4335" align="center">NG</td>
+      <td style="color:#ea4335" align="center">NG</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
@@ -2142,8 +2061,7 @@ lang: 'ja'
       <td style="color:#ea4335" align="center">NG</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
-      <td align="center">OK</td>
-      <td align="center">OK / NG *²</td>
+      <td style="color:#ea4335" align="center">OK / NG *²</td>
       <td align="center">OK</td>
       <td style="color:#ea4335" align="center">NG</td>
       <td align="center">OK</td>
@@ -2158,9 +2076,8 @@ lang: 'ja'
       <td valign="bottom">font-kerning プロパティ</td>
       <td style="color:#ea4335" align="center">NG</td>
       <td align="center">OK</td>
-      <td align="center">OK</td>
       <td style="color:#ea4335" align="center">NG</td>
-      <td align="center">OK / NG *⁴</td>
+      <td align="center">OK</td>
       <td align="center">OK</td>
       <td style="color:#ea4335" align="center">NG</td>
       <td align="center">OK</td>
@@ -2175,9 +2092,8 @@ lang: 'ja'
       <td valign="bottom">font-variant プロパティ</td>
       <td style="color:#ea4335" align="center">NG</td>
       <td align="center">OK</td>
-      <td align="center">OK</td>
       <td style="color:#ea4335" align="center">NG</td>
-      <td align="center">OK / NG *⁵</td>
+      <td align="center">OK</td>
       <td align="center">OK</td>
       <td style="color:#ea4335" align="center">NG</td>
       <td align="center">OK</td>
@@ -2192,9 +2108,8 @@ lang: 'ja'
       <td valign="bottom">font-feature-settings プロパティ</td>
       <td style="color:#ea4335" align="center">NG</td>
       <td align="center">OK</td>
-      <td align="center">OK</td>
       <td style="color:#ea4335" align="center">NG</td>
-      <td align="center">OK / NG *⁵</td>
+      <td align="center">OK</td>
       <td align="center">OK</td>
       <td style="color:#ea4335" align="center">NG</td>
       <td align="center">OK</td>
@@ -2217,65 +2132,60 @@ lang: 'ja'
       <td align="center"></td>
       <td align="center"></td>
       <td align="center"></td>
-      <td align="center"></td>
       <td style="color:#ea4335" align="center"></td>
       <td align="center"></td>
       <td align="center"></td>
     </tr>
     <tr>
       <td valign="bottom">writing-mode プロパティ vertical-rl</td>
-      <td align="center">OK / NG *⁶</td>
+      <td style="color:#ea4335" align="center">OK / NG *⁴</td>
       <td align="center">OK</td>
-      <td align="center">OK</td>
-      <td style="color:#ea4335" align="center">NG *⁶</td>
-      <td align="center">OK</td>
-      <td align="center">OK</td>
+      <td style="color:#ea4335" align="center">NG *⁴</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
-      <td style="color:#ea4335" align="center">OK / NG *⁶</td>
+      <td align="center">OK</td>
+      <td align="center">OK</td>
+      <td style="color:#ea4335" align="center">NG *⁴</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
     </tr>
     <tr>
       <td valign="bottom">text-orientation プロパティ upright</td>
-      <td align="center">OK / NG *⁶</td>
+      <td style="color:#ea4335" align="center">OK / NG *⁴</td>
       <td align="center">OK</td>
-      <td align="center">OK</td>
-      <td style="color:#0000ff" align="center" valign="bottom">N/A *⁶</td>
-      <td align="center">OK</td>
-      <td align="center">OK</td>
+      <td style="color:#0000ff" align="center" valign="bottom">N/A *⁴</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
-      <td style="color:#0000ff" align="center">OK / N/A *⁶</td>
+      <td align="center">OK</td>
+      <td align="center">OK</td>
+      <td style="color:#0000ff" align="center">N/A *⁴</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
     </tr>
     <tr>
       <td valign="bottom">text-orientation プロパティ sideways</td>
-      <td align="center">OK / NG *⁶</td>
+      <td style="color:#ea4335" align="center">OK / NG *⁴</td>
       <td align="center">OK</td>
-      <td align="center">OK</td>
-      <td style="color:#0000ff" align="center" valign="bottom">N/A *⁶</td>
-      <td align="center">OK</td>
-      <td align="center">OK</td>
+      <td style="color:#0000ff" align="center" valign="bottom">N/A *⁴</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
-      <td style="color:#0000ff" align="center">OK / N/A *⁶</td>
+      <td align="center">OK</td>
+      <td align="center">OK</td>
+      <td style="color:#0000ff" align="center">N/A *⁴</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
     </tr>
     <tr>
       <th valign="bottom">CSS Multi-column Layout Level 1</th>
-      <td align="center"></td>
       <td align="center"></td>
       <td align="center"></td>
       <td align="center"></td>
@@ -2292,86 +2202,81 @@ lang: 'ja'
     </tr>
     <tr>
       <td valign="bottom">段組 2段組</td>
-      <td style="color:#ea4335" align="center">NG *⁷</td>
+      <td style="color:#ea4335" align="center">NG *⁵</td>
+      <td style="color:#ea4335" align="center">OK / NG *¹ *⁵</td>
+      <td style="color:#ea4335" align="center">NG *⁵</td>
       <td align="center">OK</td>
-      <td style="color:#ea4335" align="center">NG *⁷</td>
-      <td style="color:#ea4335" align="center">NG *⁷</td>
       <td align="center">OK</td>
+      <td style="color:#ea4335" align="center">NG *⁵</td>
+      <td style="color:#ea4335" align="center">OK / NG *⁵ *¹</td>
+      <td style="color:#ea4335" align="center">NG *⁵</td>
+      <td style="color:#ea4335" align="center">NG *⁵</td>
       <td align="center">OK</td>
-      <td style="color:#ea4335" align="center">NG *⁷</td>
-      <td align="center">OK / NG *⁷ *¹</td>
-      <td style="color:#ea4335" align="center">NG *⁷</td>
-      <td style="color:#ea4335" align="center">NG *⁷</td>
-      <td align="center">OK</td>
-      <td style="color:#ea4335" align="center">NG *⁷</td>
+      <td style="color:#ea4335" align="center">NG *⁵</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
     </tr>
     <tr>
       <td valign="bottom">段組 段間罫</td>
-      <td style="color:#0000ff" align="center">N/A *⁷</td>
+      <td style="color:#0000ff" align="center">N/A *⁵</td>
+      <td style="color:#ea4335" align="center">OK / NG *¹ *⁵</td>
+      <td style="color:#0000ff" align="center">N/A *⁵</td>
       <td align="center">OK</td>
-      <td style="color:#0000ff" align="center">N/A *⁷</td>
-      <td style="color:#0000ff" align="center">N/A *⁷</td>
       <td align="center">OK</td>
+      <td style="color:#0000ff" align="center">N/A *⁵</td>
+      <td style="color:#0000ff" align="center">OK / N/A *⁵ *¹</td>
+      <td style="color:#0000ff" align="center">N/A *⁵</td>
+      <td style="color:#0000ff" align="center">N/A *⁵</td>
       <td align="center">OK</td>
-      <td style="color:#0000ff" align="center">N/A *⁷</td>
-      <td align="center">OK / N/A *⁷ *¹</td>
-      <td style="color:#0000ff" align="center">N/A *⁷</td>
-      <td style="color:#0000ff" align="center">N/A *⁷</td>
-      <td align="center">OK</td>
-      <td style="color:#0000ff" align="center">N/A *⁷</td>
+      <td style="color:#0000ff" align="center">N/A *⁵</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
     </tr>
     <tr>
       <td valign="bottom">段抜き：column-span プロパティ</td>
-      <td style="color:#0000ff" align="center">N/A *⁷</td>
+      <td style="color:#0000ff" align="center">N/A *⁵</td>
+      <td style="color:#ea4335" align="center">OK / NG *¹ *⁵</td>
+      <td style="color:#0000ff" align="center">N/A *⁵</td>
       <td align="center">OK</td>
-      <td style="color:#0000ff" align="center">N/A *⁷</td>
-      <td style="color:#0000ff" align="center">N/A *⁷</td>
       <td align="center">OK</td>
+      <td style="color:#0000ff" align="center">N/A *⁵</td>
+      <td style="color:#0000ff" align="center">OK / N/A *⁵ *¹</td>
+      <td style="color:#0000ff" align="center">N/A *⁵</td>
+      <td style="color:#0000ff" align="center">N/A *⁵</td>
       <td align="center">OK</td>
-      <td style="color:#0000ff" align="center">N/A *⁷</td>
-      <td align="center">OK / N/A *⁷ *¹</td>
-      <td style="color:#0000ff" align="center">N/A *⁷</td>
-      <td style="color:#0000ff" align="center">N/A *⁷</td>
-      <td align="center">OK</td>
-      <td style="color:#0000ff" align="center">N/A *⁷</td>
+      <td style="color:#0000ff" align="center">N/A *⁵</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
     </tr>
     <tr>
       <td valign="bottom">段バランス：column-fill: balance</td>
-      <td style="color:#0000ff" align="center">N/A *⁷</td>
+      <td style="color:#0000ff" align="center">N/A *⁵</td>
+      <td style="color:#ea4335" align="center">OK / NG *¹ *⁵</td>
+      <td style="color:#0000ff" align="center">N/A *⁵</td>
       <td align="center">OK</td>
-      <td style="color:#0000ff" align="center">N/A *⁷</td>
-      <td style="color:#0000ff" align="center">N/A *⁷</td>
       <td align="center">OK</td>
+      <td style="color:#0000ff" align="center">N/A *⁵</td>
+      <td style="color:#0000ff" align="center">OK / N/A *⁵ *¹</td>
+      <td style="color:#0000ff" align="center">N/A *⁵</td>
+      <td style="color:#0000ff" align="center">N/A *⁵</td>
       <td align="center">OK</td>
-      <td style="color:#0000ff" align="center">N/A *⁷</td>
-      <td align="center">OK / N/A *⁷ *¹</td>
-      <td style="color:#0000ff" align="center">N/A *⁷</td>
-      <td style="color:#0000ff" align="center">N/A *⁷</td>
-      <td align="center">OK</td>
-      <td style="color:#0000ff" align="center">N/A *⁷</td>
+      <td style="color:#0000ff" align="center">N/A *⁵</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
     </tr>
     <tr>
       <td valign="bottom">段バランス：column-fill: auto</td>
-      <td style="color:#0000ff" align="center">N/A *⁷</td>
+      <td style="color:#0000ff" align="center">N/A *⁵</td>
+      <td style="color:#ea4335" align="center">OK / NG *¹ *⁵</td>
+      <td style="color:#0000ff" align="center">N/A *⁵</td>
       <td align="center">OK</td>
-      <td style="color:#0000ff" align="center">N/A *⁷</td>
-      <td style="color:#0000ff" align="center">N/A *⁷</td>
       <td align="center">OK</td>
+      <td style="color:#0000ff" align="center">N/A *⁵</td>
+      <td style="color:#0000ff" align="center">OK / N/A *⁵ *¹</td>
+      <td style="color:#0000ff" align="center">N/A *⁵</td>
+      <td style="color:#0000ff" align="center">N/A *⁵</td>
       <td align="center">OK</td>
-      <td style="color:#0000ff" align="center">N/A *⁷</td>
-      <td align="center">OK / N/A *⁷ *¹</td>
-      <td style="color:#0000ff" align="center">N/A *⁷</td>
-      <td style="color:#0000ff" align="center">N/A *⁷</td>
-      <td align="center">OK</td>
-      <td style="color:#0000ff" align="center">N/A *⁷</td>
+      <td style="color:#0000ff" align="center">N/A *⁵</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
     </tr>
@@ -2390,12 +2295,10 @@ lang: 'ja'
       <td align="center"></td>
       <td align="center"></td>
       <td align="center"></td>
-      <td align="center"></td>
     </tr>
     <tr>
       <td valign="bottom">Flexboxによる上下中央揃え</td>
       <td style="color:#ea4335" align="center">NG</td>
-      <td align="center">OK</td>
       <td align="center">OK</td>
       <td style="color:#ea4335" align="center">NG</td>
       <td align="center">OK</td>
@@ -2424,12 +2327,10 @@ lang: 'ja'
       <td align="center"></td>
       <td align="center"></td>
       <td align="center"></td>
-      <td align="center"></td>
     </tr>
     <tr>
       <td valign="bottom">box-sizing プロパティ border-box</td>
       <td style="color:#ea4335" align="center">NG</td>
-      <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
@@ -2446,7 +2347,6 @@ lang: 'ja'
     <tr>
       <td valign="bottom">box-sizing プロパティ content-box</td>
       <td style="color:#ea4335" align="center">NG</td>
-      <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
@@ -2472,7 +2372,6 @@ lang: 'ja'
       <td align="center"></td>
       <td align="center"></td>
       <td align="center"></td>
-      <td align="center"></td>
       <td style="color:#ea4335" align="center"></td>
       <td align="center"></td>
       <td align="center"></td>
@@ -2480,7 +2379,6 @@ lang: 'ja'
     <tr>
       <td valign="bottom">contain プロパティ</td>
       <td style="color:#ea4335" align="center">NG</td>
-      <td align="center">OK</td>
       <td align="center">OK</td>
       <td style="color:#ea4335" align="center">NG</td>
       <td align="center">OK</td>
@@ -2506,7 +2404,6 @@ lang: 'ja'
       <td align="center"></td>
       <td align="center"></td>
       <td align="center"></td>
-      <td align="center"></td>
       <td style="color:#ea4335" align="center"></td>
       <td align="center"></td>
       <td align="center"></td>
@@ -2514,7 +2411,6 @@ lang: 'ja'
     <tr>
       <td valign="bottom">transform プロパティ</td>
       <td style="color:#ea4335" align="center">NG</td>
-      <td align="center">OK</td>
       <td align="center">OK</td>
       <td style="color:#ea4335" align="center">NG</td>
       <td align="center">OK</td>
@@ -2540,49 +2436,45 @@ lang: 'ja'
       <td align="center"></td>
       <td align="center"></td>
       <td align="center"></td>
-      <td align="center"></td>
       <td style="color:#ea4335" align="center"></td>
       <td style="color:#ea4335" align="center"></td>
       <td align="center"></td>
     </tr>
     <tr>
       <td valign="bottom">mix-blend-mode プロパティ</td>
-      <td style="color:#ea4335" align="center">NG *⁸</td>
+      <td style="color:#ea4335" align="center">NG *⁶</td>
+      <td align="center">OK</td>
+      <td style="color:#ea4335" align="center">NG *⁶</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
-      <td style="color:#ea4335" align="center">NG *⁸</td>
+      <td style="color:#ea4335" align="center">NG *⁶</td>
       <td align="center">OK</td>
+      <td style="color:#ea4335" align="center">NG *⁶</td>
+      <td style="color:#ea4335" align="center">NG *⁶</td>
       <td align="center">OK</td>
-      <td style="color:#ea4335" align="center">NG *⁸</td>
-      <td align="center">OK</td>
-      <td style="color:#ea4335" align="center">NG *⁸</td>
-      <td style="color:#ea4335" align="center">NG *⁸</td>
-      <td align="center">OK</td>
-      <td style="color:#ea4335" align="center">NG *⁸</td>
+      <td style="color:#ea4335" align="center">NG *⁶</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
     </tr>
     <tr>
       <td valign="bottom">isolation プロパティ</td>
-      <td style="color:#0000ff" align="center">N/A *⁸</td>
+      <td style="color:#0000ff" align="center">N/A *⁶</td>
+      <td align="center">OK</td>
+      <td style="color:#0000ff" align="center">N/A *⁶</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
-      <td style="color:#0000ff" align="center">N/A *⁸</td>
+      <td style="color:#0000ff" align="center">N/A *⁶</td>
       <td align="center">OK</td>
+      <td style="color:#0000ff" align="center">N/A *⁶</td>
+      <td style="color:#0000ff" align="center">N/A *⁶</td>
       <td align="center">OK</td>
-      <td style="color:#0000ff" align="center">N/A *⁸</td>
-      <td align="center">OK</td>
-      <td style="color:#0000ff" align="center">N/A *⁸</td>
-      <td style="color:#0000ff" align="center">N/A *⁸</td>
-      <td align="center">OK</td>
-      <td style="color:#0000ff" align="center">N/A *⁸</td>
+      <td style="color:#0000ff" align="center">N/A *⁶</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
     </tr>
     <tr>
       <td valign="bottom">background-blend-mode プロパティ</td>
       <td style="color:#ea4335" align="center">NG</td>
-      <td align="center">OK</td>
       <td align="center">OK</td>
       <td style="color:#ea4335" align="center">NG</td>
       <td align="center">OK</td>
@@ -2611,18 +2503,16 @@ lang: 'ja'
       <td align="center"></td>
       <td align="center"></td>
       <td align="center"></td>
-      <td align="center"></td>
     </tr>
     <tr>
       <td valign="bottom">@counter-style ルール</td>
       <td style="color:#ea4335" align="center">NG</td>
+      <td style="color:#ea4335" align="center">OK / NG *¹</td>
+      <td style="color:#ea4335" align="center">NG</td>
+      <td align="center">OK</td>
       <td align="center">OK</td>
       <td style="color:#ea4335" align="center">NG</td>
-      <td style="color:#ea4335" align="center">NG</td>
-      <td align="center">OK</td>
-      <td align="center">OK</td>
-      <td style="color:#ea4335" align="center">NG</td>
-      <td align="center">OK / NG *¹</td>
+      <td style="color:#ea4335" align="center">OK / NG *¹</td>
       <td style="color:#ea4335" align="center">NG</td>
       <td style="color:#ea4335" align="center">NG</td>
       <td align="center">OK</td>
@@ -2633,13 +2523,12 @@ lang: 'ja'
     <tr>
       <td valign="bottom">定義済みカウンタースタイル cjk-decimal</td>
       <td style="color:#ea4335" align="center">NG</td>
-      <td align="center">OK</td>
+      <td style="color:#ea4335" align="center">OK / NG *¹</td>
       <td style="color:#ea4335" align="center">NG</td>
-      <td style="color:#ea4335" align="center">NG</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
-      <td align="center">OK / NG *¹</td>
+      <td style="color:#ea4335" align="center">OK / NG *¹</td>
       <td style="color:#ea4335" align="center">NG</td>
       <td style="color:#ea4335" align="center">NG</td>
       <td align="center">OK</td>
@@ -2649,8 +2538,7 @@ lang: 'ja'
     </tr>
     <tr>
       <td valign="bottom">定義済みカウンタースタイル hiragana</td>
-      <td align="center">OK / NG *⁹</td>
-      <td align="center">OK</td>
+      <td style="color:#ea4335" align="center">OK / NG *⁷</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
@@ -2666,8 +2554,7 @@ lang: 'ja'
     </tr>
     <tr>
       <td valign="bottom">定義済みカウンタースタイル hiragana-iroha</td>
-      <td align="center">OK / NG *⁹</td>
-      <td align="center">OK</td>
+      <td style="color:#ea4335" align="center">OK / NG *⁷</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
@@ -2683,8 +2570,7 @@ lang: 'ja'
     </tr>
     <tr>
       <td valign="bottom">定義済みカウンタースタイル cjk-earthly-branch</td>
-      <td align="center">OK / NG *⁹</td>
-      <td align="center">OK</td>
+      <td style="color:#ea4335" align="center">OK / NG *⁷</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
@@ -2700,8 +2586,7 @@ lang: 'ja'
     </tr>
     <tr>
       <td valign="bottom">定義済みカウンタースタイル cjk-heavenly-stem</td>
-      <td align="center">OK / NG *⁹</td>
-      <td align="center">OK</td>
+      <td style="color:#ea4335" align="center">OK / NG *⁷</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
       <td align="center">OK</td>
@@ -2718,13 +2603,12 @@ lang: 'ja'
     <tr>
       <td valign="bottom">定義済みカウンタースタイル japanese-informal</td>
       <td style="color:#ea4335" align="center">NG</td>
+      <td style="color:#ea4335" align="center">OK / NG *¹</td>
+      <td style="color:#ea4335" align="center">NG</td>
+      <td align="center">OK</td>
       <td align="center">OK</td>
       <td style="color:#ea4335" align="center">NG</td>
-      <td style="color:#ea4335" align="center">NG</td>
-      <td align="center">OK</td>
-      <td align="center">OK</td>
-      <td style="color:#ea4335" align="center">NG</td>
-      <td align="center">OK / NG *¹</td>
+      <td style="color:#ea4335" align="center">OK / NG *¹</td>
       <td style="color:#ea4335" align="center">NG</td>
       <td style="color:#ea4335" align="center">NG</td>
       <td align="center">OK</td>
@@ -2736,16 +2620,108 @@ lang: 'ja'
 </table>
 </div>
 
-- 1……iOS（16.4.1 ）がOK、Android（13）がNG
-- 2……Mac（14.1.1）、及びiOS（16.4.1）でNG
-- 3……Chrome（113.0.5672.127）がOK、Edge（113.0.1774.57）がNG
-- 4……iOS（16.4.1）のみNG
-- 5……Mac（v14.1.1）のみNG
-- 6……`vertical-rl`がNGの場合、これを前提とするtext-orientationプロパティは無効（N/A）
-- 7……掲載した全てのテスト環境で2段組がNG。これを前提とする他のプロパティは無効（N/A）
-- 8……掲載した全てのテスト環境でmix-blend-modeがNG。これを前提とするisolationは無効（N/A）
-- 9……Windows上のKindle 2.3.0のみNG。他はすべてOK
+- 1……iOSがOK、AndroidがNG
+- 2……一部のMac環境でNG
+- 3……iOSのみNG
+- 4……`vertical-rl`がNGの場合、これを前提とするtext-orientationは無効（N/A）
+- 5……掲載した全てのテスト環境で2段組がNGの場合、これを前提とする他のプロパティは無効（N/A）
+- 6……掲載した全てのテスト環境でmix-blend-modeがNGの場合、これを前提とするisolationは無効（N/A）
+- 7……Windows上のKindle for PCのみNG。他はすべてOK
+
+
+一見すると、黒の「OK」と赤の「NG」が不規則に入り乱れているように見えるかもしれない。しかし縦に見ていくとつながりが見て取れる。つまりリーダーごとに、「OK」が多いものと「NG」が多いものの2種類に分かれている。上端のレイアウトエンジンの違いも含めてみれば違いがさらに分かる。「OK」の多いリーダーは緑色＝モダンブラウザー系であり、「NG」の多いリーダーは水色＝独自エンジン系なのである。
+
+前項で「NG」が多かったBinBとKinoppy、hontoだが、この項でも「NG」が多いのは変わらない。しかし、それらに加えて前項では「OK」が多かったKindle、kobo-other（楽天Kobo）、超縦書も「NG」が多くなった。
+
+#### 2-2-4-2　「writing-mode プロパティ vertical-rl」に絞ったテスト結果
+
+<figure class="figure-top">
+  <img src="img/chap2/writing-mode-NG.png" alt="writing-mode-NG">
+  <figcaption><strong>図1</strong> 左からKindle（Windows版 v2.3.1(70682)）、kobo-other (Mac版 v4.37.17113)、超縦書（v2.3.1）。</figcaption>
+</figure>
+
+すべてのテスト項目を説明するには紙幅が足りないので、日本語のEPUBで特に重要な「writing-mode プロパティ vertical-rl」を例に挙げて、スクリーンショットとともに見ていこう。
+
+なお、テストから本稿執筆まで間隔が空いてしまったので、スクリーンショットは執筆時点（2024年4月11日）の最新版で撮り直した。リーダーのバージョンがテスト時と違うものはいちいちコメントしたが、テスト結果に変わりはなかった。なおまた、テストファイルはBinBだけがepubcsstest_v1a.epubで、他は全てepubcsstest_v2.epubである。ただし「writing-mode プロパティ」に関してはテストファイルが違ってもテスト内容に基本的な違いはなく、結果が変わることは考えにくい。
+
+まず「NG」だったものから紹介すると、**図1**左からKindleのうちWindows（テスト時v2.3.0 (70673)→v2.3.1(70682)）、kobo-other（スクリーンショットはMac版だが、Windows版も同じ結果。v4.37.17113）、そして超縦書（Windows版 v2.3.1）。この3つのリーダーは`writing-mode: vertical-rl;`を指定しても縦書きで表示しなかった。これらのリーダーで縦書きを表示したい場合は、`-epub-`接頭辞をつける必要がある。
+
+残りはすべて「OK」だったものだ。**図2**左からKindleのうちiPhone版（テスト時v7.1→v7.8）、KindleのうちMac版（テスト時v7.0.0.100 (1.316222)→v7.6.0.0(1.329899)）、kobo-mobileのうちiPhone版（テスト時v10.4.3→v10.5.3）。
+
+<figure class="figure-bottom">
+  <img src="img/chap2/1-KindleiPhone-Kindlemac-koboiPhone.png" alt="img/chap2/1-KindleiPhone-Kindlemac-koboiPhone">
+  <figcaption><strong>図2</strong> 左からKindle（iPhone版v7.7）、Kindle（Mac版v7.6.0.0(1.329899)）、kobo-mobile（iPhone版v10.5.3）。</figcaption>
+</figure>
+
+ここでKindleのスクリーンショットが3つ揃ったのでコメントしよう。本テストが始動したのは2023年5月頃だったが、同年8月にKindleは[メジャーアップデート](https://forest.watch.impress.co.jp/docs/news/1526058.html)をおこなっている。しかし、特定のCSSモジュールに対応しているかどうかをみる本テストの立場からは、アップデートの前後で大きな違いは見られなかった<span class="notetext">ここでは[2023年5月〜同年7月にepubcsstest_v1でおこなったテスト（不掲載分）](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=0&range=E2:Q6)と、[2023年12月〜翌1月におこなったepubcsstest_v1aでおこなったテスト（掲載分）](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=0&range=R2:X6)の結果を比較している。Kindleに関しては、epubcsstest_v1で誤判定があったのは「::first-line 擬似要素」だけであり、それ以外は問題ない。</span>。ただし、この「writing-mode プロパティ vertical-rl」は、その数少ない例外の一つだ。2023年5月〜同年7月ではすべて「NG」だったものが、2023年12月〜2024年1月におこなった再テストでは「OK」に変わっている。
+
+なお、専用端末に関しては再テストをしていないのでアップデート後の対応は不明だが、参考のためKindle Paperwhite Signeture Edition（第11世代、v5.16.7（4193160020））で、「writing-mode プロパティ vertical-rl」に限ってテストしたところ、やはり「OK」に変わっていた。
+
+他方、Kindle（専用端末、モバイル端末、デスクトップ）と[Kindle Previewer](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?pli=1#gid=0&range=P2:Q6)とでは、それぞれCSSモジュールの対応程度が異なる。しかしKindleの中では、CSSモジュールの対応程度はハードウェアやOSの違いが少ない。つまり、Kindleの中ではいくつかの例外を除きハードウェアやOSの違いに関わらず「OK」と「NG」がよく揃っていると言える。ただし、ここでも「writing-mode プロパティ vertical-rl」はその例外で、Windows版のKindleだけが「NG」だった（図1）。
+
+koboについても触れておこう。同じkoboでありながらkobo-otherが「NG」（図1）、kobo-mobileが「OK」（図2）と結果が分かれていることに興味が引かれるかもしれない。これは、前者は独自エンジン系（モダンではないブラウザーのレイアウトエンジン利用を含む）、後者はモダンブラウザー系というレイアウトエンジンの違いが出た、分かりやすい結果とも言える。
+
+**図3**に移ろう。左からブック（Mac版、テスト時v6.1→v6.3(6040)）、MURASAKI（Mac版、v2.4.1(30)）、honto（iPhone版 v6.62.0）。このうちブックとMURASAKIはモダンブラウザー系だ。残るhontoは独自エンジン系だが、「OK」だった。
+
+<figure class="figure-bottom">
+  <img src="img/chap2/2-Book-MURASAKI-honto.png" alt="img/chap2/2-Book-MURASAKI-honto">
+  <figcaption><strong>図3 </strong>左からブック（v6.3(6040)）、MURASAKI（v2.4.1(30)）、honto（iPhone版 v6.62.0）</figcaption>
+</figure>
+
+なお、hontoはMac版、Windows版も用意されているが、サイドロードに対応しているのはiOS、Android版だけであり、さらにサイドロードしたEPUBは同期の対象外であることから、Mac版、Windows版のテストはあきらめざるを得なかった。
+
+次に**図4**。左から、Book Walker（スクリーンショットはiPhone版だが、Android版も同じ結果。テスト時v7.4.7→v7.6.0）、Kinoppy（Windows版 テスト時v3.2.19→v3.3.20.329851E）、BinB（バージョン非表示）。このうちBook Walkerのみモダンブラウザー系で、KinoppyとBinBは独自エンジン系だ。このうち、BinBは<a href="#2-2-3-メジャーなepubリーダーでサポートされるcssモジュール">2-2-3</a>だけでなく、本項の多くのテスト結果も「NG」だったが、「writing-mode プロパティ vertical-rl」については「OK」だった。
+
+独自エンジン系では、BinB以外にも、hontoと、Kinoppy、そしてWindows版以外のKindleが「writing-mode プロパティ vertical-rl」の結果は「OK」であるものの、それ以外のテスト結果では「NG」が多かった。これらはCSSモジュールについて選択的に実装する開発方針なのかもしれない。
+
+なおまた、Kinoppyについては他にMac版、iOS版、Android版もあるが、これらはテストファイルをサイドロードして表示させると必ず落ちる現象に見舞われた。そこでテストファイルを細かく分割したところ、iOS版、Android版では改善したがMac版は変わりがなく、やむなくMac版のテストをあきらめた。ただし、結果を記録できたiOS版、Android版も<a href="#2-2-3-メジャーなepubリーダーでサポートされるcssモジュール">2-2-3</a>で述べた理由により、残念ながら不掲載としている。
+
+<figure class="figure-top">
+  <img src="img/chap2/3-BOOK☆WALKER-Kinoppy-BinB.png" alt="img/chap2/3-BOOK☆WALKER-Kinoppy-BinB">
+  <figcaption><strong>図4 </strong>左からBook Walker（v7.6.0）、Kinoppy（Windows版 v3.3.20.329851E）、BinB（バージョン非表示）</figcaption>
+</figure>
+
+最後に**図5**を見てみよう。左からBibi（v1.2.0、松島智）、Vivliostyle（テスト時v2.25.0、Chrome 113で確認→v2.28.1、Chrome 123で確認、ビブリオスタイル）、Thorium Reader（Mac版、テスト時v2.2.0→v2.4.1、EDRLab）。3つともモダンブラウザー系であり、順当な結果だ。
+
+<figure class="figure-bottom">
+  <img src="img/chap2/4-Bibi-Vivliostyle-Thorium.png" alt="img/chap2/4-Bibi-Vivliostyle-Thorium">
+  <figcaption><strong>図5 </strong>Bibi（v1.2.0）、Vivliostylev2.28.1、Chrome 123で確認）、Thorium Reader（v2.4.1）</figcaption>
+</figure>
 
 ## 2-3 おわりに
 
-今回の調査で分かったことは、モダンCSSをサポートしているのはモダンブラウザーエンジンを利用しているEPUBリーダーのみであるということ。そうではないEPUBリーダーでは、基本的に EPUB 3.0 で規定されていた "EPUB 3 CSS Profile" の範囲しかサポートしていない。
+本テストは、各社EPUBリーディングシステムが現行のCSS仕様をどれだけサポートしているのかを調べたものだ。したがってEPUBリーダーの本質的な価値、たとえばユーザーにとっての読みやすさや操作しやすさといったことを調べるものではない。この点を確認した上で、最後に本テストで得られた成果を整理しておこう。
+
+まず、本テストによって分かったことは、現在使われているEPUBリーダーは、利用しているレイアウトエンジンによってモダンブラウザー系と独自エンジン系の2種に分かれているということだ。この2種のレイアウトエンジンは開発方針が大きく異なり、互いの関係を表すには「二極分化」という言葉が相応しい。
+
+本章冒頭<a href="#2-1-はじめに">「はじめに」</a>で、EPUBの現行規格である3.3は、[“CSS Snapshot”]((https://www.w3.org/TR/CSS/)) のうち、「CSSの公式的な定義に含まれるCSSモジュール」、つまり最も実装が安定している（普及している）CSSモジュールのサポートが要件となっていることを説明した。2種のうちモダンブラウザー系のEPUBリーダーは、おおむねこの要件を満たしている。
+
+一方、独自エンジン系をCSSモジュールのサポートという観点から見ると、EPUB 3.3が規定した要件を到底満たしているとは言えない。独自エンジン系のEPUBリーダーのうちいくつかは、現行規格が求める “CSS Snapshot” はもちろん、前バージョンであるEPUB 3.0.1が求めるCSSモジュールの実装要件 “CSS Profile”（[原文](https://idpf.org/epub/301/spec/epub-contentdocs-20140626.html#sec-css-profile)、[和訳](https://imagedrive.github.io/spec/epub301-contentdocs.xhtml#sec-css)）もサポートしているか怪しい。というのは、<a href="#2-2-3-メジャーなepubリーダーでサポートされるcssモジュール">2-2-3</a>で説明したように、独自エンジン系のリーダーの一部はCSS レベル2.1のプロパティである[visibility](https://www.w3.org/TR/2011/REC-CSS2-20110607/visufx.html#visibility)などをサポートしていないことが分かったからだ。
+
+それにしても、なぜ独自エンジン系はこれほどCSSモジュールのサポートに消極的なのか、そのような素朴な疑問も浮かんでくる。本来この種の調査報告で推測など慎むべきだが、テストの結果得られた「仮説」として述べておきたい。
+
+独自エンジン系のEPUBリーダーは、[電書協ガイド](http://ebpaj.jp/counsel/guide)のサポートを目指したのではないだろうか。
+
+この電書協ガイドとは、電子書籍の出版社による業界団体、日本電子書籍出版社協会（現在は[デジタル出版者連盟](http://ebpaj.jp/)）によって、「加盟社のための一般書のEPUB 3を制作する際のガイド」として2012年にver1.0が公開された規約だ<span class="notetext">[「電書協EPUB 3 制作ガイド ver.1.0」を公開します（2012年、日本電子書籍出版社協会）](http://www.ebpaj.jp/guide/guide.html)</span>
+。制定当時はEPUB 3.0に対応していたが、現在はEPUB 3.0.1（2014年）に対応した[ver.1.1.3 / 2015年1月1日版](http://www.idpf.org/epub/301/spec/epub-publications-20140626.html)にアップデートしている。
+
+このver.1.1.3をダウンロードすると「20150101-CSS機能一覧.pdf」という文書があり、そこに利用可能なCSS機能がリストアップされている。そのほとんどを占めるプロパティは、CSS レベル2.1のサブセットだが、以下のようなレベル3のプロパティも`-epub-`接頭辞つきでふくまれている。
+
+1. CSS Writing Modes Level 3（-epub-writing-mode、-epub-text-combine、-epub-text-orientation）
+2. CSS Text Decoration Module Level 3 （-epub-text-emphasis-style）
+3. CSS Text Module Level 3（-epub-line-break）
+
+上記をまとめると、電書協ガイドver.1.1.3で使用されているCSS機能は、CSS レベル2.1のサブセットと`-epub-`接頭辞つきプロパティである。これを“CSS Snapshot” と比べると、「ミニマムなセット」ということになる。
+
+本テストでは、<a href="#2-1-2-テスト結果を掲載したcssモジュール">2-1-2</a>、及び<a href="#2-2-1-レイアウトエンジンと本テストとの関係">2-2-1</a>でも述べたように、CSS レベル2.1をフルサポートしないEPUBリーダーがあり得ることまで思いが及ばず、これをテスト項目から外していた。この結果、電書協ガイドver.1.1.3が求める「CSS レベル2.1のサブセットと`-epub-`接頭辞つきプロパティ」は本テストの対象外となっている。
+
+その上での仮説だが、独自エンジン系のリーダーがミニマムな「20150101-CSS機能一覧.pdf」のサポートだけでよいと割り切った実装をしたとすれば、最新のCSSモジュールのサポートに消極的だった理由として説明がつくのではないか。
+
+では独自エンジン系のリーダーが、最新のCSSモジュールではなくミニマムな電書協ガイドのサポートに留まっている可能性が高いことを、私達はどのように考えればよいだろう。
+
+たとえば、Webページで書きためた自分の原稿を、電子書籍として売ろうと考えた人がいたとする。なぜならその人は、有り物のHTMLとCSSを最少限の手間で電子書籍にすることを、EPUB 3.3が可能にしたことを知っていたからだ。ところが、そうしてできたEPUBを[Kindleダイレクト・パブリッシング](https://kdp.amazon.co.jp/ja_JP/)で自主出版しようとしても、EPUB 3.3には適合するはずなのに、肝腎のKindleのリーダーでは意図通りに表示されない可能性が高い。なぜなら、現在のWebページでは普通に使えるCSS変数やCSS Flexible Boxに、Kindleは対応していないからだ。
+
+EPUB 3.3で “CSS Snapshot” のサポートが必須とされた理由は、現在のWebページを元に少ない手間で電子書籍として流通できるようにすることで、Webによるコミュニケーションをステップアップさせる狙いがあったからではないか。つまり、Webページと電子書籍の統合である。
+
+しかしEPUB 3.3の狙いと独自エンジン系リーダーとの間には、きわめて大きな断絶があると言わざるを得ない。このまま日本のEPUBリーダーがサポートするCSSが、ずっと電書協ガイドの範囲に限定され続ければ今後どうなるだろう？　本テストの結果を見ながら、そのような疑問にとらわれることも確かだ。
+
