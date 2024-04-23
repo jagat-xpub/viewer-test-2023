@@ -12,7 +12,7 @@
 
 ## プレビュー、ビルドの方法（第1章〜第3章）
 
-1. 準備：VSCode機能拡張、[vivliostyle-cli-helper](https://marketplace.visualstudio.com/items?itemName=Libroworks.vivliostyle-cli-helper)をインストールしておく
+1. 準備：[VSCode](https://azure.microsoft.com/ja-jp/products/visual-studio-code)に、機能拡張[vivliostyle-cli-helper](https://marketplace.visualstudio.com/items?itemName=Libroworks.vivliostyle-cli-helper)をインストールしておく
 2. このリポジトリをローカルに同期かダウンロードして、VSCodeで開く
 3. 第1章〜第3章のいずれかを開く
 4. プレビュー：編集画面で以下の順に選択
