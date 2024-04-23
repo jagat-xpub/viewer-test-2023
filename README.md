@@ -10,7 +10,7 @@
   - [第3章 その他のEPUBリーダー表示テスト](https://github.com/jagat-xpub/viewer-test-2023/blob/main/chap03.pdf)
   - [第4章 国内EPUBリーダーにおける本文／alt属性の読み上げの状況（ダイジェスト版）](https://github.com/jagat-xpub/viewer-test-2023/blob/main/ALT_text_check_JEPAVersion_20240424.pdf)
 
-- [EPUBリーダー表示チェック（JAGAT次世代パブリッシング研究会）2023](https://docs.google.com/spreadsheets/d/1xKDlL4TrMHMa1qq2QsWcXLEGMPjx-JWcTdaw_8KkftE/edit?usp=sharing)
+- [EPUBリーダー表示チェック（JAGAT次世代パブリッシング研究会）2023](https://docs.google.com/spreadsheets/u/1/d/e/2PACX-1vSPaWWfqx2bZiRqK__XG_v_NEGY5OjB-lIcoG9Ll_D1aG5UA7RwpUi3dOq4fLTt40flSuFGhu38Iv7o/pubhtml#)
 
 ## プレビュー、ビルドの方法（第1章〜第3章）
 
