@@ -28,7 +28,7 @@
     - 第3章 その他のEPUBリーダー表示テスト（15分）16:35-16:50[［PDF］](https://github.com/jagat-xpub/viewer-test-2023/blob/main/PDF/4_24_JEPA_TAJIMA.pdf)
       - 付録 国内EPUBリーダーにおける本文／alt属性の読み上げの状況：仁科哲（15分）16:50-17:05[［PDF］](https://github.com/jagat-xpub/viewer-test-2023/blob/main/PDF/ALT_text_check_JEPAVersion_20240424.pdf)
     - 第4章  EPUB内文字、画像、背景表示テスト：仁科哲（15分）17:05-17:20[［PDF］](https://github.com/jagat-xpub/viewer-test-2023/blob/main/PDF/DPFJ_EPUBCheck_Chap4_20240424.pdf)
-    - 質疑応答：（10分）17:20-17:30
+  - 質疑応答：（10分）17:20-17:30
 
 ## 報告書のプレビュー、及びPDF作成の方法（第1章〜第3章）
 
