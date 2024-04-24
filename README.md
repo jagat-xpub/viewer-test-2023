@@ -18,20 +18,17 @@
 ## JEPA（日本電子出版協会）セミナーでの発表
 
 - [2024年4月24日 各社のEPUBリーダーは、現行CSS仕様やアクセシビリティをどれだけサポートしているのか？（2024年4月24日）](https://www.jepa.or.jp/seminar/20240424/)
-- JAGAT 次世代パブリッシング研究会の紹介：小形克宏（10分）16:00-16:10[［PDF］](https://github.com/jagat-xpub/viewer-test-2023/blob/main/PDF/20240424-chap2-ogata.pdf)
-- EPUBリーダー表示テスト報告書（2023年度）
-  - 第2章 CSS表示テスト
-    - 2-1 はじめに：小形克宏（5分）16:10-16:15[［PDF］](https://github.com/jagat-xpub/viewer-test-2023/blob/main/PDF/20240424-chap2-ogata.pdf)
-    - 2-2 CSS表示テストの結果：村上真雄（10分）16:15-16:25[［PDF］](https://github.com/jagat-xpub/viewer-test-2023/blob/main/PDF/chap02-02.pdf)
-    - 2-3 おわりに：小形克宏（5分）16:25-16:30[［PDF］](https://github.com/jagat-xpub/viewer-test-2023/blob/main/PDF/20240424-chap2-ogata.pdf)
-    - 付録 使えたらうれしいCSSプロパティ：田嶋淳（5分）16:30-16:35[［PDF］](https://github.com/jagat-xpub/viewer-test-2023/blob/main/PDF/wantedCSSproperty.pdf)
-  - 第3章 その他のEPUBリーダー表示テスト（15分）16:35-16:50[［PDF］](https://github.com/jagat-xpub/viewer-test-2023/blob/main/PDF/4_24_JEPA_TAJIMA.pdf)
-    - 付録 国内EPUBリーダーにおける本文／alt属性の読み上げの状況：仁科哲（15分）16:50-17:05[［PDF］](https://github.com/jagat-xpub/viewer-test-2023/blob/main/PDF/ALT_text_check_JEPAVersion_20240424.pdf)
-  - 第4章  EPUB内文字、画像、背景表示テスト：仁科哲（15分）17:05-17:20[［PDF］](https://github.com/jagat-xpub/viewer-test-2023/blob/main/PDF/DPFJ_EPUBCheck_Chap4_20240424.pdf)
-  - 質疑応答：（10分）17:20-17:30
-
-
-
+  - JAGAT 次世代パブリッシング研究会の紹介：小形克宏（10分）16:00-16:10[［PDF］](https://github.com/jagat-xpub/viewer-test-2023/blob/main/PDF/20240424-chap2-ogata.pdf)
+  - EPUBリーダー表示テスト報告書（2023年度）
+    - 第2章 CSS表示テスト
+      - 2-1 はじめに：小形克宏（5分）16:10-16:15[［PDF］](https://github.com/jagat-xpub/viewer-test-2023/blob/main/PDF/20240424-chap2-ogata.pdf)
+      - 2-2 CSS表示テストの結果：村上真雄（10分）16:15-16:25[［PDF］](https://github.com/jagat-xpub/viewer-test-2023/blob/main/PDF/chap02-02.pdf)
+      - 2-3 おわりに：小形克宏（5分）16:25-16:30[［PDF］](https://github.com/jagat-xpub/viewer-test-2023/blob/main/PDF/20240424-chap2-ogata.pdf)
+      - 付録 使えたらうれしいCSSプロパティ：田嶋淳（5分）16:30-16:35[［PDF］](https://github.com/jagat-xpub/viewer-test-2023/blob/main/PDF/wantedCSSproperty.pdf)
+    - 第3章 その他のEPUBリーダー表示テスト（15分）16:35-16:50[［PDF］](https://github.com/jagat-xpub/viewer-test-2023/blob/main/PDF/4_24_JEPA_TAJIMA.pdf)
+      - 付録 国内EPUBリーダーにおける本文／alt属性の読み上げの状況：仁科哲（15分）16:50-17:05[［PDF］](https://github.com/jagat-xpub/viewer-test-2023/blob/main/PDF/ALT_text_check_JEPAVersion_20240424.pdf)
+    - 第4章  EPUB内文字、画像、背景表示テスト：仁科哲（15分）17:05-17:20[［PDF］](https://github.com/jagat-xpub/viewer-test-2023/blob/main/PDF/DPFJ_EPUBCheck_Chap4_20240424.pdf)
+    - 質疑応答：（10分）17:20-17:30
 
 ## 報告書のプレビュー、及びPDF作成の方法（第1章〜第3章）
 
