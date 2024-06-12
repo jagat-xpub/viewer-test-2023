@@ -17,7 +17,7 @@
 
 ## JEPA（日本電子出版協会）セミナーでの発表
 
-- [各社のEPUBリーダーは、現行CSS仕様やアクセシビリティをどれだけサポートしているのか？（2024年4月24日）](https://www.jepa.or.jp/seminar/20240424/)
+- [各社のEPUBリーダーは、現行CSS仕様やアクセシビリティをどれだけサポートしているのか？（2024年4月24日）](https://www.jepa.or.jp/sem/20240424/)
   - JAGAT 次世代パブリッシング研究会の紹介：小形克宏（10分）16:00-16:10[［PDF］](https://github.com/jagat-xpub/viewer-test-2023/blob/main/PDF/20240424-chap2-ogata.pdf)
   - EPUBリーダー表示テスト報告書（2023年度）
     - 第2章 CSS表示テスト
